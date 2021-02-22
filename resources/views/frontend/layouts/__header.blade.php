@@ -14,7 +14,7 @@
     </div>
     <ul id="top_menu">
         <li><a href="{{route('product.sale')}}" class="btn_add" target="_blank">Sale</a></li>
-        <li><a href="{{route('construction.index')}}" class="btn_add" target="_blank">Nhà thầu thi công</a></li>
+        <li><a href="{{route('construction.index')}}" class="btn_add" target="_blank">Nhà thầu</a></li>
         @if(! is_null(\Auth::guard('marketing')->user()))
         <li class="dropdown-toggle" style="line-height: 38px;position: relative;">
             <a href="#" class="account"><i class="fa fa-user"></i> {!! \Auth::guard('marketing')->user()->full_name !!}</a>
