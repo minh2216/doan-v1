@@ -13,14 +13,14 @@
         </form>
     </div>
     <ul id="top_menu">
-        <li><a href="{{route('product.sale')}}" class="btn_add" target="_blank">Sale1</a></li>
+        <li><a href="{{route('product.sale')}}" class="btn_add" target="_blank">Sale2</a></li>
         <li><a href="{{route('construction.index')}}" class="btn_add" target="_blank">Nhà thầu thi công</a></li>
         @if(! is_null(\Auth::guard('marketing')->user()))
         <li class="dropdown-toggle" style="line-height: 38px;position: relative;">
             <a href="#" class="account"><i class="fa fa-user"></i> {!! \Auth::guard('marketing')->user()->full_name !!}</a>
             <ul class="dropdown-menu">
                 <li><a href="{!!route('marketing.index',\Auth::guard('marketing')->user()->alias)!!}">Thông tin cá nhân</a></li>
-                <li><a href="{!!route('api.logout-marketing')!!}">Đăng </a></li>
+                <li><a href="{!!route('api.logout-marketing')!!}">Đăng asd</a></li>
             </ul>
         </li>
         @elseif(! is_null(\Auth::guard('construction')->user()))
