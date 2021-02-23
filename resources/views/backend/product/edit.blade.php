@@ -36,6 +36,13 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
+                                        <label class="col-md-2 col-form-label text-right">Tiêu đề 2<span class="text-danger">*</span></label>
+                                        <div class="col-md-10">
+                                            <input type="text" class="form-control" name="title2" value="{!!is_null(old('title2'))?$record->title2:old('title2')!!}" required="">
+                                            {!! $errors->first('title', '<span class="text-danger">:message</span>') !!}
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
                                         <label class="col-md-2 col-form-label text-right">Url <span class="text-danger">*</span></label>
                                         <div class="col-md-10">
                                             <input type="text" class="form-control" readonly="" name="alias" value="{!!is_null(old('alias'))?$record->alias:old('alias')!!}" required>

@@ -1,269 +1,166 @@
-<!--/footer-->
-
-<div id="toTop"></div><!-- Back to top button -->
-
-<footer class="plus_border">
-    <div class="margin_60_35 mlr-50">
-        <div class="row">
-            <div class="col-lg-2 col-md-6 col-sm-6">
-                <h3 data-target="#collapse_ft_1">Liên kết</h3>
-                <div class="collapse dont-collapse-sm" id="collapse_ft_1">
-                    <ul class="links">
-                        @foreach($news_footer1 as $key=>$val)
-                        <li><a href="/tin-tuc/{{$val->alias}}">{{$val->title}}</a></li>
-                        @endforeach
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-6 col-sm-6">
-                <h3 data-target="#collapse_ft_2">Về chúng tôi</h3>
-                <div class="collapse dont-collapse-sm" id="collapse_ft_2">
-                    <ul class="links">
-                        <li><a href="/blog">Blog</a></li>
-                        <li><a href="">Giới thiệu</a></li>
-                        <li><a href="tel:{!!$share_config->hotline!!}">{!!$share_config->hotline!!}</a></li>
-                        <li><a href="mailto:{!!$share_config->email!!}">{!!$share_config->email!!}</a></li>
-                        <li><a href="#">{!!$share_config->working_hours!!}</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        <h3 data-target="#collapse_ft_3">Cộng đồng Alagreen</h3>
-                        <div class="collapse dont-collapse-sm" id="collapse_ft_2">
-                            <ul class="links">
-                                @foreach($news_footer2 as $key=>$val)
-                                <li><a href="/tin-tuc/{{$val->alias}}">{{$val->title}}</a></li>
-                                @endforeach
-                            </ul>
+<!-- 
+    !============= Footer Area Start ===========!
+ -->
+<section class="rt-site-footer" data-scrollax-parent="true">
+    <div class="rt-shape-emenetns-1" style="background-image: url({{asset('public/assets/frontend/images/shape-elements/shape-4.png')}})" data-scrollax="properties: { translateY: '340px' }"></div><!-- /.rt-shape-emenetns-1 -->   
+    <div class="footer-top rtbgprefix-cover" style="background-image: url({{asset('public/assets/frontend/images/backgrounds/footerbg.png')}})">
+        <div class="footer-subscripbe-box wow fade-in-bottom">
+           <div class="container">
+               <div class="row">
+                   <div class="col-xl-8 col-lg-10 mx-auto text-center">
+                        <div class="rt-section-title-wrapper text-white">
+                            <h2 class="rt-section-title">
+                                <span>Newsletter</span>
+                        
+                                Get The Latest news
+                            </h2><!-- /.rt-section-title -->
+                            <p>
+                                Get the latest travel inspirations and deals from Emigrar semimonthly with your email. You can
+                                unsubscribe at any time. Your privacy & personal information will be treated.
+                            </p>
+                        </div><!-- /.rt-section-title-wrapper -->
+                   </div><!-- /.col-lg-7 -->
+               </div><!-- /.row -->
+            <div class="section-title-spacer"></div><!-- /.section-title-spacer -->
+            <div class="row">
+                <div class="col-lg-7 mx-auto">
+                    <div class="input-group mb-5">
+                        <input type="text" class="form-control" placeholder="Enter your email address" aria-describedby="button-addon2">
+                        <div class="input-group-append">
+                            <button class="btn" type="button" id="button-addon2">Subcribe Now</button>
                         </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        <h3 data-target="#collapse_ft_3">Thanh toán</h3>
-                        <div class="collapse dont-collapse-sm" id="collapse_ft_3">
-                            <img src="/assets/frontend/img/visa.png" alt="Visa" height="30">
-                            <img src="/assets/frontend/img/mastercard.png" alt="Mastercard" height="30">
-                            <img src="/assets/frontend/img/momo.jpg" alt="Momo" height="30">
-                            <img src="/assets/frontend/img/viettelpay.png" alt="Viettelpay" height="30">
-                        </div>
-                        <h3 class="mt-15">Vận chuyển</h3>
-                        <div class="collapse dont-collapse-sm" id="collapse_ft_3">
-                            <img src="/assets/frontend/img/vnpost.png" alt="VNPOST" height="30">
-                            <img src="/assets/frontend/img/viettelpost.png" alt="ViettelPost" height="30">
-                        </div>
-                    </div>
-                    <div class="col-lg-12 text-center">
-                        <div class="collapse dont-collapse-sm" id="collapse_ft_3">
-                            <img src="/assets/frontend/img/bct.png" alt="Chứng nhận bộ công thương" height="60">
-                            <img src="/assets/frontend/img/f1.png" alt="f1" height="60">
-                            <img src="/assets/frontend/img/f3.png" alt="f3" height="60">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <h3 data-target="#collapse_ft_4">Đăng ký nhận tin</h3>
-                <div class="collapse dont-collapse-sm" id="collapse_ft_4">
-                    <div id="newsletter">
-                        <div id="message-newsletter"></div>
-                        <form method="post" id="newsletter_form">
-                            <div class="form-group">
-                                <input type="email" name="email" id="email_newsletter" class="form-control" placeholder="Nhập email">
-                                <input type="submit" value="Đăng ký" id="submit-newsletter">
-                            </div>
-                        </form>
-                    </div>
-                    <p>Đăng ký và nhận email cung cấp các thông tin mới nhất của Alagreen về dịch vụ, chương trình khuyến mãi, khảo sát và ưu đãi từ đối tác. Bạn có thể hủy đăng ký bất cứ khi nào bằng cách nhấn vào liên kết ở cuối email</p>
-                    <p>Liên hệ với Alagreen <a href="#">tại đây</a>. Xem chính sách bảo mật <a href="#">tại đây</a></p>
-                </div>
-            </div>
-        </div>
-        <!-- /row-->
-        <hr>
-        <div class="row">
-            <div class="col-lg-6">
-                <img src="{!!$share_config->image!!}" alt="{!!$share_config->company_name!!}" height="50">
-                <ul id="additional_links">
-                    <li><a href="#0">Về chúng tôi</a></li>
-                    <li><a href="#0">Chính sách và điều khoản hoạt động</a></li>
-                    <li><a href="#">Bảo mật</a></li>
-                </ul>
-            </div>
-            <div class="col-lg-12">
-                <p class="nomargin">© 2019 Alagreen. Bản quyền thuộc về Công ty TNHH Thương mại Dịch vụ Alagreen. Mọi hành vi sao chép đều là phạm pháp nếu không có sự cho phép bằng văn bản của chúng tôi</p>
-            </div>
-        </div>
-    </div>
-</footer>
-<aside id="login" class="zoom-anim-dialog mfp-hide register-form">
-    <figure>
-        <a href="/"><img src="{!!$share_config->image!!}" width="165" height="35" alt="" class="logo_sticky"></a>
-    </figure>
-    <form autocomplete="off" id="frmRegister">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Họ tên <span class="text-danger">*</span></label>
-                    <input class="form-control" type="text" name="full_name" required="">
-                    <i class="ti-user"></i>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Tên đăng nhập <span class="text-danger">*</span></label>
-                    <input class="form-control" type="text" name="username" id="username1" required>
-                    <i class="ti-user"></i>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Mật khẩu <span class="text-danger">*</span></label>
-                    <input class="form-control" type="password" id="password1" name="password" required>
-                    <i class="icon_lock_alt"></i>
-                </div>
+                    </div><!-- end input gorup -->
+                </div><!-- /.col-lg-7 -->
+            </div><!-- /.row -->
+               <div class="rt-dot-divider"></div><!-- /.rt-dot-divider -->
+           </div><!-- /.container -->
+        </div><!-- /.footer-subscripbe-box -->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="rt-single-widget wow fade-in-bottom" data-wow-duration="1s">
+                        <h3 class="rt-footer-title">Company Info</h3><!-- /.rt-footer-title -->
+                        <ul class="rt-usefulllinks">
+                            <li>
+                                <a href="#">About Us</a>
+                            </li>
+                            <li>
+                                <a href="#">Contact Us</a>
+                            </li>
+                            <li>
+                                <a href="#">Authenticity Guarantee</a>
+                            </li>
+                            <li>
+                                <a href="#">Customer Reviews</a>
+                            </li>
+                            <li>
+                                <a href="#">Privacy Policy</a>
+                            </li>
+                            <li>
+                                <a href="#">Business License</a>
+                            </li>
+                            
+                        </ul>
 
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Nhập lại mật khẩu <span class="text-danger">*</span></label>
-                    <input class="form-control" type="password" id="password2" required>
-                    <i class="icon_lock_alt"></i>
-                </div>
+                    </div><!-- /.rt-single-widge -->
+                </div><!-- /.col-lg-3-->
+                <div class="col-lg-3 col-md-6">
+                    <div class="rt-single-widget wow fade-in-bottom" data-wow-duration="1.5s">
+                        <h3 class="rt-footer-title">Work With Us</h3>
+                        <ul class="rt-usefulllinks">
+                            <li><a href="#">Become Partner</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Become Affiliate</a></li>
+                            <li><a href="#">Associations</a></li>
+                            <li><a href="#">Advertise with us</a></li>
+                            <li><a href="#">Retirement Plan</a></li>
+                            <li><a href="#">Travel APIs</a></li>
+                        </ul>
+                    </div><!-- /.rt-single-widget -->
+                </div><!-- /.col-lg-3-->
+                <div class="col-lg-3 col-md-6">
+                    <div class="rt-single-widget wow fade-in-bottom" data-wow-duration="2s">
+                        <h3 class="rt-footer-title">
+                            My Account
+                        </h3>
+                        <ul class="rt-usefulllinks">
+                        
+                            <li><a href="#">Manage Your Account</a></li>
+                            <li><a href="#">Build your own trip</a></li>
+                            <li><a href="#">Order Sttatus</a></li>
+                            <li><a href="#">Booking Guide</a></li>
+                            <li><a href="#">Travel Insurance & Safety Guide</a></li>
+                        </ul><!-- /.rt-usefulllinks -->
+                    </div><!-- end single widget -->
+                </div><!-- /.col-lg-3-->
+                <div class="col-lg-3 col-md-6">
+                    <div class="rt-single-widget wow fade-in-bottom" data-wow-duration="2.5s">
+                        <h3 class="rt-footer-title">
+                            Plan Your Trip
+                        </h3>
+                        <ul class="rt-usefulllinks">
+                            <li><a href="#">Special Offers</a></li>
+                            <li><a href="#">Hotels</a></li>
+                            <li><a href="#">Flights</a></li>
+                            <li><a href="#">Tour Packages</a></li>
+                            <li><a href="#">Accommodations</a></li>
+                            <li><a href="#">Transportation</a></li>
+                        </ul><!-- /.rt-usefulllinks -->
+                    </div><!-- end single widget -->
+                </div><!-- /.col-lg-3-->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </div><!-- /.footer-top -->
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 text-center text-lg-left">
+                <div class="copy-text wow fade-in-bottom" data-wow-duration="1s">
+                    Copyright © 2018.All Rights Reserved By <a href="#">Emigrar</a>
+                </div><!-- /.copy-text -->
+                </div><!-- /.col-lg-6 -->
+                <div class="col-lg-6 text-center text-lg-right">
+                    <div class="rt-footer-social wow fade-in-bottom" data-wow-duration="1.5s">
+                        <ul>
+                            <li><a href="#"><img src="{{asset('public/assets/frontend/images/brands/card-1.png')}}" alt="cardimage" draggable="false"></a></li>
+                            <li><a href="#"><img src="{{asset('public/assets/frontend/images/brands/card-2.png')}}" alt="cardimage" draggable="false"></a></li>
+                            <li><a href="#"><img src="{{asset('public/assets/frontend/images/brands/card-3.png')}}" alt="cardimage" draggable="false"></a></li>
+                            <li><a href="#"><img src="{{asset('public/assets/frontend/images/brands/card-4.png')}}" alt="cardimage" draggable="false"></a></li>
+                            <li><a href="#"><img src="{{asset('public/assets/frontend/images/brands/card-5.png')}}" alt="cardimage" draggable="false"></a></li>
+                            
+                        </ul>
+                    </div><!-- /.rt-footer-social -->
+                </div><!-- /.col-lg-6 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </div><!-- /.footer-bottom -->
+</section>
 
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Số điện thoại <span class="text-danger">*</span></label>
-                    <input class="form-control" type="text" name="mobile" required>
-                    <i class="ti-mobile"></i>
-                </div>
 
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Email <span class="text-danger">*</span></label>
-                    <input class="form-control" type="email" name="email" required>
-                    <i class="ti-email"></i>
-                </div>
-
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Địa chỉ </label>
-                    <input class="form-control" type="text" name="address" >
-                    <i class="ti-location-pin"></i>
-                </div>
-
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Tên công ty </label>
-                    <input class="form-control" type="text" name="company_name" >
-                    <i class="ti-user"></i>
-                </div>
-            </div>
-            <div class="col-md-12">
-
-                <div class="clearfix add_bottom_15">
-                    <div class="radios float-left">
-                        <label class="container_radio">Khách hàng
-                            <input type="radio" name="type" value="3" checked="">
-                            <span class="checkmark"></span>
-                        </label>
-                    </div>
-                    <div class="radios float-left" style="margin-left:10px;">
-                        <label class="container_radio">Tiếp thị liên kết
-                            <input type="radio" name="type" value="1">
-                            <span class="checkmark"></span>
-                        </label>
-                    </div>
-                    <div class="radios float-left" style="margin-left:10px;">
-                        <label class="container_radio">Đơn vị thi công
-                            <input type="radio" name="type" value="2">
-                            <span class="checkmark"></span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
-        <div id="pass-info" class="clearfix"></div>
-        <div class="load">
-            <img src="{!! asset('/assets/frontend/img/loading.gif') !!}">
-        </div>
-        <button type="submit" class="register-btn btn_1 rounded full-width add_top_30">Đăng ký!</button>
-        <div class="text-center add_top_10">Bạn đã có tài khoản? <strong><a href="#sign-in-dialog" class="login">Đăng nhập</a></strong></div>
-    </form>
-</aside>
-<!-- Sign In Popup -->
-<div id="sign-in-dialog" class="zoom-anim-dialog mfp-hide">
-    <div class="small-dialog-header">
-        <h3>Đăng nhập</h3>
-    </div>
-    <form method="post" id="frmLogin">
-        <div class="sign-in-wrapper">
-            <div class="form-group">
-                <label>Tên đăng nhập</label>
-                <input type="username" class="form-control" name="username" id="username">
-                <i class="icon-user"></i>
-            </div>
-            <div class="form-group">
-                <label>Mật khẩu</label>
-                <input type="password" class="form-control" name="password" id="password" value="">
-                <i class="icon_lock_alt"></i>
-                <span class="help-block"></span>
-            </div>
-            <div class="clearfix add_bottom_15">
-                <div class="radios float-left">
-                    <label class="container_radio">Khách hàng
-                        <input type="radio" name="type_login" value="3" checked>
-                        <span class="checkmark"></span>
-                    </label>
-                </div>
-            </div>
-            <div class="clearfix add_bottom_15">
-                <div class="radios float-left">
-                    <label class="container_radio">Tiếp thị liên kết
-                        <input type="radio" name="type_login" value="1">
-                        <span class="checkmark"></span>
-                    </label>
-                </div>
-            </div>
-            <div class="clearfix add_bottom_15">
-                <div class="radios float-left">
-                    <label class="container_radio">Đơn vị thi công
-                        <input type="radio" name="type_login" value="2">
-                        <span class="checkmark"></span>
-                    </label>
-                </div>
-            </div>
-            <div class="clearfix add_bottom_15">
-                <div class="checkboxes float-left">
-                    <label class="container_check">Ghi nhớ tài khoản
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
-                    </label>
-                </div>
-            </div>
-            <div class="text-center"><input type="submit" value="Đăng nhập" class="btn_1 full-width"></div>
-            <div class="text-center">
-                Bạn chưa có tài khoản? <a href="#login" id="sign-in" class="register" title="Đăng ký">Đăng ký</a>
-            </div>
-        </div>
-    </form>
-    <!--form -->
-</div>
-<!-- /Sign In Popup -->
-<script src="{!!asset('assets/frontend/js/jquery.js')!!}"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script>
-<script src="{!!asset('assets/frontend/js/owl.carousel.min.js')!!}"></script>
-<script src="{!!asset('assets/frontend/js/jquery.nice-select.min.js')!!}"></script>
-<script src="{!!asset('assets/frontend/js/jquery.slimscroll.min.js')!!}"></script>
-<script src="{!!asset('assets/frontend/js/jquery.magnific-popup.min.js')!!}"></script>
-<script src="{!!asset('assets/frontend/js/jquery.auto-complete.min.js')!!}"></script>
-<script src="{!!asset('assets/frontend/js/sweetalert.min.js')!!}"></script>
-<script src="{!!asset('assets/frontend/js/custom.js')!!}"></script>
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v4.0"></script>
-
+<!-- ==================Start Js Link===================== -->
+<script src="{{asset('public/assets/frontend/js/jquery-2.2.4.min.js')}}"></script>
+<script src="{{asset('public/assets/frontend/js/popper.min.js')}}"></script>
+<script src="{{asset('public/assets/frontend/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('public/assets/frontend/js/moment.min.js')}}"></script>
+<script src="{{asset('public/assets/frontend/js/jquery.easing.1.3.js')}}"></script>
+<script src="{{asset('public/assets/frontend/js/imagesloaded.pkgd.min.js')}}"></script>
+<script src="{{asset('public/assets/frontend/js/isotope.pkgd.min.js')}}"></script>
+<script src="{{asset('public/assets/frontend/js/instafeed.min.js')}}"></script>
+<script src="{{asset('public/assets/frontend/js/waypoints.min.js')}}"></script>
+<script src="{{asset('public/assets/frontend/js/jquery.counterup.min.js')}}"></script>
+<script src="{{asset('public/assets/frontend/js/jquery.magnific-popup.min.js')}}"></script>
+<script src="{{asset('public/assets/frontend/js/jquery.scrollUp.min.js')}}"></script>
+<script src="{{asset('public/assets/frontend/js/owl.carousel.min.js')}}"></script>
+<script src="{{asset('public/assets/frontend/js/TweenMax.min.js')}}"></script>
+<script src="{{asset('public/assets/frontend/js/scrollax.min.js')}}"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3&amp;key=AIzaSyCy7becgYuLwns3uumNm6WdBYkBpLfy44k"></script>
+<script src="{{asset('public/assets/frontend/js/wow.js')}}"></script>
+<script src="{{asset('public/assets/frontend/js/jquery.overlayScrollbars.min.js')}}"></script>
+<script src="{{asset('public/assets/frontend/js/jquery-ui.js')}}"></script>
+<script src="{{asset('public/assets/frontend/js/jquery.appear.js')}}"></script>
+<script src="{{asset('public/assets/frontend/js/select2.min.js')}}"></script>
+<script src="{{asset('public/assets/frontend/js/slick.min.js')}}"></script>
+<script src="{{asset('public/assets/frontend/js/slider-range.js')}}"></script>
+<script src="{{asset('public/assets/frontend/js/vivus.min.js')}}"></script>
+<script src="{{asset('public/assets/frontend/js/tippy.all.min.js')}}"></script>
+<script src="{{asset('public/assets/frontend/js/app.js')}}"></script>
