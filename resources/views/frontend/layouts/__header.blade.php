@@ -30,15 +30,15 @@
     <div class="main-header rt-sticky">
       <nav class="navbar">
         <div class="container">
-          <a href="index.html" class="brand-logo"><img src="{{asset('public/assets/frontend/images/logo/logo.png')}}" alt=""></a>
-          <a href="index.html" class="sticky-logo"><img src="{{asset('public/assets/frontend/images/logo/logo.png')}}" alt=""></a>
+          <a href="{{route('home.index')}}" class="brand-logo"><img src="{{asset('public/assets/frontend/images/logo/logo.png')}}" alt=""></a>
+          <a href="{{route('home.index')}}" class="sticky-logo"><img src="{{asset('public/assets/frontend/images/logo/logo.png')}}" alt=""></a>
           <div class="ml-auto d-flex align-items-center">
             
 
 <div class="main-menu">
     <ul>
-        <li class="current-menu-item"><a href="#home">Home</a></li>
-        <li><a href="trip-1.html">Trip package</a></li>
+        <li class="current-menu-item"><a href="{{route('home.index')}}">Home</a></li>
+        <li><a href="{{route('sanpham.index')}} ">Trip package</a></li>
         <li><a href="service-1.html">Services</a></li>
         <li class="menu-item-has-children"><a href="#">Pages</a>
             <ul class="sub-menu">

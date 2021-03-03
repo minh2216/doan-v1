@@ -4,7 +4,7 @@
 <div class="content">  
     <div class="card">
         <div class="card-header header-elements-inline">
-            <h5 class="card-title">Tạo mới</h5>
+            <h5 class="card-title">Cập nhật</h5>
             <div class="header-elements">
                 <div class="list-icons">
                     <a class="list-icons-item" data-action="collapse"></a>
@@ -17,7 +17,7 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
-                    <form action="{!!route('admin.attribute.store')!!}" class="form-validate-jquery" method="POST" enctype="multipart/form-data">
+                    <form action="{!!route('admin.facilities.update', ['id' => $record->id])!!}" class="form-validate-jquery" method="POST" enctype="multipart/form-data">
                         <input type="hidden" name="_token" value="{!! csrf_token() !!}" />
                         <fieldset>
                             <div class="form-group row">
@@ -31,7 +31,7 @@
                             <div class="form-group row">
                                 <label class="col-md-3 col-form-label text-right">Tiêu đề <span class="text-danger">*</span></label>
                                 <div class="col-md-9">
-                                    <input type="text" class="form-control" name="title" value="{!!old('title')!!}" required="">
+                                    <input type="text" class="form-control" name="title" value="{!!is_null(old('title'))?$record->title:old('title')!!}" required="">
                                     {!! $errors->first('title', '<span class="text-danger">:message</span>') !!}
                                 </div>
                             </div>
@@ -39,24 +39,15 @@
                                 <label class="col-md-3 col-form-label text-right">Kiểu thuộc tính <span class="text-danger">*</span></label>
                                 <div class="col-md-9">
                                     <select class="form-control select-search"  data-fouc name="type" required="">
-                                        <option value="text">Text</option>
-                                        <option value="select">Lựa chọn</option>
+                                        <option value="text" @if ($record->type == 'text') selected @endif>Text</option>
+                                        <option value="select" @if ($record->type == 'select') selected @endif>Lựa chọn</option>
                                     </select>
                                 </div>
                             </div>
-<!--                             <div class="form-group row">
-                                <label class="col-md-3 col-form-label text-right">Loại thuộc tính <span class="text-danger">*</span></label>
-                                <div class="col-md-9">
-                                    <select class="form-control select-search"  data-fouc name="module" required="">
-                                        <option value="product">Sản phẩm</option>
-                                        <option value="gallery">Hình ảnh</option>
-                                    </select>
-                                </div>
-                            </div> -->
 
                         </fieldset>
                         <div class="text-right">
-                            <a type="button" href="{{route('admin.attribute.index')}}" class="btn btn-secondary legitRipple">Hủy</a>
+                            <a type="button" href="{{route('admin.facilities.index')}}" class="btn btn-secondary legitRipple">Hủy</a>
                             <button type="submit" class="btn btn-primary legitRipple">Lưu lại <i class="icon-arrow-right14 position-right"></i></button>
                         </div>
 

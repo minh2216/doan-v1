@@ -9,20 +9,12 @@
 
 <body>
 
-
-  <!-- 
-        ================== Header Area Start===================
-     -->
-    
-
     <!-- /preloder -->
   <div class="rt-preloder">
     <div class="preloder-box">
         <img src="{{asset('public/assets/frontend/images/all-img/preloder.svg')}}" alt="preloder image" draggable="false">
     </div>
 </div>
-
-  
 
 
 <!-- Modal -->

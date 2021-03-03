@@ -1,7 +1,7 @@
 @extends('backend.layouts.master')
 @section('content')
 <div class="content">
-    <form action="{!!route('admin.product.store')!!}" method="POST" enctype="multipart/form-data">
+    <form action="{!!route('admin.room.store')!!}" method="POST" enctype="multipart/form-data">
         <div class="card">
             <div class="card-header header-elements-inline">
                 <h6 class="card-title">Tạo mới</h6>
@@ -17,9 +17,8 @@
             <div class="card-body">
                 <ul class="nav nav-tabs nav-tabs-highlight">
                     <li class="nav-item"><a href="#left-icon-tab1" class="nav-link active" data-toggle="tab"><i class="icon-menu7 mr-2"></i> Thông tin cơ bản</a></li>
-                    <li class="nav-item"><a href="#left-icon-tab2" class="nav-link" data-toggle="tab"><i class="icon-stack2 mr-2"></i> Thuộc tính sản phẩm</a></li>
-                    <li class="nav-item"><a href="#left-icon-tab4" class="nav-link" data-toggle="tab"><i class="icon-bed2 mr-2"></i> Phòng</a></li>
-                    <li class="nav-item"><a href="#left-icon-tab3" class="nav-link" data-toggle="tab"><i class="icon-mention mr-2"></i> Thẻ meta</a></li>
+                    <li class="nav-item"><a href="#left-icon-tab2" class="nav-link" data-toggle="tab"><i class="icon-stack2 mr-2"></i> Tiện nghi</a></li>
+<!--                     <li class="nav-item"><a href="#left-icon-tab3" class="nav-link" data-toggle="tab"><i class="icon-mention mr-2"></i> Thẻ meta</a></li> -->
 
                 </ul>
 
@@ -44,25 +43,9 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-md-2 col-form-label text-right">Danh mục <span class="text-danger">*</span></label>
-                                        <div class="col-md-10">
-                                            <select class="select-search form-control" name="category_id[]"data-placeholder="Chọn danh mục" multiple="" >
-                                                {!!$category_html!!}
-                                            </select>
-                                            {!! $errors->first('category_id', '<span class="text-danger">:message</span>') !!}
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
                                         <label class="col-md-2 col-form-label text-right">Mô tả </label>
                                         <div class="col-md-10">
                                             <textarea class="form-control" name="description">{!!old('description')!!}</textarea>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-md-2 col-form-label text-right">Google Map</label>
-                                        <div class="col-md-10">
-                                            <input type="text" class="form-control" name="googlemap" value="{!!old('googlemap')!!}" ="">
-                                            {!! $errors->first('googlemap', '<span class="text-danger">:message</span>') !!}
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -90,7 +73,7 @@
                                 </fieldset>
                             </div>
                             <div class="col-md-4">
-<!--                                 <div class="form-group row">
+                                <div class="form-group row">
                                     <label class="col-form-label col-md-4 text-left">Giá </label>
                                     <div class="col-md-7">
                                         <input type="text" name="price" class="form-control touchspin text-center" value="0">
@@ -102,7 +85,7 @@
                                         <input type="text" name="sale_price" class="form-control touchspin text-center" value="0">
                                     </div>
                                 </div>
-                                <div class="form-group row">
+<!--                                 <div class="form-group row">
                                     <label class="form-check-label col-md-4  text-left">Hẹn ngày đăng </label>
                                     <div class="input-group col-md-7">
                                         <span class="input-group-prepend">
@@ -124,14 +107,14 @@
                                         <input type="text" name="ordering" class="form-control touchspin text-center" value="0">
                                     </div>
                                 </div>
-                                <div class="form-group row">
+<!--                                 <div class="form-group row">
                                     <div class="form-check col-md-5 form-check-right">
                                         <label class="form-check-label float-left ml-2">
                                             Hiển thị
                                             <input type="checkbox" class="form-check-input-styled" name="status" data-fouc="">
                                         </label>
                                     </div>
-                                </div>
+                                </div> -->
 <!--                                 <div class="form-group row">
                                     <div class="form-check col-md-6 form-check-right">
                                         <label class="form-check-label float-right">
@@ -164,19 +147,19 @@
                     <div class="tab-pane fade" id="left-icon-tab2">
                         <div class="row">
                             <div class="col-md-10 col-md-offset-1">
-                                @foreach ($attributes as $key => $val)
+                                @foreach ($facilities as $key => $val)
                                 <div class="form-group row">
                                     <label class="col-md-3 col-form-label text-right">{{$val->title}}</label>
                                     <div class="col-md-9">
-                                        @if ($val->type == \App\Attribute::TYPE_SELECT)
-                                        <select name="attribute_select[]" class="select-search" data-placeholder="Chọn">
+                                        @if ($val->type == \App\Facilities::TYPE_SELECT)
+                                        <select name="facilities_select[]" class="select-search" data-placeholder="Chọn">
                                             <option></option>
                                             @foreach ($val->children as $k => $v)
                                             <option value="{{$v->id}}">{{$v->title}}</option>
                                             @endforeach
                                         </select>
                                         @else
-                                        <input type="text" class="form-control" name="attribute[{{$val->id}}]" value="">
+                                        <input type="text" class="form-control" name="facilities[{{$val->id}}]" value="">
                                         @endif
                                     </div>
                                 </div>
@@ -209,33 +192,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="left-icon-tab4">
-                        <div class="row">
-                            <div class="col-md-10 col-md-offset-1">
-                                <div class="form-group row">
-                                    <label class="col-md-2 col-form-label text-right">Phòng <span class="text-danger">*</span></label>
-                                    <div class="col-md-10">
-                                        <select class="select-search form-control" name="category_id[]"data-placeholder="Chọn danh mục" >
-                                            {!!$category_html!!}
-                                        </select>
-                                        {!! $errors->first('category_id', '<span class="text-danger">:message</span>') !!}
-                                    </div>
-                                </div>
-                            <div class="form-group row">
-                                    <label class="col-form-label col-md-2 text-right">Giá </label>
-                                    <div class="col-md-2">
-                                        <input type="text" name="price" class="form-control touchspin text-center" value="0">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
                 </div>
                 <div class="row">
                     <div class="col-md-12">
                         <div class="text-center">
-                            <a type="button" href="{{route('admin.product.index')}}" class="btn btn-secondary legitRipple">Hủy</a>
+                            <a type="button" href="{{route('admin.room.index')}}" class="btn btn-secondary legitRipple">Hủy</a>
                             <button type="submit" class="btn btn-primary legitRipple">Lưu lại <i class="icon-arrow-right14 position-right"></i></button>
                         </div>
                     </div>
@@ -275,11 +237,5 @@
 <script src="{!! asset('assets/global_assets/js/plugins/notifications/jgrowl.min.js') !!}"></script>
 <script src="{!! asset('assets/backend/ckeditor/ckeditor.js') !!}"></script>
 <script src="{!! asset('assets/backend/js/custom.js') !!}"></script>
-
-<script type="text/javascript">
-    $(document).ready(function() {
-    $('.js-example-basic-single').select2();
-});
-</script>
 
 @stop

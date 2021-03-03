@@ -45,6 +45,14 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function() {
     Route::post('/product/update/{id}', ['as' => 'admin.product.update', 'uses' => 'Backend\ProductController@update']);
     Route::delete('/product/delete/{id}', ['as' => 'admin.product.destroy', 'uses' => 'Backend\ProductController@destroy']);
 
+    /* Quản lý loại phòng */
+    Route::get('/room', ['as' => 'admin.room.index', 'uses' => 'Backend\RoomController@index']);
+    Route::get('/room/create', ['as' => 'admin.room.create', 'uses' => 'Backend\RoomController@create']);
+    Route::post('/room/store', ['as' => 'admin.room.store', 'uses' => 'Backend\RoomController@store']);
+    Route::get('/room/edit/{id}', ['as' => 'admin.room.edit', 'uses' => 'Backend\RoomController@edit']);
+    Route::post('/room/update/{id}', ['as' => 'admin.room.update', 'uses' => 'Backend\RoomController@update']);
+    Route::delete('/room/delete/{id}', ['as' => 'admin.room.destroy', 'uses' => 'Backend\RoomController@destroy']);
+
     /* Quản lý attribute */
     Route::get('/attribute', ['as' => 'admin.attribute.index', 'uses' => 'Backend\AttributeController@index']);
     Route::get('/attribute/create', ['as' => 'admin.attribute.create', 'uses' => 'Backend\AttributeController@create']);
@@ -52,6 +60,14 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function() {
     Route::get('/attribute/edit/{id}', ['as' => 'admin.attribute.edit', 'uses' => 'Backend\AttributeController@edit']);
     Route::post('/attribute/update/{id}', ['as' => 'admin.attribute.update', 'uses' => 'Backend\AttributeController@update']);
     Route::delete('/attribute/delete/{id}', ['as' => 'admin.attribute.destroy', 'uses' => 'Backend\AttributeController@destroy']);
+
+    /* Quản lý tiện nghi */
+    Route::get('/facilities', ['as' => 'admin.facilities.index', 'uses' => 'Backend\FacilitiesController@index']);
+    Route::get('/facilities/create', ['as' => 'admin.facilities.create', 'uses' => 'Backend\FacilitiesController@create']);
+    Route::post('/facilities/store', ['as' => 'admin.facilities.store', 'uses' => 'Backend\FacilitiesController@store']);
+    Route::get('/facilities/edit/{id}', ['as' => 'admin.facilities.edit', 'uses' => 'Backend\FacilitiesController@edit']);
+    Route::post('/facilities/update/{id}', ['as' => 'admin.facilities.update', 'uses' => 'Backend\FacilitiesController@update']);
+    Route::delete('/facilities/delete/{id}', ['as' => 'admin.facilities.destroy', 'uses' => 'Backend\FacilitiesController@destroy']);
 
     /* Quản lý hạng mục */
     Route::get('/item', ['as' => 'admin.item.index', 'uses' => 'Backend\ItemController@index']);

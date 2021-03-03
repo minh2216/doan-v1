@@ -36,13 +36,6 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-md-2 col-form-label text-right">Tiêu đề 2<span class="text-danger">*</span></label>
-                                        <div class="col-md-10">
-                                            <input type="text" class="form-control" name="title2" value="{!!is_null(old('title2'))?$record->title2:old('title2')!!}" required="">
-                                            {!! $errors->first('title', '<span class="text-danger">:message</span>') !!}
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
                                         <label class="col-md-2 col-form-label text-right">Url <span class="text-danger">*</span></label>
                                         <div class="col-md-10">
                                             <input type="text" class="form-control" readonly="" name="alias" value="{!!is_null(old('alias'))?$record->alias:old('alias')!!}" required>
@@ -89,7 +82,7 @@
                                 </fieldset>
                             </div>
                             <div class="col-md-4">
-                                <div class="form-group row">
+                                <!-- <div class="form-group row">
                                     <label class="col-form-label col-md-4 text-left">Giá </label>
                                     <div class="col-md-7">
                                         <input type="text" name="price" class="form-control touchspin text-center" value="{!!is_null(old('price'))?$record->price:old('price')!!}">
@@ -116,7 +109,7 @@
                                         <input type="text" class="form-control tokenfield" name="keywords" data-fouc value="{!!is_null(old('keywords'))?$record->keywords:old('keywords')!!}" required="">
                                         {!! $errors->first('keywords', '<span class="text-danger">:message</span>') !!}
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="form-group row">
                                     <label class="col-form-label col-md-4 text-left">Thứ tự </label>
                                     <div class="col-md-5">
@@ -124,14 +117,14 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <div class="form-check col-md-6 form-check-right">
-                                        <label class="form-check-label float-right">
+                                    <div class="form-check col-md-5 form-check-right">
+                                        <label class="form-check-label float-left ml-2">
                                             Hiển thị
                                             <input type="checkbox" class="form-check-input-styled" name="status" data-fouc="" @if($record->status) checked @endif>
                                         </label>
                                     </div>
                                 </div>
-                                <div class="form-group row">
+<!--                                 <div class="form-group row">
                                     <div class="form-check col-md-6 form-check-right">
                                         <label class="form-check-label float-right">
                                             Sản phẩm nổi bật
@@ -146,7 +139,7 @@
                                             <input type="checkbox" class="form-check-input-styled" name="is_new" data-fouc="" @if($record->is_new) checked @endif>
                                         </label>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="col-md-12">
 

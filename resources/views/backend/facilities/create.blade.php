@@ -17,7 +17,7 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
-                    <form action="{!!route('admin.attribute.store')!!}" class="form-validate-jquery" method="POST" enctype="multipart/form-data">
+                    <form action="{!!route('admin.facilities.store')!!}" class="form-validate-jquery" method="POST" enctype="multipart/form-data">
                         <input type="hidden" name="_token" value="{!! csrf_token() !!}" />
                         <fieldset>
                             <div class="form-group row">
@@ -44,19 +44,10 @@
                                     </select>
                                 </div>
                             </div>
-<!--                             <div class="form-group row">
-                                <label class="col-md-3 col-form-label text-right">Loại thuộc tính <span class="text-danger">*</span></label>
-                                <div class="col-md-9">
-                                    <select class="form-control select-search"  data-fouc name="module" required="">
-                                        <option value="product">Sản phẩm</option>
-                                        <option value="gallery">Hình ảnh</option>
-                                    </select>
-                                </div>
-                            </div> -->
 
                         </fieldset>
                         <div class="text-right">
-                            <a type="button" href="{{route('admin.attribute.index')}}" class="btn btn-secondary legitRipple">Hủy</a>
+                            <a type="button" href="{{route('admin.facilities.index')}}" class="btn btn-secondary legitRipple">Hủy</a>
                             <button type="submit" class="btn btn-primary legitRipple">Lưu lại <i class="icon-arrow-right14 position-right"></i></button>
                         </div>
 

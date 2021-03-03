@@ -4,25 +4,25 @@ namespace App\Http\Controllers\Backend;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Repositories\AttributeRepository;
+use App\Repositories\FacilitiesRepository;
 
-class AttributeController extends Controller
+class FacilitiesController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function __construct(AttributeRepository $attributeRepo) {
-        $this->attributeRepo = $attributeRepo;
+    public function __construct(FacilitiesRepository $facilitiesRepo) {
+        $this->facilitiesRepo = $facilitiesRepo;
     }
     public function index()
     {
-        $records = $this->attributeRepo->all();
+        $records = $this->facilitiesRepo->all();
         foreach ($records as $key => $val) {
-            $records[$key]['parent'] = $this->attributeRepo->readParentCategory($val->parent_id);
+            $records[$key]['parent'] = $this->facilitiesRepo->readParentCategory($val->parent_id);
         }
-        return view('backend/attribute/index', compact('records'));
+        return view('backend/facilities/index', compact('records'));
     }
 
     /**
@@ -32,8 +32,8 @@ class AttributeController extends Controller
      */
     public function create()
     {
-        $parent_html = \App\Helpers\StringHelper::getSelectOptions($this->attributeRepo->all()->where('parent_id', 0));
-        return view('backend/attribute/create', compact('parent_html'));
+        $parent_html = \App\Helpers\StringHelper::getSelectOptions($this->facilitiesRepo->all()->where('parent_id', 0));
+        return view('backend/facilities/create', compact('parent_html'));
     }
 
     /**
@@ -46,18 +46,18 @@ class AttributeController extends Controller
     {
         $input = $request->all();
         $input['module'] = 'product';
-        $validator = \Validator::make($input, $this->attributeRepo->validateCreate());
+        $validator = \Validator::make($input, $this->facilitiesRepo->validateCreate());
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         }
         if ($input['parent_id'] == null) {
             $input['parent_id'] = 0;
         }
-        $attribute = $this->attributeRepo->create($input);
+        $attribute = $this->facilitiesRepo->create($input);
         if ($attribute->id){
-            return redirect()->route('admin.attribute.index')->with('success', 'Tạo mới thành công');
+            return redirect()->route('admin.facilities.index')->with('success', 'Tạo mới thành công');
         } else {
-            return redirect()->route('admin.attribute.index')->with('error', 'Tạo mới thất bại');
+            return redirect()->route('admin.facilities.index')->with('error', 'Tạo mới thất bại');
         }
     }
 
@@ -80,9 +80,9 @@ class AttributeController extends Controller
      */
     public function edit($id)
     {
-        $record = $this->attributeRepo->find($id);
-        $parent_html = \App\Helpers\StringHelper::getSelectOptions($this->attributeRepo->all()->where('parent_id', 0), $record->parent_id);
-        return view('backend/attribute/edit', compact('record', 'parent_html'));
+        $record = $this->facilitiesRepo->find($id);
+        $parent_html = \App\Helpers\StringHelper::getSelectOptions($this->facilitiesRepo->all()->where('parent_id', 0), $record->parent_id);
+        return view('backend/facilities/edit', compact('record', 'parent_html'));
     }
 
     /**
@@ -96,18 +96,18 @@ class AttributeController extends Controller
     {
         //
         $input = $request->all();
-        $validator = \Validator::make($input, $this->attributeRepo->validateUpdate($id));
+        $validator = \Validator::make($input, $this->facilitiesRepo->validateUpdate($id));
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         }
         if ($input['parent_id'] == null) {
             $input['parent_id'] = 0;
         }
-        $res = $this->attributeRepo->update($input, $id);
+        $res = $this->facilitiesRepo->update($input, $id);
         if ($res){
-            return redirect()->route('admin.attribute.index')->with('success', 'Cập nhật thành công');
+            return redirect()->route('admin.facilities.index')->with('success', 'Cập nhật thành công');
         } else {
-            return redirect()->route('admin.attribute.index')->with('error', 'Cập nhật thất bại');
+            return redirect()->route('admin.facilities.index')->with('error', 'Cập nhật thất bại');
         }
     }
 
@@ -119,7 +119,7 @@ class AttributeController extends Controller
      */
     public function destroy($id)
     {
-        $res = $this->attributeRepo->delete($id);
+        $res = $this->facilitiesRepo->delete($id);
         if ($res) {
             return redirect()->back()->with('success', 'Xóa thành công');
         } else {

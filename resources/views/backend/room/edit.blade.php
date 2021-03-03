@@ -1,10 +1,10 @@
 @extends('backend.layouts.master')
 @section('content')
 <div class="content">
-    <form action="{!!route('admin.product.store')!!}" method="POST" enctype="multipart/form-data">
+    <form action="{!!route('admin.room.update', ['id' => $record->id])!!}" method="POST" enctype="multipart/form-data">
         <div class="card">
             <div class="card-header header-elements-inline">
-                <h6 class="card-title">Tạo mới</h6>
+                <h6 class="card-title">Cập nhật</h6>
                 <div class="header-elements">
                     <div class="list-icons">
                         <a class="list-icons-item" data-action="collapse"></a>
@@ -18,8 +18,7 @@
                 <ul class="nav nav-tabs nav-tabs-highlight">
                     <li class="nav-item"><a href="#left-icon-tab1" class="nav-link active" data-toggle="tab"><i class="icon-menu7 mr-2"></i> Thông tin cơ bản</a></li>
                     <li class="nav-item"><a href="#left-icon-tab2" class="nav-link" data-toggle="tab"><i class="icon-stack2 mr-2"></i> Thuộc tính sản phẩm</a></li>
-                    <li class="nav-item"><a href="#left-icon-tab4" class="nav-link" data-toggle="tab"><i class="icon-bed2 mr-2"></i> Phòng</a></li>
-                    <li class="nav-item"><a href="#left-icon-tab3" class="nav-link" data-toggle="tab"><i class="icon-mention mr-2"></i> Thẻ meta</a></li>
+<!--                     <li class="nav-item"><a href="#left-icon-tab3" class="nav-link" data-toggle="tab"><i class="icon-mention mr-2"></i> Thẻ meta</a></li> -->
 
                 </ul>
 
@@ -32,41 +31,25 @@
                                     <div class="form-group row">
                                         <label class="col-md-2 col-form-label text-right">Tiêu đề <span class="text-danger">*</span></label>
                                         <div class="col-md-10">
-                                            <input type="text" class="form-control" name="title" value="{!!old('title')!!}" ="">
+                                            <input type="text" class="form-control" name="title" value="{!!is_null(old('title'))?$record->title:old('title')!!}" required="">
                                             {!! $errors->first('title', '<span class="text-danger">:message</span>') !!}
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-md-2 col-form-label text-right">Url <span class="text-danger">*</span></label>
                                         <div class="col-md-10">
-                                            <input type="text" class="form-control"  name="alias" value="{!!old('alias')!!}" >
+                                            <input type="text" class="form-control" readonly="" name="alias" value="{!!is_null(old('alias'))?$record->alias:old('alias')!!}" required>
                                             {!! $errors->first('alias', '<span class="text-danger">:message</span>') !!}
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-md-2 col-form-label text-right">Danh mục <span class="text-danger">*</span></label>
-                                        <div class="col-md-10">
-                                            <select class="select-search form-control" name="category_id[]"data-placeholder="Chọn danh mục" multiple="" >
-                                                {!!$category_html!!}
-                                            </select>
-                                            {!! $errors->first('category_id', '<span class="text-danger">:message</span>') !!}
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-md-2 col-form-label text-right">Mô tả </label>
                                         <div class="col-md-10">
-                                            <textarea class="form-control" name="description">{!!old('description')!!}</textarea>
+                                            <textarea class="form-control" name="description">{!!is_null(old('description'))?$record->description:old('description')!!}</textarea>
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-md-2 col-form-label text-right">Google Map</label>
-                                        <div class="col-md-10">
-                                            <input type="text" class="form-control" name="googlemap" value="{!!old('googlemap')!!}" ="">
-                                            {!! $errors->first('googlemap', '<span class="text-danger">:message</span>') !!}
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-md-2  control-label text-right text-semibold" for="images">Hình ảnh:</label>
+                                        <label class="col-md-2 required control-label text-right text-semibold" for="images">Hình ảnh:</label>
                                         <div class="col-lg-10 div-image">
                                             <div class="file-input file-input-ajax-new">
                                                 <div class="file-preview ">
@@ -83,68 +66,68 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <input type="hidden" name="images" class="image_data">
+                                            <input type="hidden" name="images" class="image_data" value="{{$record->images}}">
                                             <span class="help-block">Chỉ cho phép các file ảnh có đuôi <code>jpg</code>, <code>gif</code> và <code>png</code>. File có dung lượng tối đa 20M.</span>
                                         </div>
                                     </div>
                                 </fieldset>
                             </div>
                             <div class="col-md-4">
-<!--                                 <div class="form-group row">
+                                <div class="form-group row">
                                     <label class="col-form-label col-md-4 text-left">Giá </label>
                                     <div class="col-md-7">
-                                        <input type="text" name="price" class="form-control touchspin text-center" value="0">
+                                        <input type="text" name="price" class="form-control touchspin text-center" value="{!!is_null(old('price'))?$record->price:old('price')!!}">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-form-label col-md-4 text-left">Giá khuyến mãi </label>
                                     <div class="col-md-7">
-                                        <input type="text" name="sale_price" class="form-control touchspin text-center" value="0">
+                                        <input type="text" name="sale_price" class="form-control touchspin text-center" value="{!!is_null(old('sale_price'))?$record->sale_price:old('sale_price')!!}">
                                     </div>
                                 </div>
-                                <div class="form-group row">
+<!--                                 <div class="form-group row">
                                     <label class="form-check-label col-md-4  text-left">Hẹn ngày đăng </label>
                                     <div class="input-group col-md-7">
                                         <span class="input-group-prepend">
                                             <span class="input-group-text"><i class="icon-calendar5"></i></span>
                                         </span>
-                                        <input type="text" class="form-control pickadate" placeholder="Ngày đăng" name="post_schedule">
+                                        <input type="text" class="form-control pickadate" placeholder="Ngày đăng" name="post_schedule" value="{!!is_null(old('post_schedule'))?$record->getPostSchedule():old('post_schedule')!!}">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-md-4 col-form-label text-left">Từ khóa <span class="text-danger">*</span></label>
                                     <div class="col-md-7">
-                                        <input type="text" class="form-control tokenfield" name="keywords" data-fouc ="">
+                                        <input type="text" class="form-control tokenfield" name="keywords" data-fouc value="{!!is_null(old('keywords'))?$record->keywords:old('keywords')!!}" required="">
                                         {!! $errors->first('keywords', '<span class="text-danger">:message</span>') !!}
                                     </div>
                                 </div> -->
                                 <div class="form-group row">
                                     <label class="col-form-label col-md-4 text-left">Thứ tự </label>
                                     <div class="col-md-5">
-                                        <input type="text" name="ordering" class="form-control touchspin text-center" value="0">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="form-check col-md-5 form-check-right">
-                                        <label class="form-check-label float-left ml-2">
-                                            Hiển thị
-                                            <input type="checkbox" class="form-check-input-styled" name="status" data-fouc="">
-                                        </label>
+                                        <input type="text" name="ordering" class="form-control touchspin text-center" value="{!!is_null(old('ordering'))?$record->ordering:old('ordering')!!}">
                                     </div>
                                 </div>
 <!--                                 <div class="form-group row">
                                     <div class="form-check col-md-6 form-check-right">
                                         <label class="form-check-label float-right">
+                                            Hiển thị
+                                            <input type="checkbox" class="form-check-input-styled" name="status" data-fouc="" @if($record->status) checked @endif>
+                                        </label>
+                                    </div>
+                                </div> -->
+<!--                                 <div class="form-group row">
+                                    <div class="form-check col-md-6 form-check-right">
+                                        <label class="form-check-label float-right">
                                             Sản phẩm nổi bật
-                                            <input type="checkbox" class="form-check-input-styled" name="is_hot" data-fouc="">
+                                            <input type="checkbox" class="form-check-input-styled" name="is_hot" data-fouc="" @if($record->is_hot) checked @endif>
                                         </label>
                                     </div>
                                 </div>
-                                <div class="form-group row">
+ -->                                <!-- <div class="form-group row">
                                     <div class="form-check col-md-6 form-check-right">
                                         <label class="form-check-label float-right">
                                             Sản phẩm mới
-                                            <input type="checkbox" class="form-check-input-styled" name="is_new" data-fouc="">
+                                            <input type="checkbox" class="form-check-input-styled" name="is_new" data-fouc="" @if($record->is_new) checked @endif>
                                         </label>
                                     </div>
                                 </div> -->
@@ -154,7 +137,7 @@
                                 <div class="form-group row">
                                     <label class="col-md-2 col-form-label text-right">Nội dung: </label>
                                     <div class="col-md-12">
-                                        <textarea class="form-control ckeditor" id="content" name="content">{!!old('content')!!}</textarea>
+                                        <textarea class="form-control ckeditor" id="content" name="content">{!!is_null(old('content'))?$record->content:old('content')!!}</textarea>
                                     </div>
                                 </div>
                             </div>
@@ -164,19 +147,19 @@
                     <div class="tab-pane fade" id="left-icon-tab2">
                         <div class="row">
                             <div class="col-md-10 col-md-offset-1">
-                                @foreach ($attributes as $key => $val)
+                                @foreach ($facilities as $key => $val)
                                 <div class="form-group row">
                                     <label class="col-md-3 col-form-label text-right">{{$val->title}}</label>
                                     <div class="col-md-9">
-                                        @if ($val->type == \App\Attribute::TYPE_SELECT)
-                                        <select name="attribute_select[]" class="select-search" data-placeholder="Chọn">
+                                        @if ($val->type == \App\Facilities::TYPE_SELECT)
+                                        <select name="facilities_select[]" class="select-search" data-placeholder="Chọn">
                                             <option></option>
                                             @foreach ($val->children as $k => $v)
-                                            <option value="{{$v->id}}">{{$v->title}}</option>
+                                            <option value="{{$v->id}}" @if(in_array($v->id, $room_facilities_ids)) selected @endif>{{$v->title}}</option>
                                             @endforeach
                                         </select>
                                         @else
-                                        <input type="text" class="form-control" name="attribute[{{$val->id}}]" value="">
+                                        <input type="text" class="form-control" name="facilities[{{$val->id}}]" value="{!!(in_array($val->id, $room_facilities_ids))?$room_facilities[$val->id]:''!!}">
                                         @endif
                                     </div>
                                 </div>
@@ -190,43 +173,22 @@
                                 <div class="form-group row">
                                     <label class="col-md-3 col-form-label text-right">Thẻ tiêu đề (SEO)</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control" name="meta_title" value="{!!old('meta_title')!!}">
+                                        <input type="text" class="form-control" name="meta_title" value="{!!is_null(old('meta_title'))?$record->meta_title:old('meta_title')!!}">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-md-3 col-form-label text-right">Thẻ từ khóa (SEO) </label>
                                     <div class="col-md-9">
-                                        <textarea class="form-control" name="meta_keywords">{!!old('meta_keywords')!!}</textarea>
+                                        <textarea class="form-control" name="meta_keywords">{!!is_null(old('meta_keywords'))?$record->meta_keywords:old('meta_keywords')!!}</textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-md-3 col-form-label text-right">Thẻ mô tả (SEO) </label>
                                     <div class="col-md-9">
-                                        <textarea class="form-control maxlength-label-position" maxlength="255" name="meta_description">{!!old('meta_description')!!}</textarea>
+                                        <textarea class="form-control maxlength-label-position" maxlength="255" name="meta_description">{!!is_null(old('meta_description'))?$record->meta_description:old('meta_description')!!}</textarea>
                                     </div>
                                 </div>
 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="left-icon-tab4">
-                        <div class="row">
-                            <div class="col-md-10 col-md-offset-1">
-                                <div class="form-group row">
-                                    <label class="col-md-2 col-form-label text-right">Phòng <span class="text-danger">*</span></label>
-                                    <div class="col-md-10">
-                                        <select class="select-search form-control" name="category_id[]"data-placeholder="Chọn danh mục" >
-                                            {!!$category_html!!}
-                                        </select>
-                                        {!! $errors->first('category_id', '<span class="text-danger">:message</span>') !!}
-                                    </div>
-                                </div>
-                            <div class="form-group row">
-                                    <label class="col-form-label col-md-2 text-right">Giá </label>
-                                    <div class="col-md-2">
-                                        <input type="text" name="price" class="form-control touchspin text-center" value="0">
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -235,7 +197,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="text-center">
-                            <a type="button" href="{{route('admin.product.index')}}" class="btn btn-secondary legitRipple">Hủy</a>
+                            <a type="button" href="{{route('admin.room.index')}}" class="btn btn-secondary legitRipple">Hủy</a>
                             <button type="submit" class="btn btn-primary legitRipple">Lưu lại <i class="icon-arrow-right14 position-right"></i></button>
                         </div>
                     </div>
@@ -275,11 +237,5 @@
 <script src="{!! asset('assets/global_assets/js/plugins/notifications/jgrowl.min.js') !!}"></script>
 <script src="{!! asset('assets/backend/ckeditor/ckeditor.js') !!}"></script>
 <script src="{!! asset('assets/backend/js/custom.js') !!}"></script>
-
-<script type="text/javascript">
-    $(document).ready(function() {
-    $('.js-example-basic-single').select2();
-});
-</script>
 
 @stop

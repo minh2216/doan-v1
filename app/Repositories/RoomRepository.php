@@ -12,29 +12,27 @@ namespace App\Repositories;
 use Repositories\Support\AbstractRepository;
 use Illuminate\Support\Facades\DB;
 
-class ProductRepository extends AbstractRepository {
+class RoomRepository extends AbstractRepository {
 
     public function __construct(\Illuminate\Container\Container $app) {
         parent::__construct($app);
     }
 
     public function model() {
-        return 'App\Product';
+        return 'App\Room';
     }
 
     public function validateCreate() {
         return $rules = [
-            'title' => 'required|unique:product',
+            'title' => 'required|unique:room',
             'alias' => 'required',
-            'category_id' => 'required'
         ];
     }
 
     public function validateUpdate($id) {
         return $rules = [
-            'title' => 'required|unique:product,title,' . $id . ',id',
+            'title' => 'required|unique:room,title,' . $id . ',id',
             'alias' => 'required',
-            'category_id' => 'required'
         ];
     }
 
@@ -105,8 +103,8 @@ class ProductRepository extends AbstractRepository {
         $model = $model->whereIn('id', $product_ids);
         return $model->where('sale_price','>',0)->where('status', 1)->orderBy('created_at', 'desc')->get();
     }
-    public function allProduct() {
-        return $this->model->where('status', 1)->get();
+    public function allRoom() {
+        return $this->model->get();
     }
 
     public function findByAlias($alias) {

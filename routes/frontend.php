@@ -41,4 +41,8 @@ Route::group(['middleware' => 'frontend'], function() {
     /* Tiếp thị liên kết */
     Route::get('/marketing/{alias}', ['as' => 'marketing.index', 'uses' => 'Frontend\MarketingController@index']);
     Route::get('/khach-hang/tai-khoan/{alias}', ['as' => 'member.edit_profile', 'uses' => 'Frontend\MemberController@editProfile']);
+
+
+    /*Custom*/
+    Route::get('/san-pham', ['as' => 'sanpham.index', 'uses' => 'Frontend\FrontendController@sanpham']);
 });

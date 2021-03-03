@@ -6,28 +6,30 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Repositories\ProductRepository;
 use App\Repositories\RoomRepository;
+use App\Repositories\FacilitiesRepository;
 use Repositories\CategoryRepository;
 use Repositories\AttributeRepository;
 use Repositories\PostHistoryRepository;
 
-class ProductController extends Controller {
+class RoomController extends Controller {
 
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function __construct(ProductRepository $productRepo, CategoryRepository $categoryRepo, AttributeRepository $attributeRepo, PostHistoryRepository $postHistoryRepo, RoomRepository $roomRepo) {
+    public function __construct(ProductRepository $productRepo, CategoryRepository $categoryRepo, AttributeRepository $attributeRepo, PostHistoryRepository $postHistoryRepo, RoomRepository $roomRepo, FacilitiesRepository $facilitiesRepo) {
         $this->productRepo = $productRepo;
         $this->categoryRepo = $categoryRepo;
         $this->attributeRepo = $attributeRepo;
         $this->postHistoryRepo = $postHistoryRepo;
         $this->roomRepo = $roomRepo;
+        $this->facilitiesRepo = $facilitiesRepo;
     }
 
     public function index() {
-        $records = $this->productRepo->all();
-        return view('backend/product/index', compact('records'));
+        $records = $this->roomRepo->all();
+        return view('backend/room/index', compact('records'));
     }
 
     /**
@@ -39,9 +41,8 @@ class ProductController extends Controller {
         //
         $options = $this->categoryRepo->readCategoryByType(\App\Category::TYPE_PRODUCT);
         $category_html = \App\Helpers\StringHelper::getSelectOptions($options);
-        $attributes = $this->attributeRepo->readAttributeByParentAdmin();
-        $room = $this->roomRepo->allRoom();
-        return view('backend/product/create', compact('category_html', 'attributes'));
+        $facilities = $this->facilitiesRepo->readFacilitiesByParentAdmin();
+        return view('backend/room/create', compact('category_html', 'facilities'));
     }
 
     /**
@@ -52,25 +53,30 @@ class ProductController extends Controller {
      */
     public function store(Request $request) {
         $input = $request->all();
-        $validator = \Validator::make($input, $this->productRepo->validateCreate());
+        $validator = \Validator::make($input, $this->roomRepo->validateCreate());
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         }
         $input['status'] = isset($input['status']) ? 1 : 0;
+        $input['is_hot'] = isset($input['is_hot']) ? 1 : 0;
+        $input['is_new'] = isset($input['is_new']) ? 1 : 0;
         $input['created_by'] = \Auth::user()->id;
         $input['view_count'] = 0;
-        $product = $this->productRepo->create($input);
+        $input['post_schedule'] = isset($input['post_schedule']) ? $input['post_schedule_submit'] : date('Y-m-d H:i:s');
+        $room = $this->roomRepo->create($input);
         //Thêm vào lịch sử đăng bài
-        $this->addPostHistory($product);
+        $this->addPostHistory($room);
+
         //Thêm danh mục sản phẩm
-        $product->categories()->attach($input['category_id']);
+        // $product->categories()->attach($input['category_id']);
         //Thêm thuộc tính sản phẩm
-        $attributes = $this->getProductAttributes($input);
-        $product->attributes()->attach($attributes);
-        if ($product) {
-            return redirect()->route('admin.product.index')->with('success', 'Tạo mới thành công');
+        $facilities = $this->getRoomFacilities($input);
+        $room->facilities()->attach($facilities);
+
+        if ($room) {
+            return redirect()->route('admin.room.index')->with('success', 'Tạo mới thành công');
         } else {
-            return redirect()->route('admin.product.index')->with('error', 'Tạo mới thất bại');
+            return redirect()->route('admin.room.index')->with('error', 'Tạo mới thất bại');
         }
     }
 
@@ -91,21 +97,18 @@ class ProductController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function edit($id) {
-        $record = $this->productRepo->find($id);
-        $options = $this->categoryRepo->readCategoryByType(\App\Category::TYPE_PRODUCT);
-        $category_ids = $record->categories()->get()->pluck('id')->toArray();
-        $category_html = \App\Helpers\StringHelper::getSelectOptions($options, $category_ids);
-        $attributes = $this->attributeRepo->readAttributeByParentAdmin();
+        $record = $this->roomRepo->find($id);
+        $facilities = $this->facilitiesRepo->readFacilitiesByParentAdmin();
         //Lấy danh sách id thuộc tính của sản phẩm
-        $product_attribute_ids = $record->attributes()->get()->pluck('id')->toArray();
+        $room_facilities_ids = $record->facilities()->get()->pluck('id')->toArray();
         //Lấy danh sách thuộc tính cúa sản phẩm
-        $product_attribute = array();
-        foreach ($record->attributes()->get() as $key => $val) {
+        $room_facilities = array();
+        foreach ($record->facilities()->get() as $key => $val) {
             if ($val != null) {
-                $product_attribute[$val->id] = $val->pivot->value;
+                $room_facilities[$val->id] = $val->pivot->value;
             }
         }
-        return view('backend/product/edit', compact('record', 'category_html', 'attributes', 'product_attribute', 'product_attribute_ids'));
+        return view('backend/room/edit', compact('record', 'facilities', 'room_facilities', 'room_facilities_ids'));
     }
 
     /**
@@ -117,24 +120,25 @@ class ProductController extends Controller {
      */
     public function update(Request $request, $id) {
         $input = $request->all();
-        $validator = \Validator::make($input, $this->productRepo->validateUpdate($id));
+        $validator = \Validator::make($input, $this->roomRepo->validateUpdate($id));
         if ($validator->fails()) {
+            dd(123);
             return redirect()->back()->withErrors($validator)->withInput();
         }
 //      status
         $input['status'] = isset($input['status']) ? 1 : 0;
         $input['created_by'] = \Auth::user()->id;
-        $res = $this->productRepo->update($input, $id);
-        $product = $this->productRepo->find($id);
+        $res = $this->roomRepo->update($input, $id);
+        $room = $this->roomRepo->find($id);
         //Thêm danh mục sản phẩm
-        $product->categories()->sync($input['category_id']);
+        // $product->categories()->sync($input['category_id']);
         //Thêm thuộc tính sản phẩm
-        $attributes = $this->getProductAttributes($input);
-        $product->attributes()->sync($attributes);
+        $facilities = $this->getRoomFacilities($input);
+        $room->facilities()->sync($facilities);
         if ($res) {
-            return redirect()->route('admin.product.index')->with('success', 'Cập nhật thành công');
+            return redirect()->route('admin.room.index')->with('success', 'Cập nhật thành công');
         } else {
-            return redirect()->route('admin.product.index')->with('error', 'Cập nhật thất bại');
+            return redirect()->route('admin.room.index')->with('error', 'Cập nhật thất bại');
         }
     }
 
@@ -145,37 +149,24 @@ class ProductController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy($id) {
-        $product = $this->productRepo->find($id);
-        $product->categories()->detach();
-        $product->attributes()->detach();
-        $this->productRepo->delete($id);
+        $room = $this->roomRepo->find($id);
+        // $room->categories()->detach();
+        $room->facilities()->detach();
+        $this->roomRepo->delete($id);
         return redirect()->back()->with('success', 'Xóa thành công');
     }
 
-    public function getProductAttributes($input) {
-        $attributes = array();
-        foreach ($input['attribute'] as $key => $val) {
-            $attributes[$key] = ['value' => $val];
+    public function getRoomFacilities($input) {
+        $facilities = array();
+        foreach ($input['facilities'] as $key => $val) {
+            $facilities[$key] = ['value' => $val];
         }
-        foreach ($input['attribute_select'] as $key => $val) {
+        foreach ($input['facilities_select'] as $key => $val) {
             if ($val != null) {
-                $attributes[$val] = ['value' => null];
+                $facilities[$val] = ['value' => null];
             }
         }
-        return $attributes;
-    }
-
-    public function getRoom($input) {
-        $attributes = array();
-        foreach ($input['attribute'] as $key => $val) {
-            $attributes[$key] = ['value' => $val];
-        }
-        foreach ($input['attribute_select'] as $key => $val) {
-            if ($val != null) {
-                $attributes[$val] = ['value' => null];
-            }
-        }
-        return $attributes;
+        return $facilities;
     }
 
     public function addPostHistory($product) {

@@ -29,7 +29,7 @@ return [
     'admin.subcriber.index' => 'Người đăng kí',
     'admin.member.index' => 'Thành viên',
     'admin.order.index' => 'Đơn hàng',
-    'admin.attribute.index' => 'Thuộc tính',
+    'admin.attribute.index' => 'Tiện nghi',
     'admin.construction.index' => 'Đơn vị thi công',
     'admin.gallery.index' => 'Hình ảnh',
     'admin.item.index' => 'Hạng mục thi công',
@@ -43,5 +43,7 @@ return [
     'admin.role.index' => 'Phân quyền',
     'admin.subscriber.index' => 'Đăng kí theo dõi',
     'admin.service.index' => 'Dịch vụ',
-    'admin.review.index'=>'Đánh giá'
+    'admin.review.index'=>'Đánh giá',
+    'admin.room.index' => 'Loại phòng',
+    'admin.facilities.index' => 'Tiện nghi'
 ];
