@@ -163,7 +163,7 @@ class ProductRepository extends AbstractRepository {
         foreach($category_id as $category)
         $product_id = DB::table('product_category')->where('category_id',$category)->pluck('product_id');
         $value = $this->model->where('status', 1)->whereIn('id',$product_id)->orderBy('updated_at', 'desc')->take($limit)->get();
-        return $value;
+        return 1;
     }
 
 }
