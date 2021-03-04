@@ -36,6 +36,15 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
+                                        <label class="col-md-2 col-form-label text-right">Khách sạn <span class="text-danger">*</span></label>
+                                        <div class="col-md-10">
+                                            <select class="select-search form-control" name="product_id"data-placeholder="Chọn danh mục" multiple="" >
+                                                {!!$product_html!!}
+                                            </select>
+                                            {!! $errors->first('product_id', '<span class="text-danger">:message</span>') !!}
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
                                         <label class="col-md-2 col-form-label text-right">Url <span class="text-danger">*</span></label>
                                         <div class="col-md-10">
                                             <input type="text" class="form-control" readonly="" name="alias" value="{!!is_null(old('alias'))?$record->alias:old('alias')!!}" required>

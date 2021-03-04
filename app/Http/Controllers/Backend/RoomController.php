@@ -28,8 +28,8 @@ class RoomController extends Controller {
     }
 
     public function index() {
-        $records = $this->roomRepo->all();
-        return view('backend/room/index', compact('records'));
+        $records = $this->roomRepo->all();$records1 = $this->productRepo->all();
+        return view('backend/room/index', compact('records','records1'));
     }
 
     /**
@@ -42,7 +42,10 @@ class RoomController extends Controller {
         $options = $this->categoryRepo->readCategoryByType(\App\Category::TYPE_PRODUCT);
         $category_html = \App\Helpers\StringHelper::getSelectOptions($options);
         $facilities = $this->facilitiesRepo->readFacilitiesByParentAdmin();
-        return view('backend/room/create', compact('category_html', 'facilities'));
+        $options1 = $this->productRepo->allProduct(\App\Product::TYPE_PRODUCT);
+        $product_html = \App\Helpers\StringHelper::getSelectOptions($options1);
+        $room = $this->productRepo->allProduct();
+        return view('backend/room/create', compact('product_html', 'facilities'));
     }
 
     /**
@@ -66,7 +69,8 @@ class RoomController extends Controller {
         $room = $this->roomRepo->create($input);
         //Thêm vào lịch sử đăng bài
         $this->addPostHistory($room);
-
+        //thêm khách sạn     
+        $room->product()->attach($input['product_id']);
         //Thêm danh mục sản phẩm
         // $product->categories()->attach($input['category_id']);
         //Thêm thuộc tính sản phẩm
@@ -98,6 +102,9 @@ class RoomController extends Controller {
      */
     public function edit($id) {
         $record = $this->roomRepo->find($id);
+        $options = $this->productRepo->allProduct(\App\Category::TYPE_PRODUCT);
+        $product_ids = $record->product()->get()->pluck('id')->toArray();
+        $product_html = \App\Helpers\StringHelper::getSelectOptions($options, $product_ids);
         $facilities = $this->facilitiesRepo->readFacilitiesByParentAdmin();
         //Lấy danh sách id thuộc tính của sản phẩm
         $room_facilities_ids = $record->facilities()->get()->pluck('id')->toArray();
@@ -108,7 +115,7 @@ class RoomController extends Controller {
                 $room_facilities[$val->id] = $val->pivot->value;
             }
         }
-        return view('backend/room/edit', compact('record', 'facilities', 'room_facilities', 'room_facilities_ids'));
+        return view('backend/room/edit', compact('record', 'facilities', 'room_facilities', 'room_facilities_ids','product_html'));
     }
 
     /**

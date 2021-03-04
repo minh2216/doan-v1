@@ -8,7 +8,7 @@ class Room extends Model {
 
     protected $table = 'room';
     protected $fillable = [
-        'created_by', 'title', 'alias', 'description', 'images', 'content',  'price', 'sale_price', 'ordering'
+        'created_by', 'title', 'product_id', 'alias', 'description', 'images', 'content',  'price', 'sale_price', 'ordering'
     ];
 
     public function facilities() {
@@ -16,7 +16,8 @@ class Room extends Model {
     }
 
     public function product() {
-        return $this->belongsToMany('\App\Product', 'product_room', 'room_id', 'product_id')->withPivot('value');
+        //return $this->belongsToMany('\App\Product', 'product_room', 'room_id', 'product_id')->withPivot('value');
+        return $this->belongsToMany('\App\Product');
     }
 
     public function room_facilities() {

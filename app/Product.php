@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model {
+    const TYPE_PRODUCT = 4;
 
     protected $table = 'product';
     protected $fillable = [
@@ -13,6 +14,10 @@ class Product extends Model {
 
     public function attributes() {
         return $this->belongsToMany('\App\Attribute', 'product_attribute', 'product_id', 'attribute_id')->withPivot('value');
+    }
+    public function room() {
+        //return $this->belongsToMany('\App\Product', 'product_room', 'room_id', 'product_id')->withPivot('value');
+        return $this->hasMany('\App\Room', 'product_id');
     }
 
     public function categories() {
