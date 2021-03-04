@@ -37,12 +37,11 @@
             </thead>
             <tbody>
                 @foreach($records as $key=>$record)
-                @foreach($records1 as $key1=>$record1)
                 <tr>
                     <td>{{++$key}}</td>
                     <td>{{$record->title}}</td>
                     <td>{{$record->created_at}}</td>
-                    <td>{{$record1->title}}</td>
+                    <td>{{$record->product_id}}</td>
                     <td>
                         @if($record->status == 1)
                         <span class="badge bg-success-400">Hiển thị</span>
@@ -61,7 +60,6 @@
                         </form>
                     </td>
                 </tr>
-                @endforeach
                 @endforeach
             </tbody>
         </table>
