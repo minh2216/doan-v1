@@ -3,10 +3,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
-<!-- Mirrored from pixner.net/emigrar/emigrar/hotel-1.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 30 Jan 2021 02:50:29 GMT -->
-
-
 <body>
 
     <!-- /preloder -->
@@ -128,7 +124,7 @@
                 <div class="col-lg-10 mx-auto">
                     <div class="rt-banner-searchbox flight-search wow fade-in-bottom" data-wow-duration="1s" data-wow-delay="1s">
                         <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane rtIncative" id="rt-item_a_first" role="tabpanel" aria-labelledby="rt-item_a_first">
+                            <!-- <div class="tab-pane rtIncative" id="rt-item_a_first" role="tabpanel" aria-labelledby="rt-item_a_first">
                                <form action="#">
                                    <div class="rt-radio-group">
                                        <div class="custom-control custom-radio custom-control-inline">
@@ -159,7 +155,7 @@
                                                <a class="dropdown-item" href="#">Room two</a>
                                                <a class="dropdown-item" href="#">Room three</a>
                                            </div>
-                                       </div><!-- ./dropdown -->
+                                       </div>
                                        <div class="dropdown form-check-inline rt-searchlink">
                                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink2"
                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -171,8 +167,8 @@
                                                <a class="dropdown-item" href="#">Room two</a>
                                                <a class="dropdown-item" href="#">Room three</a>
                                            </div>
-                                       </div><!-- ./dropdown -->
-                                   </div><!-- /.radio-group -->
+                                       </div>
+                                   </div>
                                    <div class="rt-input-group">
                                        <div class="single-input  col-rt-in-3">
                                            <select class="rt-selectactive banner-select" name="from"
@@ -189,7 +185,7 @@
                                            <span class="input-iconbadge"><img
                                                    src="{{asset('public/assets/frontend/images/icons-image/s_icon_1.png')}}" alt=""
                                                    draggable="false"></span>
-                                       </div><!-- /.single-input -->
+                                       </div>
                                        <div class="single-input  col-rt-in-3">
                                            <select class="rt-selectactive banner-select" name="to" style="width: 100%">
                                                <option value="1">To</option>
@@ -204,23 +200,23 @@
                                            <span class="input-iconbadge"><img
                                                    src="{{asset('public/assets/frontend/images/icons-image/s_icon_2.png')}}" alt=""
                                                    draggable="false"></span>
-                                       </div><!-- /.single-input -->
+                                       </div>
                                        <div class="single-input  col-rt-in-3">
                                            <input type="text" class="form-control rt-date-picker has-icon"
                                                placeholder="Depart">
                                            <span class="input-iconbadge"><i class="icofont-ui-calendar"></i></span>
-                                       </div><!-- /.single-input -->
+                                       </div>
                                        <div class="single-input  col-rt-in-3">
                                            <input type="text" class="form-control rt-date-picker has-icon"
                                                placeholder="Return">
                                            <span class="input-iconbadge"><i class="icofont-ui-calendar"></i></span>
-                                       </div><!-- /.single-input -->
+                                       </div>
                                        <div class="single-input  col-rt-in-1">
                                            <button type="submit"><i class="icofont-search"></i></button>
-                                       </div><!-- /.single-input -->
-                                   </div><!-- /.rt-input-group -->
-                               </form><!-- ./ form -->
-                            </div>
+                                       </div>
+                                   </div>
+                               </form>
+                            </div> -->
                             <div class="tab-pane  show active" id="rt-item_a_second" role="tabpanel" aria-labelledby="rt-item_a_second">
                                  <form action="#">
                                      <div class="rt-radio-group">
@@ -261,33 +257,33 @@
                                      </div><!-- /.rt-input-group -->
                                  </form><!-- ./ form -->
                             </div>
-                            <div class="tab-pane  rtIncative" id="rt-item_a_third" role="tabpanel" aria-labelledby="rt-item_a_third">
+<!--                             <div class="tab-pane  rtIncative" id="rt-item_a_third" role="tabpanel" aria-labelledby="rt-item_a_third">
                                 <form action="#">
 
                                     <div class="rt-input-group">
                                         <div class="single-input  col-rt-in-3">
                                             <input type="text" class="form-control" placeholder="destination">
-                                        </div><!-- /.single-input -->
+                                        </div>
                                         <div class="single-input  col-rt-in-3">
                                             <input type="text" class="form-control rt-date-picker has-icon"
                                                 placeholder="Depart">
                                             <span class="input-iconbadge"><i class="icofont-ui-calendar"></i></span>
-                                        </div><!-- /.single-input -->
+                                        </div>
                                         <div class="single-input  col-rt-in-3">
                                             <input type="text" class="form-control rt-date-picker has-icon"
                                                 placeholder="Return">
                                             <span class="input-iconbadge"><i class="icofont-ui-calendar"></i></span>
-                                        </div><!-- /.single-input -->
+                                        </div>
                                         <div class="single-input  col-rt-in-3">
                                             <input type="text" class="form-control" placeholder="keywords(optional)">
-                                        </div><!-- /.single-input -->
+                                        </div>
                                         <div class="single-input  col-rt-in-1">
                                             <button type="submit"><i class="icofont-search"></i></button>
-                                        </div><!-- /.single-input -->
-                                    </div><!-- /.rt-input-group -->
-                                </form><!-- ./ form -->
-                            </div>
-                            <div class="tab-pane  rtIncative" id="rt-item_a_four" role="tabpanel" aria-labelledby="rt-item_a_four">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div> -->
+<!--                             <div class="tab-pane  rtIncative" id="rt-item_a_four" role="tabpanel" aria-labelledby="rt-item_a_four">
                                 <form action="#">
                                     <div class="rt-input-group">
                                         <div class="single-input  col-rt-in-3">
@@ -302,7 +298,7 @@
                                                 <option value="7">Europe</option>
                                                 <option value="8">Hawaii</option>
                                             </select>
-                                        </div><!-- /.single-input -->
+                                        </div>
                                         <div class="single-input  col-rt-in-3">
                                             <select class="rt-selectactive banner-select" name="to" style="width: 100%">
                                                 <option value="1">To</option>
@@ -314,26 +310,26 @@
                                                 <option value="7">Europe</option>
                                                 <option value="8">Hawaii</option>
                                             </select>
-                                        </div><!-- /.single-input -->
+                                        </div>
                                         <div class="single-input  col-rt-in-3">
                                             <input type="text" class="form-control rt-date-picker has-icon"
                                                 placeholder="Depart">
                                             <span class="input-iconbadge"><i class="icofont-ui-calendar"></i></span>
-                                        </div><!-- /.single-input -->
+                                        </div>
                                         <div class="single-input  col-rt-in-3">
                                             <input type="text" class="form-control" placeholder="train no( opt)">
-                                        </div><!-- /.single-input -->
+                                        </div>
                                         <div class="single-input  col-rt-in-1">
                                             <button type="submit"><i class="icofont-search"></i></button>
-                                        </div><!-- /.single-input -->
-                                    </div><!-- /.rt-input-group -->
-                                </form><!-- ./ form -->
-                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div> -->
                         </div>
                     </div><!-- /.rt-banner-searchbox -->
                     
                     
-                    <ul class="nav serachnavs wow fade-in-bottom" id="rtMultiTab" role="tablist" data-wow-duration="1.5s"
+<!--                     <ul class="nav serachnavs wow fade-in-bottom" id="rtMultiTab" role="tablist" data-wow-duration="1.5s"
                         data-wow-delay="1.5s">
                         <li class="nav-item">
                             <a class="nav-link inactive" id="first-tab" data-target="#rt-item_b_first"
@@ -368,7 +364,7 @@
                                 <span>Trains</span>
                             </a>
                         </li>
-                    </ul>
+                    </ul> -->
                 </div><!-- /.col-lg-10 -->
             </div><!-- /.row -->
         </div><!-- /.container -->
@@ -1875,503 +1871,7 @@
                         </div><!-- /.hotel-text -->
                     </div><!-- /.hotel-inner-content -->
                 </div><!-- /.hotel-list-box -->
-                <div class="box-style__1 rt-mb-30">
-                    <div class="hotel-inner-content row">
-                        <div class="hotel-thumb col-md-3 mb-4 mb-md-0">
-                           <div class="hotel-bg rtbgprefix-cover" style="background-image: url({{asset('public/assets/frontend/images/all-img/hotel-2.jpg')}})">
-                                <div class="inner-icon">
-                                    <i class="icofont-gift"></i>
-                                </div><!-- /.inner-icon -->
-                            </div>
-                        </div><!-- /.hotel-thumb -->
-                        <div class="hotel-text col-md-9">
-                            <div class="top mb-4 mb-md-0">
-                                <h5>The Royal Pacific Hotel and Towers <span> <i class="icofont-star review"></i><i class="icofont-star review"></i> <i class="icofont-star review"></i><i class="icofont-star review"></i> <i class="icofont-star"></i></span></h5>
-                                <p>Times Square | 4.8 km from downtown <span>| Near the subway</span></p>
-                            </div><!-- /.top -->
-                            <div class="middle-text d-md-flex justify-content-md-between mb-4 mb-md-0">
-                                <div class="left">
-                                    <span class="badge rt-gradinet-badge pill">4.3 <small>/5</small></span>
-                                    <span>Excellent</span>
-                                    <span>( 86 Reviews )</span>
-                                    <div>
-                                        <a href="#">Free Cancellation</a>
-                                    </div>
-                                </div><!-- /.left- -->
-                                <div class="right text-left text-md-right mt-4 mt-md-0">
-                                    <span class="d-block">From USD</span>
-                                    <span class="d-block">$364</span>
-                                </div><!-- /.right -->
-                            </div><!-- /.middle-text -->
-                            <div class="footer-elements d-flex justify-content-md-between align-items-center">
-                                <div class="left">
-                                    <span data-tippy="wifi"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-1.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="dumble"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-2.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="resturent"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-3.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="sofa"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-4.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="watter"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-5.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="music"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-6.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="crolstve"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-7.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="doller"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-8.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="time"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-9.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                </div><!-- /.left -->
-                                <div class="right">
-                                    <a href="hotel-3.html" class="rt-btn rt-gradient pill rt-sm2 text-uppercase">View Details</a>
-                                </div><!-- /.right -->
-                            </div><!-- /.footer-elements -->
-                        </div><!-- /.hotel-text -->
-                    </div><!-- /.hotel-inner-content -->
-                </div><!-- /.hotel-list-box -->
-                <div class="box-style__1 rt-mb-30">
-                    <div class="hotel-inner-content row">
-                        <div class="hotel-thumb col-md-3 mb-4 mb-md-0">
-                           <div class="hotel-bg rtbgprefix-cover" style="background-image: url({{asset('public/assets/frontend/images/all-img/hotel-3.jpg')}})">
-                                <div class="inner-icon">
-                                    <i class="icofont-gift"></i>
-                                </div><!-- /.inner-icon -->
-                            </div>
-                        </div><!-- /.hotel-thumb -->
-                        <div class="hotel-text col-md-9">
-                            <div class="top mb-4 mb-md-0">
-                                <h5>Empire Hotel Kowloon－Tsim Sha Tsui <span> <i class="icofont-star review"></i><i class="icofont-star review"></i> <i class="icofont-star review"></i><i class="icofont-star review"></i> <i class="icofont-star"></i></span></h5>
-                                <p>Times Square | 4.8 km from downtown <span>| Near the subway</span></p>
-                            </div><!-- /.top -->
-                            <div class="middle-text d-md-flex justify-content-md-between mb-4 mb-md-0">
-                                <div class="left">
-                                    <span class="badge rt-gradinet-badge pill">4.3 <small>/5</small></span>
-                                    <span>Excellent</span>
-                                    <span>( 86 Reviews )</span>
-                                    <div>
-                                        <a href="#">Free Cancellation</a>
-                                    </div>
-                                </div><!-- /.left- -->
-                                <div class="right text-left text-md-right mt-4 mt-md-0">
-                                    <span class="d-block">From USD</span>
-                                    <span class="d-block">$364</span>
-                                </div><!-- /.right -->
-                            </div><!-- /.middle-text -->
-                            <div class="footer-elements d-flex justify-content-md-between align-items-center">
-                                <div class="left">
-                                    <span data-tippy="wifi"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-1.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="dumble"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-2.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="resturent"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-3.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="sofa"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-4.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="watter"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-5.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="music"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-6.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="crolstve"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-7.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="doller"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-8.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="time"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-9.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                </div><!-- /.left -->
-                                <div class="right">
-                                    <a href="hotel-3.html" class="rt-btn rt-gradient pill rt-sm2 text-uppercase">View Details</a>
-                                </div><!-- /.right -->
-                            </div><!-- /.footer-elements -->
-                        </div><!-- /.hotel-text -->
-                    </div><!-- /.hotel-inner-content -->
-                </div><!-- /.hotel-list-box -->
-                <div class="box-style__1 rt-mb-30">
-                    <div class="hotel-inner-content row">
-                        <div class="hotel-thumb col-md-3 mb-4 mb-md-0">
-                           <div class="hotel-bg rtbgprefix-cover" style="background-image: url({{asset('public/assets/frontend/images/all-img/hotel-4.jpg')}})">
-                                <div class="inner-icon">
-                                    <i class="icofont-gift"></i>
-                                </div><!-- /.inner-icon -->
-                            </div>
-                        </div><!-- /.hotel-thumb -->
-                        <div class="hotel-text col-md-9">
-                            <div class="top mb-4 mb-md-0">
-                                <h5>Regal Kowloon Hotel <span> <i class="icofont-star review"></i><i class="icofont-star review"></i> <i class="icofont-star review"></i><i class="icofont-star review"></i> <i class="icofont-star"></i></span></h5>
-                                <p>Times Square | 4.8 km from downtown <span>| Near the subway</span></p>
-                            </div><!-- /.top -->
-                            <div class="middle-text d-md-flex justify-content-md-between mb-4 mb-md-0">
-                                <div class="left">
-                                    <span class="badge rt-gradinet-badge pill">4.3 <small>/5</small></span>
-                                    <span>Excellent</span>
-                                    <span>( 86 Reviews )</span>
-                                    <div>
-                                        <a href="#">Free Cancellation</a>
-                                    </div>
-                                </div><!-- /.left- -->
-                                <div class="right text-left text-md-right mt-4 mt-md-0">
-                                    <span class="d-block">From USD</span>
-                                    <span class="d-block">$364</span>
-                                </div><!-- /.right -->
-                            </div><!-- /.middle-text -->
-                            <div class="footer-elements d-flex justify-content-md-between align-items-center">
-                                <div class="left">
-                                    <span data-tippy="wifi"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-1.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="dumble"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-2.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="resturent"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-3.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="sofa"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-4.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="watter"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-5.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="music"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-6.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="crolstve"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-7.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="doller"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-8.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="time"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-9.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                </div><!-- /.left -->
-                                <div class="right">
-                                    <a href="hotel-3.html" class="rt-btn rt-gradient pill rt-sm2 text-uppercase">View Details</a>
-                                </div><!-- /.right -->
-                            </div><!-- /.footer-elements -->
-                        </div><!-- /.hotel-text -->
-                    </div><!-- /.hotel-inner-content -->
-                </div><!-- /.hotel-list-box -->
-                <div class="box-style__1 rt-mb-30">
-                    <div class="hotel-inner-content row">
-                        <div class="hotel-thumb col-md-3 mb-4 mb-md-0">
-                           <div class="hotel-bg rtbgprefix-cover" style="background-image: url({{asset('public/assets/frontend/images/all-img/hotel-5.jpg')}})">
-                                <div class="inner-icon">
-                                    <i class="icofont-gift"></i>
-                                </div><!-- /.inner-icon -->
-                            </div>
-                        </div><!-- /.hotel-thumb -->
-                        <div class="hotel-text col-md-9">
-                            <div class="top mb-4 mb-md-0">
-                                <h5>The Royal Pacific Hotel and Towers <span> <i class="icofont-star review"></i><i class="icofont-star review"></i> <i class="icofont-star review"></i><i class="icofont-star review"></i> <i class="icofont-star"></i></span></h5>
-                                <p>Times Square | 4.8 km from downtown <span>| Near the subway</span></p>
-                            </div><!-- /.top -->
-                            <div class="middle-text d-md-flex justify-content-md-between mb-4 mb-md-0">
-                                <div class="left">
-                                    <span class="badge rt-gradinet-badge pill">4.3 <small>/5</small></span>
-                                    <span>Excellent</span>
-                                    <span>( 86 Reviews )</span>
-                                    <div>
-                                        <a href="#">Free Cancellation</a>
-                                    </div>
-                                </div><!-- /.left- -->
-                                <div class="right text-left text-md-right mt-4 mt-md-0">
-                                    <span class="d-block">From USD</span>
-                                    <span class="d-block">$364</span>
-                                </div><!-- /.right -->
-                            </div><!-- /.middle-text -->
-                            <div class="footer-elements d-flex justify-content-md-between align-items-center">
-                                <div class="left">
-                                    <span data-tippy="wifi"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-1.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="dumble"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-2.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="resturent"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-3.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="sofa"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-4.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="watter"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-5.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="music"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-6.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="crolstve"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-7.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="doller"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-8.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="time"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-9.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                </div><!-- /.left -->
-                                <div class="right">
-                                    <a href="hotel-3.html" class="rt-btn rt-gradient pill rt-sm2 text-uppercase">View Details</a>
-                                </div><!-- /.right -->
-                            </div><!-- /.footer-elements -->
-                        </div><!-- /.hotel-text -->
-                    </div><!-- /.hotel-inner-content -->
-                </div><!-- /.hotel-list-box -->
-                <div class="box-style__1 rt-mb-30">
-                    <div class="hotel-inner-content row">
-                        <div class="hotel-thumb col-md-3 mb-4 mb-md-0">
-                           <div class="hotel-bg rtbgprefix-cover" style="background-image: url({{asset('public/assets/frontend/images/all-img/hotel-6.jpg')}})"></div>
-                        </div><!-- /.hotel-thumb -->
-                        <div class="hotel-text col-md-9">
-                            <div class="top mb-4 mb-md-0">
-                                <h5>The Royal Pacific Hotel and Towers <span> <i class="icofont-star review"></i><i class="icofont-star review"></i> <i class="icofont-star review"></i><i class="icofont-star review"></i> <i class="icofont-star"></i></span></h5>
-                                <p>Times Square | 4.8 km from downtown <span>| Near the subway</span></p>
-                            </div><!-- /.top -->
-                            <div class="middle-text d-md-flex justify-content-md-between mb-4 mb-md-0">
-                                <div class="left">
-                                    <span class="badge rt-gradinet-badge pill">4.3 <small>/5</small></span>
-                                    <span>Excellent</span>
-                                    <span>( 86 Reviews )</span>
-                                    <div>
-                                        <a href="#">Free Cancellation</a>
-                                    </div>
-                                </div><!-- /.left- -->
-                                <div class="right text-left text-md-right mt-4 mt-md-0">
-                                    <span class="d-block">From USD</span>
-                                    <span class="d-block">$364</span>
-                                </div><!-- /.right -->
-                            </div><!-- /.middle-text -->
-                            <div class="footer-elements d-flex justify-content-md-between align-items-center">
-                                <div class="left">
-                                    <span data-tippy="wifi"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-1.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="dumble"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-2.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="resturent"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-3.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="sofa"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-4.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="watter"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-5.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="music"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-6.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="crolstve"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-7.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="doller"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-8.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="time"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-9.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                </div><!-- /.left -->
-                                <div class="right">
-                                    <a href="hotel-3.html" class="rt-btn rt-gradient pill rt-sm2 text-uppercase">View Details</a>
-                                </div><!-- /.right -->
-                            </div><!-- /.footer-elements -->
-                        </div><!-- /.hotel-text -->
-                    </div><!-- /.hotel-inner-content -->
-                </div><!-- /.hotel-list-box -->
-                <div class="box-style__1 rt-mb-30">
-                    <div class="hotel-inner-content row">
-                        <div class="hotel-thumb col-md-3 mb-4 mb-md-0">
-                           <div class="hotel-bg rtbgprefix-cover" style="background-image: url({{asset('public/assets/frontend/images/all-img/hotel-7.jpg')}})">
-                                <div class="inner-icon">
-                                    <i class="icofont-gift"></i>
-                                </div><!-- /.inner-icon -->
-                            </div>
-                        </div><!-- /.hotel-thumb -->
-                        <div class="hotel-text col-md-9">
-                            <div class="top mb-4 mb-md-0">
-                                <h5>The Royal Pacific Hotel and Towers <span> <i class="icofont-star review"></i><i class="icofont-star review"></i> <i class="icofont-star review"></i><i class="icofont-star review"></i> <i class="icofont-star"></i></span></h5>
-                                <p>Times Square | 4.8 km from downtown <span>| Near the subway</span></p>
-                            </div><!-- /.top -->
-                            <div class="middle-text d-md-flex justify-content-md-between mb-4 mb-md-0">
-                                <div class="left">
-                                    <span class="badge rt-gradinet-badge pill">4.3 <small>/5</small></span>
-                                    <span>Excellent</span>
-                                    <span>( 86 Reviews )</span>
-                                    <div>
-                                        <a href="#">Free Cancellation</a>
-                                    </div>
-                                </div><!-- /.left- -->
-                                <div class="right text-left text-md-right mt-4 mt-md-0">
-                                    <span class="d-block">From USD</span>
-                                    <span class="d-block">$364</span>
-                                </div><!-- /.right -->
-                            </div><!-- /.middle-text -->
-                            <div class="footer-elements d-flex justify-content-md-between align-items-center">
-                                <div class="left">
-                                    <span data-tippy="wifi"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-1.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="dumble"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-2.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="resturent"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-3.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="sofa"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-4.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="watter"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-5.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="music"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-6.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="crolstve"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-7.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="doller"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-8.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="time"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-9.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                </div><!-- /.left -->
-                                <div class="right">
-                                    <a href="hotel-3.html" class="rt-btn rt-gradient pill rt-sm2 text-uppercase">View Details</a>
-                                </div><!-- /.right -->
-                            </div><!-- /.footer-elements -->
-                        </div><!-- /.hotel-text -->
-                    </div><!-- /.hotel-inner-content -->
-                </div><!-- /.hotel-list-box -->
-                <div class="box-style__1 rt-mb-30">
-                    <div class="hotel-inner-content row">
-                        <div class="hotel-thumb col-md-3 mb-4 mb-md-0">
-                           <div class="hotel-bg rtbgprefix-cover" style="background-image: url({{asset('public/assets/frontend/images/all-img/hotel-8.jpg')}})">
-                                <div class="inner-icon">
-                                    <i class="icofont-gift"></i>
-                                </div><!-- /.inner-icon -->
-                                </div>
-                        </div><!-- /.hotel-thumb -->
-                        <div class="hotel-text col-md-9">
-                            <div class="top mb-4 mb-md-0">
-                                <h5>The Royal Pacific Hotel and Towers <span> <i class="icofont-star review"></i><i class="icofont-star review"></i> <i class="icofont-star review"></i><i class="icofont-star review"></i> <i class="icofont-star"></i></span></h5>
-                                <p>Times Square | 4.8 km from downtown <span>| Near the subway</span></p>
-                            </div><!-- /.top -->
-                            <div class="middle-text d-md-flex justify-content-md-between mb-4 mb-md-0">
-                                <div class="left">
-                                    <span class="badge rt-gradinet-badge pill">4.3 <small>/5</small></span>
-                                    <span>Excellent</span>
-                                    <span>( 86 Reviews )</span>
-                                    <div>
-                                        <a href="#">Free Cancellation</a>
-                                    </div>
-                                </div><!-- /.left- -->
-                                <div class="right text-left text-md-right mt-4 mt-md-0">
-                                    <span class="d-block">From USD</span>
-                                    <span class="d-block">$364</span>
-                                </div><!-- /.right -->
-                            </div><!-- /.middle-text -->
-                            <div class="footer-elements d-flex justify-content-md-between align-items-center">
-                                <div class="left">
-                                    <span data-tippy="wifi"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-1.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="dumble"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-2.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="resturent"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-3.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="sofa"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-4.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="watter"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-5.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="music"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-6.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="crolstve"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-7.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="doller"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-8.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="time"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-9.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                </div><!-- /.left -->
-                                <div class="right">
-                                    <a href="hotel-3.html" class="rt-btn rt-gradient pill rt-sm2 text-uppercase">View Details</a>
-                                </div><!-- /.right -->
-                            </div><!-- /.footer-elements -->
-                        </div><!-- /.hotel-text -->
-                    </div><!-- /.hotel-inner-content -->
-                </div><!-- /.hotel-list-box -->
-                <div class="box-style__1 rt-mb-30">
-                    <div class="hotel-inner-content row">
-                        <div class="hotel-thumb col-md-3 mb-4 mb-md-0">
-                           <div class="hotel-bg rtbgprefix-cover" style="background-image: url({{asset('public/assets/frontend/images/all-img/hotel-9.jpg')}})"></div>
-                        </div><!-- /.hotel-thumb -->
-                        <div class="hotel-text col-md-9">
-                            <div class="top mb-4 mb-md-0">
-                                <h5>Hyatt Regency Hong Kong, Tsim Sha Tsui <span> <i class="icofont-star review"></i><i class="icofont-star review"></i> <i class="icofont-star review"></i><i class="icofont-star review"></i> <i class="icofont-star"></i></span></h5>
-                                <p>Times Square | 4.8 km from downtown <span>| Near the subway</span></p>
-                            </div><!-- /.top -->
-                            <div class="middle-text d-md-flex justify-content-md-between mb-4 mb-md-0">
-                                <div class="left">
-                                    <span class="badge rt-gradinet-badge pill">4.3 <small>/5</small></span>
-                                    <span>Excellent</span>
-                                    <span>( 86 Reviews )</span>
-                                    <div>
-                                        <a href="#">Free Cancellation</a>
-                                    </div>
-                                </div><!-- /.left- -->
-                                <div class="right text-left text-md-right mt-4 mt-md-0">
-                                    <span class="d-block">From USD</span>
-                                    <span class="d-block">$364</span>
-                                </div><!-- /.right -->
-                            </div><!-- /.middle-text -->
-                            <div class="footer-elements d-flex justify-content-md-between align-items-center">
-                                <div class="left">
-                                    <span data-tippy="wifi"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-1.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="dumble"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-2.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="resturent"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-3.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="sofa"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-4.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="watter"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-5.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="music"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-6.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="crolstve"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-7.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="doller"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-8.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="time"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-9.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                </div><!-- /.left -->
-                                <div class="right">
-                                    <a href="hotel-3.html" class="rt-btn rt-gradient pill rt-sm2 text-uppercase">View Details</a>
-                                </div><!-- /.right -->
-                            </div><!-- /.footer-elements -->
-                        </div><!-- /.hotel-text -->
-                    </div><!-- /.hotel-inner-content -->
-                </div><!-- /.hotel-list-box -->
-                <div class="box-style__1 rt-mb-30">
-                    <div class="hotel-inner-content row">
-                        <div class="hotel-thumb col-md-3 mb-4 mb-md-0">
-                           <div class="hotel-bg rtbgprefix-cover" style="background-image: url({{asset('public/assets/frontend/images/all-img/hotel-10.jpg')}})"></div>
-                        </div><!-- /.hotel-thumb -->
-                        <div class="hotel-text col-md-9">
-                            <div class="top mb-4 mb-md-0">
-                                <h5>The Royal Pacific Hotel and Towers <span> <i class="icofont-star review"></i><i class="icofont-star review"></i> <i class="icofont-star review"></i><i class="icofont-star review"></i> <i class="icofont-star"></i></span></h5>
-                                <p>Times Square | 4.8 km from downtown <span>| Near the subway</span></p>
-                            </div><!-- /.top -->
-                            <div class="middle-text d-md-flex justify-content-md-between mb-4 mb-md-0">
-                                <div class="left">
-                                    <span class="badge rt-gradinet-badge pill">4.3 <small>/5</small></span>
-                                    <span>Excellent</span>
-                                    <span>( 86 Reviews )</span>
-                                    <div>
-                                        <a href="#">Free Cancellation</a>
-                                    </div>
-                                </div><!-- /.left- -->
-                                <div class="right text-left text-md-right mt-4 mt-md-0">
-                                    <span class="d-block">From USD</span>
-                                    <span class="d-block">$364</span>
-                                </div><!-- /.right -->
-                            </div><!-- /.middle-text -->
-                            <div class="footer-elements d-flex justify-content-md-between align-items-center">
-                                <div class="left">
-                                    <span data-tippy="wifi"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-1.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="dumble"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-2.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="resturent"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-3.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="sofa"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-4.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="watter"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-5.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="music"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-6.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="crolstve"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-7.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="doller"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-8.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="time"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-9.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                </div><!-- /.left -->
-                                <div class="right">
-                                    <a href="hotel-3.html" class="rt-btn rt-gradient pill rt-sm2 text-uppercase">View Details</a>
-                                </div><!-- /.right -->
-                            </div><!-- /.footer-elements -->
-                        </div><!-- /.hotel-text -->
-                    </div><!-- /.hotel-inner-content -->
-                </div><!-- /.hotel-list-box -->
-                <div class="box-style__1 rt-mb-30">
-                    <div class="hotel-inner-content row">
-                        <div class="hotel-thumb col-md-3 mb-4 mb-md-0">
-                           <div class="hotel-bg rtbgprefix-cover" style="background-image: url({{asset('public/assets/frontend/images/all-img/hotel-11.jpg')}})"></div>
-                        </div><!-- /.hotel-thumb -->
-                        <div class="hotel-text col-md-9">
-                            <div class="top mb-4 mb-md-0">
-                                <h5>Lan Kwai Fong Hotel Kau U Fong <span> <i class="icofont-star review"></i><i class="icofont-star review"></i> <i class="icofont-star review"></i><i class="icofont-star review"></i> <i class="icofont-star"></i></span></h5>
-                                <p>Times Square | 4.8 km from downtown <span>| Near the subway</span></p>
-                            </div><!-- /.top -->
-                            <div class="middle-text d-md-flex justify-content-md-between mb-4 mb-md-0">
-                                <div class="left">
-                                    <span class="badge rt-gradinet-badge pill">4.3 <small>/5</small></span>
-                                    <span>Excellent</span>
-                                    <span>( 86 Reviews )</span>
-                                    <div>
-                                        <a href="#">Free Cancellation</a>
-                                    </div>
-                                </div><!-- /.left- -->
-                                <div class="right text-left text-md-right mt-4 mt-md-0">
-                                    <span class="d-block">From USD</span>
-                                    <span class="d-block">$364</span>
-                                </div><!-- /.right -->
-                            </div><!-- /.middle-text -->
-                            <div class="footer-elements d-flex justify-content-md-between align-items-center">
-                                <div class="left">
-                                    <span data-tippy="wifi"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-1.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="dumble"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-2.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="resturent"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-3.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="sofa"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-4.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="watter"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-5.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="music"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-6.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="crolstve"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-7.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="doller"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-8.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="time"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-9.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                </div><!-- /.left -->
-                                <div class="right">
-                                    <a href="hotel-3.html" class="rt-btn rt-gradient pill rt-sm2 text-uppercase">View Details</a>
-                                </div><!-- /.right -->
-                            </div><!-- /.footer-elements -->
-                        </div><!-- /.hotel-text -->
-                    </div><!-- /.hotel-inner-content -->
-                </div><!-- /.hotel-list-box -->
-                <div class="box-style__1 rt-mb-30">
-                    <div class="hotel-inner-content row">
-                        <div class="hotel-thumb col-md-3 mb-4 mb-md-0">
-                           <div class="hotel-bg rtbgprefix-cover" style="background-image: url({{asset('public/assets/frontend/images/all-img/hotel-12.jpg')}})"></div>
-                        </div><!-- /.hotel-thumb -->
-                        <div class="hotel-text col-md-9">
-                            <div class="top mb-4 mb-md-0">
-                                <h5>InterContinental Grand Stanford Hong Kong <span> <i class="icofont-star review"></i><i class="icofont-star review"></i> <i class="icofont-star review"></i><i class="icofont-star review"></i> <i class="icofont-star"></i></span></h5>
-                                <p>Times Square | 4.8 km from downtown <span>| Near the subway</span></p>
-                            </div><!-- /.top -->
-                            <div class="middle-text d-md-flex justify-content-md-between mb-4 mb-md-0">
-                                <div class="left">
-                                    <span class="badge rt-gradinet-badge pill">4.3 <small>/5</small></span>
-                                    <span>Excellent</span>
-                                    <span>( 86 Reviews )</span>
-                                    <div>
-                                        <a href="#">Free Cancellation</a>
-                                    </div>
-                                </div><!-- /.left- -->
-                                <div class="right text-left text-md-right mt-4 mt-md-0">
-                                    <span class="d-block">From USD</span>
-                                    <span class="d-block">$364</span>
-                                </div><!-- /.right -->
-                            </div><!-- /.middle-text -->
-                            <div class="footer-elements d-flex justify-content-md-between align-items-center">
-                                <div class="left">
-                                    <span data-tippy="wifi"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-1.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="dumble"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-2.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="resturent"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-3.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="sofa"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-4.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="watter"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-5.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="music"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-6.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="crolstve"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-7.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="doller"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-8.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                    <span data-tippy="time"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-9.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                </div><!-- /.left -->
-                                <div class="right">
-                                    <a href="hotel-3.html" class="rt-btn rt-gradient pill rt-sm2 text-uppercase">View Details</a>
-                                </div><!-- /.right -->
-                            </div><!-- /.footer-elements -->
-                        </div><!-- /.hotel-text -->
-                    </div><!-- /.hotel-inner-content -->
-                </div><!-- /.hotel-list-box -->
+                
                 <div class="box-style__1 rt-mb-30">
                     <div class="hotel-inner-content row">
                         <div class="hotel-thumb col-md-3 mb-4 mb-md-0">
@@ -3606,18 +3106,6 @@
 
 </body>
 
-
-<!-- Mirrored from pixner.net/emigrar/emigrar/hotel-1.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 30 Jan 2021 02:51:02 GMT -->
 </html>
-
-
-
-
-
-
-
-
-
-
 
 @stop

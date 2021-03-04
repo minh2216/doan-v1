@@ -4,8 +4,8 @@
         <div class="row align-items-center">
             <div class="col-md-6">
                 <ul class="text-center text-md-left top-message">
-                    <li> <i class="icofont-headphone-alt"></i>Support</li>
-                    <li><a href="mailto:info@emigrar.com "><i class="icofont-email"></i>info@emigrar.com</a></li>
+                    <li style="<?php if($link!='/')echo("color: #fff;")?>"> <i class="icofont-headphone-alt" style="<?php if($link!='/')echo("color: #fff;")?>"></i>Support</li>
+                    <li><a href="mailto:info@emigrar.com " style="<?php if($link!='/')echo("color: #fff;")?>"><i class="icofont-email" style="<?php if($link!='/')echo("color: #fff;")?>"></i>info@emigrar.com</a></li>
                 </ul>
             </div><!-- end top header single -->
             <div class="col-md-6">
@@ -30,7 +30,7 @@
     <div class="main-header rt-sticky">
       <nav class="navbar">
         <div class="container">
-          <a href="{{route('home.index')}}" class="brand-logo"><img src="{{asset('public/assets/frontend/images/logo/logo.png')}}" alt=""></a>
+          <a href="{{route('home.index')}}" class="brand-logo"><img src="@if($link=='/'){{asset('public/assets/frontend/images/logo/logo.png')}}@else{{asset('public/assets/frontend/images/logo/logo-white.png')}}@endif" alt=""></a>
           <a href="{{route('home.index')}}" class="sticky-logo"><img src="{{asset('public/assets/frontend/images/logo/logo.png')}}" alt=""></a>
           <div class="ml-auto d-flex align-items-center">
             
@@ -38,8 +38,10 @@
 <div class="main-menu">
     <ul>
         <li class="current-menu-item"><a href="{{route('home.index')}}">Home</a></li>
-        <li><a href="{{route('sanpham.index')}} ">Trip package</a></li>
-        <li><a href="service-1.html">Services</a></li>
+        <li><a href="{{route('product.index', 'khach-san')}} ">Hotel</a></li>
+        <li><a href="{{route('thong-tin-sp.index')}}">Detail-Hotel</a></li>
+        <li> <a href="{{route('blog.index')}}">Blog</a></li>
+        <li> <a href="{{route('blog.detail')}}">Detail-Blog</a></li>
         <li class="menu-item-has-children"><a href="#">Pages</a>
             <ul class="sub-menu">
                 <li class="menu-item-has-children"><a href="#">Home Pages</a>
@@ -101,7 +103,7 @@
                 </li>
             </ul>
         </li>
-        <li> <a href="blog.html">Blog</a></li>
+
     
     </ul>
     <div class="mobile-menu">
@@ -113,7 +115,7 @@
     </div>
 </div><!-- end main menu -->
             <div class="rt-nav-tolls d-flex align-items-center">
-    <span class="d-md-inline d-none"><a href="contact.html" class="rt-btn rt-gradient2 rt-rounded text-uppercase rt-Bshadow-1">Contact
+    <span class="d-md-inline d-none"><a href="{{route('contact.index')}}" class="rt-btn rt-gradient2 rt-rounded text-uppercase rt-Bshadow-1">Contact
             Us</a></span>
 </div>
     

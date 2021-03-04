@@ -26,6 +26,9 @@ class Frontend {
                     $count += $val['quantity'];
             }
         }
+        //Logo
+        $link="$_SERVER[REQUEST_URI]";
+        \View::share(['link' => $link]);
         \View::share(['share_config' => $config]);
         \View::share(['count_cart' => $count]);
         \View::share(['menu' => $menu]);

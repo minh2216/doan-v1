@@ -21,10 +21,28 @@ class FrontendController extends Controller {
         $gallery_arr = $this->categoryRepo->readHomeGalleryCategory($limit = 8);
         $construction_arr = $this->constructionRepo->readHomeConstruction($limit = 8);
         $keyword_arr = $this->keywordRepo->readHomeRecentKeyword($limit = 6);
+        $logo=1;
         return view('frontend/home/index', compact('category_arr', 'construction_arr', 'keyword_arr'));
     }
 
     public function sanpham() {
+        $logo=0;
         return view('frontend/product/list');
+    }
+
+    public function thongtinsp() {
+        return view('frontend/product/detail');
+    }
+
+    public function contact() {
+        return view('frontend/contact/index');
+    }
+
+    public function blog() {
+        return view('frontend/blog/index');
+    }
+
+    public function blogdetail() {
+        return view('frontend/blog/detail');
     }
 }

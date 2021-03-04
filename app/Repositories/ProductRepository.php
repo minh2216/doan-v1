@@ -156,4 +156,14 @@ class ProductRepository extends AbstractRepository {
         return $this->model->select('title', 'description','keywords', 'meta_title', 'meta_keywords', 'meta_description')->where('id', $id)->first();
     }
 
+    //Custom
+    public function getProductByAliasCategory($category) {
+        $limit = null;
+        $category_id = DB::table('category')->where('alias',$category)->pluck('id');
+        foreach($category_id as $category)
+        $product_id = DB::table('product_category')->where('category_id',$category)->pluck('product_id');
+        $value = $this->model->where('status', 1)->whereIn('id',$product_id)->orderBy('updated_at', 'desc')->take($limit)->get();
+        return $value;
+    }
+
 }

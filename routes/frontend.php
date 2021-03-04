@@ -6,9 +6,9 @@ Route::group(['middleware' => 'frontend'], function() {
     Route::get('/construction/activation/{key}', ['as' => 'construction.activation', 'uses' => 'Frontend\ConstructionController@activation']);
     Route::get('/member/activation/{key}', ['as' => 'member.activation', 'uses' => 'Frontend\MemberController@activation']);
     /* Sản phẩm */
-    Route::get('/san-pham', ['as' => 'product.index', 'uses' => 'Frontend\ProductController@index']);
-    Route::get('/sale', ['as' => 'product.sale', 'uses' => 'Frontend\ProductController@sale']);
-    Route::get('/san-pham/{alias}', ['as' => 'product.detail', 'uses' => 'Frontend\ProductController@detail']);
+    // Route::get('/san-pham', ['as' => 'product.index', 'uses' => 'Frontend\ProductController@index']);
+    // Route::get('/sale', ['as' => 'product.sale', 'uses' => 'Frontend\ProductController@sale']);
+    // Route::get('/san-pham/{alias}', ['as' => 'product.detail', 'uses' => 'Frontend\ProductController@detail']);
     /* Hình ảnh */
     Route::get('/hinh-anh', ['as' => 'gallery.index', 'uses' => 'Frontend\GalleryController@index']);
     Route::get('/hinh-anh/{alias}', ['as' => 'gallery.detail', 'uses' => 'Frontend\GalleryController@detail']);
@@ -44,5 +44,9 @@ Route::group(['middleware' => 'frontend'], function() {
 
 
     /*Custom*/
-    Route::get('/san-pham', ['as' => 'sanpham.index', 'uses' => 'Frontend\FrontendController@sanpham']);
+    Route::get('/{category}', ['as' => 'product.index', 'uses' => 'Frontend\ProductController@index2']);
+    Route::get('/thong-tin-sp', ['as' => 'thong-tin-sp.index', 'uses' => 'Frontend\FrontendController@thongtinsp']);
+    Route::get('/contact', ['as' => 'contact.index', 'uses' => 'Frontend\FrontendController@contact']);
+    Route::get('/blog', ['as' => 'blog.index', 'uses' => 'Frontend\FrontendController@blog']);
+    Route::get('/blog-detail', ['as' => 'blog.detail', 'uses' => 'Frontend\FrontendController@blogdetail']);
 });

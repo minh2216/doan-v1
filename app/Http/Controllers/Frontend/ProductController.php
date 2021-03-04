@@ -235,4 +235,13 @@ class ProductController extends Controller {
         }
     }
 
+    public function index2(Request $request, $category) {
+        ini_set('memory_limit', '2048M');
+        $check_cat= is_null($category);
+        if($check_cat==false){
+            $records = $this->productRepo->getProductByAliasCategory($category);
+        }
+        return view('frontend/product/list', compact('records'));
+    }
+
 }
