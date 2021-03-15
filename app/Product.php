@@ -17,7 +17,7 @@ class Product extends Model {
     }
     public function room() {
         //return $this->belongsToMany('\App\Product', 'product_room', 'room_id', 'product_id')->withPivot('value');
-        return $this->hasMany('\App\Room', 'product_id');
+        return $this->hasMany('App\Room');
     }
 
     public function categories() {

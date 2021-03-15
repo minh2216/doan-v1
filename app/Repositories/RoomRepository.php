@@ -26,6 +26,7 @@ class RoomRepository extends AbstractRepository {
         return $rules = [
             'title' => 'required|unique:room',
             'alias' => 'required',
+            'product_id'=>'required',
         ];
     }
 
@@ -33,6 +34,7 @@ class RoomRepository extends AbstractRepository {
         return $rules = [
             'title' => 'required|unique:room,title,' . $id . ',id',
             'alias' => 'required',
+            'product_id'=>'required',
         ];
     }
 
@@ -153,5 +155,11 @@ class RoomRepository extends AbstractRepository {
     public function getConfig($id) {
         return $this->model->select('title', 'description','keywords', 'meta_title', 'meta_keywords', 'meta_description')->where('id', $id)->first();
     }
+
+    //Custom
+    public function getTitleHotel() {
+        return $this->model->pluck('product_id');
+    }
+
 
 }

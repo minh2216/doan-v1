@@ -35,11 +35,22 @@
                                             {!! $errors->first('title', '<span class="text-danger">:message</span>') !!}
                                         </div>
                                     </div>
-                                    <div class="form-group row">
+                                    <!--<div class="form-group row">
                                         <label class="col-md-2 col-form-label text-right">Khách sạn <span class="text-danger">*</span></label>
                                         <div class="col-md-10">
                                             <select class="select-search form-control" name="product_id"data-placeholder="Chọn danh mục" multiple="" >
-                                                {!!$product_html!!}
+                                                {!!$product_html!!}}
+                                            </select>
+                                            {!! $errors->first('product_id', '<span class="text-danger">:message</span>') !!}
+                                        </div>
+                                    </div> -->
+                                    <div class="form-group row">
+                                        <label class="col-md-2 col-form-label text-right">Khách sạn <span class="text-danger">*</span></label>
+                                        <div class="col-md-10">
+                                            <select class="select-search form-control" name="product_id"data-placeholder="Chọn ks">
+                                                @foreach($item as $key)
+                                                    <option value="{{$key->id}}">{{$key->title}}</option>
+                                                @endforeach
                                             </select>
                                             {!! $errors->first('product_id', '<span class="text-danger">:message</span>') !!}
                                         </div>

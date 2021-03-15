@@ -38,8 +38,10 @@
                                     <div class="form-group row">
                                         <label class="col-md-2 col-form-label text-right">Khách sạn <span class="text-danger">*</span></label>
                                         <div class="col-md-10">
-                                            <select class="select-search form-control" name="product_id"data-placeholder="Chọn danh mục" multiple="" >
-                                                {!!$product_html!!}
+                                            <select class="select-search form-control" name="product_id"data-placeholder="Chọn danh mục"  required>
+                                                @foreach($item as $product)
+                                                <option value="{{$product->id}}" {{$product->id == $record->product_id ? 'selected' : ''}}>{{$product->title}}</option>
+                                               @endforeach 
                                             </select>
                                             {!! $errors->first('product_id', '<span class="text-danger">:message</span>') !!}
                                         </div>

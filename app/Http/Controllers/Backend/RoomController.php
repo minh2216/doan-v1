@@ -10,7 +10,7 @@ use App\Repositories\FacilitiesRepository;
 use Repositories\CategoryRepository;
 use Repositories\AttributeRepository;
 use Repositories\PostHistoryRepository;
-
+use App\Room;
 class RoomController extends Controller {
 
     /**
@@ -18,18 +18,23 @@ class RoomController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function __construct(ProductRepository $productRepo, CategoryRepository $categoryRepo, AttributeRepository $attributeRepo, PostHistoryRepository $postHistoryRepo, RoomRepository $roomRepo, FacilitiesRepository $facilitiesRepo) {
+    public function __construct(ProductRepository $productRepo, CategoryRepository $categoryRepo, AttributeRepository $attributeRepo, PostHistoryRepository $postHistoryRepo, RoomRepository $roomRepo, FacilitiesRepository $facilitiesRepo, Room $room) {
         $this->productRepo = $productRepo;
         $this->categoryRepo = $categoryRepo;
         $this->attributeRepo = $attributeRepo;
         $this->postHistoryRepo = $postHistoryRepo;
         $this->roomRepo = $roomRepo;
         $this->facilitiesRepo = $facilitiesRepo;
+        $this->room=$room;
     }
 
     public function index() {
-        $records = $this->roomRepo->all();$records1 = $this->productRepo->all();
-        return view('backend/room/index', compact('records','records1'));
+        $records = $this->roomRepo->all();
+        $product_id = $this->roomRepo->GetTitleHotel();
+        $title = \DB::table('product')->where('id',$product_id)->pluck('title');
+        // $title = \DB::table('room')->join('product','room.product_id','=','product.id')->select('product.title')->get();
+        $item = \App\Product::all();
+        return view('backend/room/index', compact('records','item','title'));
     }
 
     /**
@@ -45,7 +50,8 @@ class RoomController extends Controller {
         $options1 = $this->productRepo->allProduct(\App\Product::TYPE_PRODUCT);
         $product_html = \App\Helpers\StringHelper::getSelectOptions($options1);
         $room = $this->productRepo->allProduct();
-        return view('backend/room/create', compact('product_html', 'facilities'));
+        $item = $this->productRepo->all();
+        return view('backend/room/create', compact('product_html', 'facilities','item'));
     }
 
     /**
@@ -101,6 +107,8 @@ class RoomController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function edit($id) {
+        $room = new room();
+        $item = \App\Product::all();
         $record = $this->roomRepo->find($id);
         $options = $this->productRepo->allProduct(\App\Category::TYPE_PRODUCT);
         $product_ids = $record->product()->get()->pluck('id')->toArray();
@@ -115,7 +123,7 @@ class RoomController extends Controller {
                 $room_facilities[$val->id] = $val->pivot->value;
             }
         }
-        return view('backend/room/edit', compact('record', 'facilities', 'room_facilities', 'room_facilities_ids','product_html'));
+        return view('backend/room/edit', compact('record', 'facilities', 'room_facilities', 'room_facilities_ids','product_html','options','item'));
     }
 
     /**
@@ -127,6 +135,7 @@ class RoomController extends Controller {
      */
     public function update(Request $request, $id) {
         $input = $request->all();
+        $item = \App\Product::all();
         $validator = \Validator::make($input, $this->roomRepo->validateUpdate($id));
         if ($validator->fails()) {
             dd(123);

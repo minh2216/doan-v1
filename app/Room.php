@@ -48,4 +48,11 @@ class Room extends Model {
     public function url() {
         return route('product.detail', ['alias' => $this->alias]);
     }
+
+    public function getTitleHotel() {
+        $product_id = $this->product_id;
+        $title = \DB::table('product')->where('id',$product_id)->pluck('title');
+        foreach($title as $value);
+        return $value;
+    }
 }
