@@ -29,7 +29,7 @@ class RoomController extends Controller {
     }
 
     public function index() {
-        $records = $this->roomRepo->all();
+        $records = $this->roomRepo->allRoomByHotel();
         $product_id = $this->roomRepo->GetTitleHotel();
         $title = \DB::table('product')->where('id',$product_id)->pluck('title');
         // $title = \DB::table('room')->join('product','room.product_id','=','product.id')->select('product.title')->get();
@@ -50,7 +50,7 @@ class RoomController extends Controller {
         $options1 = $this->productRepo->allProduct(\App\Product::TYPE_PRODUCT);
         $product_html = \App\Helpers\StringHelper::getSelectOptions($options1);
         $room = $this->productRepo->allProduct();
-        $item = $this->productRepo->all();
+        $item = $this->productRepo->allProductByUser();
         return view('backend/room/create', compact('product_html', 'facilities','item'));
     }
 

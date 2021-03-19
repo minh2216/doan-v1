@@ -59,7 +59,7 @@
                         <span>Cấu hình website</span>
                     </a>
                 </li>
-<!--                 <li class="nav-item nav-item-submenu">
+               <li class="nav-item nav-item-submenu">
                     <a href="#" class="nav-link"><i class="icon-user-tie"></i> <span>Người dùng</span></a>
                     <ul class="nav nav-group-sub" data-submenu-title="Layouts">
 
@@ -74,7 +74,7 @@
                             </a>
                         </li>
                     </ul>
-                </li> -->
+                </li> 
                 @endif
                 <li class="nav-item nav-item-submenu">
                     <a href="#" class="nav-link"><i class="icon-newspaper2"></i> <span>Tin tức</span></a>

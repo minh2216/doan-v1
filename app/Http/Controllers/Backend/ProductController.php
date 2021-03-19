@@ -26,7 +26,7 @@ class ProductController extends Controller {
     }
 
     public function index() {
-        $records = $this->productRepo->all();
+        $records = $this->productRepo->allProductByUser();
         return view('backend/product/index', compact('records'));
     }
 
@@ -36,12 +36,12 @@ class ProductController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function create() {
-        //
+        $record = \Auth::user()->username;
         $options = $this->categoryRepo->readCategoryByType(\App\Category::TYPE_PRODUCT);
         $category_html = \App\Helpers\StringHelper::getSelectOptions($options);
         $attributes = $this->attributeRepo->readAttributeByParentAdmin();
         $room = $this->roomRepo->allRoom();
-        return view('backend/product/create', compact('category_html', 'attributes'));
+        return view('backend/product/create', compact('category_html', 'attributes','record'));
     }
 
     /**
@@ -56,6 +56,7 @@ class ProductController extends Controller {
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         }
+        $input['user_id'] = \Auth::user()->id;
         $input['status'] = isset($input['status']) ? 1 : 0;
         $input['created_by'] = \Auth::user()->id;
         $input['view_count'] = 0;
@@ -91,6 +92,7 @@ class ProductController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function edit($id) {
+        $records = \Auth::user()->username;
         $record = $this->productRepo->find($id);
         $options = $this->categoryRepo->readCategoryByType(\App\Category::TYPE_PRODUCT);
         $category_ids = $record->categories()->get()->pluck('id')->toArray();
@@ -105,7 +107,7 @@ class ProductController extends Controller {
                 $product_attribute[$val->id] = $val->pivot->value;
             }
         }
-        return view('backend/product/edit', compact('record', 'category_html', 'attributes', 'product_attribute', 'product_attribute_ids'));
+        return view('backend/product/edit', compact('record', 'category_html', 'attributes', 'product_attribute', 'product_attribute_ids','records'));
     }
 
     /**

@@ -26,7 +26,8 @@ class ProductRepository extends AbstractRepository {
         return $rules = [
             'title' => 'required|unique:product',
             'alias' => 'required',
-            'category_id' => 'required'
+            'category_id' => 'required',
+            'user_id' => 'required'
         ];
     }
 
@@ -105,6 +106,13 @@ class ProductRepository extends AbstractRepository {
         $model = $model->whereIn('id', $product_ids);
         return $model->where('sale_price','>',0)->where('status', 1)->orderBy('created_at', 'desc')->get();
     }
+
+    public function allProductByUser(){
+        $id = \Auth::user()->id;
+        $user_id = \DB::table('user')->where('type_user',2)->Where('id',$id)->pluck('id');
+        return $this->model->where('status',1)->whereIn('user_id',$user_id)->get();
+    }
+
     public function allProduct() {
         return $this->model->where('status', 1)->get();
     }

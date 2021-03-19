@@ -9,8 +9,12 @@ class Product extends Model {
 
     protected $table = 'product';
     protected $fillable = [
-        'created_by','content','images', 'title', 'description', 'meta_title', 'meta_description', 'meta_keywords', 'view_count', 'status', 'alias', 'ordering'
+        'created_by','content','images', 'title', 'description', 'meta_title', 'meta_description', 'meta_keywords', 'view_count', 'status', 'alias', 'ordering','user_id'
     ];
+
+    public function user(){
+        return $this->hasOne('\App\User');
+    }
 
     public function attributes() {
         return $this->belongsToMany('\App\Attribute', 'product_attribute', 'product_id', 'attribute_id')->withPivot('value');

@@ -23,7 +23,7 @@ class User extends Authenticatable
     const ROLE_CONTRIBUTOR = 4;
     
     protected $fillable = [
-        'username', 'full_name', 'email', 'password', 'role_id', 'status', 'avatar'
+        'type_user','username', 'full_name', 'email', 'password', 'role_id', 'status', 'avatar'
     ];
 
     /**
