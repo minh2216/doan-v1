@@ -33,4 +33,5 @@ class UserRepository extends AbstractRepository {
         $users = $this->model->where('role_id', '<>', \App\User::ROLE_ADMIN)->get();
         return $users;
     }
+
 }

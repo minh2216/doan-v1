@@ -37,7 +37,7 @@
                     <td>{{$record->id}}</td>
                     <td>{{$record->username}}</td>
                     <td>{{$record->full_name}}</td>
-                    <td>{{$record->role->title}}</td>
+                    <td>{{$record->role->name}}</td>
                     <td>{{$record->type_user}}</td>
                     <td>{{$record->created_at()}}</td>
                     <td class="text-center">
