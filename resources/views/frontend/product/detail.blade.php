@@ -4,7 +4,7 @@
 <html lang="en">
 
 <body>
-
+@foreach($records as $key =>$product)
     <!-- /preloder -->
   <div class="rt-preloder">
     <div class="preloder-box">
@@ -106,7 +106,7 @@
         <div class="row rt-breadcump-height">
             <div class="col-12">
                 <div class="breadcrumbs-content">
-                    <h3>Hotel</h3>
+                    <h3>{!!$product->title!!}</h3>
                     <div class="breadcrumbs">
                         <span class="divider"><i class="icofont-home"></i></span>
                         <a href="#" title="Home">Home</a>
@@ -135,49 +135,23 @@
         <div class="row">
             <div class="col-lg-7">
                 <div class="rt-duel-slider-main rt-mb-30">
-                    <div class="single-main rtbgprefix-cover" style="background-image: url({{asset('public/assets/frontend/images/all-img/hotel-slider-1.jpg')}})">
+                    @foreach($product->getImage() as $key =>$image)
+                    <div class="single-main rtbgprefix-cover" style="background-image: url('{!!$image!!}')">
                         <div class="inner-badge badge-bg-1 f-size-14 rt-strong">
                             Last booked 12 mins ago
                         </div><!-- /.inner-badge -->
                     </div><!-- /.single-main -->
-                    <div class="single-main rtbgprefix-cover" style="background-image: url({{asset('public/assets/frontend/images/all-img/hotel-slider-2.jpg')}})">
-                        <div class="inner-badge badge-bg-1 f-size-14 rt-strong">
-                            Last booked 12 mins ago
-                        </div><!-- /.inner-badge -->
-                    </div><!-- /.single-main -->
-                    <div class="single-main rtbgprefix-cover" style="background-image: url({{asset('public/assets/frontend/images/all-img/hotel-slider-3.jpg')}})">
-                        <div class="inner-badge badge-bg-1 f-size-14 rt-strong">
-                            Last booked 12 mins ago
-                        </div><!-- /.inner-badge -->
-                    </div><!-- /.single-main -->
-                    <div class="single-main rtbgprefix-cover" style="background-image: url({{asset('public/assets/frontend/images/all-img/hotel-slider-4.jpg')}})">
-                        <div class="inner-badge badge-bg-1 f-size-14 rt-strong">
-                            Last booked 12 mins ago
-                        </div><!-- /.inner-badge -->
-                    </div><!-- /.single-main -->
-                    <div class="single-main rtbgprefix-cover" style="background-image: url({{asset('public/assets/frontend/images/all-img/hotel-slider-5.jpg')}})">
-                        <div class="inner-badge badge-bg-1 f-size-14 rt-strong">
-                            Last booked 12 mins ago
-                        </div><!-- /.inner-badge -->
-                    </div><!-- /.single-main -->
-                    <div class="single-main rtbgprefix-cover" style="background-image: url({{asset('public/assets/frontend/images/all-img/hotel-slider-6.jpg')}})">
-                        <div class="inner-badge badge-bg-1 f-size-14 rt-strong">
-                            Last booked 12 mins ago
-                        </div><!-- /.inner-badge -->
-                    </div><!-- /.single-main -->
+                    @endforeach
                 </div><!-- /.rt-duel-slider-main -->
                 <div class="rt-duel-slider-thumb">
-                    <div class="single--thumb rtbgprefix-cover" style="background-image: url({{asset('public/assets/frontend/images/all-img/hotel-slider-1.jpg')}})"></div><!-- /.single-thumb -->
-                    <div class="single--thumb rtbgprefix-cover" style="background-image: url({{asset('public/assets/frontend/images/all-img/hotel-slider-2.jpg')}})"></div><!-- /.single-thumb -->
-                    <div class="single--thumb rtbgprefix-cover" style="background-image: url({{asset('public/assets/frontend/images/all-img/hotel-slider-3.jpg')}})"></div><!-- /.single-thumb -->
-                    <div class="single--thumb rtbgprefix-cover" style="background-image: url({{asset('public/assets/frontend/images/all-img/hotel-slider-4.jpg')}})"></div><!-- /.single-thumb -->
-                    <div class="single--thumb rtbgprefix-cover" style="background-image: url({{asset('public/assets/frontend/images/all-img/hotel-slider-5.jpg')}})"></div><!-- /.single-thumb -->
-                    <div class="single--thumb rtbgprefix-cover" style="background-image: url({{asset('public/assets/frontend/images/all-img/hotel-slider-6.jpg')}})"></div><!-- /.single-thumb -->
+                    @foreach($product->getImage() as $key =>$image)
+                    <div class="single--thumb rtbgprefix-cover" style="background-image: url('{!!$image!!}')"></div><!-- /.single-thumb -->
+                    @endforeach
                 </div><!-- /.rt-duel-slider-thumb -->
             </div><!-- /.col-lg-7 -->
             <div class="col-lg-5 mt-5 mt-lg-0">
                 <div class="hotel-inner-content">
-                    <h5 class="f-size-18 rt-medium">Candlewood Suites NYC -Times Square</h5>
+                    <h5 class="f-size-18 rt-medium">{!!$product->title!!}</h5>
                     <p class="f-size-13"><span class="text-555">Times Square | 4.8 km from downtown</span> <span class="pl-2 text-777">| Near the subway</span></p>
                      <p class="rt-mt-15 rt-mb-20">
                                 <span class="badge rt-gradinet-badge pill rt-mr-10">4.3 <small>/5</small></span>
@@ -387,13 +361,14 @@
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="rt-itm_2" role="tabpanel" aria-labelledby="rt-itm_2-tab">
+                                @foreach($room as $key => $room)
                                 <div class="box-style__1 rt-light-gray rt-mb-30">
                                     <div class="row">
                                         <div class="col-md-5 col-lg-2 mx-auto">
                                             <span class="f-size-16 text-656 title-font rt-medium text-uppercase rt-mb-20 d-block rt-mt-10">Room Type</span>
                                             <div class="box-style__1 rt-light-bg">
-                                                <div class="hote-roombgtab rtbgprefix-cover rt-mb-30" style="background-image: url({{asset('public/assets/frontend/images/all-img/hroom-1.jpg')}})"></div><!-- /.hote-room -->
-                                                <h5 class="text-uppercase f-size-14 rt-medium rt-mb-15">Premier Room</h5>
+                                                <div class="hote-roombgtab rtbgprefix-cover rt-mb-30" style="background-image: url({!!$room->getImage()!!})"></div><!-- /.hote-room -->
+                                                <h5 class="text-uppercase f-size-14 rt-medium rt-mb-15">{!!$room->title!!}</h5>
                                                 <p>
                                                     <span class="rt-mr-5"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-10.png')}}"  alt=""></span>
                                                     <span class="f-size-13 text-333">17 m²</span>
@@ -401,10 +376,6 @@
                                                 <p>
                                                     <span class="rt-mr-5"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-11.png')}}"  alt=""></span>
                                                     <span class="f-size-13 text-333">Floor 8-15</span>
-                                                </p>
-                                                <p class="line-height-16 rt-mt-19 rt-mb-15">
-                                                    <a href="#" class="f-size-11 text-2f7">Bigger than most similar
-                                                    rooms in Hong Kong</a>
                                                 </p>
                                             </div><!-- /.flight-list-box -->
                                         </div><!-- /.col-md-3 -->
@@ -458,327 +429,11 @@
                                                                 </li>
                                                             </ul>
                                                         </div><!-- /.col-lg-12 -->
-                                                        <div class="col-lg-12 col-md-6">
-                                                            <ul class="rt-list d-flex flex-lg-row flex-column justify-content-md-between box-style__1 rt-light-bg">
-                                                                <li class="rt-pt-8">
-                                                                    <span class="text-333"><i class="icofont-bed"></i> <i class="icofont-bed"></i></span>
-                                                                    <span class="d-block">1 double bed or</span>
-                                                                    <span class="d-block">2 single beds</span>
-                                                                </li>
-                                                                <li class="rt-pt-8">
-                                                                    <span class="d-block"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-1.png')}}"  alt="hotel iamge" draggable="false">
-                                                                        <span class="f-size-13 rt-pl-20">Free in-room Wi-Fi</span></span>
-                                                                    <span class="d-block"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-2.png')}}"  alt="hotel iamge" draggable="false">
-                                                                        <span class="f-size-13 rt-pl-15">Gym</span></span>
-                                                                    <span class="d-block"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-3.png')}}"  alt="hotel iamge" draggable="false">
-                                                                        <span class="f-size-13 rt-pl-25">Western restaurant</span></span>
-                                                                    <span class="d-block"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-4.png')}}"  alt="hotel iamge" draggable="false">
-                                                                        <span class="f-size-13 rt-pl-25">Front desk (24 hours)</span></span>
-                                                                    <span class="d-block"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-5.png')}}"  alt="hotel iamge" draggable="false">
-                                                                        <span class="f-size-13 rt-pl-25">soft drinks</span></span>
-                                                                </li>
-                                                                <li class="rt-pt-8">
-                                                            
-                                                                    <p class="f-size-13 text-333 line-height-20"><span class="rt-pr-4"><i class="far fa-check-circle"></i></span>
-                                                                        Free cancellation before Nov 10, <br>
-                                                                        2018, 12:00 (hotel's local time)</p>
-                                                                    <p class="f-size-13 text-333 line-height-20"><span class="rt-pr-4"><i class="far fa-check-circle"></i></span>
-                                                                        Instant Confirmation</p>
-                                                                    <p class="f-size-13 text-333 line-height-20"><span class="rt-pr-4"><i class="far fa-check-circle"></i></span>
-                                                                        Summer promotion</p>
-                                                            
-                                                                </li>
-                                                                <li class="rt-pt-8">
-                                                                    <span class="d-block f-size-12 text-878">From USD</span>
-                                                                    <span class="d-block f-size-24 primary-color rt-strong">$364</span>
-                                                                    <span class="d-block f-size-12 text-444">After tax $410</span>
-                                                                </li>
-                                                                <li class="rt-pt-8">
-                                                                    <a href="#" class="rt-btn rt-gradient rt-sm2 pill text-uppercase">Book</a>
-                                                                    <p class="f-size-13 text-2f7"><span class="rt-pr-5"><i class="icofont-check"></i></span>Price Guarantee</p>
-                                                                </li>
-                                                            </ul>
-                                                        </div><!-- /.col-lg-12 -->
                                                     </div><!-- /.row -->
                                         </div><!-- /.col-md-9 -->
                                     </div><!-- /.row -->
                                 </div><!-- /.flight-list-box -->
-                                <div class="box-style__1 rt-light-gray rt-mb-30">
-                                    <div class="row">
-                                        <div class="col-md-5 col-lg-2 mx-auto">
-                                            <span class="f-size-16 text-656 title-font rt-medium text-uppercase rt-mb-20 d-block rt-mt-10">Room
-                                                Type</span>
-                                            <div class="box-style__1 rt-light-bg">
-                                                <div class="hote-roombgtab rtbgprefix-cover rt-mb-30"
-                                                    style="background-image: url({{asset('public/assets/frontend/images/all-img/hroom-1.jpg')}})"></div><!-- /.hote-room -->
-                                                <h5 class="text-uppercase f-size-14 rt-medium rt-mb-15">Premier Room</h5>
-                                                <p>
-                                                    <span class="rt-mr-5"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-10.png')}}"  alt=""></span>
-                                                    <span class="f-size-13 text-333">17 m²</span>
-                                                </p>
-                                                <p>
-                                                    <span class="rt-mr-5"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-11.png')}}"  alt=""></span>
-                                                    <span class="f-size-13 text-333">Floor 8-15</span>
-                                                </p>
-                                                <p class="line-height-16 rt-mt-19 rt-mb-15">
-                                                    <a href="#" class="f-size-11 text-2f7">Bigger than most similar
-                                                        rooms in Hong Kong</a>
-                                                </p>
-                                            </div><!-- /.flight-list-box -->
-                                        </div><!-- /.col-md-3 -->
-                                        <div class="col-md-12 col-lg-10">
-                                            <div class="d-flex flex-md-row flex-column justify-content-md-between rt-mb-20 rt-mt-10">
-                                                <span class="f-size-16 text-656 title-font rt-medium text-uppercase">Max. & Bed</span>
-                                                <span class="f-size-16 text-656 title-font rt-medium text-uppercase">Facilities</span>
-                                                <span class="f-size-16 text-656 title-font rt-medium text-uppercase">Policies</span>
-                                                <span class="f-size-16 text-656 title-font rt-medium text-uppercase">Avg. price per room/night</span>
-                                            </div>
-                                
-                                            <div class="row">
-                                                <div class="col-lg-12 col-md-6">
-                                                    <ul
-                                                        class="rt-list d-flex flex-lg-row flex-column justify-content-md-between box-style__1 rt-light-bg rt-mb-10">
-                                                        <li class="rt-pt-8">
-                                                            <span class="text-333"><i class="icofont-bed"></i> <i class="icofont-bed"></i></span>
-                                                            <span class="d-block">1 double bed or</span>
-                                                            <span class="d-block">2 single beds</span>
-                                                        </li>
-                                                        <li class="rt-pt-8">
-                                                            <span class="d-block"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-1.png')}}"  alt="hotel iamge"
-                                                                    draggable="false">
-                                                                <span class="f-size-13 rt-pl-20">Free in-room Wi-Fi</span></span>
-                                                            <span class="d-block"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-2.png')}}"  alt="hotel iamge"
-                                                                    draggable="false">
-                                                                <span class="f-size-13 rt-pl-15">Gym</span></span>
-                                                            <span class="d-block"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-3.png')}}"  alt="hotel iamge"
-                                                                    draggable="false">
-                                                                <span class="f-size-13 rt-pl-25">Western restaurant</span></span>
-                                                            <span class="d-block"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-4.png')}}"  alt="hotel iamge"
-                                                                    draggable="false">
-                                                                <span class="f-size-13 rt-pl-25">Front desk (24 hours)</span></span>
-                                                            <span class="d-block"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-5.png')}}"  alt="hotel iamge"
-                                                                    draggable="false">
-                                                                <span class="f-size-13 rt-pl-25">soft drinks</span></span>
-                                                        </li>
-                                                        <li class="rt-pt-8">
-                                
-                                                            <p class="f-size-13 text-333 line-height-20"><span class="rt-pr-4"><i
-                                                                        class="far fa-check-circle"></i></span>
-                                                                Free cancellation before Nov 10, <br>
-                                                                2018, 12:00 (hotel's local time)</p>
-                                                            <p class="f-size-13 text-333 line-height-20"><span class="rt-pr-4"><i
-                                                                        class="far fa-check-circle"></i></span>
-                                                                Instant Confirmation</p>
-                                                            <p class="f-size-13 text-333 line-height-20"><span class="rt-pr-4"><i
-                                                                        class="far fa-check-circle"></i></span>
-                                                                Summer promotion</p>
-                                
-                                                        </li>
-                                                        <li class="rt-pt-8">
-                                                            <span class="d-block f-size-12 text-878">From USD</span>
-                                                            <span class="d-block f-size-24 primary-color rt-strong">$364</span>
-                                                            <span class="d-block f-size-12 text-444">After tax $410</span>
-                                                        </li>
-                                                        <li class="rt-pt-8">
-                                                            <a href="#" class="rt-btn rt-gradient rt-sm2 pill text-uppercase">Book</a>
-                                                            <p class="f-size-13 text-2f7"><span class="rt-pr-5"><i
-                                                                        class="icofont-check"></i></span>Price Guarantee</p>
-                                                        </li>
-                                                    </ul>
-                                                </div><!-- /.col-lg-12 -->
-                                                <div class="col-lg-12 col-md-6">
-                                                    <ul
-                                                        class="rt-list d-flex flex-lg-row flex-column justify-content-md-between box-style__1 rt-light-bg">
-                                                        <li class="rt-pt-8">
-                                                            <span class="text-333"><i class="icofont-bed"></i> <i class="icofont-bed"></i></span>
-                                                            <span class="d-block">1 double bed or</span>
-                                                            <span class="d-block">2 single beds</span>
-                                                        </li>
-                                                        <li class="rt-pt-8">
-                                                            <span class="d-block"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-1.png')}}"  alt="hotel iamge"
-                                                                    draggable="false">
-                                                                <span class="f-size-13 rt-pl-20">Free in-room Wi-Fi</span></span>
-                                                            <span class="d-block"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-2.png')}}"  alt="hotel iamge"
-                                                                    draggable="false">
-                                                                <span class="f-size-13 rt-pl-15">Gym</span></span>
-                                                            <span class="d-block"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-3.png')}}"  alt="hotel iamge"
-                                                                    draggable="false">
-                                                                <span class="f-size-13 rt-pl-25">Western restaurant</span></span>
-                                                            <span class="d-block"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-4.png')}}"  alt="hotel iamge"
-                                                                    draggable="false">
-                                                                <span class="f-size-13 rt-pl-25">Front desk (24 hours)</span></span>
-                                                            <span class="d-block"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-5.png')}}"  alt="hotel iamge"
-                                                                    draggable="false">
-                                                                <span class="f-size-13 rt-pl-25">soft drinks</span></span>
-                                                        </li>
-                                                        <li class="rt-pt-8">
-                                
-                                                            <p class="f-size-13 text-333 line-height-20"><span class="rt-pr-4"><i
-                                                                        class="far fa-check-circle"></i></span>
-                                                                Free cancellation before Nov 10, <br>
-                                                                2018, 12:00 (hotel's local time)</p>
-                                                            <p class="f-size-13 text-333 line-height-20"><span class="rt-pr-4"><i
-                                                                        class="far fa-check-circle"></i></span>
-                                                                Instant Confirmation</p>
-                                                            <p class="f-size-13 text-333 line-height-20"><span class="rt-pr-4"><i
-                                                                        class="far fa-check-circle"></i></span>
-                                                                Summer promotion</p>
-                                
-                                                        </li>
-                                                        <li class="rt-pt-8">
-                                                            <span class="d-block f-size-12 text-878">From USD</span>
-                                                            <span class="d-block f-size-24 primary-color rt-strong">$364</span>
-                                                            <span class="d-block f-size-12 text-444">After tax $410</span>
-                                                        </li>
-                                                        <li class="rt-pt-8">
-                                                            <a href="#" class="rt-btn rt-gradient rt-sm2 pill text-uppercase">Book</a>
-                                                            <p class="f-size-13 text-2f7"><span class="rt-pr-5"><i
-                                                                        class="icofont-check"></i></span>Price Guarantee</p>
-                                                        </li>
-                                                    </ul>
-                                                </div><!-- /.col-lg-12 -->
-                                            </div><!-- /.row -->
-                                        </div><!-- /.col-md-9 -->
-                                    </div><!-- /.row -->
-                                </div><!-- /.flight-list-box -->
-                                <div class="box-style__1 rt-light-gray rt-mb-30">
-                                    <div class="row">
-                                        <div class="col-md-5 col-lg-2 mx-auto">
-                                            <span class="f-size-16 text-656 title-font rt-medium text-uppercase rt-mb-20 d-block rt-mt-10">Room
-                                                Type</span>
-                                            <div class="box-style__1 rt-light-bg">
-                                                <div class="hote-roombgtab rtbgprefix-cover rt-mb-30"
-                                                    style="background-image: url({{asset('public/assets/frontend/images/all-img/hroom-1.jpg')}})"></div><!-- /.hote-room -->
-                                                <h5 class="text-uppercase f-size-14 rt-medium rt-mb-15">Premier Room</h5>
-                                                <p>
-                                                    <span class="rt-mr-5"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-10.png')}}"  alt=""></span>
-                                                    <span class="f-size-13 text-333">17 m²</span>
-                                                </p>
-                                                <p>
-                                                    <span class="rt-mr-5"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-11.png')}}"  alt=""></span>
-                                                    <span class="f-size-13 text-333">Floor 8-15</span>
-                                                </p>
-                                                <p class="line-height-16 rt-mt-19 rt-mb-15">
-                                                    <a href="#" class="f-size-11 text-2f7">Bigger than most similar
-                                                        rooms in Hong Kong</a>
-                                                </p>
-                                            </div><!-- /.flight-list-box -->
-                                        </div><!-- /.col-md-3 -->
-                                        <div class="col-md-12 col-lg-10">
-                                            <div class="d-flex flex-md-row flex-column justify-content-md-between rt-mb-20 rt-mt-10">
-                                                <span class="f-size-16 text-656 title-font rt-medium text-uppercase">Max. & Bed</span>
-                                                <span class="f-size-16 text-656 title-font rt-medium text-uppercase">Facilities</span>
-                                                <span class="f-size-16 text-656 title-font rt-medium text-uppercase">Policies</span>
-                                                <span class="f-size-16 text-656 title-font rt-medium text-uppercase">Avg. price per room/night</span>
-                                            </div>
-                                
-                                            <div class="row">
-                                                <div class="col-lg-12 col-md-6">
-                                                    <ul
-                                                        class="rt-list d-flex flex-lg-row flex-column justify-content-md-between box-style__1 rt-light-bg rt-mb-10">
-                                                        <li class="rt-pt-8">
-                                                            <span class="text-333"><i class="icofont-bed"></i> <i class="icofont-bed"></i></span>
-                                                            <span class="d-block">1 double bed or</span>
-                                                            <span class="d-block">2 single beds</span>
-                                                        </li>
-                                                        <li class="rt-pt-8">
-                                                            <span class="d-block"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-1.png')}}"  alt="hotel iamge"
-                                                                    draggable="false">
-                                                                <span class="f-size-13 rt-pl-20">Free in-room Wi-Fi</span></span>
-                                                            <span class="d-block"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-2.png')}}"  alt="hotel iamge"
-                                                                    draggable="false">
-                                                                <span class="f-size-13 rt-pl-15">Gym</span></span>
-                                                            <span class="d-block"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-3.png')}}"  alt="hotel iamge"
-                                                                    draggable="false">
-                                                                <span class="f-size-13 rt-pl-25">Western restaurant</span></span>
-                                                            <span class="d-block"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-4.png')}}"  alt="hotel iamge"
-                                                                    draggable="false">
-                                                                <span class="f-size-13 rt-pl-25">Front desk (24 hours)</span></span>
-                                                            <span class="d-block"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-5.png')}}"  alt="hotel iamge"
-                                                                    draggable="false">
-                                                                <span class="f-size-13 rt-pl-25">soft drinks</span></span>
-                                                        </li>
-                                                        <li class="rt-pt-8">
-                                
-                                                            <p class="f-size-13 text-333 line-height-20"><span class="rt-pr-4"><i
-                                                                        class="far fa-check-circle"></i></span>
-                                                                Free cancellation before Nov 10, <br>
-                                                                2018, 12:00 (hotel's local time)</p>
-                                                            <p class="f-size-13 text-333 line-height-20"><span class="rt-pr-4"><i
-                                                                        class="far fa-check-circle"></i></span>
-                                                                Instant Confirmation</p>
-                                                            <p class="f-size-13 text-333 line-height-20"><span class="rt-pr-4"><i
-                                                                        class="far fa-check-circle"></i></span>
-                                                                Summer promotion</p>
-                                
-                                                        </li>
-                                                        <li class="rt-pt-8">
-                                                            <span class="d-block f-size-12 text-878">From USD</span>
-                                                            <span class="d-block f-size-24 primary-color rt-strong">$364</span>
-                                                            <span class="d-block f-size-12 text-444">After tax $410</span>
-                                                        </li>
-                                                        <li class="rt-pt-8">
-                                                            <a href="#" class="rt-btn rt-gradient rt-sm2 pill text-uppercase">Book</a>
-                                                            <p class="f-size-13 text-2f7"><span class="rt-pr-5"><i
-                                                                        class="icofont-check"></i></span>Price Guarantee</p>
-                                                        </li>
-                                                    </ul>
-                                                </div><!-- /.col-lg-12 -->
-                                                <div class="col-lg-12 col-md-6">
-                                                    <ul
-                                                        class="rt-list d-flex flex-lg-row flex-column justify-content-md-between box-style__1 rt-light-bg">
-                                                        <li class="rt-pt-8">
-                                                            <span class="text-333"><i class="icofont-bed"></i> <i class="icofont-bed"></i></span>
-                                                            <span class="d-block">1 double bed or</span>
-                                                            <span class="d-block">2 single beds</span>
-                                                        </li>
-                                                        <li class="rt-pt-8">
-                                                            <span class="d-block"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-1.png')}}"  alt="hotel iamge"
-                                                                    draggable="false">
-                                                                <span class="f-size-13 rt-pl-20">Free in-room Wi-Fi</span></span>
-                                                            <span class="d-block"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-2.png')}}"  alt="hotel iamge"
-                                                                    draggable="false">
-                                                                <span class="f-size-13 rt-pl-15">Gym</span></span>
-                                                            <span class="d-block"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-3.png')}}"  alt="hotel iamge"
-                                                                    draggable="false">
-                                                                <span class="f-size-13 rt-pl-25">Western restaurant</span></span>
-                                                            <span class="d-block"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-4.png')}}"  alt="hotel iamge"
-                                                                    draggable="false">
-                                                                <span class="f-size-13 rt-pl-25">Front desk (24 hours)</span></span>
-                                                            <span class="d-block"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-5.png')}}"  alt="hotel iamge"
-                                                                    draggable="false">
-                                                                <span class="f-size-13 rt-pl-25">soft drinks</span></span>
-                                                        </li>
-                                                        <li class="rt-pt-8">
-                                
-                                                            <p class="f-size-13 text-333 line-height-20"><span class="rt-pr-4"><i
-                                                                        class="far fa-check-circle"></i></span>
-                                                                Free cancellation before Nov 10, <br>
-                                                                2018, 12:00 (hotel's local time)</p>
-                                                            <p class="f-size-13 text-333 line-height-20"><span class="rt-pr-4"><i
-                                                                        class="far fa-check-circle"></i></span>
-                                                                Instant Confirmation</p>
-                                                            <p class="f-size-13 text-333 line-height-20"><span class="rt-pr-4"><i
-                                                                        class="far fa-check-circle"></i></span>
-                                                                Summer promotion</p>
-                                
-                                                        </li>
-                                                        <li class="rt-pt-8">
-                                                            <span class="d-block f-size-12 text-878">From USD</span>
-                                                            <span class="d-block f-size-24 primary-color rt-strong">$364</span>
-                                                            <span class="d-block f-size-12 text-444">After tax $410</span>
-                                                        </li>
-                                                        <li class="rt-pt-8">
-                                                            <a href="#" class="rt-btn rt-gradient rt-sm2 pill text-uppercase">Book</a>
-                                                            <p class="f-size-13 text-2f7"><span class="rt-pr-5"><i
-                                                                        class="icofont-check"></i></span>Price Guarantee</p>
-                                                        </li>
-                                                    </ul>
-                                                </div><!-- /.col-lg-12 -->
-                                            </div><!-- /.row -->
-                                        </div><!-- /.col-md-9 -->
-                                    </div><!-- /.row -->
-                                </div><!-- /.flight-list-box -->
+                                @endforeach
                             </div>
                             <div class="tab-pane fade" id="rt-itm_3" role="tabpanel" aria-labelledby="rt-itm_3-tab">
 
@@ -1113,7 +768,7 @@
         
     </div><!-- /.container -->
 </section>
-
+@endforeach
 </body>
 
 

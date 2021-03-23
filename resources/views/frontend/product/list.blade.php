@@ -1828,6 +1828,7 @@
                         </div><!-- /.col-lg-3 -->
                     </form>
                 </div><!-- /.flight-list-box -->
+                @foreach($records as $key => $product)
                 <div class="box-style__1 rt-mb-30">
                     <div class="hotel-inner-content row">
                         <div class="hotel-thumb col-md-3 mb-4 mb-md-0">
@@ -1835,7 +1836,7 @@
                         </div><!-- /.hotel-thumb -->
                         <div class="hotel-text col-md-9">
                             <div class="top mb-4 mb-md-0">
-                                <h5>Candlewood Suites NYC -Times Square <span> <i class="icofont-star review"></i><i class="icofont-star review"></i> <i class="icofont-star review"></i><i class="icofont-star review"></i> <i class="icofont-star"></i></span></h5>
+                                <h5><a href="{!! route('product.detail',['alias' => $product->alias])!!}">{!!$product->title!!}</a><span> <i class="icofont-star review"></i><i class="icofont-star review"></i> <i class="icofont-star review"></i><i class="icofont-star review"></i> <i class="icofont-star"></i></span></h5>
                                 <p>Times Square | 4.8 km from downtown <span>| Near the subway</span></p>
                             </div><!-- /.top -->
                             <div class="middle-text d-md-flex justify-content-md-between mb-4 mb-md-0">
@@ -1871,21 +1872,21 @@
                         </div><!-- /.hotel-text -->
                     </div><!-- /.hotel-inner-content -->
                 </div><!-- /.hotel-list-box -->
-                
-                <div class="box-style__1 rt-mb-30">
+                @endforeach
+                <!-- <div class="box-style__1 rt-mb-30">
                     <div class="hotel-inner-content row">
                         <div class="hotel-thumb col-md-3 mb-4 mb-md-0">
                            <div class="hotel-bg rtbgprefix-cover" style="background-image: url({{asset('public/assets/frontend/images/all-img/hotel-1.jpg')}})">
                                 <div class="inner-icon">
                                     <i class="icofont-gift"></i>
-                                </div><!-- /.inner-icon -->
+                                </div>
                             </div>
-                        </div><!-- /.hotel-thumb -->
+                        </div>
                         <div class="hotel-text col-md-9">
                             <div class="top mb-4 mb-md-0">
                                 <h5>The Royal Pacific Hotel and Towers <span> <i class="icofont-star review"></i><i class="icofont-star review"></i> <i class="icofont-star review"></i><i class="icofont-star review"></i> <i class="icofont-star"></i></span></h5>
                                 <p>Times Square | 4.8 km from downtown <span>| Near the subway</span></p>
-                            </div><!-- /.top -->
+                            </div>
                             <div class="middle-text d-md-flex justify-content-md-between mb-4 mb-md-0">
                                 <div class="left">
                                     <span class="badge rt-gradinet-badge pill">4.3 <small>/5</small></span>
@@ -1894,12 +1895,12 @@
                                     <div>
                                         <a href="#">Free Cancellation</a>
                                     </div>
-                                </div><!-- /.left- -->
+                                </div>
                                 <div class="right text-left text-md-right mt-4 mt-md-0">
                                     <span class="d-block">From USD</span>
                                     <span class="d-block">$364</span>
-                                </div><!-- /.right -->
-                            </div><!-- /.middle-text -->
+                                </div>
+                            </div>
                             <div class="footer-elements d-flex justify-content-md-between align-items-center">
                                 <div class="left">
                                     <span data-tippy="wifi"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-1.png')}}" alt="hotel iamge"  draggable="false"></span>
@@ -1911,14 +1912,14 @@
                                     <span data-tippy="crolstve"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-7.png')}}" alt="hotel iamge"  draggable="false"></span>
                                     <span data-tippy="doller"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-8.png')}}" alt="hotel iamge"  draggable="false"></span>
                                     <span data-tippy="time"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-9.png')}}" alt="hotel iamge"  draggable="false"></span>
-                                </div><!-- /.left -->
+                                </div>
                                 <div class="right">
                                     <a href="hotel-3.html" class="rt-btn rt-gradient pill rt-sm2 text-uppercase">View Details</a>
-                                </div><!-- /.right -->
-                            </div><!-- /.footer-elements -->
-                        </div><!-- /.hotel-text -->
-                    </div><!-- /.hotel-inner-content -->
-                </div><!-- /.hotel-list-box -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
                 
                 <nav aria-label="Page navigation example">
     <ul class="pagination  rt-paganation justify-content-center">
