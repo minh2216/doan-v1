@@ -248,7 +248,7 @@ class ProductController extends Controller {
         ini_set('memory_limit', '2048M');
         $records = $this->productRepo->getProductByAlias($alias);
         $product_id = $this->productRepo->getIdByAlias($alias);
-        $room_id = \DB::table('product_room')->where('product_id',$product_id)->pluck('room_id');
+        $room_id = \DB::table('room')->where('product_id',$product_id)->pluck('id');
         $room = Room::whereIn('id',$room_id)->where('status',1)->get();
         return view('frontend/product/detail', compact('records','room'));
     }
