@@ -13,7 +13,7 @@ class Facilities extends Model {
     const MODULE_PRODUCT = 'product';
 
     protected $fillable = [
-        'title', 'parent_id', 'type', 'module'
+        'title', 'parent_id', 'type', 'module','images'
     ];
     public $timestamps = false;
 

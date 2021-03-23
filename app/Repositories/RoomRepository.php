@@ -110,7 +110,7 @@ class RoomRepository extends AbstractRepository {
         $id = \Auth::user()->id;
         $user_id = \DB::table('user')->where('type_user',2)->Where('id',$id)->pluck('id');
         $product_id = \DB::table('product')->where('status',1)->whereIn('user_id',$user_id)->pluck('id');
-        return $this->model->whereIn('product_id',$product_id)->get();
+        return $this->model->whereIn('product_id',$product_id)->orWhere('created_by',$id)->get();
     }
     
     public function allRoom() {

@@ -127,6 +127,14 @@
                                         <input type="text" name="ordering" class="form-control touchspin text-center" value="0">
                                     </div>
                                 </div>
+                                <div class="form-group row">
+                                    <div class="form-check col-md-5 form-check-right">
+                                        <label class="form-check-label float-left ml-2">
+                                            Hiển thị
+                                            <input type="checkbox" class="form-check-input-styled" name="status" data-fouc="">
+                                        </label>
+                                    </div>
+                                </div>
 <!--                                 <div class="form-group row">
                                     <div class="form-check col-md-5 form-check-right">
                                         <label class="form-check-label float-left ml-2">

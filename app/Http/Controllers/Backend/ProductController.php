@@ -123,6 +123,7 @@ class ProductController extends Controller {
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         }
+        $input['user_id'] = \Auth::user()->id;
 //      status
         $input['status'] = isset($input['status']) ? 1 : 0;
         $input['created_by'] = \Auth::user()->id;
@@ -150,6 +151,7 @@ class ProductController extends Controller {
         $product = $this->productRepo->find($id);
         $product->categories()->detach();
         $product->attributes()->detach();
+        \DB::table('room')->where('product_id','=',$id)->update(['product_id'=>null]);
         $this->productRepo->delete($id);
         return redirect()->back()->with('success', 'Xóa thành công');
     }

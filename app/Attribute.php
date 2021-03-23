@@ -14,7 +14,7 @@ class Attribute extends Model {
     const MODULE_GALLERY = 'gallery';
 
     protected $fillable = [
-        'title', 'parent_id', 'type', 'module'
+        'title', 'parent_id', 'type', 'module','images'
     ];
     public $timestamps = false;
 

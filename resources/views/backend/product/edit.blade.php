@@ -66,6 +66,13 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
+                                        <label class="col-md-2 col-form-label text-right">Google Map</label>
+                                        <div class="col-md-10">
+                                            <input type="text" class="form-control" name="googlemap" value="{{$record->googlemap}}">
+                                            {!! $errors->first('googlemap', '<span class="text-danger">:message</span>') !!}
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
                                         <label class="col-md-2 required control-label text-right text-semibold" for="images">Hình ảnh:</label>
                                         <div class="col-lg-10 div-image">
                                             <div class="file-input file-input-ajax-new">

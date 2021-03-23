@@ -66,6 +66,7 @@ class RoomController extends Controller {
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         }
+        $input['temp_product_id'] = $input['product_id'];
         $input['status'] = isset($input['status']) ? 1 : 0;
         $input['is_hot'] = isset($input['is_hot']) ? 1 : 0;
         $input['is_new'] = isset($input['is_new']) ? 1 : 0;
@@ -107,10 +108,9 @@ class RoomController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function edit($id) {
-        $room = new room();
-        $item = \App\Product::all();
         $record = $this->roomRepo->find($id);
-        $options = $this->productRepo->allProduct(\App\Category::TYPE_PRODUCT);
+        $options = $this->productRepo->allProductByUser(\App\Category::TYPE_PRODUCT);
+        $items = $this->productRepo->allProductByUser();
         $product_ids = $record->product()->get()->pluck('id')->toArray();
         $product_html = \App\Helpers\StringHelper::getSelectOptions($options, $product_ids);
         $facilities = $this->facilitiesRepo->readFacilitiesByParentAdmin();
@@ -123,7 +123,7 @@ class RoomController extends Controller {
                 $room_facilities[$val->id] = $val->pivot->value;
             }
         }
-        return view('backend/room/edit', compact('record', 'facilities', 'room_facilities', 'room_facilities_ids','product_html','options','item'));
+        return view('backend/room/edit', compact('record', 'facilities', 'room_facilities', 'room_facilities_ids','product_html','options','items'));
     }
 
     /**

@@ -8,7 +8,7 @@ class Room extends Model {
 
     protected $table = 'room';
     protected $fillable = [
-        'created_by', 'title', 'product_id', 'alias', 'description', 'images', 'content',  'price', 'sale_price', 'ordering'
+        'created_by', 'title', 'product_id', 'alias', 'description', 'images', 'content',  'price', 'sale_price', 'ordering','status'
     ];
 
     public function facilities() {
@@ -52,7 +52,12 @@ class Room extends Model {
     public function getTitleHotel() {
         $product_id = $this->product_id;
         $title = \DB::table('product')->where('id',$product_id)->pluck('title');
-        foreach($title as $value);
-        return $value;
+        if($title->isEmpty()){
+            return 'Null';
+        }
+        else{
+            foreach($title as $value);
+            return $value;
+        }
     }
 }

@@ -39,7 +39,7 @@
                                         <label class="col-md-2 col-form-label text-right">Khách sạn <span class="text-danger">*</span></label>
                                         <div class="col-md-10">
                                             <select class="select-search form-control" name="product_id"data-placeholder="Chọn danh mục"  required>
-                                                @foreach($item as $product)
+                                                @foreach($items as $product)
                                                 <option value="{{$product->id}}" {{$product->id == $record->product_id ? 'selected' : ''}}>{{$product->title}}</option>
                                                @endforeach 
                                             </select>
@@ -116,6 +116,14 @@
                                     <label class="col-form-label col-md-4 text-left">Thứ tự </label>
                                     <div class="col-md-5">
                                         <input type="text" name="ordering" class="form-control touchspin text-center" value="{!!is_null(old('ordering'))?$record->ordering:old('ordering')!!}">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="form-check col-md-5 form-check-right">
+                                        <label class="form-check-label float-left ml-2">
+                                            Hiển thị
+                                            <input type="checkbox" class="form-check-input-styled" name="status" data-fouc="">
+                                        </label>
                                     </div>
                                 </div>
 <!--                                 <div class="form-group row">
