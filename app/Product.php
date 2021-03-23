@@ -38,7 +38,7 @@ class Product extends Model {
 
     public function getImage() {
         $image_arr = explode(',', $this->images);
-        return $image_arr[0];
+        return $image_arr;
     }
 
     public function getPrice() {

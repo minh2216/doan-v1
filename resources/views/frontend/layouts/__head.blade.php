@@ -5,8 +5,8 @@
     <title>Emigrar Html-5 Template</title>
     <link rel="icon" type="image/png" href="{{asset('public/assets/frontend/images/favicon.png')}}">
     <!-- ==================Start Css Link===================== -->
-<link href="https://fonts.googleapis.com/css?family=Lato&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{asset('public/assets/frontend/css/animate.css')}}">
 <link rel="stylesheet" href="{{asset('public/assets/frontend/css/bootstrap.min.css')}}">
 <link rel="stylesheet" href="{{asset('public/assets/frontend/css/datepicker.min.css')}}">
