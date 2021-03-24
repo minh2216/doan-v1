@@ -34,4 +34,9 @@ class UserRepository extends AbstractRepository {
         return $users;
     }
 
+    function getType(){
+        $id = \DB::table('user_type')->get();
+        return $id;
+    }
+
 }

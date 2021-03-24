@@ -38,7 +38,7 @@
                     <td>{{$record->username}}</td>
                     <td>{{$record->full_name}}</td>
                     <td>{{$record->role->name}}</td>
-                    <td>{{$record->type_user}}</td>
+                    <td>{{$record->getTitle()}}</td>
                     <td>{{$record->created_at()}}</td>
                     <td class="text-center">
                         <a href="{{route('admin.user.edit', $record->id)}}" title="Chỉnh sửa" class="success"><i class="icon-pencil"></i></a>   

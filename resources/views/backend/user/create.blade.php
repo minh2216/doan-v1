@@ -58,8 +58,9 @@
                                     <div class="form-group col-md-6">
                                         <label class="required">User Type <span class="text-danger"></span></label>
                                         <select name="type_user" class="form-control select-search" data-placeholder="Chọn type" required="">
-                                            <option value="2">customer</option>
-                                            <option value="3">user</option>
+                                            @foreach($key as $keys)
+                                            <option value="{{$keys->id}}">{{$keys->title}}</option>
+                                            @endforeach
                                         </select>
                                         {!! $errors->first('type_user', '<span class="text-danger">:message</span>') !!}
                                 </div>

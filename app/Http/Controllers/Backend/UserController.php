@@ -26,8 +26,9 @@ class UserController extends Controller {
 
     public function create() {
         $roles = $this->roleRepo->getAllRole();
+        $key = $this->userRepo->getType();
         $role_html = \App\Helpers\StringHelper::getSelectRoleOptions($roles);
-        return view('backend/user/create', compact('role_html'));
+        return view('backend/user/create', compact('role_html','key'));
     }
 
     public function store(Request $request) {
@@ -51,13 +52,16 @@ class UserController extends Controller {
     public function edit($id) {
         $record = $this->userRepo->find($id);
         $roles = $this->roleRepo->getAllRole();
+        $record = $this->userRepo->find($id);
+        $key = $this->userRepo->getType();
         $role_html = \App\Helpers\StringHelper::getSelectRoleOptions($roles, $record->role_id);
-        return view('backend/user/update', compact('record', 'role_html'));
+        return view('backend/user/update', compact('record', 'role_html','key'));
     }
 
     public function editProfile($id) {
         $record = $this->userRepo->find($id);
-        return view('backend/profile/edit', compact('record'));
+        $key = $this->userRepo->getType();
+        return view('backend/profile/edit', compact('record','key'));
     }
      public function updateProfile(Request $request, $id) {
         $input = $request->all();

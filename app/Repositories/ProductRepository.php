@@ -109,7 +109,7 @@ class ProductRepository extends AbstractRepository {
 
     public function allProductByUser(){
         $id = \Auth::user()->id;
-        $user_id = \DB::table('user')->where('type_user',2)->where('id',$id)->pluck('id');
+        $user_id = \DB::table('user')->where('user_type_id',1)->where('id',$id)->pluck('id');
         return $this->model->where('user_id',$user_id)->get();
     }
 

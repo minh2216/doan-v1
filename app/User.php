@@ -23,7 +23,7 @@ class User extends Authenticatable
     const ROLE_CONTRIBUTOR = 4;
     
     protected $fillable = [
-        'type_user','username', 'full_name', 'email', 'password', 'role_id', 'status', 'avatar'
+        'user_type_id','username', 'full_name', 'email', 'password', 'role_id', 'status', 'avatar'
     ];
 
     /**
@@ -47,11 +47,22 @@ class User extends Authenticatable
     public function role() {
         return $this->belongsTo('App\Role');
     }
+
+    public function typeuser() {
+        return $this->belongsTo(TypeUser::class);
+    }
     
     public function created_at() {
         return date( "d/m/Y", strtotime($this->created_at));
     }
     public function updated_at() {
         return date( "d/m/Y", strtotime($this->updated_at));
+    }
+
+    public function getTitle() {
+        $id = $this->user_type_id;
+        $title = \DB::table('user_type')->where('id',$id)->pluck('title');
+        foreach($title as $title)
+            return $title;
     }
 }
