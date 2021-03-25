@@ -122,7 +122,7 @@
                                     <div class="form-check col-md-5 form-check-right">
                                         <label class="form-check-label float-left ml-2">
                                             Hiển thị
-                                            <input type="checkbox" class="form-check-input-styled" name="status" data-fouc="">
+                                            <input type="checkbox" class="form-check-input-styled" name="status" data-fouc="" @if($record->status) checked @endif>
                                         </label>
                                     </div>
                                 </div>
