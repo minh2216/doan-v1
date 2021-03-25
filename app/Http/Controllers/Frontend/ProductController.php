@@ -253,4 +253,10 @@ class ProductController extends Controller {
         return view('frontend/product/detail', compact('records','room'));
     }
 
+    public function order(Request $request) {
+        ini_set('memory_limit', '2048M');
+        $input = $request->all();
+        return view('frontend/product/order');
+    }
+
 }

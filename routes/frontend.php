@@ -46,6 +46,7 @@ Route::group(['middleware' => 'frontend'], function() {
     /*Custom*/
     Route::get('/product/{category}', ['as' => 'product.index', 'uses' => 'Frontend\ProductController@index2']);
     Route::get('/detail-product/{alias}', ['as' => 'product.detail', 'uses' => 'Frontend\ProductController@detail2']);
+    Route::post('/order', ['as' => 'product.order', 'uses' => 'Frontend\ProductController@order']);
     Route::get('/thong-tin-sp', ['as' => 'thong-tin-sp.index', 'uses' => 'Frontend\FrontendController@thongtinsp']);
     Route::get('/contact', ['as' => 'contact.index', 'uses' => 'Frontend\FrontendController@contact']);
     Route::get('/blog', ['as' => 'blog.index', 'uses' => 'Frontend\FrontendController@blog']);

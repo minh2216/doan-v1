@@ -369,27 +369,26 @@
                                             <div class="box-style__1 rt-light-bg">
                                                 <div class="hote-roombgtab rtbgprefix-cover rt-mb-30" style="background-image: url({!!$room->getImage()!!})"></div><!-- /.hote-room -->
                                                 <h5 class="text-uppercase f-size-14 rt-medium rt-mb-15">{!!$room->title!!}</h5>
-                                                <p>
-                                                    <span class="rt-mr-5"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-10.png')}}"  alt=""></span>
-                                                    <span class="f-size-13 text-333">17 m²</span>
-                                                </p>
-                                                <p>
-                                                    <span class="rt-mr-5"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-11.png')}}"  alt=""></span>
-                                                    <span class="f-size-13 text-333">Floor 8-15</span>
-                                                </p>
                                             </div><!-- /.flight-list-box -->
                                         </div><!-- /.col-md-3 -->
                                         <div class="col-md-12 col-lg-10"> 
                                                      <div class="d-flex flex-md-row flex-column justify-content-md-between rt-mb-20 rt-mt-10">
-                                                        <span class="f-size-16 text-656 title-font rt-medium text-uppercase">Max. & Bed</span>
-                                                        <span class="f-size-16 text-656 title-font rt-medium text-uppercase">Facilities</span>
-                                                        <span class="f-size-16 text-656 title-font rt-medium text-uppercase">Policies</span>
-                                                        <span class="f-size-16 text-656 title-font rt-medium text-uppercase">Avg. price per room/night</span>
+                                                        <span class="f-size-16 text-656 title-font rt-medium text-uppercase">Diện tích</span>
+                                                        <span class="f-size-16 text-656 title-font rt-medium text-uppercase">Loại</span>
+                                                        <span class="f-size-16 text-656 title-font rt-medium text-uppercase">Tiện nghi</span>
+                                                        <span class="f-size-16 text-656 title-font rt-medium text-uppercase">Chính sách</span>
+                                                        <span class="f-size-16 text-656 title-font rt-medium text-uppercase">Giá phòng cho 1 đêm</span>
                                                      </div>
                                                   
                                                     <div class="row">
                                                         <div class="col-lg-12 col-md-6">
                                                             <ul class="rt-list d-flex flex-lg-row flex-column justify-content-md-between box-style__1 rt-light-bg rt-mb-10">
+                                                                <li class="rt-pt-8">
+                                                                    <span class="rt-mr-5 d-block"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-10.png')}}"  alt=""></span>
+                                                                    <span class="f-size-13 text-333">17 m²</span>
+                                                                    <span class="rt-mr-5 d-block"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-11.png')}}"  alt=""></span>
+                                                                    <span class="f-size-13 text-333">Floor 8-15</span>
+                                                                </li>
                                                                 <li class="rt-pt-8">
                                                                     <span class="text-333"><i class="icofont-bed"></i> <i class="icofont-bed"></i></span>
                                                                     <span class="d-block">1 double bed or</span>
@@ -418,14 +417,13 @@
                                                                         Summer promotion</p>
                                                             
                                                                 </li>
+
                                                                 <li class="rt-pt-8">
-                                                                    <span class="d-block f-size-12 text-878">From USD</span>
-                                                                    <span class="d-block f-size-24 primary-color rt-strong">$364</span>
-                                                                    <span class="d-block f-size-12 text-444">After tax $410</span>
-                                                                </li>
-                                                                <li class="rt-pt-8">
-                                                                    <a href="#" class="rt-btn rt-gradient rt-sm2 pill text-uppercase">Book</a>
+                                                                    <a href="#" class="rt-btn rt-gradient rt-sm2 pill text-uppercase" data-toggle="modal" data-target="#booking" >Book</a>
                                                                     <p class="f-size-13 text-2f7"><span class="rt-pr-5"><i class="icofont-check"></i></span>Price Guarantee</p>
+                                                                    <span class="d-block f-size-12 text-878">From USD</span>
+                                                                    <span class="d-block f-size-24 primary-color rt-strong">{!!$room->getPrice()!!}</span>
+                                                                    <span class="d-block f-size-12 text-444">After tax $410</span>
                                                                 </li>
                                                             </ul>
                                                         </div><!-- /.col-lg-12 -->
@@ -433,6 +431,45 @@
                                         </div><!-- /.col-md-9 -->
                                     </div><!-- /.row -->
                                 </div><!-- /.flight-list-box -->
+                                <!-- Modal -->
+                                <div class="modal fade" id="booking" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                  <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                      <div class="modal-header" style="display: flex;align-items: center;">
+                                        <h5 class="modal-title" id="exampleModalLabel" >Chọn thời gian</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true" style="font-size: 50px;">&times;</span>
+                                        </button>
+                                      </div>
+                                      <form action="{!!route('product.order')!!}" method="POST" enctype="multipart/form-data">
+                                        @csrf
+                                      <div class="modal-body">
+                                            <div class="rt-input-group">
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="single-input  col-rt-in-4 col-6" style="padding: 0px;">
+                                                           <input type="text" class="form-control rt-date-picker has-icon" placeholder="Depart" name="checkin_time">
+                                                           <span class="input-iconbadge"><i class="icofont-ui-calendar"></i></span>
+                                                        </div><!-- /.single-input -->
+                                                        <div class="single-input  col-rt-in-4 col-6" style="padding: 0px;">
+                                                            <input type="text" class="form-control rt-date-picker has-icon" placeholder="Return" name="checkout_time">
+                                                            <span class="input-iconbadge"><i class="icofont-ui-calendar"></i></span>
+                                                        </div><!-- /.single-input -->
+                                                        <input type="hidden" value ="{!!$product->id!!}"name="id_hotel">
+                                                        <input type="hidden" value ="{!!$room->id!!}"name="id_room">
+                                                    </div>
+                                                </div>
+                                            </div><!-- /.rt-input-group -->
+
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button class="rt-btn rt-sm2 pill text-uppercase" data-dismiss="modal" style="text-align: center;width: 50%;background: linear-gradient(to right, #000000, #434343);color: white;">Trở lại</button>
+                                        <button type="submit" class="rt-btn rt-gradient rt-sm2 pill text-uppercase" style="text-align: center;width: 50%;color:white;">Thanh toán</button>
+                                      </div>
+                                      </form><!-- ./ form -->
+                                    </div>
+                                  </div>
+                                </div>
                                 @endforeach
                             </div>
                             <div class="tab-pane fade" id="rt-itm_3" role="tabpanel" aria-labelledby="rt-itm_3-tab">
@@ -768,6 +805,7 @@
         
     </div><!-- /.container -->
 </section>
+
 @endforeach
 </body>
 

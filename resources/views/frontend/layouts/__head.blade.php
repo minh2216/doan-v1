@@ -23,8 +23,9 @@
 <link rel="stylesheet" href="{{asset('public/assets/frontend/css/tippy.css')}}">
 <link rel="stylesheet" href="{{asset('public/assets/frontend/css/app.css')}}">
 <!-- ==================End Css Link===================== -->
-
-
+<!-- <link rel="stylesheet" href="{{asset('public/assets/frontend/css/propeller.min.css')}}">
+<link rel="stylesheet" href="{{asset('public/assets/frontend/css/bootstrap-datetimepicker.css')}}">
+<link rel="stylesheet" href="{{asset('public/assets/frontend/css/pmd-datetimepicker.css')}}"> -->
 
 
     <!--[if lt IE 9]>
