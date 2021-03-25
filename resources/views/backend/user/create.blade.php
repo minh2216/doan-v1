@@ -57,12 +57,12 @@
                                 </div>
                                     <div class="form-group col-md-6">
                                         <label class="required">User Type <span class="text-danger"></span></label>
-                                        <select name="type_user" class="form-control select-search" data-placeholder="Chọn type" required="">
+                                        <select name="user_type_id" class="form-control select-search" data-placeholder="Chọn type" required="">
                                             @foreach($key as $keys)
                                             <option value="{{$keys->id}}">{{$keys->title}}</option>
                                             @endforeach
                                         </select>
-                                        {!! $errors->first('type_user', '<span class="text-danger">:message</span>') !!}
+                                        {!! $errors->first('user_type_id', '<span class="text-danger">:message</span>') !!}
                                 </div>
                                     <div class="form-group col-md-2">
                                         <div class="form-check  form-check-right">

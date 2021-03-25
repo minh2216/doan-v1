@@ -9,7 +9,7 @@
                     <div class="icon"><i class="icon-bag"></i>
                     </div> 
                     <div class="num" data-start="0" data-end="3350" data-postfix="" data-duration="1500" data-delay="0">
-                        {{$product_count}}                        </div>
+                                               </div>
                     <h3>Sản phẩm</h3>
                 </div>
             </a>
@@ -20,7 +20,7 @@
                     <div class="icon"><i class="icon-newspaper"></i>
                     </div> 
                     <div class="num" data-start="0" data-end="85" data-postfix="" data-duration="1500" data-delay="0">
-                        {{$news_count}}</div>
+                        </div>
                     <h3>Tin tức</h3>
                 </div>
             </a>
@@ -31,7 +31,7 @@
                     <div class="icon"><i class="icon-bubble-dots4"></i>
                     </div> 
                     <div class="num" data-start="0" data-end="0" data-postfix="" data-duration="1500" data-delay="0">
-                        {{$contact_count}}
+                        
                     </div>
                     <h3>Liên hệ</h3>
                 </div>

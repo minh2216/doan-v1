@@ -32,11 +32,7 @@ class BackendController  extends Controller
     }
     public function index()
     {
-        $product_count = $this->productRepo->allProductByUser()->count();
-        $room_count = $this->roomRepo->allRoomByHotel()->count();
-        $news_count = $this->newsRepo->all()->count();
-        $contact_count = $this->contactRepo->all()->count();
-        return view('backend/index', compact('product_count', 'news_count', 'contact_count','room_count'));
+        return view('backend/index');
     }
 
 

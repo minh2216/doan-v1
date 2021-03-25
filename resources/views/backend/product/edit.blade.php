@@ -55,7 +55,9 @@
                                     <div class="form-group row">
                                         <label class="col-md-2 col-form-label text-right">User <span class="text-danger">*</span></label>
                                         <div class="col-md-10">
-                                            <input type="text" class="form-control"  name="user_id" value="{{$records}}" readonly >
+                                            @foreach ($records as $re )
+                                            <input type="text" class="form-control"  name="user_id" value="{{$re -> username}}" readonly >
+                                            @endforeach
                                             {!! $errors->first('category_id', '<span class="text-danger">:message</span>') !!}
                                         </div>
                                     </div>

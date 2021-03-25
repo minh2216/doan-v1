@@ -26,7 +26,15 @@ class ProductController extends Controller {
     }
 
     public function index() {
-        $records = $this->productRepo->allProductByUser();
+        $type = \Auth::user()->user_type_id;
+        if($type == 1){
+            $records = $this->productRepo->allProductByUser();
+
+        }
+        else if($type == 3){
+            $records = $this->productRepo->allProduct();
+
+        }
         return view('backend/product/index', compact('records'));
     }
 
@@ -36,12 +44,17 @@ class ProductController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function create() {
-        $record = \Auth::user()->username;
+        $type = \Auth::user()->user_type_id;
+        if($type == 1){
+            $record = \Auth::user()->username;
+        }
+        else if($type == 3){
+            $record = \DB::table('user')->where('user_type_id',1)->get();
+        }
         $options = $this->categoryRepo->readCategoryByType(\App\Category::TYPE_PRODUCT);
         $category_html = \App\Helpers\StringHelper::getSelectOptions($options);
         $attributes = $this->attributeRepo->readAttributeByParentAdmin();
-        $room = $this->roomRepo->allRoom();
-        return view('backend/product/create', compact('category_html', 'attributes','record'));
+        return view('backend/product/create', compact('category_html', 'attributes','record','type'));
     }
 
     /**
@@ -92,7 +105,8 @@ class ProductController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function edit($id) {
-        $records = \Auth::user()->username;
+        $user_id = \DB::table('product')->where('id',$id)->pluck('user_id');
+        $records = \DB::table('user')->where('id',$user_id)->get();
         $record = $this->productRepo->find($id);
         $options = $this->categoryRepo->readCategoryByType(\App\Category::TYPE_PRODUCT);
         $category_ids = $record->categories()->get()->pluck('id')->toArray();

@@ -52,6 +52,7 @@
                                             {!! $errors->first('category_id', '<span class="text-danger">:message</span>') !!}
                                         </div>
                                     </div>
+                                    @if($type == 1)
                                     <div class="form-group row">
                                         <label class="col-md-2 col-form-label text-right">User <span class="text-danger">*</span></label>
                                         <div class="col-md-10">
@@ -59,6 +60,20 @@
                                             {!! $errors->first('category_id', '<span class="text-danger">:message</span>') !!}
                                         </div>
                                     </div>
+                                    @endif
+                                    @if($type == 3)
+                                    <div class="form-group row">
+                                        <label class="col-md-2 col-form-label text-right">User <span class="text-danger">*</span></label>
+                                        <div class="col-md-10">
+                                            <select class="select-search form-control" name="product_id"data-placeholder="Chọn ks">
+                                                @foreach($record as $key)
+                                                    <option value="{{$key->id}}">{{$key->username}}</option>
+                                                @endforeach
+                                            </select>
+                                            {!! $errors->first('user_id', '<span class="text-danger">:message</span>') !!}
+                                        </div>
+                                    </div>
+                                    @endif
                                     <div class="form-group row">
                                         <label class="col-md-2 col-form-label text-right">Mô tả </label>
                                         <div class="col-md-10">

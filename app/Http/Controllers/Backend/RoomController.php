@@ -29,10 +29,14 @@ class RoomController extends Controller {
     }
 
     public function index() {
-        $records = $this->roomRepo->allRoomByHotel();
+        $type = \Auth::user()->user_type_id;
+        if($type == 3){
+            $records = $this->roomRepo->allRoom();
+        }
+        else if($type == 1){
+            $records = $this->roomRepo->allRoomByHotel();
+        }
         $product_id = $this->roomRepo->GetTitleHotel();
-        $title = \DB::table('product')->where('id',$product_id)->pluck('title');
-        // $title = \DB::table('room')->join('product','room.product_id','=','product.id')->select('product.title')->get();
         $item = \App\Product::all();
         return view('backend/room/index', compact('records','item','title'));
     }
@@ -43,14 +47,16 @@ class RoomController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function create() {
-        //
-        $options = $this->categoryRepo->readCategoryByType(\App\Category::TYPE_PRODUCT);
-        $category_html = \App\Helpers\StringHelper::getSelectOptions($options);
         $facilities = $this->facilitiesRepo->readFacilitiesByParentAdmin();
         $options1 = $this->productRepo->allProduct(\App\Product::TYPE_PRODUCT);
         $product_html = \App\Helpers\StringHelper::getSelectOptions($options1);
-        $room = $this->productRepo->allProduct();
-        $item = $this->productRepo->allProductByUser();
+        $type = \Auth::user()->user_type_id;
+        if($type == 3){
+            $item = $this->productRepo->allProduct();
+        }
+        else if($type == 1){
+            $item = $this->productRepo->allProductByUser();
+        }
         return view('backend/room/create', compact('product_html', 'facilities','item'));
     }
 
@@ -108,9 +114,17 @@ class RoomController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function edit($id) {
+        $type = \Auth::user()->user_type_id;
         $record = $this->roomRepo->find($id);
-        $options = $this->productRepo->allProductByUser(\App\Category::TYPE_PRODUCT);
-        $items = $this->productRepo->allProductByUser();
+        if($type == 3){
+            $options = $this->productRepo->allProduct(\App\Category::TYPE_PRODUCT);
+            $items = $this->productRepo->allProduct();
+        }
+
+        else if($type == 1){
+            $options = $this->productRepo->allProductByUser(\App\Category::TYPE_PRODUCT);
+            $items = $this->productRepo->allProductByUser();
+        }
         $product_ids = $record->product()->get()->pluck('id')->toArray();
         $product_html = \App\Helpers\StringHelper::getSelectOptions($options, $product_ids);
         $facilities = $this->facilitiesRepo->readFacilitiesByParentAdmin();

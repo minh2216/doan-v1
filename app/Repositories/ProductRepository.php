@@ -114,7 +114,7 @@ class ProductRepository extends AbstractRepository {
     }
 
     public function allProduct() {
-        return $this->model->where('status', 1)->get();
+        return $this->model->get();
     }
 
     public function findByAlias($alias) {
