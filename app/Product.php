@@ -10,7 +10,7 @@ class Product extends Model {
     protected $table = 'product';
     protected $fillable = [
         'created_by','content','images', 'title', 'description', 'meta_title', 'meta_description', 'meta_keywords', 'view_count', 'status', 'alias', 'ordering','user_id','googlemap'
-    ];
+    ]; 
 
     public function user(){
         return $this->hasOne('\App\User');

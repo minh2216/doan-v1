@@ -57,7 +57,7 @@
                                         <label class="col-md-2 col-form-label text-right">User <span class="text-danger">*</span></label>
                                         <div class="col-md-10">
                                             <input type="text" class="form-control"  name="user_id" value="{{$record}}" readonly >
-                                            {!! $errors->first('category_id', '<span class="text-danger">:message</span>') !!}
+                                            {!! $errors->first('user_id', '<span class="text-danger">:message</span>') !!}
                                         </div>
                                     </div>
                                     @endif
@@ -65,7 +65,7 @@
                                     <div class="form-group row">
                                         <label class="col-md-2 col-form-label text-right">User <span class="text-danger">*</span></label>
                                         <div class="col-md-10">
-                                            <select class="select-search form-control" name="product_id"data-placeholder="Chọn ks">
+                                            <select class="select-search form-control" name="user_id"data-placeholder="Chọn user">
                                                 @foreach($record as $key)
                                                     <option value="{{$key->id}}">{{$key->username}}</option>
                                                 @endforeach
