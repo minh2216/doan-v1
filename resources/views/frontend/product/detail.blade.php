@@ -421,7 +421,7 @@
                                                                 <li class="rt-pt-8">
                                                                     <a href="#" class="rt-btn rt-gradient rt-sm2 pill text-uppercase" data-toggle="modal" data-target="#booking" >Book</a>
                                                                     <p class="f-size-13 text-2f7"><span class="rt-pr-5"><i class="icofont-check"></i></span>Price Guarantee</p>
-                                                                    <span class="d-block f-size-12 text-878">From USD</span>
+                                                                    <span class="d-block f-size-12 text-878">From VNĐ</span>
                                                                     <span class="d-block f-size-24 primary-color rt-strong">{!!$room->getPrice()!!}</span>
                                                                     <span class="d-block f-size-12 text-444">After tax $410</span>
                                                                 </li>
@@ -455,8 +455,9 @@
                                                             <input type="text" class="form-control rt-date-picker has-icon" placeholder="Return" name="checkout_time">
                                                             <span class="input-iconbadge"><i class="icofont-ui-calendar"></i></span>
                                                         </div><!-- /.single-input -->
-                                                        <input type="hidden" value ="{!!$product->id!!}"name="id_hotel">
-                                                        <input type="hidden" value ="{!!$room->id!!}"name="id_room">
+                                                        <input type="hidden" value ="{!!$product->id!!}"name="product_id">
+                                                        <input type="hidden" value ="{!!$room->id!!}"name="room_id">
+                                                        <input type="hidden" value ="{!!$room->getValuePrice()!!}"name="price">
                                                     </div>
                                                 </div>
                                             </div><!-- /.rt-input-group -->

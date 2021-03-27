@@ -16,88 +16,6 @@
     </div>
 </div>
 
-
-<!-- Modal -->
-<div class="modal fade" id="rtmodal-1" tabindex="-1" role="dialog" aria-labelledby="rtmodal-1"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered rt-lgoinmodal " role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <div class="rt-modal-headr rt-mb-20 one">
-                    <img src="{{asset('public/assets/frontend/images/logo/Logo-icon.png')}}" alt="modal logo" draggable="false">
-                    <h4>Login in to Emigrar</h4>
-                    <p>Log in to get in the moment updates on the things
-                        that interest you.</p>
-                </div><!-- /.rt-modal-headr -->
-                <div class="rt-modal-headr rt-mb-20 two">
-                    <img src="{{asset('public/assets/frontend/images/logo/Logo-icon.png')}}" alt="modal logo" draggable="false">
-                    <h4>Create your Account</h4>
-                    <p>Log in to get in the moment updates on the things
-                        that interest you.</p>
-                </div><!-- /.rt-modal-headr -->
-                <div class="rt-modal-input one">
-                    <form action="#" class="rt-form">
-                        <input type="text" class="form-control pill rt-mb-15" placeholder="User name">
-                        <input type="password" class="form-control pill rt-mb-15" placeholder="Password">
-                        <div class="form-group forgot-pass">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="gridCheckss">
-                                <label class="form-check-label" for="gridCheckss">
-                                     Remember Password
-                                </label>
-                            </div><!-- ./orm-group -->
-                        </div>
-                            <input type="submit" class="rt-btn rt-gradient pill d-block text-uppercase " value="Log In">
-                    </form>
-                    <div class="ac-register">
-                        <span>Don’t have an account? <a href="#" class="open-creatac">Sign Up Now <i class="icofont-double-right"></i></a></span>
-                    </div><!-- /.ac-register -->
-                </div><!-- /.rt-modal-input -->
-                <div class="rt-modal-input two">
-                    <form action="#" class="rt-form">
-                        <input type="text" class="form-control pill rt-mb-15" placeholder="User name">
-                        <input type="password" class="form-control pill rt-mb-15" placeholder="Enter your mail address">
-                        <input type="password" class="form-control pill rt-mb-15" placeholder="Password">
-                        <div class="form-group forgot-pass">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="gridCheck333">
-                                <label class="form-check-label" for="gridCheck333">
-                                    I'd like to hear about promos, new products,and much more!
-                                </label>
-                            </div><!-- ./orm-group -->
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="gridCheck222">
-                                <label class="form-check-label" for="gridCheck222">
-                                    By clicking "Sign up" you agree to our Terms of Service and Privacy Policy
-                                </label>
-                            </div><!-- ./orm-group -->
-                        </div>
-                            <input type="submit" class="rt-btn rt-gradient pill d-block text-uppercase " value="Log In">
-                    </form>
-                    <div class="ac-register">
-                        <span>Already have an account?<a href="#">LOGIN <i class="icofont-double-right"></i></a></span>
-
-                    </div><!-- /.ac-register -->
-                </div><!-- /.rt-modal-input -->
-                <div class="rt-modal-footer">
-                    <span>Or</span>
-                    <h4>Sign Up with social media</h4>
-                    <ul class="rt-social rt-circle-style2">
-                
-                        <li><a href="#"><i class="icofont-facebook"></i></a></li>
-                        <li><a href="#"><i class="icofont-twitter"></i></a></li>
-                        <li><a href="#"><i class="icofont-linkedin"></i></a></li>
-                    </ul>
-                </div><!-- /.rt-modal-footer -->
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-
 <!-- 
     !============= Banner Area Start ===========!
  -->
@@ -114,8 +32,8 @@
                             Thế giới!
                         </h1>
                         <p class="wow fade-in-top">
-                            You can create a Custom Trip.Search Our Lowest Fares to <br>
-                            Your Favorite Destinations.Find a better way to travel
+                            Bạn có thể đặt phòng với giá thấp nhất<br>
+                            Đăng ký để nhận được nhiều ưu đãi từ chúng tôi.
                         </p>
                     
         <div class="rt-banner-searchbox standard-search wow fade-in-bottom" data-wow-duration="1s" data-wow-delay="1s">
@@ -179,28 +97,28 @@
 
             <div class="col-lg-4 col-md-6 col-12">
                 <div class="media counter-box-1 align-items-center wow fadeInUp">
-                    <img src="{{asset('public/assets/frontend/images/counter-icons/counter_iocn_1.png')}}" alt="counter_iocn" draggable="false">
+                    <img src="{{asset('public/assets/frontend/images/counter-icons/hotel.svg')}}" alt="counter_iocn" draggable="false" style="width: 65px;">
                     <div class="media-body">
-                        <h5>Trusted Members</h5>
-                        <h6><span class="counter">90,000</span><span>+</span></h6>
+                        <h5>Số khách sạn hoạt động trên hệ thống</h5>
+                        <h6><span class="counter">20,000</span><span>+</span></h6>
                     </div>
                 </div>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-4 col-md-6 col-12" >
                 <div class="media counter-box-1 align-items-center wow fadeInUp" data-wow-duration="1.5s">
-                    <img src="{{asset('public/assets/frontend/images/counter-icons/counter_iocn_2.png')}}" alt="counter_iocn" draggable="false">
+                    <img src="{{asset('public/assets/frontend/images/counter-icons/member.svg')}}" alt="counter_iocn" draggable="false" style="width: 65px;">
                     <div class="media-body">
-                        <h5>Trusted Members</h5>
-                        <h6><span class="counter">2,00</span></h6>
+                        <h5>Lượng khách hàng đã đăng ký</h5>
+                        <h6><span class="counter">40,000</span><span>+</span></h6>
                     </div>
                 </div>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-4 col-md-6 col-12">
                 <div class="media counter-box-1 align-items-center wow fadeInUp" data-wow-duration="2s">
-                <img src="{{asset('public/assets/frontend/images/counter-icons/counter_iocn_3.png')}}" alt="counter_iocn" draggable="false">
+                <img src="{{asset('public/assets/frontend/images/counter-icons/booking.svg')}}" alt="counter_iocn" draggable="false" style="width: 65px;">
                     <div class="media-body">
-                        <h5>Trusted Members</h5>
-                        <h6><span class="counter">80,000</span><span>+</span></h6>
+                        <h5>Số lượt đặt phòng mỗi ngày</h5>
+                        <h6><span class="counter">1000</span><span>+</span></h6>
                     </div>
                 </div>
             </div><!-- /.col-lg-4 -->
@@ -219,11 +137,10 @@
             <div class="col-lg-8 text-center mx-auto">
                 <div class="rt-section-title-wrapper">
                     <h2 class="rt-section-title">
-                        <span>WHY Choose Our Travel Agency?</span>
-                        Our Core Values
+                        <span>Vì sao nên lựa chọn website của chúng tôi?</span>
+                        Giá trị cốt lõi
                     </h2><!-- /.rt-section-title -->
-                    <p>Our thoughtful team of knowledgeable experts are here to take care of every need,
-                        from the second you contact us to when you return</p>
+                    <p>Đội ngũ chuyên gia của chúng tôi luôn sẵn sàng giải quyết mọi nhu cầu của bạn</p>
                 </div><!-- /.rt-section-title-wrapper- -->
             </div><!-- /.col-lg-12 -->
         </div><!-- /.row -->

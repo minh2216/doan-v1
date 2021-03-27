@@ -28,6 +28,7 @@ class Frontend {
         }
         //Logo
         $link="$_SERVER[REQUEST_URI]";
+        //Custom
         \View::share(['link' => $link]);
         \View::share(['share_config' => $config]);
         \View::share(['count_cart' => $count]);

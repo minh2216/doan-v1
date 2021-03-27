@@ -34,7 +34,23 @@ class Room extends Model {
     }
 
     public function getPrice() {
-        return $this->price > 0 ? number_format($this->price) . ' đ' : 'Liên hệ';
+        if($this->sale_price==0){
+            $value = $this->price > 0 ? number_format($this->price) . ' đ' : 'Liên hệ';
+        }
+        else{
+            $value = number_format($this->sale_price) . ' đ';
+        }
+        return $value;
+    }
+
+    public function getValuePrice() {
+        if($this->sale_price==0){
+            $value = $this->price;
+        }
+        else{
+            $value = $this->sale_price;
+        }
+        return $value;
     }
 
     public function getSalePrice() {

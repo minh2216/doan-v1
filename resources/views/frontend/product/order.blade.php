@@ -322,18 +322,20 @@
                         <ul>
                             <li class="clearfix">
 
-                                <span>1 Room x 3 Nights</span>
-                                <span class="float-right">£ 435.2</span>
+                                <span>1 Phòng x {!!$time!!} Đêm</span>
+                                <br>
+                                <span class="float-right">{!!number_format($total_price)!!} VNĐ</span>
                             </li>
                             <li class="clearfix">
 
-                                <span>Taxes & Fees</span>
-                                <span class="float-right">$£ 87.04</span>
+                                <span>Thuế GTGT (VAT 10%)</span>
+                                <br>
+                                <span class="float-right">{!!number_format($tax)!!} VNĐ</span>
                             </li>
                             <li class="clearfix sub-total">
 
-                                <span>Total</span>
-                                <span class="float-right"><small>£</small>522.24</span>
+                                <span>Tổng</span>
+                                <span class="float-right">{!!number_format($cost)!!} <small>VNĐ</small></span>
                             </li>
 
                         </ul>
