@@ -77,12 +77,6 @@ class ProductController extends Controller {
         //Thêm vào lịch sử đăng bài
         $this->addPostHistory($product);
         //Thêm danh mục sản phẩm
-        $validator = \Validator::make($input['category_id'], [
-            'category_id' => 'required',
-        ]);
-        if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator)->withInput();
-        }
         $product->categories()->attach($input['category_id']);
         //Thêm thuộc tính sản phẩm
         $attributes = $this->getProductAttributes($input);

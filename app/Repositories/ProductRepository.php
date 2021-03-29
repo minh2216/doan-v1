@@ -26,8 +26,8 @@ class ProductRepository extends AbstractRepository {
         return $rules = [
             'title' => 'required|unique:product',
             'alias' => 'required',
-            'category_id' => 'required',
-            'user_id' => 'required'
+            'user_id' => 'required',
+            'category_id' => ' required',
         ];
     }
 
@@ -35,7 +35,7 @@ class ProductRepository extends AbstractRepository {
         return $rules = [
             'title' => 'required|unique:product,title,' . $id . ',id',
             'alias' => 'required',
-            'category_id' => 'required'
+            'category_id' => ' required',
         ];
     }
 

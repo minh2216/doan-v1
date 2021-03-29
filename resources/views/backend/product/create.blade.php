@@ -46,7 +46,7 @@
                                     <div class="form-group row">
                                         <label class="col-md-2 col-form-label text-right">Danh mục <span class="text-danger">*</span></label>
                                         <div class="col-md-10">
-                                            <select class="select-search form-control" name="category_id[]"data-placeholder="Chọn danh mục" multiple="" >
+                                            <select class="select-search form-control" name="category_id[]"data-placeholder="Chọn danh mục" multiple="" required>
                                                 {!!$category_html!!}
                                             </select>
                                             {!! $errors->first('category_id', '<span class="text-danger">:message</span>') !!}
