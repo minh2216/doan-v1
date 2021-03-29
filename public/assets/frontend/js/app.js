@@ -372,8 +372,12 @@ jQuery(document).ready(function ($) {
   ================-------------------*/
 
   $('.open-creatac').on("click", function () {
-    $(".rt-modal-input.two , .rt-modal-headr.two").addClass("show-cac");
-    $(".rt-modal-input.one, .rt-modal-headr.one").addClass("hide-cac");
+    $(".rt-modal-input.two , .rt-modal-headr.two").show();
+    $(".rt-modal-input.one, .rt-modal-headr.one").hide();
+  });
+  $('.open-login').on("click", function () {
+    $(".rt-modal-input.two , .rt-modal-headr.two").hide();
+    $(".rt-modal-input.one, .rt-modal-headr.one").show();
   });
   $('.rt-selectactive').select2({
     minimumResultsForSearch: Infinity

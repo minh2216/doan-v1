@@ -15,6 +15,7 @@ use App\Repositories\OrderRepository;
 use App\Repositories\OrderDetailRepository;
 use Repositories\GalleryRepository;
 use App\Room;
+use DB;
 class ProductController extends Controller {
 
     public function __construct(OrderRepository $orderRepo, OrderDetailRepository $orderdetailRepo, ProductRepository $productRepo, CategoryRepository $categoryRepo, AttributeRepository $attributeRepo, ProductAttributeRepository $productAttrRepo, ProductCategoryRepository $productCategoryRepo, KeywordRepository $keywordRepo, GalleryRepository $galleryRepo) {
@@ -256,7 +257,13 @@ class ProductController extends Controller {
     public function order(Request $request) {
         ini_set('memory_limit', '2048M');
         $input = $request->all();
-        return view('frontend/product/order');
+        $checkin = strtotime($input['checkin_time']);
+        $checkout = strtotime($input['checkout_time']);
+        $time = ($checkout - $checkin)/86400;
+        $total_price = $input['price']*$time;
+        $tax = ($total_price/100)*10;
+        $cost = $total_price + $tax;
+        return view('frontend/product/order', compact('time','total_price','tax','cost'));
     }
 
 }
