@@ -187,12 +187,15 @@ class ProductRepository extends AbstractRepository {
         return $value;
     }
 
-    public function getProductByIdCategory($category_id) {
+    public function getRecommendProduct($category_id) {
         $category_hotel_id = DB::table('category')->where('alias','khach-san')->pluck('id');
-        $hotel_id = DB::table('product_category')->where('product_id',$category_hotel_id)->pluck('product_id');
-        dd($hotel_id);
+        $location_parent_id = DB::table('category')->where('alias','dia-diem')->pluck('id');
+        $location_ids = DB::table('category')->where('parent_id',$location_parent_id)->pluck('id');
+        $hotel_id = DB::table('product_category')->where('category_id',$category_hotel_id)->pluck('product_id');
+        $hotel_location_id = DB::table('product_category')->where('product_id',$hotel_id)->whereIn('category_id',$location_ids)->pluck('product_id');
+
         $product_id = DB::table('product_category')->where('category_id',$category_id)->get();
-        dd($product_id);
+
         $value = $this->model->where('status', 1)->where('',$alias)->pluck('id');
         return $value;
     }

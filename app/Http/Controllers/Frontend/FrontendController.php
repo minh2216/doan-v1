@@ -28,7 +28,7 @@ class FrontendController extends Controller {
         $keyword_arr = $this->keywordRepo->readHomeRecentKeyword($limit = 6);
         $logo=1;
         $recommend_location = $this->categoryRepo->readLocationCategory();
-        $recommend_product = $this->productRepo->getProductByIdCategory($recommend_location->pluck('id'));
+        // $recommend_product = $this->productRepo->getRecommendProduct($recommend_location->pluck('id'));
         return view('frontend/home/index', compact('category_arr', 'construction_arr', 'keyword_arr'));
     }
 
