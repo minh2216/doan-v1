@@ -9,14 +9,16 @@ use Repositories\ConstructionRepository;
 use Repositories\KeywordRepository;
 use DB;
 use App\Repositories\MemberRepository;
+use App\Repositories\ProductRepository;
 
 class FrontendController extends Controller {
 
-    public function __construct(CategoryRepository $categoryRepo, ConstructionRepository $constructionRepo, KeywordRepository $keywordRepo, MemberRepository $memberRepo) {
+    public function __construct(CategoryRepository $categoryRepo, ConstructionRepository $constructionRepo, KeywordRepository $keywordRepo, MemberRepository $memberRepo, ProductRepository $productRepo) {
         $this->categoryRepo = $categoryRepo;
         $this->constructionRepo = $constructionRepo;
         $this->keywordRepo = $keywordRepo;
         $this->memberRepo = $memberRepo;
+        $this->productRepo = $productRepo;
     }
 
     public function index() {
@@ -25,6 +27,8 @@ class FrontendController extends Controller {
         $construction_arr = $this->constructionRepo->readHomeConstruction($limit = 8);
         $keyword_arr = $this->keywordRepo->readHomeRecentKeyword($limit = 6);
         $logo=1;
+        $recommend_location = $this->categoryRepo->readLocationCategory();
+        $recommend_product = $this->productRepo->getProductByIdCategory($recommend_location->pluck('id'));
         return view('frontend/home/index', compact('category_arr', 'construction_arr', 'keyword_arr'));
     }
 

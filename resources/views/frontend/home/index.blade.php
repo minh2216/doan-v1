@@ -393,11 +393,10 @@
             <div class="col-xl-8 text-center mx-auto text-center">
                 <div class="rt-section-title-wrapper text-white">
                     <h2 class="rt-section-title">
-                        <span>Take a Look at Our</span>
-                        Recommended Hotels
+                        <span>Bạn còn đang do dự ?</span>
+                        Gợi ý của chúng tôi
                     </h2><!-- /.rt-section-title -->
-                    <p>We've made a list of suggested activities based on your interests.Browse through our most popular
-                    Hotels!Our Featured Tours can help you find the trip that's perfect for you!.</p>
+                    <p>Chúng tôi đã lập một danh sách các hoạt động được đề xuất dựa trên sở thích của bạn. Hãy lướt qua các Khách sạn nổi tiếng nhất của chúng tôi! Các Chuyến tham quan Nổi bật của chúng tôi có thể giúp bạn tìm thấy chuyến đi hoàn hảo cho mình !.</p>
                 </div><!-- /.rt-section-title-wrapper- -->
             </div><!-- /.col-lg-12 -->
         </div><!-- /.row -->
@@ -411,7 +410,7 @@
                     <li data-filter=".cat-3">Hong Kong</li>
                     <li data-filter=".cat-4">Bangkok</li>
                     <li data-filter=".cat-5">Singapore</li>
-                    <li data-filter=".cat-5">Tokyo</li>
+                    <li data-filter=".cat-6">Tokyo</li>
                 </ul>
             </div><!-- /.col-12 -->
         </div><!-- /.row -->
