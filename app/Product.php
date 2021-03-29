@@ -41,6 +41,11 @@ class Product extends Model {
         return $image_arr;
     }
 
+    public function getFirstImage() {
+        $image_arr = explode(',', $this->images);
+        return $image_arr[0];
+    }
+
     public function getPrice() {
         return $this->price > 0 ? number_format($this->price) . ' đ' : 'Liên hệ';
     }

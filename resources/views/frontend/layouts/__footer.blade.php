@@ -10,13 +10,12 @@
                    <div class="col-xl-8 col-lg-10 mx-auto text-center">
                         <div class="rt-section-title-wrapper text-white">
                             <h2 class="rt-section-title">
-                                <span>Newsletter</span>
+                                <span>Liên hệ</span>
                         
-                                Get The Latest news
+                                Đăng ký
                             </h2><!-- /.rt-section-title -->
                             <p>
-                                Get the latest travel inspirations and deals from Emigrar semimonthly with your email. You can
-                                unsubscribe at any time. Your privacy & personal information will be treated.
+                               Nhận những ưu đãi mới nhất từ chúng tôi
                             </p>
                         </div><!-- /.rt-section-title-wrapper -->
                    </div><!-- /.col-lg-7 -->
@@ -27,7 +26,7 @@
                     <div class="input-group mb-5">
                         <input type="text" class="form-control" placeholder="Enter your email address" aria-describedby="button-addon2">
                         <div class="input-group-append">
-                            <button class="btn" type="button" id="button-addon2">Subcribe Now</button>
+                            <button class="btn" type="button" id="button-addon2">Đăng ký ngay</button>
                         </div>
                     </div><!-- end input gorup -->
                 </div><!-- /.col-lg-7 -->
