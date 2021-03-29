@@ -67,4 +67,10 @@ class CategoryRepository extends AbstractRepository {
         return $this->model->where('type', \App\Category::TYPE_NEWS)->where('is_home', 1)->take($limit)->get();
     }
 
+    public function readLocationCategory($limit = 10) {
+        $parent_id = $this->model->where('alias','dia-diem')->pluck('id');
+        $value = $this->model->where('type', \App\Category::TYPE_PRODUCT)->where('parent_id',$parent_id)->take($limit)->get();
+        return $value;
+    }
+
 }
