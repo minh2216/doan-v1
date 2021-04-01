@@ -44,8 +44,8 @@ class FrontendController extends Controller {
         ];
         if (\Auth::guard('member')->attempt($input)) {
             $name = $request->get('username');
-            $value = $request->session()->get($name);
-            dd($value);
+            $request->session()->put('username',$request->get('username'));
+            $value = $request->session()->get('username');
             return redirect()->route('home.index')->with('login', 'success')->with('name',$name);
         }
 
