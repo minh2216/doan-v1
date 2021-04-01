@@ -3,13 +3,17 @@
 namespace App\Http\Controllers\Frontend;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 use App\Http\Controllers\Controller;
 use Repositories\CategoryRepository;
 use Repositories\ConstructionRepository;
 use Repositories\KeywordRepository;
-use DB;
 use App\Repositories\MemberRepository;
 use App\Repositories\ProductRepository;
+use Validator;
+use DB;
+use App\Member;
 
 class FrontendController extends Controller {
 
@@ -42,6 +46,7 @@ class FrontendController extends Controller {
             return response()->json(['success' => true]);
         }
         return response()->json(['success' => false]);
+
     }
 
     public function create(Request $request) {

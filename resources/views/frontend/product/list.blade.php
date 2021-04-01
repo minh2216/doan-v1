@@ -235,21 +235,18 @@
                                      </div><!-- /.radio-group -->
                                      <div class="rt-input-group">
                                          <div class="single-input  col-rt-in-3">
-                                             <input type="text" class="form-control" placeholder="destination">
+                                             <input type="text" class="form-control" placeholder="Địa điểm">
 
                                          </div><!-- /.single-input -->
                                          <div class="single-input  col-rt-in-3">
                                              <input type="text" class="form-control rt-date-picker has-icon"
-                                                 placeholder="Depart">
+                                                 placeholder="Ngày nhận phòng">
                                              <span class="input-iconbadge"><i class="icofont-ui-calendar"></i></span>
                                          </div><!-- /.single-input -->
                                          <div class="single-input  col-rt-in-3">
                                              <input type="text" class="form-control rt-date-picker has-icon"
-                                                 placeholder="Return">
+                                                 placeholder="Ngày trả phòng">
                                              <span class="input-iconbadge"><i class="icofont-ui-calendar"></i></span>
-                                         </div><!-- /.single-input -->
-                                         <div class="single-input  col-rt-in-3">
-                                             <input type="text" class="form-control" placeholder="keywords(optional)">
                                          </div><!-- /.single-input -->
                                          <div class="single-input  col-rt-in-1">
                                              <button type="submit"><i class="icofont-search"></i></button>

@@ -111,7 +111,9 @@
                     <form action="{!!route('account.create')!!}" method="POST" enctype="multipart/form-data" class="rt-form">
                         @csrf
                         <input type="text" class="form-control pill rt-mb-15" placeholder="User name" name="username" >
+                        
                         <input type="email" class="form-control pill rt-mb-15" placeholder="Enter your mail address" name="email" >
+
                         <input type="password" class="form-control pill rt-mb-15" placeholder="Password" name="password" >
                         <input type="text" class="form-control pill rt-mb-15" placeholder="Full name" name="full_name" >
                         <div class="form-group forgot-pass">
@@ -128,7 +130,7 @@
                                 </label>
                             </div><!-- ./orm-group -->
                         </div>
-                            <input type="submit" class="rt-btn rt-gradient pill d-block text-uppercase " value="Log In">
+                            <input type="submit" class="rt-btn rt-gradient pill d-block text-uppercase " value="Sign Up">
                     </form>
                     <div class="ac-register">
                         <span>Already have an account?<a href="#" class="open-login">LOGIN <i class="icofont-double-right"></i></a></span>
@@ -153,6 +155,8 @@
 <script type="text/javascript">
     $( document ).ready(function() {
         $('#rtmodal-1').modal('<?php if(Session('error')) {echo('show');} else {echo('hide');} ?>');
+        $(".rt-modal-input.two , .rt-modal-headr.two").css("display", "<?php if(Session('error')) {echo('block');}?>");
+        $(".rt-modal-input.one, .rt-modal-headr.one").css("display", "<?php if(Session('error')) {echo('none');}?>");
     });
     function myFunction() {
         alert('<?php if(isset($modal)) {echo($modal);} else {echo('hide');} ?>');
