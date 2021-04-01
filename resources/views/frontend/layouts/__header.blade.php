@@ -111,7 +111,7 @@
                     <form action="{!!route('account.create')!!}" method="POST" enctype="multipart/form-data" class="rt-form">
                         @csrf
                         <input type="text" class="form-control pill rt-mb-15" placeholder="User name" name="username" >
-                        <input type="password" class="form-control pill rt-mb-15" placeholder="Enter your mail address" name="email" >
+                        <input type="email" class="form-control pill rt-mb-15" placeholder="Enter your mail address" name="email" >
                         <input type="password" class="form-control pill rt-mb-15" placeholder="Password" name="password" >
                         <input type="text" class="form-control pill rt-mb-15" placeholder="Full name" name="full_name" >
                         <div class="form-group forgot-pass">

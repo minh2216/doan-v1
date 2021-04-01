@@ -33,27 +33,25 @@ class FrontendController extends Controller {
     }
 
     public function login(Request $request) {
-        $input = $request->all();
-        $input['password'] = md5($input['password']);
-        dd($input['password']);
-        $check = DB::table('member')->get();
-        dd($check);
-        return view('frontend/home/index');
+        $input = [
+            'username' => $request->get('username'),
+            'password' => $request->get('password'),
+        ];
+        if (\Auth::guard('member')->attempt($input)) {
+            return response()->json(['success' => true]);
+        }
+        return response()->json(['success' => false]);
     }
 
     public function create(Request $request) {
         $input = $request->all();
         $validator = \Validator::make($input, $this->memberRepo->validateCreate());
         if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator)->withInput()->with('error',1);
+            return response()->json(['success' => false]);
         }
-        $member = $this->memberRepo->create($input);
-        dd($member);
-        if ($product) {
-            return redirect()->route('admin.product.index')->with('success', 'Tạo mới thành công');
-        } else {
-            return redirect()->route('admin.product.index')->with('error', 'Tạo mới thất bại');
-        }
+        $password = $request->get('password');
+        $input['password'] = bcrypt($password);
+        $this->memberRepo->create($input);
         return view('frontend/home/index');
     }
 
