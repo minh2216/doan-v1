@@ -20,7 +20,19 @@
                         </div>
                         </li>
                     <li><a href="#"><i class="fas fa-briefcase"></i>My Trips</a></li>
-                    <li><a href="#" data-target="#rtmodal-1" data-toggle="modal"><i class="far fa-user-circle"></i>Sign in | Join</a></li>
+                    <li><a href="#" data-target="#rtmodal-1" data-toggle="modal">
+                        @if(Session('login')=='success') 
+                        <a href="#" class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-globe-americas"></i>{!!Session('name')!!}</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">English</a>
+                            <a class="dropdown-item" href="#">French</a>
+                            <a class="dropdown-item" href="#">Trukis</a>
+                        </div> 
+                        @else 
+                        <i class="far fa-user-circle"></i>Sign in / Register 
+                        @endif
+                        </a>
+                    </li>
                 </ul>
             </div><!-- end top header single -->
         </div>
@@ -111,7 +123,7 @@
                     <form action="{!!route('account.create')!!}" method="POST" enctype="multipart/form-data" class="rt-form">
                         @csrf
                         <input type="text" class="form-control pill rt-mb-15" placeholder="User name" name="username" >
-                        
+
                         <input type="email" class="form-control pill rt-mb-15" placeholder="Enter your mail address" name="email" >
 
                         <input type="password" class="form-control pill rt-mb-15" placeholder="Password" name="password" >
@@ -154,11 +166,12 @@
 
 <script type="text/javascript">
     $( document ).ready(function() {
-        $('#rtmodal-1').modal('<?php if(Session('error')) {echo('show');} else {echo('hide');} ?>');
-        $(".rt-modal-input.two , .rt-modal-headr.two").css("display", "<?php if(Session('error')) {echo('block');}?>");
-        $(".rt-modal-input.one, .rt-modal-headr.one").css("display", "<?php if(Session('error')) {echo('none');}?>");
+        $('#rtmodal-1').modal('<?php if(Session('create')=='failed' || Session('login')=='failed') {echo('show');} else {echo('hide');} ?>');
     });
-    function myFunction() {
-        alert('<?php if(isset($modal)) {echo($modal);} else {echo('hide');} ?>');
-    }
+
 </script>
+
+<!--
+        $(".rt-modal-input.one, .rt-modal-headr.one").css("display", "<?php if(Session('login')=='failed') {echo('block');} ?>");
+        $(".rt-modal-input.two , .rt-modal-headr.two").css("display", "<?php if(Session('create')=='failed') {echo('block');} ?>");
+!>

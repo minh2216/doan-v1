@@ -43,9 +43,13 @@ class FrontendController extends Controller {
             'password' => $request->get('password'),
         ];
         if (\Auth::guard('member')->attempt($input)) {
-            return response()->json(['success' => true]);
+            $name = $request->get('username');
+            $value = $request->session()->get($name);
+            dd($value);
+            return redirect()->route('home.index')->with('login', 'success')->with('name',$name);
         }
-        return response()->json(['success' => false]);
+
+        return redirect()->route('home.index')->with('login', 'failed');
 
     }
 
@@ -53,12 +57,13 @@ class FrontendController extends Controller {
         $input = $request->all();
         $validator = \Validator::make($input, $this->memberRepo->validateCreate());
         if ($validator->fails()) {
-            return response()->json(['success' => false]);
+            return redirect()->route('home.index')->with('create', 'failed');
         }
         $password = $request->get('password');
         $input['password'] = bcrypt($password);
         $this->memberRepo->create($input);
-        return view('frontend/home/index');
+        return redirect()->route('home.index')->with('create', 'success');;
+
     }
 
     public function sanpham() {
