@@ -25,10 +25,6 @@ Route::group(['middleware' => 'frontend'], function() {
     Route::post('/thi-cong/cap-nhat-tai-khoan/{alias}', ['as' => 'construction.update_profile', 'uses' => 'Frontend\ConstructionController@updateProfile']);
     /* Dự án */
     Route::get('/du-an/{alias}', ['as' => 'project.detail', 'uses' => 'Frontend\ProjectController@detail']);
-    /* Tin tuc */
-    Route::get('/tin-tuc', ['as' => 'news.index', 'uses' => 'Frontend\NewsController@index']);
-    Route::get('/danh-muc-tin/{alias}', ['as' => 'news_category.index', 'uses' => 'Frontend\NewsController@index']);
-    Route::get('/tin-tuc/{alias}', ['as' => 'news.detail', 'uses' => 'Frontend\NewsController@detail']);
     /* Video */
     Route::get('/video', ['as' => 'video.index', 'uses' => 'Frontend\VideoController@index']);
     Route::get('/video/{alias}', ['as' => 'video.detail', 'uses' => 'Frontend\VideoController@detail']);
@@ -46,10 +42,14 @@ Route::group(['middleware' => 'frontend'], function() {
     /*Custom*/
     Route::get('/product/{category}', ['as' => 'product.index', 'uses' => 'Frontend\ProductController@index2']);
     Route::get('/detail-product/{alias}', ['as' => 'product.detail', 'uses' => 'Frontend\ProductController@detail2']);
+    /*Tin Tức */
+    Route::get('/danh-muc-tin/{category}', ['as' => 'news.index', 'uses' => 'Frontend\NewsController@index2']);
+    Route::get('/tin-tuc/{alias}', ['as' => 'news.detail', 'uses' => 'Frontend\NewsController@detail2']);
+
+
     Route::post('/order', ['as' => 'product.order', 'uses' => 'Frontend\ProductController@order']);
     Route::post('/sign-in', ['as' => 'account.login', 'uses' => 'Frontend\FrontendController@login']);
-
-    // Route::post('/sign-in', ['as' => 'account.login', 'uses' => 'Frontend\FrontendController@login']);
+    Route::get('/product/{category}', ['as' => 'product.index', 'uses' => 'Frontend\ProductController@index2']);
     Route::post('/create-login', ['as' => 'account.create', 'uses' => 'Frontend\FrontendController@create']);
     Route::get('/thong-tin-sp', ['as' => 'thong-tin-sp.index', 'uses' => 'Frontend\FrontendController@thongtinsp']);
     Route::get('/contact', ['as' => 'contact.index', 'uses' => 'Frontend\FrontendController@contact']);

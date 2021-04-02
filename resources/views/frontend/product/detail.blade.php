@@ -1,10 +1,16 @@
 @extends('frontend.layouts.master')
 @section('content')
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <body>
+
+
 @foreach($records as $key =>$product)
+
     <!-- /preloder -->
   <div class="rt-preloder">
     <div class="preloder-box">
@@ -12,6 +18,11 @@
     </div>
 </div>
 
+<style type="text/css">
+    iframe {
+        width: 100%;
+    }
+</style>
 
 <!-- Modal -->
 <div class="modal fade" id="rtmodal-1" tabindex="-1" role="dialog" aria-labelledby="rtmodal-1"
@@ -111,13 +122,7 @@
                         <span class="divider"><i class="icofont-home"></i></span>
                         <a href="#" title="Home">Home</a>
                         <span class="divider"><i class="icofont-simple-right"></i></span>
-                        <a href="#">China</a>
-                        <span class="divider"><i class="icofont-simple-right"></i></span>
-                        <a href="#">Hotels</a>
-                        <span class="divider"><i class="icofont-simple-right"></i></span>
-                        <a href="#" title="Home">Hong Kong Hotels</a>
-                        <span class="divider"><i class="icofont-simple-right"></i></span>
-                        Empire Hotel Kowloon - Tsim Sha Tsui
+                        {!!$product->title!!}
 
                     </div><!-- /.breadcrumbs -->
                 </div><!-- /.breadcrumbs-content -->
@@ -204,27 +209,27 @@
                         <ul class="nav rt-tab-nav-1 pill justify-content-lg-between pl-md-4 pr-md-4 justify-content-center" id="myTab-2" role="tablist">
                             <li class="nav-item">
                                 <a class="nav-link active" id="rt-itm_1-tab" data-toggle="tab" href="#rt-itm_1" role="tab"
-                                    aria-controls="rt-itm_1" aria-selected="true">Overview</a>
+                                    aria-controls="rt-itm_1" aria-selected="true">Tổng quan</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" id="rt-itm_2-tab" data-toggle="tab" href="#rt-itm_2" role="tab"
-                                    aria-controls="rt-itm_2" aria-selected="false">Rooms</a>
+                                    aria-controls="rt-itm_2" aria-selected="false">Phòng</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" id="rt-itm_3-tab" data-toggle="tab" href="#rt-itm_3" role="tab"
-                                    aria-controls="rt-itm_3" aria-selected="false">Hotel Description</a>
+                                    aria-controls="rt-itm_3" aria-selected="false">Thông tin chi tiết</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" id="rt-itm_4-tab" data-toggle="tab" href="#rt-itm_4" role="tab"
-                                    aria-controls="rt-itm_4" aria-selected="false">Services & Amenities</a>
+                                    aria-controls="rt-itm_4" aria-selected="false">Dịch vụ và tiện nghi</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" id="rt-itm_5-tab" data-toggle="tab" href="#rt-itm_5" role="tab"
-                                    aria-controls="rt-itm_5" aria-selected="false">Policies</a>
+                                    aria-controls="rt-itm_5" aria-selected="false">Chính sách</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" id="rt-itm_6-tab" data-toggle="tab" href="#rt-itm_6" role="tab"
-                                    aria-controls="rt-itm_6" aria-selected="false">Reviews</a>
+                                    aria-controls="rt-itm_6" aria-selected="false">Nhận xét</a>
                             </li>
                         </ul>
                     </div><!-- /.hotle-del-box -->
@@ -233,131 +238,17 @@
                             <div class="tab-pane fade show active" id="rt-itm_1" role="tabpanel" aria-labelledby="rt-itm_1-tab">
                                 <div class="flight-list-box rt-mb-30">
                                     <div class="inner-content rt-pl-15">
-                                        <h4 class="badge-hilighit color--1 f-size-14 text-white text-font text-uppercase rt-mb-30 rt-mt-15">HIGHLIGHTS</h4>
-                                        <ul class="rt-list">
-                                            <li><i class="icofont-check-alt"></i> The best, most fun-filled night out anywhere in China</li>
-                                            <li><i class="icofont-check-alt"></i> Free four/five free shots throughout the night plus other drink discounts</li>
-                                            <li> <i class="icofont-check-alt"></i>Free for birthdays and hens</li>
-                                        </ul>
-                                        <br>
-                                        <p>The Shoreditch Pub Crawl is an alternative pub crawl for locals, students or visitors who want to go beyond the
-                                            standard
-                                            tourist trails and discover the very best nightlife in Shoreditch. We’re dedicated to giving you the best, most
-                                            fun-filled night out anywhere in the capital.</p>
+                                        <h4 class="badge-hilighit color--1 f-size-14 text-white text-font text-uppercase rt-mb-30 rt-mt-15">Mô tả ngắn</h4>
+
                                         <p>
-                                        
-                                            We have several crawls around the clubs and pubs of Shoreditch, and we’re always looking for new adventures too.
-                                            We’re
-                                            about socialising, not just drinking. You’ll be part of a friendly, likeminded crowd who all want to unwind, meet
-                                            new
-                                            people and enjoy a fantastic night out
-                                        
+                                            {!!$product->description!!}
                                         </p>
-                                        <p>You might be a Shoreditch regular or a first-timer. Maybe you live round the corner, in another city or even in
-                                            another
-                                            country. You might be a lone crawler or planning to bring a friend. Whoever you are, you’ll be welcome on the
-                                            Shoreditch
-                                            Pub Crawl.</p>
+
                                     </div><!-- /.inner-content -->
                                 </div><!-- /.flight-list-box -->
-                                <div class="flight-list-box rt-mb-30">
-                                    <div class="inner-content rt-pl-15">
-                                        <h4 class="f-size-18 rt-mt-15 rt-mb-30 rt-semiblod">Tour Details</h4>
-                                        <div class="tour-carosel-active owl-carousel rt-pb-100">
-                                            <div class="media single-tour">
-                                                <div class="icon-thumb rt-mr-23">
-                                                    <img src="{{asset('public/assets/frontend/images/all-img/tour-1.png')}}"  alt="tour image" draggable="false">
-                                                </div><!-- /.icon-thumb -->
-                                                <div class="media-body">
-                                                    <span class="d-block f-size-13 text-333 rt-strong">Booking Type</span>
-                                                    <span class="d-block f-size-18 primary-color rt-medium title-font">Instant Booking</span>
-                                                </div>
-                                            </div><!-- /. single tour -->
-                                            <div class="media single-tour">
-                                                <div class="icon-thumb rt-mr-23">
-                                                    <img src="{{asset('public/assets/frontend/images/all-img/tour-2.png')}}"  alt="tour image" draggable="false">
-                                                </div><!-- /.icon-thumb -->
-                                                <div class="media-body">
-                                                    <span class="d-block f-size-13 text-333 rt-strong">Tour Type</span>
-                                                    <span class="d-block f-size-18 primary-color rt-medium title-font">Private Tour</span>
-                                                </div>
-                                            </div><!-- /. single tour -->
-                                            <div class="media single-tour">
-                                                <div class="icon-thumb rt-mr-23">
-                                                    <img src="{{asset('public/assets/frontend/images/all-img/tour-3.png')}}"  alt="tour image" draggable="false">
-                                                </div><!-- /.icon-thumb -->
-                                                <div class="media-body">
-                                                    <span class="d-block f-size-13 text-333 rt-strong">Availability</span>
-                                                    <span class="d-block f-size-18 primary-color rt-medium title-font">Guide/Instructor</span>
-                                                </div>
-                                            </div><!-- /. single tour -->
-                                            <div class="media single-tour">
-                                                <div class="icon-thumb rt-mr-23">
-                                                    <img src="{{asset('public/assets/frontend/images/all-img/tour-4.png')}}"  alt="tour image" draggable="false">
-                                                </div><!-- /.icon-thumb -->
-                                                <div class="media-body">
-                                                    <span class="d-block f-size-13 text-333 rt-strong">Guiding Method</span>
-                                                    <span class="d-block f-size-18 primary-color rt-medium title-font">Available Daily</span>
-                                                </div>
-                                            </div><!-- /. single tour -->
-                                            <div class="media single-tour">
-                                                <div class="icon-thumb rt-mr-23">
-                                                    <img src="{{asset('public/assets/frontend/images/all-img/tour-1.png')}}"  alt="tour image" draggable="false">
-                                                </div><!-- /.icon-thumb -->
-                                                <div class="media-body">
-                                                    <span class="d-block f-size-13 text-333 rt-strong">Booking Type</span>
-                                                    <span class="d-block f-size-18 primary-color rt-medium title-font">Instant Booking</span>
-                                                </div>
-                                            </div><!-- /. single tour -->
-                                            <div class="media single-tour">
-                                                <div class="icon-thumb rt-mr-23">
-                                                    <img src="{{asset('public/assets/frontend/images/all-img/tour-2.png')}}"  alt="tour image" draggable="false">
-                                                </div><!-- /.icon-thumb -->
-                                                <div class="media-body">
-                                                    <span class="d-block f-size-13 text-333 rt-strong">Tour Type</span>
-                                                    <span class="d-block f-size-18 primary-color rt-medium title-font">Private Tour</span>
-                                                </div>
-                                            </div><!-- /. single tour -->
-                                            <div class="media single-tour">
-                                                <div class="icon-thumb rt-mr-23">
-                                                    <img src="{{asset('public/assets/frontend/images/all-img/tour-3.png')}}"  alt="tour image" draggable="false">
-                                                </div><!-- /.icon-thumb -->
-                                                <div class="media-body">
-                                                    <span class="d-block f-size-13 text-333 rt-strong">Availability</span>
-                                                    <span class="d-block f-size-18 primary-color rt-medium title-font">Guide/Instructor</span>
-                                                </div>
-                                            </div><!-- /. single tour -->
-                                            <div class="media single-tour">
-                                                <div class="icon-thumb rt-mr-23">
-                                                    <img src="{{asset('public/assets/frontend/images/all-img/tour-4.png')}}"  alt="tour image" draggable="false">
-                                                </div><!-- /.icon-thumb -->
-                                                <div class="media-body">
-                                                    <span class="d-block f-size-13 text-333 rt-strong">Guiding Method</span>
-                                                    <span class="d-block f-size-18 primary-color rt-medium title-font">Available Daily</span>
-                                                </div>
-                                            </div><!-- /. single tour -->
-                                        </div><!-- /.tour-carosel-active -->
-                                    </div><!-- /.inner-content -->
-                                </div><!-- /.flight-list-box -->
-                                <div class="flight-list-box rt-mb-30">
-                                    <h3 class="f-size-18 rt-semiblod rt-mt-15 rt-mb-30">Good to know</h3>
-                                    <div>
-                                        <h3 class="f-size-16 rt-semiblod text-uppercase">PAYMENT</h3>
-                                        <p>A deposit of 10% is required when booking this tour. The remaining balance will be charged 45 days prior
-                                            departure. For
-                                            any bookings within 45 days of departure, the full tour amount will be charged upon booking.</p>
-                                    </div>
-                                    <div class="rt-mt-28">
-                                        <h3 class="f-size-16 rt-semiblod text-uppercase">TRAVEL INSURANCE</h3>
-                                        <p>A deposit of 10% is required when booking this tour. The remaining balance will be charged 45 days prior
-                                            departure. For
-                                            any bookings within 45 days of departure, the full tour amount will be charged upon booking.</p>
-                                    </div>
-                                </div><!-- /.flight-list-box -->
+                                
                                 <div class="googleMap">
-                                    <iframe
-                                        src="{{$product->googlemap}}"
-                                        width="100%" height="292" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                                    {!!$product->googlemap!!}
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="rt-itm_2" role="tabpanel" aria-labelledby="rt-itm_2-tab">
@@ -480,24 +371,10 @@
                                    
                                         <h3 class="f-size-16 rt-semiblod text-uppercase"><span class="rt-mr-15">Opened: 1990</span> <span class="rt-mr-15">Number of rooms: 142</span> Renovated: 2016</h3>
                                     <br>
-                                        <p>Within walking distance of one of Hong Kong's business and financial centers as well as several shopping malls, the
-                                    Garden View Hong Kong puts the Peak Tram Station, the trendy "Lan Kwai Fong" night club district and Hong Kong
-                                    Zoological and Botanical Garden at guests' doorsteps. Several public transportation options and the MTR Central Station
-                                    are also conveniently near.</p>
-                                    <br>
-                                   
-                                   <p>
-                                        Spacious hotel rooms and suites overlooking the city with panoramic garden views, offer optimal comfort with full
-                                        service at a reasonable price. Suites come with fully-equipped kitchens.
-                                   </p>
+                                    <p>
+                                        {!!$product->content!!}
+                                    </p>                                
                                     
-                                    
-                                </div>
-                                <div class="googleMap">
-                                    
-                                        <iframe
-                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29220.818804296498!2d90.37472176549844!3d23.72589036448156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8d73a64e709%3A0x65a4e99bd5bb0ebd!2sOld%20Dhaka%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1570045602199!5m2!1sen!2sbd"
-                                            width="100%" height="292" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
                                 </div>
                                 
                             </div>

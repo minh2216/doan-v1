@@ -50,4 +50,19 @@ class NewsController extends Controller {
         }
     }
 
+    public function index2(Request $request, $category) {
+        ini_set('memory_limit', '2048M');
+        $check_cat= is_null($category);
+        if($check_cat==false){
+            $records = $this->newsRepo->getNewsByAliasCategory($category);
+        }
+        return view('frontend/news/list', compact('records'));
+    }
+
+    public function detail2(Request $request, $alias) {
+        ini_set('memory_limit', '2048M');
+        $records = $this->newsRepo->getNewsByAlias($alias);
+        return view('frontend/news/detail', compact('records'));
+    }
+
 }

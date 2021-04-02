@@ -30,6 +30,11 @@ class News extends Model {
 
     public function getImage() {
         $image_arr = explode(',', $this->images);
+        return $image_arr;
+    }
+
+    public function getFirstImage() {
+        $image_arr = explode(',', $this->images);
         return $image_arr[0];
     }
 

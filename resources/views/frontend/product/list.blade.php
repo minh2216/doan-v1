@@ -121,7 +121,7 @@
     <div class="bredcump-search">
         <div class="container">
             <div class="row">
-                <div class="col-lg-10 mx-auto">
+                <div class="col-lg-9 mx-auto">
                     <div class="rt-banner-searchbox flight-search wow fade-in-bottom" data-wow-duration="1s" data-wow-delay="1s">
                         <div class="tab-content" id="myTabContent">
                             <!-- <div class="tab-pane rtIncative" id="rt-item_a_first" role="tabpanel" aria-labelledby="rt-item_a_first">
@@ -234,16 +234,16 @@
                                          </div><!-- ./dropdown -->
                                      </div><!-- /.radio-group -->
                                      <div class="rt-input-group">
-                                         <div class="single-input  col-rt-in-3">
+                                         <div class="single-input  col-rt-in-4">
                                              <input type="text" class="form-control" placeholder="Địa điểm">
 
                                          </div><!-- /.single-input -->
-                                         <div class="single-input  col-rt-in-3">
+                                         <div class="single-input  col-rt-in-4">
                                              <input type="text" class="form-control rt-date-picker has-icon"
                                                  placeholder="Ngày nhận phòng">
                                              <span class="input-iconbadge"><i class="icofont-ui-calendar"></i></span>
                                          </div><!-- /.single-input -->
-                                         <div class="single-input  col-rt-in-3">
+                                         <div class="single-input  col-rt-in-4">
                                              <input type="text" class="form-control rt-date-picker has-icon"
                                                  placeholder="Ngày trả phòng">
                                              <span class="input-iconbadge"><i class="icofont-ui-calendar"></i></span>
@@ -1829,7 +1829,7 @@
                 <div class="box-style__1 rt-mb-30">
                     <div class="hotel-inner-content row">
                         <div class="hotel-thumb col-md-3 mb-4 mb-md-0">
-                           <div class="hotel-bg rtbgprefix-cover" style="background-image: url({{asset('public/assets/frontend/images/all-img/hotel-1.jpg')}})"></div>
+                           <div class="hotel-bg rtbgprefix-cover" style="background-image: url({!!$product->getFirstImage()!!});background-size: cover;"></div>
                         </div><!-- /.hotel-thumb -->
                         <div class="hotel-text col-md-9">
                             <div class="top mb-4 mb-md-0">
@@ -1863,7 +1863,7 @@
                                     <span data-tippy="time"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-9.png')}}" alt="hotel iamge"  draggable="false"></span>
                                 </div><!-- /.left -->
                                 <div class="right">
-                                    <a href="hotel-3.html" class="rt-btn rt-gradient pill rt-sm2 text-uppercase">View Details</a>
+                                    <a href="{!! route('product.detail',['alias' => $product->alias])!!}" class="rt-btn rt-gradient pill rt-sm2 text-uppercase">View Details</a>
                                 </div><!-- /.right -->
                             </div><!-- /.footer-elements -->
                         </div><!-- /.hotel-text -->
