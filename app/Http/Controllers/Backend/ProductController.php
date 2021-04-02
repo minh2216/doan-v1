@@ -9,7 +9,7 @@ use App\Repositories\RoomRepository;
 use Repositories\CategoryRepository;
 use Repositories\AttributeRepository;
 use Repositories\PostHistoryRepository;
-
+use District;
 class ProductController extends Controller {
 
     /**
@@ -45,6 +45,8 @@ class ProductController extends Controller {
      */
     public function create() {
         $type = \Auth::user()->user_type_id;
+        $city =\DB::table('province')->get();
+        $district =\DB::table('district')->get();
         if($type == 1){
             $record = \Auth::user()->username;
         }
@@ -54,7 +56,7 @@ class ProductController extends Controller {
         $options = $this->categoryRepo->readCategoryByType(\App\Category::TYPE_PRODUCT);
         $category_html = \App\Helpers\StringHelper::getSelectOptions($options);
         $attributes = $this->attributeRepo->readAttributeByParentAdmin();
-        return view('backend/product/create', compact('category_html', 'attributes','record','type'));
+        return view('backend/product/create', compact('category_html', 'attributes','record','type','city','district'));
     }
 
     /**
@@ -69,7 +71,6 @@ class ProductController extends Controller {
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         }
-        $input['user_id'] = \Auth::user()->id;
         $input['status'] = isset($input['status']) ? 1 : 0;
         $input['created_by'] = \Auth::user()->id;
         $input['view_count'] = 0;
@@ -105,6 +106,10 @@ class ProductController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function edit($id) {
+        $proid = \DB::table('product')->where('id',$id)->pluck('province_id');
+        $disid = \DB::table('product')->where('id',$id)->pluck('district_id');
+        $city =\DB::table('province')->get();
+        $district =\DB::table('district')->get();
         $user_id = \DB::table('product')->where('id',$id)->pluck('user_id');
         $records = \DB::table('user')->where('id',$user_id)->get();
         $record = $this->productRepo->find($id);
@@ -121,7 +126,7 @@ class ProductController extends Controller {
                 $product_attribute[$val->id] = $val->pivot->value;
             }
         }
-        return view('backend/product/edit', compact('record', 'category_html', 'attributes', 'product_attribute', 'product_attribute_ids','records'));
+        return view('backend/product/edit', compact('record', 'category_html', 'attributes', 'product_attribute', 'product_attribute_ids','records','city','district'));
     }
 
     /**
@@ -137,7 +142,6 @@ class ProductController extends Controller {
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         }
-        $input['user_id'] = \Auth::user()->id;
 //      status
         $input['status'] = isset($input['status']) ? 1 : 0;
         $input['created_by'] = \Auth::user()->id;
@@ -204,5 +208,6 @@ class ProductController extends Controller {
         $post_history['module'] = 'product';
         $this->postHistoryRepo->create($post_history);
     }
+
 
 }

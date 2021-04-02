@@ -182,4 +182,5 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function() {
     Route::get('/template_setting/create', ['as' => 'admin.template_setting.create', 'uses' => 'Backend\TemplateSettingController@create']);
     Route::post('/template_setting/store', ['as' => 'admin.template_setting.store', 'uses' => 'Backend\TemplateSettingController@store']);
 
+
 });

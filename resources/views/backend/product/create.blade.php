@@ -81,6 +81,29 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
+                                        <label class="col-md-2 col-form-label text-right">Vị trí <span class="text-danger">*</span></label>
+                                        <div class="col-md-10">
+                                              <div class="row">
+                                                    <div class="col-md-6">
+                                                        <select class="js-example-basic-single2 myselect2 mr-2 option form-control" name="province_id" id="province" data-placeholder="{{ __('messages.chon-thanh-pho') }}" >
+                                                        @foreach($city as $city)
+                                                            <option value="{{$city->id}}">{{$city->title}} </option>
+                                                        @endforeach
+                                                        </select>
+                                                    </div>
+                                                          
+                                                    <div class="col-md-6">
+                                                        <select class="js-example-basic-single2 myselect2 mr-2 form-control" id="district" name="district_id" data-placeholder="{{ __('messages.chon-quan-huyen') }}" >                           
+                                                        @foreach($district as $district)
+                                                        <option value="{{$district->id}}" >{!!$district->title!!}</option>
+                                                        @endforeach
+                                                        </select> 
+                                                    </div>
+                                              </div>
+                                        </div>
+                                  </div>
+                                   
+                                    <div class="form-group row">
                                         <label class="col-md-2 col-form-label text-right">Google Map</label>
                                         <div class="col-md-10">
                                             <input type="text" class="form-control" name="googlemap" value="{!!old('googlemap')!!}" ="">
@@ -297,7 +320,33 @@
 <script src="{!! asset('assets/global_assets/js/plugins/notifications/jgrowl.min.js') !!}"></script>
 <script src="{!! asset('assets/backend/ckeditor/ckeditor.js') !!}"></script>
 <script src="{!! asset('assets/backend/js/custom.js') !!}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+            $('.option').on('change',function(){
+              
+            var action = $(this).attr('id');
+         
+            var ma_id = $(this).val();
+            var _token = $('#token').val();
+            var result = '';
+            if(action=='city'){
+                result = 'district';
 
+            }
+            $.ajax({
+                url : '{{route('api.select_address')}}',
+                method: 'POST',
+                data:{action:action,ma_id:ma_id,_token:_token},
+                success:function(data){
+                  
+                    $("#district").html(data);
+            
+                }
+            });
+        }); 
+    });
+</script>
 <script type="text/javascript">
     $(document).ready(function() {
     $('.js-example-basic-single').select2();

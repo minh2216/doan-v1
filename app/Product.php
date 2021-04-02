@@ -9,11 +9,19 @@ class Product extends Model {
 
     protected $table = 'product';
     protected $fillable = [
-        'created_by','content','images', 'title', 'description', 'meta_title', 'meta_description', 'meta_keywords', 'view_count', 'status', 'alias', 'ordering','user_id','googlemap'
+        'created_by','content','images', 'title', 'description', 'meta_title', 'meta_description', 'meta_keywords', 'view_count', 'status', 'alias', 'ordering','user_id','googlemap','province_id','district_id'
     ]; 
 
     public function user(){
         return $this->hasOne('\App\User');
+    }
+
+    public function province(){
+        return $this->belongsTo('\App\Province');
+    }
+
+    public function district(){
+        return $this->belongsTo('\App\District');
     }
 
     public function attributes() {

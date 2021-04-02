@@ -51,22 +51,39 @@
                                             {!! $errors->first('category_id', '<span class="text-danger">:message</span>') !!}
                                         </div>
                                     </div>
-
-                                    <div class="form-group row">
-                                        <label class="col-md-2 col-form-label text-right">User <span class="text-danger">*</span></label>
-                                        <div class="col-md-10">
                                             @foreach ($records as $re )
-                                            <input type="text" class="form-control"  name="user_id" value="{{$re -> username}}" readonly >
+                                            <input type="hidden" class="form-control"  name="user_id" value="{{$re -> id}}" readonly >
                                             @endforeach
-                                            {!! $errors->first('category_id', '<span class="text-danger">:message</span>') !!}
-                                        </div>
-                                    </div>
                                     <div class="form-group row">
                                         <label class="col-md-2 col-form-label text-right">Mô tả </label>
                                         <div class="col-md-10">
                                             <textarea class="form-control" name="description">{!!is_null(old('description'))?$record->description:old('description')!!}</textarea>
                                         </div>
                                     </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-md-2 col-form-label text-right">Vị trí <span class="text-danger">*</span></label>
+                                        <div class="col-md-10">
+                                              <div class="row">
+                                                    <div class="col-md-6">
+                                                        <select class="js-example-basic-single2 myselect2 mr-2 option form-control" name="province_id" id="province" data-placeholder="{{ __('messages.chon-thanh-pho') }}" >
+                                                        @foreach($city as $city)
+                                                            <option value="{{$city->id}}" {{$city->id == $record->province_id ? 'selected' : ''}}>{{$city->title}} </option>
+                                                        @endforeach
+                                                        </select>
+                                                    </div>
+                                                          
+                                                    <div class="col-md-6">
+                                                        <select class="js-example-basic-single2 myselect2 mr-2 form-control" id="district" name="district_id" data-placeholder="{{ __('messages.chon-quan-huyen') }}" >                           
+                                                        @foreach($district as $district)
+                                                        <option value="{{$district->id}}" {{$district->id == $record->district_id ? 'selected' : ''}}>{!!$district->title!!}</option>
+                                                        @endforeach
+                                                        </select> 
+                                                    </div>
+                                              </div>
+                                        </div>
+                                  </div>
+                                  
                                     <div class="form-group row">
                                         <label class="col-md-2 col-form-label text-right">Google Map</label>
                                         <div class="col-md-10">
@@ -263,5 +280,31 @@
 <script src="{!! asset('assets/global_assets/js/plugins/notifications/jgrowl.min.js') !!}"></script>
 <script src="{!! asset('assets/backend/ckeditor/ckeditor.js') !!}"></script>
 <script src="{!! asset('assets/backend/js/custom.js') !!}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+            $('.option').on('change',function(){
+              
+            var action = $(this).attr('id');
+         
+            var ma_id = $(this).val();
+            var _token = $('#token').val();
+            var result = '';
+            if(action=='city'){
+                result = 'district';
 
+            }
+            $.ajax({
+                url : '{{route('api.select_address')}}',
+                method: 'POST',
+                data:{action:action,ma_id:ma_id,_token:_token},
+                success:function(data){
+                  
+                    $("#district").html(data);
+            
+                }
+            });
+        }); 
+    });
+</script>
 @stop
