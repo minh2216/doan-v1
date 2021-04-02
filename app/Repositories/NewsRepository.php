@@ -3,6 +3,7 @@
 namespace Repositories;
 
 use Repositories\Support\AbstractRepository;
+use Illuminate\Support\Facades\DB;
 
 class NewsRepository extends AbstractRepository {
 
@@ -61,5 +62,20 @@ class NewsRepository extends AbstractRepository {
         return $this->model->select('title', 'description','keywords', 'meta_title', 'meta_keywords', 'meta_description')->where('id', $id)->first();
     }
 
+    //Custom
+    public function getNewsByAliasCategory($category) {
+        $limit = null;
+        $category_id = DB::table('category')->where('alias',$category)->pluck('id');
+        foreach($category_id as $category)
+        $news_id = DB::table('news_category')->where('category_id',$category)->pluck('news_id');
+        $value = $this->model->where('status', 1)->whereIn('id',$news_id)->orderBy('created_at', 'desc')->take($limit)->get();
+        return $value;
+    }
+
+    public function getNewsByAlias($alias) {
+        $limit = null;
+        $value = $this->model->where('status', 1)->where('alias',$alias)->orderBy('created_at', 'desc')->take($limit)->get();
+        return $value;
+    }
 
 }

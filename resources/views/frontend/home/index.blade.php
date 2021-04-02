@@ -148,11 +148,9 @@
                 <div class="col-lg-7">
                     <div class="rt-section-title-wrapper text-white" data-animation="fadeIn" data-duration=".4s" >
                         <h2 class="rt-section-title">
-                            <span>Ưu đãi của chúng tôi</span>
-                            Top Homestay đang được sale nhiều nhất
+                            <span>Top Homestay đang được lựa chọn nhiều nhất</span>
+                            {!!$product->title!!}
                         </h2><!-- /.rt-section-title -->
-                        <p>Find great experiences, trips, and activities at fantastic prices around the globe.</p>
-                        <div class="section-title-spacer"></div><!-- /.section-title-spacer -->
                         <div class="deal-bottom-content">
                             <div class="rating-box">
                                 <span class="d-block">EXCELLENT</span>
@@ -160,13 +158,13 @@
                                 <span class="d-block">Reviewed by Kim - Denmark</span>
                             </div><!-- /.rating-box -->
                             <div class="section-title-spacer"></div><!-- /.section-title-spacer -->
-                            <h4>Thailand Tours and Holidays 2018/2019</h4>
+                            <h4>{!!$product->title!!}</h4>
                             <p>
                                 {!!$product->description!!}
                             </p>
                             <div class="rt-button-group">
-                                <a href="#" class="rt-btn rt-gradient rt-rounded rt-Bshadow-2">Read More</a>
-                                <a href="#" class="rt-btn rt-outline-gradientL rt-rounded">Help Me Plan My Trip</a>
+                                <a href="{!! route('product.detail',['alias' => $product->alias])!!}" class="rt-btn rt-gradient rt-rounded rt-Bshadow-2">Xem thêm</a>
+                                <a href="#" class="rt-btn rt-outline-gradientL rt-rounded">Lưu vào danh sách yêu thích</a>
                             </div>
                         </div><!-- /.deal-bottom-content -->
                     </div><!-- /.rt-section-title-wrapper -->
@@ -190,7 +188,7 @@
                         <span>Bạn còn đang do dự ?</span>
                         Gợi ý của chúng tôi
                     </h2><!-- /.rt-section-title -->
-                    <p>Chúng tôi đã lập một danh sách các hoạt động được đề xuất dựa trên sở thích của bạn. Hãy lướt qua các Khách sạn nổi tiếng nhất của chúng tôi! Các Chuyến tham quan Nổi bật của chúng tôi có thể giúp bạn tìm thấy chuyến đi hoàn hảo cho mình !.</p>
+                    <p>Chúng tôi đã lập một danh sách các hoạt động được đề xuất dựa trên sở thích của bạn. Hãy lướt qua các Khách sạn nổi tiếng nhất của chúng tôi! Các Chuyến tham quan Nổi bật của chúng tôi có thể giúp bạn tìm được lựa chọn hoàn hảo cho mình !</p>
                 </div><!-- /.rt-section-title-wrapper- -->
             </div><!-- /.col-lg-12 -->
         </div><!-- /.row -->

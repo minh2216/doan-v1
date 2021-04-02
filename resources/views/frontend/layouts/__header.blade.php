@@ -48,17 +48,10 @@
 
 <div class="main-menu">
     <ul>
-        <li class="current-menu-item"><a href="{{route('home.index')}}">Home</a></li>
-        <li><a href="{{route('product.index', 'khach-san')}} ">Hotel</a></li>
-        <li><a href="{{route('thong-tin-sp.index')}}">Detail-Hotel</a></li>
-        <li class="menu-item-has-children"><a href="#">Pages</a>
-            <ul class="sub-menu">
-                <li> <a href="{{route('blog.index')}}">Blog</a></li>
-                <li> <a href="{{route('blog.detail')}}">Detail-Blog</a></li>
-            </ul>
-        </li>
-
-    
+        <li class="current-menu-item"><a href="{{route('home.index')}}">Trang chủ</a></li>
+        <li><a href="{{route('product.index', 'khach-san')}} ">Khách sạn</a></li>
+        <li><a href="{{route('product.index', 'homestay')}} ">Homestay</a></li>
+        <li> <a href="{{route('news.index','tin-tuc')}}">Tin tức</a></li>
     </ul>
     <div class="mobile-menu">
         <div class="menu-click">
@@ -69,8 +62,7 @@
     </div>
 </div><!-- end main menu -->
             <div class="rt-nav-tolls d-flex align-items-center">
-    <span class="d-md-inline d-none"><a href="{{route('contact.index')}}" class="rt-btn rt-gradient2 rt-rounded text-uppercase rt-Bshadow-1">Contact
-            Us</a></span>
+    <span class="d-md-inline d-none"><a href="{{route('contact.index')}}" class="rt-btn rt-gradient2 rt-rounded text-uppercase rt-Bshadow-1">Liên hệ</a></span>
 </div>
     
           </div>
