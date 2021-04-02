@@ -46,19 +46,16 @@ class FrontendController extends Controller {
             $name = $request->get('username');
             $request->session()->put('username',$request->get('username'));
             $value = $request->session()->get('username');
-            session_start();
-            return redirect()->route('home.index')->with('login', 'success')->with('name',$name);
+            return redirect()->route('home.index')->with('login', 'success');
         }
 
         return redirect()->route('home.index')->with('login', 'failed');
 
     }
 
-    public function logout() {
-        session_start();
-        unset($_SESSION);
-        session_destroy();
-        Auth::guard('member')->logout();
+    public function logout(Request $request) {
+        $request->session()->flush();
+        \Auth::guard('member')->logout();
         return redirect()->route('home.index');
     }
 

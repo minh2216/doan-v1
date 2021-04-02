@@ -48,7 +48,7 @@ Route::group(['middleware' => 'frontend'], function() {
     Route::get('/detail-product/{alias}', ['as' => 'product.detail', 'uses' => 'Frontend\ProductController@detail2']);
     Route::post('/order', ['as' => 'product.order', 'uses' => 'Frontend\ProductController@order']);
     Route::post('/sign-in', ['as' => 'account.login', 'uses' => 'Frontend\FrontendController@login']);
-
+    Route::get('/log-out', ['as' => 'account.logout', 'uses' => 'Frontend\FrontendController@logout']);
     // Route::post('/sign-in', ['as' => 'account.login', 'uses' => 'Frontend\FrontendController@login']);
     Route::post('/create-login', ['as' => 'account.create', 'uses' => 'Frontend\FrontendController@create']);
     Route::get('/thong-tin-sp', ['as' => 'thong-tin-sp.index', 'uses' => 'Frontend\FrontendController@thongtinsp']);

@@ -38,7 +38,7 @@ class RoomController extends Controller {
         }
         $product_id = $this->roomRepo->GetTitleHotel();
         $item = \App\Product::all();
-        return view('backend/room/index', compact('records','item','title'));
+        return view('backend/room/index', compact('records','item'));
     }
 
     /**

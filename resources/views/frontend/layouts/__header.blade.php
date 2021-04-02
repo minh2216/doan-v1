@@ -21,12 +21,10 @@
                         </li>
                     <li><a href="#"><i class="fas fa-briefcase"></i>My Trips</a></li>
                     <li><a href="#" data-target="#rtmodal-1" data-toggle="modal">
-                        @if(Session('login')=='success') 
-                        <a href="#" class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-globe-americas"></i>{!!Session('name')!!}</a>
+                        @if(session()->has('username')) 
+                        <a href="#" class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-globe-americas"></i>{!!Session('username')!!}</a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">English</a>
-                            <a class="dropdown-item" href="#">French</a>
-                            <a class="dropdown-item" href="#">Trukis</a>
+                            <a class="dropdown-item" href="{!!route('account.logout')!!}" data-action="logout">Log out</a>
                         </div> 
                         @else 
                         <i class="far fa-user-circle"></i>Sign in / Register 
