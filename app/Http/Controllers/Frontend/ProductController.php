@@ -266,4 +266,15 @@ class ProductController extends Controller {
         return view('frontend/product/order', compact('time','total_price','tax','cost'));
     }
 
+    public function create_order(Request $request) {
+        ini_set('memory_limit', '2048M');
+        return view('frontend/product/order');
+    }
+
+    public function detail_order(Request $request) {
+        ini_set('memory_limit', '2048M');
+        
+        return view('frontend/product/order');
+    }
+
 }

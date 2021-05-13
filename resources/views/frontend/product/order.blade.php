@@ -12,91 +12,6 @@
     </div>
 </div>
 
-<!-- Modal -->
-<div class="modal fade" id="rtmodal-1" tabindex="-1" role="dialog" aria-labelledby="rtmodal-1"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered rt-lgoinmodal " role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <div class="rt-modal-headr rt-mb-20 one">
-                    <img src="{{asset('public/assets/frontend/images/logo/Logo-icon.png')}}" alt="modal logo" draggable="false">
-                    <h4>Login in to Emigrar</h4>
-                    <p>Log in to get in the moment updates on the things
-                        that interest you.</p>
-                </div><!-- /.rt-modal-headr -->
-                <div class="rt-modal-headr rt-mb-20 two">
-                    <img src="{{asset('public/assets/frontend/images/logo/Logo-icon.png')}}" alt="modal logo" draggable="false">
-                    <h4>Create your Account</h4>
-                    <p>Log in to get in the moment updates on the things
-                        that interest you.</p>
-                </div><!-- /.rt-modal-headr -->
-                <div class="rt-modal-input one">
-                    <form action="#" class="rt-form">
-                        <input type="text" class="form-control pill rt-mb-15" placeholder="User name">
-                        <input type="password" class="form-control pill rt-mb-15" placeholder="Password">
-                        <div class="form-group forgot-pass">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="gridCheckss">
-                                <label class="form-check-label" for="gridCheckss">
-                                     Remember Password
-                                </label>
-                            </div><!-- ./orm-group -->
-                        </div>
-                            <input type="submit" class="rt-btn rt-gradient pill d-block text-uppercase " value="Log In">
-                    </form>
-                    <div class="ac-register">
-                        <span>Don’t have an account? <a href="#" class="open-creatac">Sign Up Now <i class="icofont-double-right"></i></a></span>
-                    </div><!-- /.ac-register -->
-                </div><!-- /.rt-modal-input -->
-                <div class="rt-modal-input two">
-                    <form action="#" class="rt-form">
-                        <input type="text" class="form-control pill rt-mb-15" placeholder="User name">
-                        <input type="password" class="form-control pill rt-mb-15" placeholder="Enter your mail address">
-                        <input type="password" class="form-control pill rt-mb-15" placeholder="Password">
-                        <div class="form-group forgot-pass">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="gridCheck333">
-                                <label class="form-check-label" for="gridCheck333">
-                                    I'd like to hear about promos, new products,and much more!
-                                </label>
-                            </div><!-- ./orm-group -->
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="gridCheck222">
-                                <label class="form-check-label" for="gridCheck222">
-                                    By clicking "Sign up" you agree to our Terms of Service and Privacy Policy
-                                </label>
-                            </div><!-- ./orm-group -->
-                        </div>
-                            <input type="submit" class="rt-btn rt-gradient pill d-block text-uppercase " value="Log In">
-                    </form>
-                    <div class="ac-register">
-                        <span>Already have an account?<a href="#">LOGIN <i class="icofont-double-right"></i></a></span>
-
-                    </div><!-- /.ac-register -->
-                </div><!-- /.rt-modal-input -->
-                <div class="rt-modal-footer">
-                    <span>Or</span>
-                    <h4>Sign Up with social media</h4>
-                    <ul class="rt-social rt-circle-style2">
-                
-                        <li><a href="#"><i class="icofont-facebook"></i></a></li>
-                        <li><a href="#"><i class="icofont-twitter"></i></a></li>
-                        <li><a href="#"><i class="icofont-linkedin"></i></a></li>
-                    </ul>
-                </div><!-- /.rt-modal-footer -->
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-
-
-
-
-
 
 <div class="rt-breadcump rt-breadcump-height">
     <div class="rt-page-bg rtbgprefix-cover" style="background-image: url({{asset('public/assets/frontend/images/backgrounds/bredcump.png')}})">
@@ -132,23 +47,13 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h4 class="rt-strong text-uppercase rt-mb-20"> Review your Booking </h4>
+                <h4 class="rt-strong text-uppercase rt-mb-20"> Thông tin đặt phòng </h4>
             </div><!-- /.col-12 -->
             <div class="col-xl-9">
-                <div class="alert rt-alrt-1">
-                    <div class="media">
-                        <i class="icofont-check mr-2"></i>
-                        <div class="media-body">
-                            <h6 class="mt-0 rt-semiblod">Nice Job! You picked one of our best Hotel..</h6>
-                            Book now so you don't miss out on this price!
-                        </div>
-                    </div>
-                </div><!-- /.alert -->
-                <div class="section-title-spacer"></div><!-- /.rt-section-title-spacer -->
                 <div class="flt-dtls-box rt-mb-30">
                     <div class="upper-top-content d-md-flex flex-md-row justify-content-md-between align-items-center">
                         <div class="left">
-                            <span>Candlewood Suites NYC - </span<span>Times Square</span>
+                            <span>Candlewood Suites NYC - </span><span>Times Square</span>
                             <p>Times Square | 4.8 km from downtown   | Near the subway</p>
                         </div><!-- /.left -->
                         <div class="right">
@@ -322,29 +227,26 @@
                         <ul>
                             <li class="clearfix">
 
-                                <span>1 Phòng x {!!$time!!} Đêm</span>
+                                <span>1 Phòng x 2 Đêm</span>
                                 <br>
-                                <span class="float-right">{!!number_format($total_price)!!} VNĐ</span>
+                                <span class="float-right">200 VNĐ</span>
                             </li>
                             <li class="clearfix">
 
                                 <span>Thuế GTGT (VAT 10%)</span>
                                 <br>
-                                <span class="float-right">{!!number_format($tax)!!} VNĐ</span>
+                                <span class="float-right">20 VNĐ</span>
                             </li>
                             <li class="clearfix sub-total">
 
                                 <span>Tổng</span>
-                                <span class="float-right">{!!number_format($cost)!!} <small>VNĐ</small></span>
+                                <span class="float-right">220 <small>VNĐ</small></span>
                             </li>
 
                         </ul>
                         <div class="text-center rt-mb-30">
                             <a href="#" class="rt-btn rt-gradient pill rt-sm2">Continue Booking</a>
                         </div><!-- /.text-center -->
-                        <p class="f-size-12 line-height-12">By proceeding, I acknowledge that I
-                            have read and agree to Emigrar
-                            <a href="#">Terms of Use</a> and <a href="#">Privacy Statement.</a></p>
                     </div><!-- /.rt-widget -->
 
                     <div class="plain-box pl-md-3">

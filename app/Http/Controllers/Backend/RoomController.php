@@ -82,8 +82,6 @@ class RoomController extends Controller {
         $room = $this->roomRepo->create($input);
         //Thêm vào lịch sử đăng bài
         $this->addPostHistory($room);
-        //thêm khách sạn     
-        $room->product()->attach($input['product_id']);
         //Thêm danh mục sản phẩm
         // $product->categories()->attach($input['category_id']);
         //Thêm thuộc tính sản phẩm

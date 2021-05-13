@@ -47,7 +47,7 @@ Route::group(['middleware' => 'frontend'], function() {
     Route::get('/tin-tuc/{alias}', ['as' => 'news.detail', 'uses' => 'Frontend\NewsController@detail2']);
 
 
-    Route::post('/order', ['as' => 'product.order', 'uses' => 'Frontend\ProductController@order']);
+    Route::get('/order', ['as' => 'detail.order', 'uses' => 'Frontend\ProductController@detail_order']);
     Route::post('/sign-in', ['as' => 'account.login', 'uses' => 'Frontend\FrontendController@login']);
 <<<<<<< HEAD
     Route::get('/log-out', ['as' => 'account.logout', 'uses' => 'Frontend\FrontendController@logout']);

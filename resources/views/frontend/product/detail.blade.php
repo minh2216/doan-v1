@@ -332,7 +332,7 @@
                                           <span aria-hidden="true" style="font-size: 50px;">&times;</span>
                                         </button>
                                       </div>
-                                      <form action="{!!route('product.order')!!}" method="POST" enctype="multipart/form-data">
+                                      <form action="{!!route('detail.order')!!}" method="get" enctype="multipart/form-data">
                                         @csrf
                                       <div class="modal-body">
                                             <div class="rt-input-group">
