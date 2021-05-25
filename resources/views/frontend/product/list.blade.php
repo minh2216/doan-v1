@@ -121,7 +121,7 @@
     <div class="bredcump-search">
         <div class="container">
             <div class="row">
-                <div class="col-lg-9 mx-auto">
+                <div class="col-lg-10 mx-auto">
                     <div class="rt-banner-searchbox flight-search wow fade-in-bottom" data-wow-duration="1s" data-wow-delay="1s">
                         <div class="tab-content" id="myTabContent">
                             <!-- <div class="tab-pane rtIncative" id="rt-item_a_first" role="tabpanel" aria-labelledby="rt-item_a_first">
@@ -234,19 +234,22 @@
                                          </div><!-- ./dropdown -->
                                      </div><!-- /.radio-group -->
                                      <div class="rt-input-group">
-                                         <div class="single-input  col-rt-in-4">
+                                         <div class="single-input  col-rt-in-3">
                                              <input type="text" class="form-control" placeholder="Địa điểm">
 
                                          </div><!-- /.single-input -->
-                                         <div class="single-input  col-rt-in-4">
+                                         <div class="single-input  col-rt-in-3">
                                              <input type="text" class="form-control rt-date-picker has-icon"
                                                  placeholder="Ngày nhận phòng">
                                              <span class="input-iconbadge"><i class="icofont-ui-calendar"></i></span>
                                          </div><!-- /.single-input -->
-                                         <div class="single-input  col-rt-in-4">
+                                         <div class="single-input  col-rt-in-3">
                                              <input type="text" class="form-control rt-date-picker has-icon"
                                                  placeholder="Ngày trả phòng">
                                              <span class="input-iconbadge"><i class="icofont-ui-calendar"></i></span>
+                                         </div><!-- /.single-input -->
+                                          <div class="single-input  col-rt-in-3">
+                                             <input type="text" class="form-control" placeholder="keywords(optional)">
                                          </div><!-- /.single-input -->
                                          <div class="single-input  col-rt-in-1">
                                              <button type="submit"><i class="icofont-search"></i></button>

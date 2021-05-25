@@ -19,7 +19,7 @@
                             <a class="dropdown-item" href="#">Trukis</a>
                         </div>
                         </li>
-                    <li><a href="#"><i class="fas fa-briefcase"></i>My Trips</a></li>
+                    <li><a href="{!!route('detail.order')!!}"><i class="fas fa-briefcase"></i>My Trips</a></li>
                     <li><a href="#" data-target="#rtmodal-1" data-toggle="modal">
                         @if(session()->has('username')) 
                         <a href="#" class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-globe-americas"></i>{!!Session('username')!!}</a>
