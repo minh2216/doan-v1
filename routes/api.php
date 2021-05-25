@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
-
+use App\Http\Controllers\Frontend\ProductController;
 /*
   |--------------------------------------------------------------------------
   | API Routes
@@ -43,3 +43,5 @@ Route::post('/upload', ['as' => 'api.upload', 'uses' => 'Api\FrontendController@
 Route::post('/uploadImage', ['as' => 'api.uploadimage', 'uses' => 'Api\FrontendController@uploadImage']);
 Route::post('/delete_image', ['as' => 'api.upload', 'uses' => 'Api\FrontendController@delete_image']);
 Route::post('/get' , ['as' => 'api.select_address', 'uses' => 'Api\BackendController@getStateList']);
+
+Route::Get('/getData',[ProductController::class,'getData']);

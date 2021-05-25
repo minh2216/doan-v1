@@ -111,7 +111,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-md-2  control-label text-right text-semibold" for="images">Hình ảnh:</label>
+                                        <label class="col-md-2  control-label text-right text-semibold" >Hình ảnh:</label>
                                         <div class="col-lg-10 div-image">
                                             <div class="file-input file-input-ajax-new">
                                                 <div class="file-preview ">

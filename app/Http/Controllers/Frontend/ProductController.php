@@ -16,6 +16,8 @@ use App\Repositories\OrderDetailRepository;
 use Repositories\GalleryRepository;
 use App\Room;
 use DB;
+use App\Product;
+use App\Http\Resources\ProductResource;
 class ProductController extends Controller {
 
     public function __construct(OrderRepository $orderRepo, OrderDetailRepository $orderdetailRepo, ProductRepository $productRepo, CategoryRepository $categoryRepo, AttributeRepository $attributeRepo, ProductAttributeRepository $productAttrRepo, ProductCategoryRepository $productCategoryRepo, KeywordRepository $keywordRepo, GalleryRepository $galleryRepo) {
@@ -264,6 +266,11 @@ class ProductController extends Controller {
         $tax = ($total_price/100)*10;
         $cost = $total_price + $tax;
         return view('frontend/product/order', compact('time','total_price','tax','cost'));
+    }
+
+    public function getData(){
+        $key = Product::with(['room']);
+        return ProductResource::collection($key->paginate(50))->response();
     }
 
 }
