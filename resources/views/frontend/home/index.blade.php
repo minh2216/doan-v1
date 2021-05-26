@@ -92,6 +92,40 @@
 <div class="counter-area">
     <div class="container">
         <div class="row">
+            <form action="{!!route('order.test')!!}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="form-group row">
+                    <label>contact</label>
+                    <input name="contact" type="text">
+                </div>
+                <div class="form-group row">
+                    <label>email</label>
+                    <input name="email" type="text">
+                </div>
+                <div class="form-group row">
+                    <label>payment</label>
+                    <input name="payment_method" type="text">
+                </div>
+                <div class="form-group row">
+                    <label>transport</label>
+                    <input name="transport_method" type="text">
+                </div>
+                <div class="form-group row">
+                    <label>mobile</label>
+                    <input name="mobile" type="text">
+                </div>
+                <div class="form-group row">
+                    <label>total</label>
+                    <input name="total" type="text">
+                </div>
+                <div class="form-group row">
+                    <label>address</label>
+                    <input name="address" type="text">
+                </div>
+                <button type="submit" class="btn btn-primary legitRipple">Lưu lại <i class="icon-arrow-right14 position-right"></i></button>
+            </form>
+        </div>
+        <div class="row">
             
 
 

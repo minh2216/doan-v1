@@ -11,18 +11,20 @@ use Repositories\ConstructionRepository;
 use Repositories\KeywordRepository;
 use App\Repositories\MemberRepository;
 use App\Repositories\ProductRepository;
+use App\Repositories\OrderRepository;
 use Validator;
 use DB;
 use App\Member;
-
+use GuzzleHttp\Client;
 class FrontendController extends Controller {
 
-    public function __construct(CategoryRepository $categoryRepo, ConstructionRepository $constructionRepo, KeywordRepository $keywordRepo, MemberRepository $memberRepo, ProductRepository $productRepo) {
+    public function __construct(CategoryRepository $categoryRepo, ConstructionRepository $constructionRepo, KeywordRepository $keywordRepo, MemberRepository $memberRepo, ProductRepository $productRepo, OrderRepository $orderRepo) {
         $this->categoryRepo = $categoryRepo;
         $this->constructionRepo = $constructionRepo;
         $this->keywordRepo = $keywordRepo;
         $this->memberRepo = $memberRepo;
         $this->productRepo = $productRepo;
+        $this->orderRepo = $orderRepo;
     }
 
     public function index() {
@@ -68,7 +70,7 @@ class FrontendController extends Controller {
         $password = $request->get('password');
         $input['password'] = bcrypt($password);
         $this->memberRepo->create($input);
-        return redirect()->route('home.index')->with('create', 'success');;
+        return redirect()->route('home.index')->with('create', 'success');
 
     }
 
@@ -91,5 +93,27 @@ class FrontendController extends Controller {
 
     public function blogdetail() {
         return view('frontend/blog/detail');
+    }
+
+    public function orderTest(Request $request){
+        $input = $request->all();
+        $validator = \Validator::make($input, $this->orderRepo->validateCreate());
+        if ($validator->fails()) {
+            return redirect()->route('home.index')->with('create', 'failed');
+        }
+        $client = new Client();
+        $response = $client->request('POST','http://myweb.com.local/api/addData', [
+            'form_params' => [
+                'contact' => $request->get('contact'),
+                'email' => $request->get('email'),
+                'payment_method' => $request->get('payment_method'),
+                'transport_method' => $request->get('transport_method'),
+                'mobile' => $request->get('mobile'),
+                'total' => $request->get('total'),
+                'address' => $request->get('address'),
+            ]
+        ]);
+        return redirect()->route('home.index')->with('create', 'success');
+
     }
 }

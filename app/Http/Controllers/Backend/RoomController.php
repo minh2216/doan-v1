@@ -82,10 +82,7 @@ class RoomController extends Controller {
         $room = $this->roomRepo->create($input);
         //Thêm vào lịch sử đăng bài
         $this->addPostHistory($room);
-<<<<<<< HEAD
         //thêm khách sạn     
-=======
->>>>>>> e6b4b294757d00b1316581aca67f9dfda7985f6b
         //Thêm danh mục sản phẩm
         // $product->categories()->attach($input['category_id']);
         //Thêm thuộc tính sản phẩm
@@ -209,5 +206,6 @@ class RoomController extends Controller {
         $post_history['module'] = 'product';
         $this->postHistoryRepo->create($post_history);
     }
+
 
 }

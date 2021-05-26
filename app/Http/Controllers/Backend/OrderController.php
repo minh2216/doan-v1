@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Backend;
 use App\Repositories\OrderRepository;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Order;
+use App\Http\Resources\OrderResource;
 
 class OrderController extends Controller
 {
@@ -26,5 +28,11 @@ class OrderController extends Controller
     {
         $this->orderRepo->delete($id);
         return redirect()->back()->with('success','Xóa thành công');
+    }
+
+    public function addData(Request $request){
+        $order = Order::create($request->all());
+        dd($order);
+        return new OrderResource($order);
     }
 }

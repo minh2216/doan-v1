@@ -57,4 +57,5 @@ Route::group(['middleware' => 'frontend'], function() {
     Route::get('/contact', ['as' => 'contact.index', 'uses' => 'Frontend\FrontendController@contact']);
     Route::get('/blog', ['as' => 'blog.index', 'uses' => 'Frontend\FrontendController@blog']);
     Route::get('/blog-detail', ['as' => 'blog.detail', 'uses' => 'Frontend\FrontendController@blogdetail']);
+    Route::post('/test',['as'=>'order.test', 'uses'=>'Frontend\FrontendController@orderTest']);
 });

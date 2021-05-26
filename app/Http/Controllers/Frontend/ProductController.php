@@ -271,7 +271,7 @@ class ProductController extends Controller {
     public function getData(){
         $key = Product::with(['room']);
         return ProductResource::collection($key->paginate(50))->response();
-    };
+    }
 
 
 }
