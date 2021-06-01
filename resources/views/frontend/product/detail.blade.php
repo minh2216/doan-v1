@@ -332,18 +332,18 @@
                                           <span aria-hidden="true" style="font-size: 50px;">&times;</span>
                                         </button>
                                       </div>
-                                      <form action="{!!route('detail.order')!!}" method="get" enctype="multipart/form-data">
+                                      <form action="{!!route('post.order')!!}" method="post" enctype="multipart/form-data">
                                         @csrf
                                       <div class="modal-body">
                                             <div class="rt-input-group">
                                                 <div class="container">
                                                     <div class="row">
                                                         <div class="single-input  col-rt-in-4 col-6" style="padding: 0px;">
-                                                           <input type="text" class="form-control rt-date-picker has-icon" placeholder="Depart" name="checkin_time">
+                                                           <input autocomplete="off" type="text" class="form-control rt-date-picker has-icon" placeholder="Depart" name="checkin_time">
                                                            <span class="input-iconbadge"><i class="icofont-ui-calendar"></i></span>
                                                         </div><!-- /.single-input -->
                                                         <div class="single-input  col-rt-in-4 col-6" style="padding: 0px;">
-                                                            <input type="text" class="form-control rt-date-picker has-icon" placeholder="Return" name="checkout_time">
+                                                            <input autocomplete="off" type="text" class="form-control rt-date-picker has-icon" placeholder="Return" name="checkout_time">
                                                             <span class="input-iconbadge"><i class="icofont-ui-calendar"></i></span>
                                                         </div><!-- /.single-input -->
                                                         <input type="hidden" value ="{!!$product->id!!}"name="product_id">
@@ -369,8 +369,6 @@
                                 <div class="flight-list-box rt-mb-30">
                                     <h3 class="f-size-18 rt-semiblod rt-mt-15 rt-mb-30">Hotel Description</h3>
                                    
-                                        <h3 class="f-size-16 rt-semiblod text-uppercase"><span class="rt-mr-15">Opened: 1990</span> <span class="rt-mr-15">Number of rooms: 142</span> Renovated: 2016</h3>
-                                    <br>
                                     <p>
                                         {!!$product->content!!}
                                     </p>                                

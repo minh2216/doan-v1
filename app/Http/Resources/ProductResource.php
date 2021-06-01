@@ -19,6 +19,7 @@ class ProductResource extends JsonResource
             'title' => $this->title,
             'room' => RoomResource::collection($this->whenLoaded('room')),
             'description' => $this->description,
+            'images' => $this->images,
         ];
     }
 }

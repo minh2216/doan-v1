@@ -40,25 +40,17 @@
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane show active" id="rt-item_a_first" role="tabpanel" aria-labelledby="rt-item_a_first">
                     <form action="#">
-                        <div class="rt-radio-group">
-                            <div class="dropdown form-check-inline rt-searchlink">
-                                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink24" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                    Guestes per room
-                                </a>
-                        
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink24">
-                                    <a class="dropdown-item" href="#">Room one</a>
-                                    <a class="dropdown-item" href="#">Room two</a>
-                                    <a class="dropdown-item" href="#">Room three</a>
-                                </div>
-                            </div><!-- ./dropdown -->
-                        </div><!-- /.radio-group -->
                         <div class="rt-input-group">
                             <div class="single-input  col-rt-in-3">
-                                <input type="text" class="form-control" placeholder="destination">
-                               
+                            <select class="rt-selectactive banner-select" name="from" style="width: 100%">
+                                <option value="0">Tất cả</option>
+                                <option value="2">100</option>
+                                <option value="3">100</option>
+                                <option value="4">400</option>
+                                <option value="5">500</option>
+                            </select>
                             </div><!-- /.single-input -->
+
                             <div class="single-input  col-rt-in-3">
                                <input type="text" class="form-control rt-date-picker has-icon" placeholder="Depart">
                                <span class="input-iconbadge"><i class="icofont-ui-calendar"></i></span>
@@ -91,40 +83,6 @@
  -->
 <div class="counter-area">
     <div class="container">
-        <div class="row">
-            <form action="{!!route('order.test')!!}" method="POST" enctype="multipart/form-data">
-                @csrf
-                <div class="form-group row">
-                    <label>contact</label>
-                    <input name="contact" type="text">
-                </div>
-                <div class="form-group row">
-                    <label>email</label>
-                    <input name="email" type="text">
-                </div>
-                <div class="form-group row">
-                    <label>payment</label>
-                    <input name="payment_method" type="text">
-                </div>
-                <div class="form-group row">
-                    <label>transport</label>
-                    <input name="transport_method" type="text">
-                </div>
-                <div class="form-group row">
-                    <label>mobile</label>
-                    <input name="mobile" type="text">
-                </div>
-                <div class="form-group row">
-                    <label>total</label>
-                    <input name="total" type="text">
-                </div>
-                <div class="form-group row">
-                    <label>address</label>
-                    <input name="address" type="text">
-                </div>
-                <button type="submit" class="btn btn-primary legitRipple">Lưu lại <i class="icon-arrow-right14 position-right"></i></button>
-            </form>
-        </div>
         <div class="row">
             
 
@@ -296,7 +254,11 @@
 </html>
 
 
-
+<script type="text/javascript">
+    $(document).ready(function() {
+    $('.js-example-basic-single').select2();
+});
+</script>
 
 
 
