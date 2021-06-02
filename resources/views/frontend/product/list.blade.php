@@ -219,24 +219,21 @@
                             </div> -->
                             <div class="tab-pane  show active" id="rt-item_a_second" role="tabpanel" aria-labelledby="rt-item_a_second">
                                  <form action="#">
-                                     <div class="rt-radio-group">
-                                         <div class="dropdown form-check-inline rt-searchlink">
-                                             <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink24"
-                                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                 Guestes per room
-                                             </a>
 
-                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink24">
-                                                 <a class="dropdown-item" href="#">Room one</a>
-                                                 <a class="dropdown-item" href="#">Room two</a>
-                                                 <a class="dropdown-item" href="#">Room three</a>
-                                             </div>
-                                         </div><!-- ./dropdown -->
-                                     </div><!-- /.radio-group -->
                                      <div class="rt-input-group">
                                          <div class="single-input  col-rt-in-3">
-                                             <input type="text" class="form-control" placeholder="Địa điểm">
-
+                                          <style type="text/css">
+                                            .select2-container--default .select2-selection--single .select2-selection__rendered{
+                                              padding-left: 15px;
+                                            }
+                                          </style>
+                                            <select class="rt-selectactive banner-select" name="from" style="width: 100%">
+                                                <option value="">Loại phòng</option>
+                                                <option value="2">100</option>
+                                                <option value="3">100</option>
+                                                <option value="4">400</option>
+                                                <option value="5">500</option>
+                                            </select>
                                          </div><!-- /.single-input -->
                                          <div class="single-input  col-rt-in-3">
                                              <input type="text" class="form-control rt-date-picker has-icon"
@@ -249,10 +246,46 @@
                                              <span class="input-iconbadge"><i class="icofont-ui-calendar"></i></span>
                                          </div><!-- /.single-input -->
                                           <div class="single-input  col-rt-in-3">
-                                             <input type="text" class="form-control" placeholder="keywords(optional)">
+                                             <style type="text/css">
+                                            .select2-container--default .select2-selection--single .select2-selection__rendered{
+                                              padding-left: 15px;
+                                            }
+                                          </style>
+                                            <select class="rt-selectactive banner-select" name="from" style="width: 100%">
+                                                <option value="">Khu vực</option>
+                                                <option value="1">Hải Phòng</option>
+                                                <option value="2">Hà Nội</option>
+                                                <option value="3">TP Hồ Chí Minh</option>
+                                            </select>
                                          </div><!-- /.single-input -->
-                                         <div class="single-input  col-rt-in-1">
-                                             <button type="submit"><i class="icofont-search"></i></button>
+                                     </div><!-- /.rt-input-group -->
+
+                                     <div class="rt-input-group" style="padding-top: 20px;">
+                                          <div class="single-input  col-rt-in-3">
+                                             <style type="text/css">
+                                            .select2-container--default .select2-selection--single .select2-selection__rendered{
+                                              padding-left: 15px;
+                                            }
+                                          </style>
+                                            <select class="rt-selectactive banner-select" name="from" style="width: 100%">
+                                                <option value="">Đánh giá sao</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                            </select>
+                                         </div><!-- /.single-input -->
+                                         <div class="single-input  col-rt-in-3">
+                                             <input type="text" class="form-control" placeholder="Giá thấp nhất">
+
+                                         </div><!-- /.single-input -->
+                                         <div class="single-input  col-rt-in-3">
+                                             <input type="text" class="form-control" placeholder="Giá cao nhất">
+
+                                         </div><!-- /.single-input -->
+                                         <div class="single-input  col-rt-in-3">
+                                             <button type="submit" style="width: 100%;"><i class="icofont-search" style="margin-right: 5px;"></i>Tìm kiếm</button>
                                          </div><!-- /.single-input -->
                                      </div><!-- /.rt-input-group -->
                                  </form><!-- ./ form -->
@@ -1435,399 +1468,9 @@
         <div class="row">
             <div class="col-xl-3 mx-auto col-lg-3 col-md-6">
                 <div class="rt-sidebar-group">
-    <div class="rt-widget widget_rating">
-        <h3 class="rt-widget-title">
-            Star Rating
-        </h3><!-- /.rt-widget-title -->
-        <ul>
-            <li class="clearfix">
-        
-                <div class="form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="Hotel_gridCheckrt-1xs">
-                    <label class="form-check-label" for="Hotel_gridCheckrt-1xs">
-                    <span> 
-                        <i class="icofont-star review"></i>
-                        <i class="icofont-star review"></i> 
-                        <i class="icofont-star review"></i>
-                        <i class="icofont-star review"></i>
-                        <i class="icofont-star"></i>
-                    </span>
-                    </label>
-                </div><!-- ./orm-group -->
-                
-            </li>
-            <li class="clearfix">
-        
-                <div class="form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="Hotel_gridCheckrt-2xs">
-                    <label class="form-check-label" for="Hotel_gridCheckrt-2xs">
-                    <span>
-                        <i class="icofont-star review"></i>
-                        <i class="icofont-star review"></i>
-                        <i class="icofont-star review"></i>
-                        <i class="icofont-star review"></i>
-                    </span>
-                    </label>
-                </div><!-- ./orm-group -->
-                
-            </li>
-            <li class="clearfix">
-        
-                <div class="form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="Hotel_gridCheckrt-2xss">
-                    <label class="form-check-label" for="Hotel_gridCheckrt-2xss">
-                    <span>
-                        <i class="icofont-star review"></i>
-                        <i class="icofont-star review"></i>
-                        <i class="icofont-star review"></i>
-                    </span>
-                    </label>
-                </div><!-- ./orm-group -->
-                
-            </li>
-            <li class="clearfix">
-        
-                <div class="form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="Hotel_gridCheckrt-2xssa">
-                    <label class="form-check-label" for="Hotel_gridCheckrt-2xssa">
-                    <span>
-                        <i class="icofont-star review"></i>
-                        <i class="icofont-star review"></i>
-                    </span>
-                    </label>
-                </div><!-- ./orm-group -->
-                
-            </li>
-        </ul>
-    </div><!-- /.rt-widget -->
-    <div class="rt-widget widget_range-slider">
-        <h3 class="rt-widget-title">
-            Filter by Price
-        </h3><!-- /.rt-widget-title -->
-
-        <div class="slider-range"></div>
-        <div class="price_slider_amount">
-            <div class="clearfix">
-                <div class="float-left">
-                    <span>Price:</span>
-                </div><!-- /.float-left -->
-                <div class="float-right">
-                    <input type="text" class="amount" name="price" placeholder="Add Your Price" />
-                </div><!-- /.float-right -->
-            </div><!-- /.clearfix -->
-        </div>
-        <div class="text-center">
-            <input type="submit" value="Filter" class="rt-btn rt-gradient rounded-sm rt-sm text-uppercase" />
-        </div><!-- /.text-center -->
-    </div><!-- /.rt-widget -->
-    <div class="rt-widget widget_plane_time">
-        <h3 class="rt-widget-title">
-            Booking Policy
-        </h3><!-- /.rt-widget-title -->
-        <ul>
-            <li class="clearfix">
-
-                <div class="form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="Hotel_gridCheckrt-1">
-                    <label class="form-check-label" for="Hotel_gridCheckrt-1">
-                    Instant Confirmation
-                    </label>
-                </div><!-- ./orm-group -->
-                
-            </li>
-            <li class="clearfix">
-
-                <div class="form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="Hotel_gridCheckrt-2">
-                    <label class="form-check-label" for="Hotel_gridCheckrt-2">
-                        Free Cancellation
-                    </label>
-                </div><!-- ./orm-group -->
-                
-            </li>
-        </ul>
-    </div><!-- /.rt-widget -->
-    <div class="rt-widget widget_plane_time">
-        <h3 class="rt-widget-title">
-        Bed Type
-        </h3><!-- /.rt-widget-title -->
-        <ul>
-            <li class="clearfix">
-
-                <div class="form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="Hotel_gridCheckrt-3">
-                    <label class="form-check-label" for="Hotel_gridCheckrt-3">
-                        2 Single beds
-                    </label>
-                </div><!-- ./orm-group -->
-                
-            </li>
-            <li class="clearfix">
-
-                <div class="form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="Hotel_gridCheckrt-4">
-                    <label class="form-check-label" for="Hotel_gridCheckrt-4">
-                        1 Queen bed
-                    </label>
-                </div><!-- ./orm-group -->
-                
-            </li>
-        </ul>
-    </div><!-- /.rt-widget -->
-    <div class="rt-widget widget_plane_time">
-        <h3 class="rt-widget-title">
-        Neighborhood
-        </h3><!-- /.rt-widget-title -->
-        <ul>
-            <li class="clearfix">
-
-                <div class="form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="Hotel_gridCheckrt-11">
-                    <label class="form-check-label" for="Hotel_gridCheckrt-11">
-                        New York (and vicinity)
-                    </label>
-                </div><!-- ./orm-group -->
-
-            </li>
-            <li class="clearfix">
-
-                <div class="form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="Hotel_gridCheckrt-111">
-                    <label class="form-check-label" for="Hotel_gridCheckrt-111">
-                        New York
-                    </label>
-                </div><!-- ./orm-group -->
-
-            </li>
-            <li class="clearfix">
-
-                <div class="form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="Hotel_gridCheckrt-1111">
-                    <label class="form-check-label" for="Hotel_gridCheckrt-1111">
-                    Manhattan
-                    </label>
-                </div><!-- ./orm-group -->
-
-            </li>
-            <li class="clearfix">
-
-                <div class="form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="Hotel_gridCheckrt-1s111">
-                    <label class="form-check-label" for="Hotel_gridCheckrt-1s111">
-                    Brooklyn
-                    </label>
-                </div><!-- ./orm-group -->
-
-            </li>
-        </ul>
-        <div class="show-more-links">
-            <a href="#">Show more</a>
-        </div>
-    </div><!-- /.rt-widget -->
-    <div class="rt-widget widget_plane_time">
-        <h3 class="rt-widget-title">
-            Amenities
-        </h3><!-- /.rt-widget-title -->
-        <ul>
-            <li class="clearfix">
-
-                <div class="form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="Hotel_gridCheckrt-22">
-                    <label class="form-check-label" for="Hotel_gridCheckrt-22">
-                        High-speed Internet
-                    </label>
-                </div><!-- ./orm-group -->
-
-            </li>
-            <li class="clearfix">
-
-                <div class="form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="Hotel_gridCheckrt-222">
-                    <label class="form-check-label" for="Hotel_gridCheckrt-222">
-                    Air conditioning
-                    </label>
-                </div><!-- ./orm-group -->
-
-            </li>
-            <li class="clearfix">
-
-                <div class="form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="Hotel_gridCheckrt-2222">
-                    <label class="form-check-label" for="Hotel_gridCheckrt-2222">
-                        Swimming pool
-                    </label>
-                </div><!-- ./orm-group -->
-
-            </li>
-            <li class="clearfix">
-
-                <div class="form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="Hotel_gridCheckrt-2s222">
-                    <label class="form-check-label" for="Hotel_gridCheckrt-2s222">
-                    Free breakfast
-                    </label>
-                </div><!-- ./orm-group -->
-
-            </li>
-        </ul>
-        <div class="show-more-links">
-            <a href="#">Show more</a>
-        </div>
-    </div><!-- /.rt-widget -->
-    <div class="rt-widget widget_plane_time">
-        <h3 class="rt-widget-title">
-            Property Type
-        </h3><!-- /.rt-widget-title -->
-        <ul>
-            <li class="clearfix">
-
-                <div class="form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="Hotel_gridCheckrt-ex-1">
-                    <label class="form-check-label" for="Hotel_gridCheckrt-ex-1">
-                        Hotel
-                    </label>
-                </div><!-- ./orm-group -->
-                
-            </li>
-            <li class="clearfix">
-
-                <div class="form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="Hotel_gridCheckrt-ex-2">
-                    <label class="form-check-label" for="Hotel_gridCheckrt-ex-2">
-                    Private vacation home
-                    </label>
-                </div><!-- ./orm-group -->
-                
-            </li>
-            <li class="clearfix">
-
-                <div class="form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="Hotel_gridCheckrt-ex-3">
-                    <label class="form-check-label" for="Hotel_gridCheckrt-ex-3">
-                        Bed & Breakfast
-                    </label>
-                </div><!-- ./orm-group -->
-                
-            </li>
-
-        </ul>
-        <div class="show-more-links">
-            <a href="#">Show more</a>
-        </div>
-    </div><!-- /.rt-widget -->
-    <div class="rt-widget widget_plane_time">
-        <h3 class="rt-widget-title">
-            Popular Locations
-        </h3><!-- /.rt-widget-title -->
-        <ul>
-            <li class="clearfix">
-
-                <div class="form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="Hotel_gridCheckrt-ex-11">
-                    <label class="form-check-label" for="Hotel_gridCheckrt-ex-11">
-                        Central Park
-                    </label>
-                </div><!-- ./orm-group -->
-            </li>
-            <li class="clearfix">
-
-                <div class="form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="Hotel_gridCheckrt-ex-22">
-                    <label class="form-check-label" for="Hotel_gridCheckrt-ex-22">
-                    Times Square
-                    </label>
-                </div><!-- ./orm-group -->
-            </li>
-            <li class="clearfix">
-
-                <div class="form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="Hotel_gridCheckrt-ex-33">
-                    <label class="form-check-label" for="Hotel_gridCheckrt-ex-33">
-                        Statue of Liberty
-                    </label>
-                </div><!-- ./orm-group -->
-               
-            </li>
-            <li class="clearfix">
-
-                <div class="form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="Hotel_gridCheckrt-ex-3s3">
-                    <label class="form-check-label" for="Hotel_gridCheckrt-ex-3s3">
-                        Empire State Building
-                    </label>
-                </div><!-- ./orm-group -->
-               
-            </li>
-
-        </ul>
-        <div class="show-more-links">
-            <a href="#">Show more</a>
-        </div>
-    </div><!-- /.rt-widget -->
-    <div class="rt-widget widget_plane_time">
-        <h3 class="rt-widget-title">
-            Accessibility
-        </h3><!-- /.rt-widget-title -->
-        <ul>
-            <li class="clearfix">
-
-                <div class="form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="Hotel_gridCheckrt-ex-1rt1">
-                    <label class="form-check-label" for="Hotel_gridCheckrt-ex-1rt1">
-                        Accessible bathroom
-                    </label>
-                </div><!-- ./orm-group -->
-            </li>
-            <li class="clearfix">
-
-                <div class="form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="Hotel_gridCheckrt-ex-2rt2">
-                    <label class="form-check-label" for="Hotel_gridCheckrt-ex-2rt2">
-                    In-room accessibility
-                    </label>
-                </div><!-- ./orm-group -->
-            </li>
-            <li class="clearfix">
-
-                <div class="form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="Hotel_gridCheckrt-ex-3rt3">
-                    <label class="form-check-label" for="Hotel_gridCheckrt-ex-3rt3">
-                    Roll-in shower
-                    </label>
-                </div><!-- ./orm-group -->
-               
-            </li>
-            
-
-        </ul>
-        
-    </div><!-- /.rt-widget -->
 </div><!-- /.rt-sidebar-group -->
             </div><!-- /.col-lg-3 -->
-            <div class="col-xl-9 col-lg-9 mt-5 mt-lg-0">
-                
-                <div class="box-style__1 rt-mb-30">
-                    <form action="#" class="row">
-                        <div class="col-lg-3 col-md-6 mb-3 mb-lg-0">
-                            <button class="rt-btn pill rt-sm rt-gradient d-block">Recommended</button>
-                        </div><!-- /.col-lg-4 -->
-                        <div class="col-lg-3 col-md-6 mb-3 mb-lg-0">
-                            <select class="rt-selectactive banner-select" name="from" style="width: 100%">
-                                <option value="1">Price</option>
-                                <option value="2">100</option>
-                                <option value="3">100</option>
-                                <option value="4">400</option>
-                                <option value="5">500</option>
-                            </select>
-                        </div><!-- /.col-lg-3 -->
-                        <div class="col-lg-3 rt-input-group mini col-md-6  mb-3 mb-md-0">
-                            <input type="text" class="rt-date-picker form-control" placeholder="Departure Time">
-                        </div><!-- /.col-lg-3 -->
-                        <div class="col-lg-3 rt-input-group mini col-md-6 ">
-                            <input type="text" class="form-control rt-date-picker" placeholder="Arrival Time ">
-                        </div><!-- /.col-lg-3 -->
-                    </form>
-                </div><!-- /.flight-list-box -->
+            <div class="col-xl-12 col-lg-12 mt-5 mt-lg-0">
                 @foreach($records as $key => $product)
                 <div class="box-style__1 rt-mb-30">
                     <div class="hotel-inner-content row">
@@ -1836,7 +1479,14 @@
                         </div><!-- /.hotel-thumb -->
                         <div class="hotel-text col-md-9">
                             <div class="top mb-4 mb-md-0">
-                                <h5><a href="{!! route('product.detail',['alias' => $product->alias])!!}">{!!$product->title!!}</a><span> <i class="icofont-star review"></i><i class="icofont-star review"></i> <i class="icofont-star review"></i><i class="icofont-star review"></i> <i class="icofont-star"></i></span></h5>
+                                <h5><a href="{!! route('product.detail',['alias' => $product->alias])!!}">{!!$product->title!!}</a><span>
+                                  @for($i=0;$i<$product->rating;$i++) 
+                                  <i class="icofont-star review"></i>
+                                  @endfor
+                                  @for($i=0;$i<5-($product->rating);$i++) 
+                                  <i class="icofont-star"></i>
+                                  @endfor
+                                </span></h5>
                                 <p>Times Square | 4.8 km from downtown <span>| Near the subway</span></p>
                             </div><!-- /.top -->
                             <div class="middle-text d-md-flex justify-content-md-between mb-4 mb-md-0">
