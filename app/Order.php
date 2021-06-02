@@ -17,7 +17,11 @@ class Order extends Model {
         return $this->belongsToMany('App\Product', 'order_detail', 'order_id', 'product_id')->withPivot('order_id', 'product_id', 'quantity', 'sub_total');
     }
 
-    public function detail() {
+    public function rooms() {
+        return $this->belongsToMany('App\Room', 'order_detail', 'order_id', 'room_id')->withPivot('order_id', 'room_id','quantity');
+    }
+
+    public function order_detail() {
         return $this->hasMany('App\OrderDetail');
     }
 
@@ -27,4 +31,5 @@ class Order extends Model {
     public function total_format(){
         return number_format($this->total);
     }
+    
 }

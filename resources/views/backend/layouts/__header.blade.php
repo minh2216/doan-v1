@@ -13,13 +13,11 @@
 
                 @if($method == 'index')
                 @if($current_route == "admin.product.index")
-                @if(\Auth::user()->user_type_id == 1 && \DB::table('product')->where('user_id',\Auth::user()->id)->count() < 1 || \Auth::user()->user_type_id == 3)
                 @if (\Route::has(str_replace('index', 'create', $current_route)))
                 @if(isset($type)) 
                 <a href="{!!route(str_replace('index', 'create', $current_route), ['type'=>$type])!!}" class="btn btn-link btn-float text-default"><i class="icon-googleplus5 text-primary"></i><span>Thêm mới</span></a>
                 @else
                 <a href="{!!route(str_replace('index', 'create', $current_route))!!}" class="btn btn-link btn-float text-default"><i class="icon-googleplus5 text-primary"></i><span>Thêm mới</span></a>
-                @endif
                 @endif
                 @endif
                 @else

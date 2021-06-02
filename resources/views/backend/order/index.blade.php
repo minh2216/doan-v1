@@ -1,7 +1,7 @@
 @extends('backend.layouts.master')
 @section('content')
     <!-- Content area -->
-    <div class="content">
+    <div class="content" title="{!! trans('base.show') !!}" class="success">
         <!-- Table header styling -->
         <div class="card">
             <div class="card-header header-elements-inline">
@@ -52,7 +52,7 @@
                                 <span class="badge bg-danger-400">Từ chối</span>
                             @endif
                         </td>
-                        <td>{{$record->created_at()}}</td>
+                        <td>{{$record->created_at}}</td>
                         <td class="text-center">
                             <a href="{{route('admin.order.edit', $record->id)}}" title="{!! trans('base.show') !!}" class="success"><i class="icon-eye"></i></a>
                             <form action="{!! route('admin.order.destroy', ['id' => $record->id]) !!}" method="POST" style="display: inline-block">

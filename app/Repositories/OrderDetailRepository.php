@@ -20,4 +20,6 @@ class OrderDetailRepository extends AbstractRepository
     public function model() {
         return 'App\OrderDetail';
     }
+
+    
 }

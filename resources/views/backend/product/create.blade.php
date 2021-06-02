@@ -53,13 +53,7 @@
                                         </div>
                                     </div>
                                     @if($type == 1)
-                                    <div class="form-group row">
-                                        <label class="col-md-2 col-form-label text-right">User <span class="text-danger">*</span></label>
-                                        <div class="col-md-10">
-                                            <input type="text" class="form-control"  name="user_id" value="{{$record}}" readonly >
-                                            {!! $errors->first('user_id', '<span class="text-danger">:message</span>') !!}
-                                        </div>
-                                    </div>
+                                            <input type="hidden" class="form-control"  name="user_id" value="{{$record}}" readonly >
                                     @endif
                                     @if($type == 3)
                                     <div class="form-group row">

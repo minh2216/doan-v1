@@ -48,7 +48,7 @@ class ProductController extends Controller {
         $city =\DB::table('province')->get();
         $district =\DB::table('district')->get();
         if($type == 1){
-            $record = \Auth::user()->username;
+            $record = \Auth::user()->id;
         }
         else if($type == 3){
             $record = \DB::table('user')->where('user_type_id',1)->get();

@@ -17,6 +17,7 @@ use Repositories\GalleryRepository;
 use App\Room;
 use DB;
 use App\Product;
+use App\OrderDetail;
 use App\Http\Resources\ProductResource;
 class ProductController extends Controller {
 
@@ -272,6 +273,19 @@ class ProductController extends Controller {
         $key = Product::with(['room']);
         return ProductResource::collection($key->paginate(50))->response();
     }
+    
 
+
+    public function detail_order(Request $request){
+        $value = $request->session()->get('username');
+        $member_id = \DB::table('member')->where('username', $value)->pluck('id');
+        $order = \DB::table('order')->where('member_id',$member_id)->get();
+        return view('frontend/order/index',compact('order'));
+    }
+
+    public function details($id){
+        $record = $this->orderRepo->find($id);
+        return view('frontend/order/detail',compact('record'));
+    }
 
 }

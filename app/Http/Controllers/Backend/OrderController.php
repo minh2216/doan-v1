@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Order;
 use App\Http\Resources\OrderResource;
-
+use Illuminate\Support\Facades\DB;
 class OrderController extends Controller
 {
     public function __construct(OrderRepository $orderRepo) {
@@ -15,7 +15,10 @@ class OrderController extends Controller
     }
     public function index()
     {
-        $records = $this->orderRepo->all();
+        $id = \Auth::user()->id;
+        $product_id = \DB::table('product')->where('user_id',$id)->pluck('id');
+        $detail = \DB::table('order_detail')->whereIn('product_id',$product_id)->pluck('order_id');
+        $records = \DB::table('order')->whereIn('id',$detail)->get();
         return view('backend/order/index', compact('records'));
     }
     public function show($id)
@@ -32,7 +35,6 @@ class OrderController extends Controller
 
     public function addData(Request $request){
         $order = Order::create($request->all());
-        dd($order);
         return new OrderResource($order);
     }
 }
