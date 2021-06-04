@@ -276,10 +276,15 @@ class ProductController extends Controller {
         $input = $request ->all();
         if(isset($input['contact']) && isset($input['mobile']) && isset($input['email']))
         {
+            $session = session()->all();
+            $member_id = \DB::table('member')->where('username',$session['username'])->pluck('id');
+            foreach($member_id as $member_id);
+            $input['member_id'] = strval($member_id);
             $order = $this->orderRepo->create($input);
             $input['order_id'] = $order->id;
             $order_detail = $this->orderdetailRepo->create($input);
             $alias = \DB::table('product')->where('id',$input['product_id'])->pluck('alias');
+
         }
         return redirect()->route('home.index')->with('status', 'Đặt phòng thành công');;
     }

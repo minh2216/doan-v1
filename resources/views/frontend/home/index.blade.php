@@ -254,11 +254,6 @@
 </body>
 
 
-    <div class="alert alert-success">
-        123
-    </div>
-
-
 <!-- Mirrored from pixner.net/emigrar/emigrar/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 30 Jan 2021 02:49:17 GMT -->
 </html>
 
