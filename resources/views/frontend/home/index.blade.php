@@ -42,25 +42,29 @@
                     <form action="#">
                         <div class="rt-input-group">
                             <div class="single-input  col-rt-in-3">
-                            <select class="rt-selectactive banner-select" name="from" style="width: 100%">
-                                <option value="0">Tất cả</option>
-                                <option value="2">100</option>
-                                <option value="3">100</option>
-                                <option value="4">400</option>
-                                <option value="5">500</option>
+                            <select class="rt-selectactive banner-select" name="rating" style="width: 100%">
+                                <option value="">Đánh giá sao</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
                             </select>
                             </div><!-- /.single-input -->
 
                             <div class="single-input  col-rt-in-3">
-                               <input type="text" class="form-control rt-date-picker has-icon" placeholder="Depart">
-                               <span class="input-iconbadge"><i class="icofont-ui-calendar"></i></span>
+                                <input type="text" class="form-control" placeholder="Giá thấp nhất" name="min-price">
                             </div><!-- /.single-input -->
                             <div class="single-input  col-rt-in-3">
-                                <input type="text" class="form-control rt-date-picker has-icon" placeholder="Return">
-                                <span class="input-iconbadge"><i class="icofont-ui-calendar"></i></span>
+                                <input type="text" class="form-control" placeholder="Giá cao nhất" name="max-price">
                             </div><!-- /.single-input -->
                             <div class="single-input  col-rt-in-3">
-                                <input type="text" class="form-control" placeholder="keywords(optional)">
+                                <select class="rt-selectactive banner-select" name="location" style="width: 100%">
+                                    <option value="">Khu vực</option>
+                                    <option value="1">Hải Phòng</option>
+                                    <option value="2">Hà Nội</option>
+                                    <option value="3">TP Hồ Chí Minh</option>
+                                </select>
                             </div><!-- /.single-input -->
                             <div class="single-input  col-rt-in-1">
                                 <button type="submit"><i class="icofont-search"></i></button>
@@ -250,6 +254,11 @@
 </body>
 
 
+    <div class="alert alert-success">
+        123
+    </div>
+
+
 <!-- Mirrored from pixner.net/emigrar/emigrar/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 30 Jan 2021 02:49:17 GMT -->
 </html>
 
@@ -260,6 +269,19 @@
 });
 </script>
 
+
+<script>
+
+ function CheckSession() {
+            var session = '<%=Session["status"] != null%>';
+            if (session == false) {
+                alert("Đặt phòng thành công");
+            }
+        }
+
+setInterval(CheckSession(),500);
+
+</script>
 
 
 

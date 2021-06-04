@@ -218,56 +218,16 @@
                                </form>
                             </div> -->
                             <div class="tab-pane  show active" id="rt-item_a_second" role="tabpanel" aria-labelledby="rt-item_a_second">
-                                 <form action="#">
-
-                                     <div class="rt-input-group">
-                                         <div class="single-input  col-rt-in-3">
-                                          <style type="text/css">
-                                            .select2-container--default .select2-selection--single .select2-selection__rendered{
-                                              padding-left: 15px;
-                                            }
-                                          </style>
-                                            <select class="rt-selectactive banner-select" name="from" style="width: 100%">
-                                                <option value="">Loại phòng</option>
-                                                <option value="2">100</option>
-                                                <option value="3">100</option>
-                                                <option value="4">400</option>
-                                                <option value="5">500</option>
-                                            </select>
-                                         </div><!-- /.single-input -->
-                                         <div class="single-input  col-rt-in-3">
-                                             <input type="text" class="form-control rt-date-picker has-icon"
-                                                 placeholder="Ngày nhận phòng">
-                                             <span class="input-iconbadge"><i class="icofont-ui-calendar"></i></span>
-                                         </div><!-- /.single-input -->
-                                         <div class="single-input  col-rt-in-3">
-                                             <input type="text" class="form-control rt-date-picker has-icon"
-                                                 placeholder="Ngày trả phòng">
-                                             <span class="input-iconbadge"><i class="icofont-ui-calendar"></i></span>
-                                         </div><!-- /.single-input -->
+                                 <form action="{!!route('product.filter')!!}" method="post" enctype="multipart/form-data">
+                                  @csrf
+                                     <div class="rt-input-group" style="padding-top: 10px;padding-bottom: 10px;">
                                           <div class="single-input  col-rt-in-3">
                                              <style type="text/css">
                                             .select2-container--default .select2-selection--single .select2-selection__rendered{
                                               padding-left: 15px;
                                             }
                                           </style>
-                                            <select class="rt-selectactive banner-select" name="from" style="width: 100%">
-                                                <option value="">Khu vực</option>
-                                                <option value="1">Hải Phòng</option>
-                                                <option value="2">Hà Nội</option>
-                                                <option value="3">TP Hồ Chí Minh</option>
-                                            </select>
-                                         </div><!-- /.single-input -->
-                                     </div><!-- /.rt-input-group -->
-
-                                     <div class="rt-input-group" style="padding-top: 20px;">
-                                          <div class="single-input  col-rt-in-3">
-                                             <style type="text/css">
-                                            .select2-container--default .select2-selection--single .select2-selection__rendered{
-                                              padding-left: 15px;
-                                            }
-                                          </style>
-                                            <select class="rt-selectactive banner-select" name="from" style="width: 100%">
+                                            <select class="rt-selectactive banner-select" name="rating" style="width: 100%">
                                                 <option value="">Đánh giá sao</option>
                                                 <option value="1">1</option>
                                                 <option value="2">2</option>
@@ -277,15 +237,28 @@
                                             </select>
                                          </div><!-- /.single-input -->
                                          <div class="single-input  col-rt-in-3">
-                                             <input type="text" class="form-control" placeholder="Giá thấp nhất">
+                                             <input type="text" class="form-control" placeholder="Giá thấp nhất" name="min-price">
 
                                          </div><!-- /.single-input -->
                                          <div class="single-input  col-rt-in-3">
-                                             <input type="text" class="form-control" placeholder="Giá cao nhất">
+                                             <input type="text" class="form-control" placeholder="Giá cao nhất" name="max-price">
 
                                          </div><!-- /.single-input -->
-                                         <div class="single-input  col-rt-in-3">
-                                             <button type="submit" style="width: 100%;"><i class="icofont-search" style="margin-right: 5px;"></i>Tìm kiếm</button>
+                                          <div class="single-input  col-rt-in-3">
+                                             <style type="text/css">
+                                            .select2-container--default .select2-selection--single .select2-selection__rendered{
+                                              padding-left: 15px;
+                                            }
+                                          </style>
+                                            <select class="rt-selectactive banner-select" name="location" style="width: 100%">
+                                                <option value="">Khu vực</option>
+                                                <option value="1">Hải Phòng</option>
+                                                <option value="2">Hà Nội</option>
+                                                <option value="3">TP Hồ Chí Minh</option>
+                                            </select>
+                                         </div><!-- /.single-input -->
+                                         <div class="single-input  col-rt-in-1">
+                                             <button type="submit"><i class="icofont-search"></i></button>
                                          </div><!-- /.single-input -->
                                      </div><!-- /.rt-input-group -->
                                  </form><!-- ./ form -->

@@ -44,6 +44,8 @@
 
 
 <section class="content-area">
+    <form id="my_order" action="{!!route('post.order-detail')!!}" method="post" enctype="multipart/form-data" class="rt-form rt-line-form flight-lable">
+        @csrf
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -101,124 +103,42 @@
                         </div><!-- /.hotel-inner-content -->
                     </div><!-- /.flight-list-box -->
                 </div><!-- /.flt-dtls-box -->
-                <div
-                    class="flight-list-box rt-mb-30 ask-for-login d-md-flex flex-md-row justify-content-md-between align-items-center pt-30">
-                    <div class="left">
-                        <h6 class="rt-strong">Already a Emigrar member?</h6>
-                        <p>Sign in to earn points and make booking easier!</p>
-                    </div><!-- /.left -->
-                    <div class="right">
-                        <a href="#" class="link-text rt-strong f-size-14" data-toggle="modal" data-target="#rtmodal-1">
-                            <i class="fa fa-user rt-icon icon-gradinet-1 rt-circle mr-2 rt-hw-35"></i><!-- /.fa --> Sign
-                            in</a>
-                    </div><!-- /.left -->
-                </div><!-- /.flight-list-box -->
-                <div class="flight-list-box rt-mb-30 pt-30">
-                    <h4 class="f-size-24 text-capitalize rt-mb-30  rt-semiblod">Passenger Info</h4>
-                    <h6 class="text-333 rt-medium">Passenger 1: Adult ticket</h6>
-                    <br>
-                    <br>
-                    <form action="#" class="rt-form rt-line-form flight-lable">
-                        <div class="row">
-                            <div class="col-md-6 rt-mb-30 ">
-                                <label for="fst-name">First Name</label>
-                                <input type="text" class="form-control" id="fst-name"
-                                    placeholder="Enter Your First Name ">
-                            </div><!-- /.col-md-6 -->
-                            <div class="col-md-6 rt-mb-30">
-                                <label for="lst-name">Last Name</label>
-                                <input type="text" class="form-control" id="lst-name"
-                                    placeholder="Enter Your Last Name ">
-                            </div><!-- /.col-md-6 -->
-                            <div class="col-lg-6 rt-mb-30">
-                                <label for="select-1"></label>
-                                <select id="select-1">
-                                    <option value="1" disabled selected>Select or enter the first character</option>
-                                    <option value="2">Alaska</option>
-                                    <option value="3">Bahamas</option>
-                                    <option value="4">Bermuda</option>
-                                    <option value="5">Canada</option>
-                                    <option value="6">Caribbean</option>
-                                    <option value="7">Europe</option>
-                                    <option value="8">Hawaii</option>
-                                </select>
-                            </div><!-- /.col-md-6 -->
-                            <div class="col-lg-6 rt-mb-30">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <label>Date</label>
-                                        <br>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                                id="inlineRadio2s" value="option2">
-                                            <label class="form-check-label" for="inlineRadio2s">Female</label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                                id="inlineRadio2ss" value="option2">
-                                            <label class="form-check-label" for="inlineRadio2ss">Male</label>
-                                        </div>
-                                    </div><!-- /.col-md-6 -->
-                                    <div class="col-md-6">
-                                        <label for="st-date">date</label>
-                                        <input type="text" class="form-control rt-date-picker" placeholder="date"
-                                            id="st-date">
-                                    </div><!-- /.col-md-6 -->
-                                </div><!-- /.row -->
-                            </div><!-- /.col-md-6 -->
-                            <div class="col-md-6 rt-mb-30">
-                                <label for="select-2">ID</label>
-                                <select id="select-2">
-                                    <option value="1">Passport</option>
-                                    <option value="2">NID</option>
-                                    <option value="3">NTO</option>
 
-                                </select>
-                            </div><!-- /.col-md-6 -->
-                            <div class="col-md-6 rt-mb-30">
-                                <label for="id-number">ID Number</label>
-                                <input type="text" placeholder="ID Number" class="form-control">
-                            </div><!-- /.col-md-6 -->
-                            <div class="col-md-6">
-                                <p class="f-size-14">Please ensure the ID is valid for at least 6 months
-                                    after the date of departure.</p>
-                            </div><!-- /.col-12 -->
-                        </div><!-- /.row -->
-                    </form>
-                </div><!-- /.flight-list-box -->
                 <div class="flight-list-box rt-mb-30 pt-30">
                     <h6 class="text-333 rt-semiblod">Contact Details</h6> <br>
-                    <form action="#" class="rt-form rt-line-form flight-lable">
                         <div class="row">
                             <div class="col-md-6 rt-mb-30">
                                 <label for="contact-name">Contact name</label>
-                                <input type="text" placeholder="Contact name" id="contact-name">
+                                <input type="text" placeholder="Contact name" name="contact" required="">
                             </div><!-- /.col-md-6 -->
                             <div class="col-md-6 rt-mb-30">
                                 <label for="mbl-name">Mobile phone</label>
-                                <input type="tel" placeholder="Enter Your Number" id="mbl-name">
+                                <input type="text" placeholder="Enter Your Number" name="mobile">
                             </div><!-- /.col-md-6 -->
                             <div class="col-md-6">
                                 <label for="eml-name">Email</label>
-                                <input type="tel" placeholder="Enter Your Email" id="eml-name">
+                                <input type="text" placeholder="Enter Your Email" name="email">
                             </div><!-- /.col-md-6 -->
+                            <input type="hidden" value="{{$cost}}" name="total" >
+                            <input type="hidden" value ="{!!$product_id!!}"name="product_id">
+                            <input type="hidden" value ="{!!$room_id!!}"name="room_id">
+                            <input type="hidden" value ="{!!$cost!!}"name="price">
                         </div><!-- /.row -->
-                    </form>
                 </div><!-- /.flight-list-box -->
-                <div class="flight-list-box pt-30">
+<!--                 <div class="flight-list-box pt-30">
                     <h4 class="f-size-24 rt-strong rt-mb-20">Promo Code</h4>
                     <form action="#" class="rt-form rt-line-form flight-lable">
                         <div class="row align-items-end">
                             <div class="col-md-6">
                                 <label>Add promo code</label>
                                 <input type="text" placeholder="Please enter promo code">
-                            </div><!-- /.col-md-6 -->
+                            </div>
                             <div class="col-md-6">
                                 <a href="#" class="rt-btn rt-gradient3 pill text-uppercase rt-sm2">Verify</a>
-                            </div><!-- /.col-md- -->
-                        </div><!-- /.row -->
+                            </div>
+                        </div>
                     </form>
-                </div><!-- /.flight-list-box -->
+                </div> -->
             </div><!-- /.col-lg-9 -->
             <div class="col-lg-3 mx-auto">
                 <div class="rt-sidebar-group">
@@ -229,26 +149,26 @@
 
                                 <span>1 Phòng x 2 Đêm</span>
                                 <br>
-                                <span class="float-right">200 VNĐ</span>
+                                <span class="float-right">{{$total_price}} VNĐ</span>
                             </li>
                             <li class="clearfix">
 
                                 <span>Thuế GTGT (VAT 10%)</span>
                                 <br>
-                                <span class="float-right">20 VNĐ</span>
+                                <span class="float-right">{{$tax}} VNĐ</span>
                             </li>
                             <li class="clearfix sub-total">
 
                                 <span>Tổng</span>
-                                <span class="float-right">220 <small>VNĐ</small></span>
+                                <span class="float-right">{{$cost}} <small>VNĐ</small></span>
                             </li>
 
                         </ul>
                         <div class="text-center rt-mb-30">
-                            <a href="#" class="rt-btn rt-gradient pill rt-sm2">Continue Booking</a>
+                            <a  href="javascript:{}" onclick="document.getElementById('my_order').submit();" class="rt-btn rt-gradient pill rt-sm2" type="submit">Continue Booking</a>
                         </div><!-- /.text-center -->
                     </div><!-- /.rt-widget -->
-
+<!-- 
                     <div class="plain-box pl-md-3">
                         <p class="rt-strong">Payment Method</p>
                         <div class="rt-footer-social">
@@ -266,11 +186,12 @@
 
                             </ul>
                         </div>
-                    </div><!-- /.plain-box -->
+                    </div> -->
                 </div><!-- /.rt-sidebar-group -->
             </div><!-- /.col-lg-3 -->
         </div><!-- /.row -->
     </div><!-- /.container -->
+</form>
 </section>
 
 </body>

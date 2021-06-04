@@ -48,11 +48,17 @@ Route::group(['middleware' => 'frontend'], function() {
 
 
     Route::get('/order', ['as' => 'detail.order', 'uses' => 'Frontend\ProductController@detail_order']);
+
     Route::get('/order-detail/{id}', ['as' => 'order.detail', 'uses' => 'Frontend\ProductController@details']);
+
+    Route::post('/post-order', ['as' => 'post.order', 'uses' => 'Frontend\ProductController@order']);
+    Route::post('/post-order-detail', ['as' => 'post.order-detail', 'uses' => 'Frontend\ProductController@post_order_detail']);
+
     Route::post('/sign-in', ['as' => 'account.login', 'uses' => 'Frontend\FrontendController@login']);
     Route::get('/log-out', ['as' => 'account.logout', 'uses' => 'Frontend\FrontendController@logout']);
-    // Route::post('/sign-in', ['as' => 'account.login', 'uses' => 'Frontend\FrontendController@login']);
+
     Route::get('/product/{category}', ['as' => 'product.index', 'uses' => 'Frontend\ProductController@index2']);
+    Route::post('/filter', ['as' => 'product.filter', 'uses' => 'Frontend\ProductController@filter']);
     Route::post('/create-login', ['as' => 'account.create', 'uses' => 'Frontend\FrontendController@create']);
     Route::get('/thong-tin-sp', ['as' => 'thong-tin-sp.index', 'uses' => 'Frontend\FrontendController@thongtinsp']);
     Route::get('/contact', ['as' => 'contact.index', 'uses' => 'Frontend\FrontendController@contact']);

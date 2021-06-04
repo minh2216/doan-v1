@@ -266,6 +266,27 @@ class ProductController extends Controller {
         $total_price = $input['price']*$time;
         $tax = ($total_price/100)*10;
         $cost = $total_price + $tax;
+        $product_id = $input['product_id'];
+        $room_id = $input['room_id'];
+        return view('frontend/product/order', compact('time','total_price','tax','cost','product_id','room_id'));
+    }
+
+    public function post_order_detail(Request $request) {
+        ini_set('memory_limit', '2048M');
+        $input = $request ->all();
+        if(isset($input['contact']) && isset($input['mobile']) && isset($input['email']))
+        {
+            $order = $this->orderRepo->create($input);
+            $input['order_id'] = $order->id;
+            $order_detail = $this->orderdetailRepo->create($input);
+            $alias = \DB::table('product')->where('id',$input['product_id'])->pluck('alias');
+        }
+        return redirect()->route('home.index')->with('status', 'Đặt phòng thành công');;
+    }
+
+    public function filter(Request $request) {
+        ini_set('memory_limit', '2048M');
+        dd($request);
         return view('frontend/product/order', compact('time','total_price','tax','cost'));
     }
 
