@@ -158,7 +158,7 @@
                                 </td>
                                 <td>{{$record->created_at}}</td>
                                 <td class="text-center">
-                                    <a href="{{route('order.detail', $record->id)}}" title="{!! trans('base.show') !!}" class="success"><i class="fa fa-eye"></i></a>
+                                    <a href="{{route('order.detail', $record->id)}}" title="{!! trans('base.show') !!}" class="success"><i class="fa fa-eye "></i></a>
                                 </td>
                             </tr>
                         @endforeach

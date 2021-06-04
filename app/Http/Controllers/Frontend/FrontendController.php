@@ -45,9 +45,9 @@ class FrontendController extends Controller {
             'password' => $request->get('password'),
         ];
         if (\Auth::guard('member')->attempt($input)) {
-            $name = $request->get('username');
-            $request->session()->put('username',$request->get('username'));
-            $value = $request->session()->get('username');
+                $name = $request->get('username');
+                $request->session()->put('username',$request->get('username'));
+                $value = $request->session()->get('username');
             return redirect()->route('home.index')->with('login', 'success');
         }
 

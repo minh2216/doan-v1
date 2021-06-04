@@ -11,7 +11,9 @@
             </div><!-- end top header single -->
             <div class="col-md-6">
                 <ul class="text-center text-md-right top-social">
+                    @if(session()->has('username'))
                     <li><a href="{!!route('detail.order')!!}"><i class="fas fa-briefcase"></i>My Trips</a></li>
+                    @endif
                     <li><a href="#" data-target="#rtmodal-1" data-toggle="modal">
                         @if(session()->has('username')) 
                         <a href="#" class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-globe-americas"></i>{!!Session('username')!!}</a>
