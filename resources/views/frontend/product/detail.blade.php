@@ -160,16 +160,16 @@
             <div class="col-lg-5 mt-5 mt-lg-0">
                 <div class="hotel-inner-content">
                     <h5 class="f-size-18 rt-medium">{!!$product->title!!}</h5>
-                    <p class="f-size-13"><span class="text-555">Times Square | 4.8 km from downtown</span> <span class="pl-2 text-777">| Near the subway</span></p>
+                    <p class="f-size-13"><span class="text-555">{!!$product->meta_title!!}</span></p>
                      <p class="rt-mt-15 rt-mb-20">
                                 <span class="badge rt-gradinet-badge pill rt-mr-10">4.3 <small>/5</small></span>
                                 <span class="primary-color rt-mr-10">Excellent</span>
-                                <span class="f-size-12 text-878">( 86 Reviews )</span>
+                                <span class="f-size-12 text-878">{{$num_review}} Reviews</span>
                     </p>
                     <p class="f-size-14 text-333">"It is a good hotel with nice service, everything is so convenient. will choose it again next time i go there. "</p>
                     <p>
                         @foreach ($att as $att)
-                        <span class="d-block"><span class="f-size-13 rt-pl-20">{{$att->title}}</span></span>
+                        <span class="d-block "><span class="f-size-15 rt-pl-20">{{$att->title}}</span></span>
                         @endforeach
                     
                     </p>

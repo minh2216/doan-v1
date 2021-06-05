@@ -260,7 +260,8 @@ class ProductController extends Controller {
         $review = \DB::table('review')->where('product_id',$product_id)->get();
         $att_pro = \DB::table('product_attribute')->where('product_id',$product_id)->pluck('attribute_id');
         $att = \DB::table('attribute')->whereIn('id',$att_pro)->get();
-        return view('frontend/product/detail', compact('records','room','product_id','review','att'));
+        $num_review = \DB::table('review')->where('product_id',$product_id)->count();
+        return view('frontend/product/detail', compact('records','room','product_id','review','att','num_review'));
     }
 
     public function order(Request $request) {
