@@ -112,7 +112,9 @@
                         <tr>
                             <th>STT</th>
                             <th>Tên</th>
-                            <th>Số ngày</th>
+                            <th>Ngày vào</th>
+                            <th>Ngày ra</th>
+                            <th>Phòng</th>
                             <th>Thành tiền</th>
                         </tr>
                         </thead>
@@ -121,9 +123,16 @@
                             <tr>
                                 <td>{{++$key}}</td>
                                 <td>{{$product->title}}</td>
-                                <td>{{$product->pivot->quantity}}</td>
-                                
+                                @foreach ($time_in as $time)
+                                <td>{{($time)}}</td>
+                                @endforeach
+                                @foreach ($time_out as $time)
+                                <td>{{$time}}</td> 
+                                @endforeach  
+                                @foreach($record->rooms as $key=>$product)
+                                <td>{{$product->title}}</td>
                                 <td >{{number_format($record->total)}}</td>
+                            @endforeach                          
                             </tr>
                         @endforeach
                         </tbody>

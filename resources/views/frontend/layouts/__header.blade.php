@@ -1,4 +1,11 @@
 <script src="{{asset('public/assets/frontend/js/jquery-2.2.4.min.js')}}"></script>
+<style type="text/css">
+    @media only screen and (max-width: 600px) {
+          .single-rt-banner {
+            margin-top: 100px;
+          }
+}
+</style>
 <header class="rt-site-header  rt-fixed-top white-menu">
     <div class="top-header d-none d-md-block">
     <div class="container">
@@ -6,7 +13,7 @@
             <div class="col-md-6">
                 <ul class="text-center text-md-left top-message">
                     <li><a href="#" onclick="myFunction()" style="<?php if($link!='/')echo("color: #fff;")?>"> <i class="icofont-headphone-alt" style="<?php if($link!='/')echo("color: #fff;")?>"></i>Support</a></li>
-                    <li><a href="mailto:info@emigrar.com " style="<?php if($link!='/')echo("color: #fff;")?>"><i class="icofont-email" style="<?php if($link!='/')echo("color: #fff;")?>"></i>info@emigrar.com</a></li>
+                    <li><a href="mailto:minh@75202@st.vimaru.edu.vn" style="<?php if($link!='/')echo("color: #fff;")?>"><i class="icofont-email" style="<?php if($link!='/')echo("color: #fff;")?>"></i>minh@75202@st.vimaru.edu.vn</a></li>
                 </ul>
             </div><!-- end top header single -->
             <div class="col-md-6">
@@ -35,8 +42,8 @@
     <div class="main-header rt-sticky">
       <nav class="navbar">
         <div class="container">
-          <a href="{{route('home.index')}}" class="brand-logo"><img src="@if($link=='/'){{asset('public/assets/frontend/images/logo/logo.png')}}@else{{asset('public/assets/frontend/images/logo/logo-white.png')}}@endif" alt=""></a>
-          <a href="{{route('home.index')}}" class="sticky-logo"><img src="{{asset('public/assets/frontend/images/logo/logo.png')}}" alt=""></a>
+          <a href="{{route('home.index')}}" class="brand-logo"><img src="@if($link=='/'){{asset('public/assets/frontend/images/logo/logo.png')}}@else{{asset('public/assets/frontend/images/logo/logo-white.png')}}@endif" alt="" style="width: 100px;"></a>
+          <a href="{{route('home.index')}}" class="sticky-logo"><img src="{{asset('public/assets/frontend/images/logo/logo.png')}}" alt="" style="width: 100px;"></a>
           <div class="ml-auto d-flex align-items-center">
             
 

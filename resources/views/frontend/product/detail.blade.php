@@ -7,7 +7,11 @@
 <html lang="en">
 
 <body>
-
+@if(Session::has('error'))
+<div class="alert alert-danger">
+  {{ Session::get('error')}}
+</div>
+@endif
 
 @foreach($records as $key =>$product)
 
@@ -339,11 +343,11 @@
                                                 <div class="container">
                                                     <div class="row">
                                                         <div class="single-input  col-rt-in-4 col-6" style="padding: 0px;">
-                                                           <input autocomplete="off" type="text" class="form-control rt-date-picker has-icon" placeholder="Depart" name="checkin_time">
+                                                           <input autocomplete="off" type="text" class="form-control rt-date-picker has-icon" placeholder="Ngày nhận phòng" name="checkin_time">
                                                            <span class="input-iconbadge"><i class="icofont-ui-calendar"></i></span>
                                                         </div><!-- /.single-input -->
                                                         <div class="single-input  col-rt-in-4 col-6" style="padding: 0px;">
-                                                            <input autocomplete="off" type="text" class="form-control rt-date-picker has-icon" placeholder="Return" name="checkout_time">
+                                                            <input autocomplete="off" type="text" class="form-control rt-date-picker has-icon" placeholder="Ngày trả phòng" name="checkout_time">
                                                             <span class="input-iconbadge"><i class="icofont-ui-calendar"></i></span>
                                                         </div><!-- /.single-input -->
                                                         <input type="hidden" value ="{!!$product->id!!}"name="product_id">

@@ -134,7 +134,6 @@
                             <th>Người đặt</th>
                             <th>Số điện thoại</th>
                             <th>Trạng thái</th>
-                            <th>Ngày tạo</th>
                             <th>Tác vụ</th>
                         </tr>
                         </thead>
@@ -155,7 +154,6 @@
                                         <span class="badge bg-danger-400">Từ chối</span>
                                     @endif
                                 </td>
-                                <td>{{$record->created_at}}</td>
                                 <td class="text-center">
                                     <a href="{{route('order.detail', $record->id)}}" title="{!! trans('base.show') !!}" class="success"><i class="fa fa-eye "></i></a>
                                 </td>
@@ -225,79 +223,11 @@
  -->
 
 <section class="brands-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-9 mx-auto text-center">
-                <div class="rt-section-title-wrapper">
-                    <h2 class="rt-section-title">
-                        <span>Take a Look at Our</span>
-                        Trusted Partners
-                    </h2><!-- /.rt-section-title -->
-                    <p>
-                        We are committed to being the best partner.Emigrar believes in being your trusted partner and
-                        earning that trust through
-                        confidence and performance in service and support.
-                    </p>
-                </div><!-- /.rt-section-title-wrapper -->
-            </div><!-- /.col-lg-9 -->
-        </div><!-- /.row -->
-        <div class="section-title-spacer"></div><!-- /.section-title-spacer -->
-        <div class="row">
-            <div class="col-lg-9 mx-auto">
-                <ul class="rt-border-brands">
-    <li class="single-border-brands">
-        <a href="#" class="wow flipInX d-block">
-            <img src="{{asset('public/assets/frontend/images/brands/brands-1.png')}}" alt="brands image" draggable="false">
-        </a>
-    </li><!-- /.single-border-brands -->
-    <li class="single-border-brands">
-        <a href="#" class="wow flipInX d-block" data-wow-duration="1s">
-            <img src="{{asset('public/assets/frontend/images/brands/brands-2.png')}}" alt="brands image" draggable="false">
-        </a>
-    </li><!-- /.single-border-brands -->
-    <li class="single-border-brands">
-        <a href="#" class="wow flipInX d-block" data-wow-duration="1.5s">
-            <img src="{{asset('public/assets/frontend/images/brands/brands-3.png')}}" alt="brands image" draggable="false">
-        </a>
-    </li><!-- /.single-border-brands -->
-    <li class="single-border-brands">
-        <a href="#" class="wow flipInX d-block" data-wow-duration="2s"> 
-            <img src="{{asset('public/assets/frontend/images/brands/brands-4.png')}}" alt="brands image" draggable="false">
-        </a>
-    </li><!-- /.single-border-brands -->
-    <li class="single-border-brands">
-        <a href="#" class="wow flipInX d-block" data-wow-duration="2.5s">
-            <img src="{{asset('public/assets/frontend/images/brands/brands-4.png')}}" alt="brands image" draggable="false">
-        </a>
-    </li><!-- /.single-border-brands -->
-    <li class="single-border-brands">
-        <a href="#" class="wow flipInX d-block" data-wow-duration="3s">
-            <img src="{{asset('public/assets/frontend/images/brands/brands-3.png')}}" alt="brands image" draggable="false">
-        </a>
-    </li><!-- /.single-border-brands -->
-    <li class="single-border-brands">
-        <a href="#" class="wow flipInX d-block" data-wow-duration="3.5s">
-            <img src="{{asset('public/assets/frontend/images/brands/brands-2.png')}}" alt="brands image" draggable="false">
-        </a>
-    </li><!-- /.single-border-brands -->
-    <li class="single-border-brands">
-        <a href="#" class="wow flipInX d-block" data-wow-duration="4s">
-            <img src="{{asset('public/assets/frontend/images/brands/brands-1.png')}}" alt="brands image" draggable="false">
-        </a>
-    </li><!-- /.single-border-brands -->
-</ul><!-- /.rt-border-brands -->
-            </div><!-- /.col-lg-7 -->
-        </div><!-- /.row -->
-    </div><!-- /.containe -->
+    
 </section>
 
 </body>
 
 </html>
 
-@stop
-@section('script')
-@parent
-    <script src="{!! asset('assets/global_assets/js/plugins/tables/datatables/datatables.min.js') !!}"></script>
-    <script src="{!! asset('assets/global_assets/js/demo_pages/datatables_basic.js') !!}"></script>
 @stop

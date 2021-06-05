@@ -218,7 +218,8 @@
                             <th>STT</th>
                             <th>Tên</th>
                             <th>Phòng</th>
-                            <th>Số ngày</th>
+                            <th>Ngày vào</th>
+                            <th>Ngày ra</th>
                             <th>Thành tiền</th>
                         </tr>
                         </thead>
@@ -229,9 +230,14 @@
                                 <td>{{$product->title}}</td>
                                 @foreach($record->rooms as $key=>$product)
                                     <td>{{$product->title}}</td>
-                                    <td >{{number_format($product->pivot->quantity)}}</td>
-                                    <td >{{number_format($record->total)}}</td>
                                 @endforeach
+                                @foreach ($time_in as $time)
+                                <td>{{($time)}}</td>
+                                @endforeach
+                                @foreach ($time_out as $time)
+                                <td>{{$time}}</td> 
+                                @endforeach
+                                <td >{{number_format($record->total)}}</td>
                             </tr>
                         @endforeach
                         </tbody>
@@ -290,11 +296,7 @@
             </div><!-- /.col-lg-4 -->
         </div><!-- /.row -->
     </div><!-- /.container -->
-    <div class="googleMap">
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d116834.1509316622!2d90.34928591742289!3d23.780620653401414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8b087026b81%3A0x8fa563bbdd5904c2!2sDhaka!5e0!3m2!1sen!2sbd!4v1569663745803!5m2!1sen!2sbd"
-            width="100%" height="582" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-    </div>
+
 </section>
 
 
@@ -304,70 +306,7 @@
  -->
 
 <section class="brands-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-9 mx-auto text-center">
-                <div class="rt-section-title-wrapper">
-                    <h2 class="rt-section-title">
-                        <span>Take a Look at Our</span>
-                        Trusted Partners
-                    </h2><!-- /.rt-section-title -->
-                    <p>
-                        We are committed to being the best partner.Emigrar believes in being your trusted partner and
-                        earning that trust through
-                        confidence and performance in service and support.
-                    </p>
-                </div><!-- /.rt-section-title-wrapper -->
-            </div><!-- /.col-lg-9 -->
-        </div><!-- /.row -->
-        <div class="section-title-spacer"></div><!-- /.section-title-spacer -->
-        <div class="row">
-            <div class="col-lg-9 mx-auto">
-                <ul class="rt-border-brands">
-    <li class="single-border-brands">
-        <a href="#" class="wow flipInX d-block">
-            <img src="{{asset('public/assets/frontend/images/brands/brands-1.png')}}" alt="brands image" draggable="false">
-        </a>
-    </li><!-- /.single-border-brands -->
-    <li class="single-border-brands">
-        <a href="#" class="wow flipInX d-block" data-wow-duration="1s">
-            <img src="{{asset('public/assets/frontend/images/brands/brands-2.png')}}" alt="brands image" draggable="false">
-        </a>
-    </li><!-- /.single-border-brands -->
-    <li class="single-border-brands">
-        <a href="#" class="wow flipInX d-block" data-wow-duration="1.5s">
-            <img src="{{asset('public/assets/frontend/images/brands/brands-3.png')}}" alt="brands image" draggable="false">
-        </a>
-    </li><!-- /.single-border-brands -->
-    <li class="single-border-brands">
-        <a href="#" class="wow flipInX d-block" data-wow-duration="2s"> 
-            <img src="{{asset('public/assets/frontend/images/brands/brands-4.png')}}" alt="brands image" draggable="false">
-        </a>
-    </li><!-- /.single-border-brands -->
-    <li class="single-border-brands">
-        <a href="#" class="wow flipInX d-block" data-wow-duration="2.5s">
-            <img src="{{asset('public/assets/frontend/images/brands/brands-4.png')}}" alt="brands image" draggable="false">
-        </a>
-    </li><!-- /.single-border-brands -->
-    <li class="single-border-brands">
-        <a href="#" class="wow flipInX d-block" data-wow-duration="3s">
-            <img src="{{asset('public/assets/frontend/images/brands/brands-3.png')}}" alt="brands image" draggable="false">
-        </a>
-    </li><!-- /.single-border-brands -->
-    <li class="single-border-brands">
-        <a href="#" class="wow flipInX d-block" data-wow-duration="3.5s">
-            <img src="{{asset('public/assets/frontend/images/brands/brands-2.png')}}" alt="brands image" draggable="false">
-        </a>
-    </li><!-- /.single-border-brands -->
-    <li class="single-border-brands">
-        <a href="#" class="wow flipInX d-block" data-wow-duration="4s">
-            <img src="{{asset('public/assets/frontend/images/brands/brands-1.png')}}" alt="brands image" draggable="false">
-        </a>
-    </li><!-- /.single-border-brands -->
-</ul><!-- /.rt-border-brands -->
-            </div><!-- /.col-lg-7 -->
-        </div><!-- /.row -->
-    </div><!-- /.containe -->
+
 </section>
 
 </body>

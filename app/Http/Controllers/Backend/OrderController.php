@@ -24,7 +24,9 @@ class OrderController extends Controller
     public function show($id)
     {
         $record = $this->orderRepo->find($id);
-        return view('backend/order/detail', compact('record'));
+        $time_in = \DB::table('order_detail')->where('order_id',$record->id)->pluck('checkin_date');
+        $time_out = \DB::table('order_detail')->where('order_id',$record->id)->pluck('checkout_date');
+        return view('backend/order/detail', compact('record','time_in','time_out'));
     }
 
     public function destroy($id)

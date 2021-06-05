@@ -75,12 +75,12 @@
                                <div class="top-2 d-flex flex-column flex-md-row justify-content-md-between rt-mb-20">
                                     <div>
                                         <span class="d-block f-size-12">Check-in:</span>
-                                        <span class="d-block rt-strong heading-color-1">{{($in)}}</span>
+                                        <span class="d-block rt-strong heading-color-1">{{($checkin_date)}}</span>
                                         <span class="d-block f-size-12">From 14:00</span>
                                     </div>
                                     <div>
                                         <span class="d-block f-size-12">Check-out:</span>
-                                        <span class="d-block rt-strong heading-color-1">{{$out}}</span>
+                                        <span class="d-block rt-strong heading-color-1">{{$checkout_date}}</span>
                                         <span class="d-block f-size-12">Before 12:00</span>
                                     </div>
                                     <div class="text-right"> 
@@ -123,6 +123,8 @@
                             <input type="hidden" value ="{!!$product_id!!}"name="product_id">
                             <input type="hidden" value ="{!!$room_id!!}"name="room_id">
                             <input type="hidden" value ="{!!$cost!!}"name="price">
+                            <input type="hidden" value ="{!!$checkin_date!!}"name="checkin_date">
+                            <input type="hidden" value ="{!!$checkout_date!!}"name="checkout_date">
                         </div><!-- /.row -->
                 </div><!-- /.flight-list-box -->
 <!--                 <div class="flight-list-box pt-30">
