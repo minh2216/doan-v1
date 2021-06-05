@@ -1464,16 +1464,9 @@
                             </div><!-- /.top -->
                             <div class="middle-text d-md-flex justify-content-md-between mb-4 mb-md-0">
                                 <div class="left">
-                                    <span class="badge rt-gradinet-badge pill">4.3 <small>/5</small></span>
-                                    <span>Excellent</span>
                                     <span>( 86 Reviews )</span>
-                                    <div>
-                                        <a href="#">Free Cancellation</a>
-                                    </div>
                                 </div><!-- /.left- -->
                                 <div class="right text-left text-md-right mt-4 mt-md-0">
-                                    <span class="d-block">From USD</span>
-                                    <span class="d-block">$364</span>
                                 </div><!-- /.right -->
                             </div><!-- /.middle-text -->
                             <div class="footer-elements d-flex justify-content-md-between align-items-center">

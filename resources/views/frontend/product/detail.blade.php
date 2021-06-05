@@ -147,7 +147,6 @@
                     @foreach($product->getImage() as $key =>$image)
                     <div class="single-main rtbgprefix-cover" style="background-image: url('{!!$image!!}')">
                         <div class="inner-badge badge-bg-1 f-size-14 rt-strong">
-                            Last booked 12 mins ago
                         </div><!-- /.inner-badge -->
                     </div><!-- /.single-main -->
                     @endforeach
@@ -169,29 +168,13 @@
                     </p>
                     <p class="f-size-14 text-333">"It is a good hotel with nice service, everything is so convenient. will choose it again next time i go there. "</p>
                     <p>
-                        <span class="d-block"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-1.png')}}"  alt="hotel iamge" draggable="false"> <span class="f-size-13 rt-pl-20">Free in-room Wi-Fi</span></span>
-                        <span class="d-block" ><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-2.png')}}"  alt="hotel iamge" draggable="false"> <span class="f-size-13 rt-pl-15">Gym</span></span>
-                        <span class="d-block"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-3.png')}}"  alt="hotel iamge" draggable="false"> <span class="f-size-13 rt-pl-25">Western restaurant</span></span>
-                        <span class="d-block"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-4.png')}}"  alt="hotel iamge" draggable="false"> <span class="f-size-13 rt-pl-25">Front desk (24 hours)</span></span>
-                        <span class="d-block"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-5.png')}}"  alt="hotel iamge" draggable="false"> <span class="f-size-13 rt-pl-25">soft drinks</span></span>
-                        <span class="d-block"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-6.png')}}"  alt="hotel iamge" draggable="false"> <span class="f-size-13 rt-pl-25">Spa</span></span>
-                        <span class="d-block"><img src="{{asset('public/assets/frontend/images/all-img/hottel-cion-9.png')}}"  alt="hotel iamge" draggable="false"> <span class="f-size-13 rt-pl-25">Wake-up call</span></span>
-                    </p>
-                    <p class="rt-mb-30">
-                        <a href="#" class="primary-color underline">Show all 30 amenities</a>
+                        @foreach ($att as $att)
+                        <span class="d-block"><span class="f-size-13 rt-pl-20">{{$att->title}}</span></span>
+                        @endforeach
+                    
                     </p>
                     <div class="rt-divider style-one rt-mb-30"></div><!-- /.rt-divider -->
                     <div class="d-flex flex-md-row flex-column justify-content-md-between">
-                        <div>
-                            <span class="d-block f-size-12 text-878">From USD</span>
-                            <span class="d-block f-size-24 primary-color rt-strong">$364</span>
-                        </div>
-                        <div>
-                            <a href="#" class="rt-btn rt-gradient rt-sm2 text-uppercase pill">Select Room</a>
-                        </div>
-                        <div>
-                            <a href="#" class="rt-btn rt-gradient3 rt-sm2 text-uppercase pill">Update</a>
-                        </div>
                     </div><!-- /.d-flex -->
                     <div class="rt-divider style-one rt-mt-30"></div><!-- /.rt-divider -->
                     <div class="rt-mt-25">
@@ -525,156 +508,36 @@
                             <div class="tab-pane fade" id="rt-itm_6" role="tabpanel" aria-labelledby="rt-itm_6-tab">
                                 <div class="flight-list-box rt-mb-30 row">
                                    <div class="col-12">
-                                    <h4 class="f-seize-18 rt-semiblod rt-mb-30">Reviews <span class="f-size-14">(86 verified reviews)</span></h4>
-                                    <div class="row align-items-center">
-                                        <div class="col-md-4">
-                                            <div class="review-box rt-pt-36 rt-pb-30 rt-pr-30 rt-pl-30 rt-dborder-primary text-center rounded">
-                                                <h4 class="f-size-24 primary-color">Excellent</h4>
-                                                <h5 class="f-size-60 primary-color"><span class="rt-strong">4.3</span><span
-                                                        class="f-size-14 text-878 rt-">/5</span></h5>
-                                                <h6 class="f-size-18"><span class="primary-color">Emigrar</span> Verified Reviews</h6>
-                                            </div><!-- /.review-box -->
-                                        </div><!-- /.col-md-4 -->
-                                        <div class="col-md-7 offset-md-1">
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="single-progress rt-mb-30">
-                                                        <div class="progress-title f-size-18 heading-color-1"><span
-                                                                class="float-right">4.4</span><span>Location</span></div>
-                                                        <div class="progress" data-percent="80%">
-                                                            <span class="progress-bar bg-gr-1"></span>
-                                                        </div>
-                                                    </div><!-- /.single-progress -->
-                                                    <div class="single-progress rt-mb-30">
-                                                        <div class="progress-title f-size-18 heading-color-1"><span
-                                                                class="float-right">4.4</span><span>Service</span></div>
-                                                        <div class="progress" data-percent="80%">
-                                                            <span class="progress-bar bg-gr-1"></span>
-                                                        </div>
-                                                    </div><!-- /.single-progress -->
-                                                </div><!-- /.col-md-6 -->
-                                                <div class="col-md-6">
-                                                    <div class="single-progress rt-mb-30">
-                                                        <div class="progress-title f-size-18 heading-color-1"><span
-                                                                class="float-right">4.5</span><span>Cleanliness</span></div>
-                                                        <div class="progress" data-percent="80%">
-                                                            <span class="progress-bar bg-gr-1"></span>
-                                                        </div>
-                                                    </div><!-- /.single-progress -->
-                                                    <div class="single-progress rt-mb-30">
-                                                        <div class="progress-title f-size-18 heading-color-1"><span
-                                                                class="float-right">4.5</span><span>Facilities</span></div>
-                                                        <div class="progress" data-percent="80%">
-                                                            <span class="progress-bar bg-gr-1"></span>
-                                                        </div>
-                                                    </div><!-- /.single-progress -->
-                                                </div><!-- /.col-md-6 -->
-                                            </div><!-- /.row -->
+                                    <h4 class="f-seize-18 rt-semiblod rt-mb-30">Reviews <span class="f-size-14"></span></h4>
+                                    @if(session()->has('username'))
+                                    <form id="my_order" action="{!!route('review')!!}" method="post" enctype="multipart/form-data" class="rt-form rt-line-form flight-lable">
+                                        @csrf
+                                        <input type="hidden" value ="{!!$product_id!!}"name="product_id">   
+                                        <input type="hidden" value ="{!!Session('username')!!}"name="user">  
+                                    <div class="form-group">
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"  name="content"></textarea>
+                                    </div>
+                                    <button class="rt-btn rt-gradient pill rt-sm2" type="submit">Send</button>
+                                    </form>
+                                    @endif
+                                    
                                     
                                         </div><!-- /.col-md-4 -->
                                     </div><!-- /.row -->
                                    </div><!-- /.col-12 -->
                                 </div><!-- /.flight-list-box -->
                                 <div class="flight-list-box single-commnets row rt-mb-30">
-                                    <div class="col-lg-3 col-md-4  rt-dashed-primary rt-pt-30 rt-pl-30 rt-pb-30 rt-pr-30 rt-dborder-primary rounded">
-                                            <div class="cmnt-thumb rt-hw-60 rt-border-primary rounded-circle rtbgprefix-cover rt-mb-20" style="background-image: url({{asset('public/assets/frontend/images/all-img/cmnt-2.jpg')}})">   
-                                            </div><!-- /.cmnt-thumb -->
-                                            <span class="d-block f-size-13 text-878"> <span><i class="icofont-ui-calendar rt-mr-5"></i></span>Stayed in Nov 2018</span>
-                                            <span class="d-block f-size-13 text-878"> <span><i class="icofont-edit rt-mr-5"></i></span>Stayed in Nov 2018</span>
-                                    </div><!-- /.left-coulmn -->
+                                @foreach ($review as $r)
                                     <div class="col-lg-9 col-md-8 pl-md-5">
-                                            <h4 class="f-size-17 rt-strong">Simon Lopez <span class="rt-pl-15 f-size-14"> <i class="icofont-star review"></i><i class="icofont-star review"></i> <i class="icofont-star review"></i><i
-                                                    class="icofont-star review"></i> <i class="icofont-star review"></i></span></h4>
-                                            <span class="f-size-13 text-878 d-block rt-mb-15">November 20, 2018 at 8:31 pm</span>
+                                            <h4 class="f-size-17 rt-strong">{{$r->user}} <span class="rt-pl-15 f-size-14"> </span></h4>
+                                            <span class="f-size-13 text-878 d-block rt-mb-15">{{$r->created_at}}</span>
                                             <p class="f-size-14 text-333">
-                                                I am very please with Garden View Hong Kong Hotel! I will certainly return. I got a wonderful from the 15 floor to the
-                                                Botanical Garden a great Supermarket in the corner, about 2 minutes walking, and a bus stop to downtown within few
-                                                meters. It is close to downtown and great price!
+                                               {{$r->content}}
                                             </p>
-
-                                            <a href="#" class="replay-cmnt text-uppercase rt-strong">Reply <i class="icofont-reply-all"></i> </a>
                                     </div><!-- /.right-column -->
                                 </div><!-- /.flight-list-box -->
-                                <div class="flight-list-box single-commnets row rt-mb-30">
-                                    <div class="col-lg-3 col-md-4  rt-dashed-primary rt-pt-30 rt-pl-30 rt-pb-30 rt-pr-30 rt-dborder-primary rounded">
-                                            <div class="cmnt-thumb rt-hw-60 rt-border-primary rounded-circle rtbgprefix-cover rt-mb-20" style="background-image: url({{asset('public/assets/frontend/images/all-img/cmnt-3.jpg')}})">   
-                                            </div><!-- /.cmnt-thumb -->
-                                            <span class="d-block f-size-13 text-878"> <span><i class="icofont-ui-calendar rt-mr-5"></i></span>Stayed in Nov 2018</span>
-                                            <span class="d-block f-size-13 text-878"> <span><i class="icofont-edit rt-mr-5"></i></span>Stayed in Nov 2018</span>
-                                    </div><!-- /.left-coulmn -->
-                                    <div class="col-md-8 col-lg-9 pl-md-5">
-                                            <h4 class="f-size-17 rt-strong">Gary Dunn <span class="rt-pl-15 f-size-14"> <i class="icofont-star review"></i><i class="icofont-star review"></i> <i class="icofont-star review"></i><i
-                                                    class="icofont-star review"></i> <i class="icofont-star review"></i></span></h4>
-                                            <span class="f-size-13 text-878 d-block rt-mb-15">November 20, 2018 at 8:31 pm</span>
-                                            <p class="f-size-14 text-333">
-                                                I am very please with Garden View Hong Kong Hotel! I will certainly return. I got a wonderful from the 15 floor to the
-                                                Botanical Garden a great Supermarket in the corner, about 2 minutes walking, and a bus stop to downtown within few
-                                                meters. It is close to downtown and great price!
-                                            </p>
-
-                                            <a href="#" class="replay-cmnt text-uppercase rt-strong">Reply <i class="icofont-reply-all"></i> </a>
-                                    </div><!-- /.right-column -->
-                                </div><!-- /.flight-list-box -->
-                                <div class="flight-list-box single-commnets row rt-mb-30">
-                                    <div class="col-lg-3 col-md-4  rt-dashed-primary rt-pt-30 rt-pl-30 rt-pb-30 rt-pr-30 rt-dborder-primary rounded">
-                                            <div class="cmnt-thumb rt-hw-60 rt-border-primary rounded-circle rtbgprefix-cover rt-mb-20" style="background-image: url({{asset('public/assets/frontend/images/all-img/cmnt-4.jpg')}})">   
-                                            </div><!-- /.cmnt-thumb -->
-                                            <span class="d-block f-size-13 text-878"> <span><i class="icofont-ui-calendar rt-mr-5"></i></span>Stayed in Nov 2018</span>
-                                            <span class="d-block f-size-13 text-878"> <span><i class="icofont-edit rt-mr-5"></i></span>Stayed in Nov 2018</span>
-                                    </div><!-- /.left-coulmn -->
-                                    <div class="col-md-8 col-lg-9 pl-md-5">
-                                            <h4 class="f-size-17 rt-strong">Mark Ques <span class="rt-pl-15 f-size-14"> <i class="icofont-star review"></i><i class="icofont-star review"></i> <i class="icofont-star review"></i><i
-                                                    class="icofont-star review"></i> <i class="icofont-star review"></i></span></h4>
-                                            <span class="f-size-13 text-878 d-block rt-mb-15">November 20, 2018 at 8:31 pm</span>
-                                            <p class="f-size-14 text-333">
-                                                I am very please with Garden View Hong Kong Hotel! I will certainly return. I got a wonderful from the 15 floor to the
-                                                Botanical Garden a great Supermarket in the corner, about 2 minutes walking, and a bus stop to downtown within few
-                                                meters. It is close to downtown and great price!
-                                            </p>
-
-                                            <a href="#" class="replay-cmnt text-uppercase rt-strong">Reply <i class="icofont-reply-all"></i> </a>
-                                    </div><!-- /.right-column -->
-                                </div><!-- /.flight-list-box -->
-                                <div class="flight-list-box single-commnets row rt-mb-30">
-                                    <div class="col-lg-3 col-md-4  rt-dashed-primary rt-pt-30 rt-pl-30 rt-pb-30 rt-pr-30 rt-dborder-primary rounded">
-                                            <div class="cmnt-thumb rt-hw-60 rt-border-primary rounded-circle rtbgprefix-cover rt-mb-20" style="background-image: url({{asset('public/assets/frontend/images/all-img/cmnt-5.jpg')}})">   
-                                            </div><!-- /.cmnt-thumb -->
-                                            <span class="d-block f-size-13 text-878"> <span><i class="icofont-ui-calendar rt-mr-5"></i></span>Stayed in Nov 2018</span>
-                                            <span class="d-block f-size-13 text-878"> <span><i class="icofont-edit rt-mr-5"></i></span>Stayed in Nov 2018</span>
-                                    </div><!-- /.left-coulmn -->
-                                    <div class="col-md-8 col-lg-9 pl-md-5">
-                                            <h4 class="f-size-17 rt-strong">Mans Livly <span class="rt-pl-15 f-size-14"> <i class="icofont-star review"></i><i class="icofont-star review"></i> <i class="icofont-star review"></i><i
-                                                    class="icofont-star review"></i> <i class="icofont-star review"></i></span></h4>
-                                            <span class="f-size-13 text-878 d-block rt-mb-15">November 20, 2018 at 8:31 pm</span>
-                                            <p class="f-size-14 text-333">
-                                                I am very please with Garden View Hong Kong Hotel! I will certainly return. I got a wonderful from the 15 floor to the
-                                                Botanical Garden a great Supermarket in the corner, about 2 minutes walking, and a bus stop to downtown within few
-                                                meters. It is close to downtown and great price!
-                                            </p>
-
-                                            <a href="#" class="replay-cmnt text-uppercase rt-strong">Reply <i class="icofont-reply-all"></i> </a>
-                                    </div><!-- /.right-column -->
-                                </div><!-- /.flight-list-box -->
-                                <div class="flight-list-box single-commnets row rt-mb-30">
-                                    <div class="col-lg-3 col-md-4  rt-dashed-primary rt-pt-30 rt-pl-30 rt-pb-30 rt-pr-30 rt-dborder-primary rounded">
-                                            <div class="cmnt-thumb rt-hw-60 rt-border-primary rounded-circle rtbgprefix-cover rt-mb-20" style="background-image: url({{asset('public/assets/frontend/images/all-img/cmnt-2.jpg')}})">   
-                                            </div><!-- /.cmnt-thumb -->
-                                            <span class="d-block f-size-13 text-878"> <span><i class="icofont-ui-calendar rt-mr-5"></i></span>Stayed in Nov 2018</span>
-                                            <span class="d-block f-size-13 text-878"> <span><i class="icofont-edit rt-mr-5"></i></span>Stayed in Nov 2018</span>
-                                    </div><!-- /.left-coulmn -->
-                                    <div class="col-md-8 pl-md-5">
-                                            <h4 class="f-size-17 rt-strong">Sirlon Mika <span class="rt-pl-15 f-size-14"> <i class="icofont-star review"></i><i class="icofont-star review"></i> <i class="icofont-star review"></i><i
-                                                    class="icofont-star review"></i> <i class="icofont-star review"></i></span></h4>
-                                            <span class="f-size-13 text-878 d-block rt-mb-15">November 20, 2018 at 8:31 pm</span>
-                                            <p class="f-size-14 text-333">
-                                                I am very please with Garden View Hong Kong Hotel! I will certainly return. I got a wonderful from the 15 floor to the
-                                                Botanical Garden a great Supermarket in the corner, about 2 minutes walking, and a bus stop to downtown within few
-                                                meters. It is close to downtown and great price!
-                                            </p>
-
-                                            <a href="#" class="replay-cmnt text-uppercase rt-strong">Reply <i class="icofont-reply-all"></i> </a>
-                                    </div><!-- /.right-column -->
-                                </div><!-- /.flight-list-box -->
+                                @endforeach
+                            
                             </div>
                         </div>
                     

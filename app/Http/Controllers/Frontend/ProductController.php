@@ -13,15 +13,17 @@ use Repositories\CategoryRepository;
 use Repositories\KeywordRepository;
 use App\Repositories\OrderRepository;
 use App\Repositories\OrderDetailRepository;
+use Repositories\ReviewRepository;
 use Repositories\GalleryRepository;
 use App\Room;
 use DB;
 use App\Product;
 use App\OrderDetail;
+use App\Review;
 use App\Http\Resources\ProductResource;
 class ProductController extends Controller {
 
-    public function __construct(OrderRepository $orderRepo, OrderDetailRepository $orderdetailRepo, ProductRepository $productRepo, CategoryRepository $categoryRepo, AttributeRepository $attributeRepo, ProductAttributeRepository $productAttrRepo, ProductCategoryRepository $productCategoryRepo, KeywordRepository $keywordRepo, GalleryRepository $galleryRepo) {
+    public function __construct(ReviewRepository $reviewRepo,OrderRepository $orderRepo, OrderDetailRepository $orderdetailRepo, ProductRepository $productRepo, CategoryRepository $categoryRepo, AttributeRepository $attributeRepo, ProductAttributeRepository $productAttrRepo, ProductCategoryRepository $productCategoryRepo, KeywordRepository $keywordRepo, GalleryRepository $galleryRepo) {
         $this->productRepo = $productRepo;
         $this->categoryRepo = $categoryRepo;
         $this->attributeRepo = $attributeRepo;
@@ -31,6 +33,7 @@ class ProductController extends Controller {
         $this->keywordRepo = $keywordRepo;
         $this->orderRepo = $orderRepo;
         $this->orderdetailRepo = $orderdetailRepo;
+        $this->reviewRepo = $reviewRepo;
     }
 
     public function index(Request $request) {
@@ -254,7 +257,10 @@ class ProductController extends Controller {
         $product_id = $this->productRepo->getIdByAlias($alias);
         $room_id = \DB::table('room')->where('product_id',$product_id)->pluck('id');
         $room = Room::whereIn('id',$room_id)->where('status',1)->get();
-        return view('frontend/product/detail', compact('records','room'));
+        $review = \DB::table('review')->where('product_id',$product_id)->get();
+        $att_pro = \DB::table('product_attribute')->where('product_id',$product_id)->pluck('attribute_id');
+        $att = \DB::table('attribute')->whereIn('id',$att_pro)->get();
+        return view('frontend/product/detail', compact('records','room','product_id','review','att'));
     }
 
     public function order(Request $request) {
@@ -321,6 +327,12 @@ class ProductController extends Controller {
         $time_in = \DB::table('order_detail')->where('order_id',$record->id)->pluck('checkin_date');
         $time_out = \DB::table('order_detail')->where('order_id',$record->id)->pluck('checkout_date');
         return view('frontend/order/detail',compact('record','time_in','time_out'));
+    }
+
+    public function review(Request $request){
+        $input=$request->all();
+        $review = $this->reviewRepo->create($input);
+        return redirect()->back();
     }
 
 }

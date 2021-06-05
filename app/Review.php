@@ -8,7 +8,7 @@ class Review extends Model {
 
     protected $table = "review";
     protected $fillable =[
-        'star', 'construction_id', 'review_person_id', 'content'
+        'star', 'product_id', 'user', 'content'
     ];
 
     public function construction() {
