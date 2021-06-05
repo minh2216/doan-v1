@@ -42,18 +42,6 @@
                         </tr>
                         <tr>
                             <td>
-                                <h6 class="mb-0">Phương thức thanh toán:</h6>
-                            </td>
-                            <td><span>{{$record->payment_method}}</span></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h6 class="mb-0">Phương thức vận chuyển:</h6>
-                            </td>
-                            <td><span>{{$record->transport_method}}</span></td>
-                        </tr>
-                        <tr>
-                            <td>
                                 <h6 class="mb-0">Tổng đơn hàng:</h6>
                             </td>
                             <td><span>{{number_format($record->total)}}</span></td>
@@ -110,7 +98,7 @@
             <div class="content">
                 <div class="card">
                     <div class="card-header header-elements-inline">
-                        <h5 class="card-title">Sản phẩm</h5>
+                        <h5 class="card-title">Khách sạn</h5>
                         <div class="header-elements">
                             <div class="list-icons">
                                 <a class="list-icons-item" data-action="collapse"></a>
@@ -124,8 +112,7 @@
                         <tr>
                             <th>STT</th>
                             <th>Tên</th>
-                            <th>Giá</th>
-                            <th>Số lượng</th>
+                            <th>Số ngày</th>
                             <th>Thành tiền</th>
                         </tr>
                         </thead>
@@ -134,9 +121,9 @@
                             <tr>
                                 <td>{{++$key}}</td>
                                 <td>{{$product->title}}</td>
-                                <td class="text-right">{{number_format($product->price)}}</td>
-                                <td class="text-center">{{$product->pivot->quantity}}</td>
-                                <td class="text-right">{{number_format($product->pivot->sub_total)}}</td>
+                                <td>{{$product->pivot->quantity}}</td>
+                                
+                                <td >{{number_format($record->total)}}</td>
                             </tr>
                         @endforeach
                         </tbody>

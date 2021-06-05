@@ -45,7 +45,7 @@ class FacilitiesController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
-        $input['module'] = 'product';
+        $input['module'] = 'room';
         $validator = \Validator::make($input, $this->facilitiesRepo->validateCreate());
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();

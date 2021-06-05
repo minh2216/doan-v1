@@ -28,7 +28,7 @@
                 <thead>
                 <tr>
                     <th>#</th>
-                    <th>Người mua</th>
+                    <th>Người đặt</th>
                     <th>Số điện thoại</th>
                     <th>Trạng thái</th>
                     <th>Ngày tạo</th>

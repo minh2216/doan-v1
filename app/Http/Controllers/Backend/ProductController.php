@@ -80,6 +80,7 @@ class ProductController extends Controller {
         //Thêm danh mục sản phẩm
         $product->categories()->attach($input['category_id']);
         //Thêm thuộc tính sản phẩm
+        dd($input);
         $attributes = $this->getProductAttributes($input);
         $product->attributes()->attach($attributes);
         if ($product) {

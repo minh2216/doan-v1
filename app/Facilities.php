@@ -10,7 +10,7 @@ class Facilities extends Model {
 
     const TYPE_SELECT = 'select';
     const TYPE_TEXT = 'text';
-    const MODULE_PRODUCT = 'product';
+    const MODULE_PRODUCT = 'room';
 
     protected $fillable = [
         'title', 'parent_id', 'type', 'module','images'

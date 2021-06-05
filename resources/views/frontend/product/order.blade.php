@@ -75,17 +75,17 @@
                                <div class="top-2 d-flex flex-column flex-md-row justify-content-md-between rt-mb-20">
                                     <div>
                                         <span class="d-block f-size-12">Check-in:</span>
-                                        <span class="d-block rt-strong heading-color-1">Tue,Nov 13,2018</span>
+                                        <span class="d-block rt-strong heading-color-1">{{($in)}}</span>
                                         <span class="d-block f-size-12">From 14:00</span>
                                     </div>
                                     <div>
                                         <span class="d-block f-size-12">Check-out:</span>
-                                        <span class="d-block rt-strong heading-color-1">Fri,Nov 16,2018</span>
+                                        <span class="d-block rt-strong heading-color-1">{{$out}}</span>
                                         <span class="d-block f-size-12">Before 12:00</span>
                                     </div>
                                     <div class="text-right"> 
-                                        <span class="d-block rt-medium heading-color-1">3 Nights</span>
-                                        <span class="d-block"><a href="#">Change Dates</a></span>
+                                        <span class="d-block rt-medium heading-color-1">{{$time}} Nights</span>
+                                        <span class="d-block"><a href="#">Change Dates</a></span>   
                                     </div>
                                </div><!-- /.top-2 -->
                               

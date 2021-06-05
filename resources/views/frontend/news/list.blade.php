@@ -146,7 +146,7 @@
                             {!!$records->description!!}
                         </p>
                         <footer class="entry-footer text-center">
-                            <a href="#">read more</a>
+                            <a href="{!! route('news.detail',['alias' => $records->alias])!!}">read more</a>
                         </footer><!-- ./ footer -->
                     </div><!-- .entry content -->
                 </article><!-- ./artice single blog -->

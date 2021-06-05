@@ -29,7 +29,7 @@ class FacilitiesRepository extends AbstractRepository {
         ];
     }
 
-    public function readFacilitiesByParentAdmin($module = 'product', $parent_id = 0, $type = '') {
+    public function readFacilitiesByParentAdmin($module = 'room', $parent_id = 0, $type = '') {
         $model = $this->model;
         if ($type) {
             $model = $model->where('type', 'select');
@@ -41,12 +41,12 @@ class FacilitiesRepository extends AbstractRepository {
         return $data;
     }
 
-    public function readFacilitiesByParent($module = 'product', $parent_id = 0, $type = '', $ids = '') {
+    public function readFacilitiesByParent($module = 'room', $parent_id = 0, $type = '', $ids = '') {
         $model = $this->model;
         if ($type) {
             $model = $model->where('type', 'select');
         }
-        $attribute_ids = \Db::table($module . '_attribute')->whereIn($module . '_id', $ids)->pluck('attribute_id');
+        $attribute_ids = \Db::table($module . '_facilities')->whereIn($module . '_id', $ids)->pluck('facilities_id');
         $data = $model->where('parent_id', $parent_id)->where('module', $module)->get();
         foreach ($data as $key => $val) {
             $data[$key]->children = $this->model->where('parent_id', $val->id)->whereIn('id', $attribute_ids)->get();

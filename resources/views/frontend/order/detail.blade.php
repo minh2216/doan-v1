@@ -105,12 +105,12 @@
         <div class="row rt-breadcump-height">
             <div class="col-12">
                 <div class="breadcrumbs-content">
-                    <h3>Contact Us</h3>
+                    <h3>My Trips</h3>
                     <div class="breadcrumbs">
                         <span class="divider"><i class="icofont-home"></i></span>
                         <a href="#" title="Home">Home</a>
                         <span class="divider"><i class="icofont-simple-right"></i></span>
-                        Contact Us
+                        My Trips
 
                     </div><!-- /.breadcrumbs -->
                 </div><!-- /.breadcrumbs-content -->
@@ -218,8 +218,7 @@
                             <th>STT</th>
                             <th>Tên</th>
                             <th>Phòng</th>
-                            <th>Giá</th>
-                            <th>Số lượng</th>
+                            <th>Số ngày</th>
                             <th>Thành tiền</th>
                         </tr>
                         </thead>
@@ -230,9 +229,8 @@
                                 <td>{{$product->title}}</td>
                                 @foreach($record->rooms as $key=>$product)
                                     <td>{{$product->title}}</td>
-                                    <td >{{number_format($product->price)}}</td>
                                     <td >{{number_format($product->pivot->quantity)}}</td>
-                                    <td >{{number_format($product->pivot->quantity*$product->price)}}</td>
+                                    <td >{{number_format($record->total)}}</td>
                                 @endforeach
                             </tr>
                         @endforeach

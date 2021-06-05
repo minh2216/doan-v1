@@ -268,7 +268,7 @@ class ProductController extends Controller {
         $cost = $total_price + $tax;
         $product_id = $input['product_id'];
         $room_id = $input['room_id'];
-        return view('frontend/product/order', compact('time','total_price','tax','cost','product_id','room_id'));
+        return view('frontend/product/order', compact('time','total_price','tax','cost','product_id','room_id','time'));
     }
 
     public function post_order_detail(Request $request) {

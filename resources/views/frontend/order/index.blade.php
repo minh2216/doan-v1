@@ -105,13 +105,12 @@
         <div class="row rt-breadcump-height">
             <div class="col-12">
                 <div class="breadcrumbs-content">
-                    <h3>Contact Us</h3>
+                    <h3>My Trips</h3>
                     <div class="breadcrumbs">
                         <span class="divider"><i class="icofont-home"></i></span>
                         <a href="#" title="Home">Home</a>
                         <span class="divider"><i class="icofont-simple-right"></i></span>
-                        Contact Us
-
+                        My Trips
                     </div><!-- /.breadcrumbs -->
                 </div><!-- /.breadcrumbs-content -->
             </div><!-- /.col-12 -->
@@ -183,8 +182,7 @@
                     </div><!-- /.icon-thumb -->
                     <div class="iconbox-content">
                         <h5>Our Address</h5>
-                        <p>971-949 8th Ave <br>
-                        New York, NY</p>
+                        <p>sad</p>
                     </div><!-- /.iconbox-content -->
                 </div><!-- /.rt-single-icon-box -->
             </div><!-- /.col-lg-4 -->
@@ -218,11 +216,6 @@
             </div><!-- /.col-lg-4 -->
         </div><!-- /.row -->
     </div><!-- /.container -->
-    <div class="googleMap">
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d116834.1509316622!2d90.34928591742289!3d23.780620653401414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8b087026b81%3A0x8fa563bbdd5904c2!2sDhaka!5e0!3m2!1sen!2sbd!4v1569663745803!5m2!1sen!2sbd"
-            width="100%" height="582" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-    </div>
 </section>
 
 
@@ -302,4 +295,9 @@
 
 </html>
 
+@stop
+@section('script')
+@parent
+    <script src="{!! asset('assets/global_assets/js/plugins/tables/datatables/datatables.min.js') !!}"></script>
+    <script src="{!! asset('assets/global_assets/js/demo_pages/datatables_basic.js') !!}"></script>
 @stop
