@@ -268,7 +268,9 @@ class ProductController extends Controller {
         $cost = $total_price + $tax;
         $product_id = $input['product_id'];
         $room_id = $input['room_id'];
-        return view('frontend/product/order', compact('time','total_price','tax','cost','product_id','room_id'));
+        $checkin_date = date('Y-m-d',$checkin);
+        $checkout_date = date('Y-m-d',$checkout);
+        return view('frontend/product/order', compact('time','total_price','tax','cost','product_id','room_id','checkin_date','checkout_date'));
     }
 
     public function post_order_detail(Request $request) {
@@ -277,13 +279,18 @@ class ProductController extends Controller {
         if(isset($input['contact']) && isset($input['mobile']) && isset($input['email']))
         {
             $session = session()->all();
+            $alias = \DB::table('product')->where('id',$input['product_id'])->pluck('alias');
+            foreach($alias as $alias)
+            if(isset($session['username'])== false)
+            {
+                return redirect()->route('product.detail', $alias)->with('error', 'your message,here');   
+            }
             $member_id = \DB::table('member')->where('username',$session['username'])->pluck('id');
             foreach($member_id as $member_id);
             $input['member_id'] = strval($member_id);
             $order = $this->orderRepo->create($input);
             $input['order_id'] = $order->id;
             $order_detail = $this->orderdetailRepo->create($input);
-            $alias = \DB::table('product')->where('id',$input['product_id'])->pluck('alias');
 
         }
         return redirect()->route('home.index')->with('status', 'Đặt phòng thành công');;

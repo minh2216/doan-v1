@@ -123,6 +123,8 @@
                             <input type="hidden" value ="{!!$product_id!!}"name="product_id">
                             <input type="hidden" value ="{!!$room_id!!}"name="room_id">
                             <input type="hidden" value ="{!!$cost!!}"name="price">
+                            <input type="hidden" value ="{!!$checkin_date!!}"name="checkin_date">
+                            <input type="hidden" value ="{!!$checkout_date!!}"name="checkout_date">
                         </div><!-- /.row -->
                 </div><!-- /.flight-list-box -->
 <!--                 <div class="flight-list-box pt-30">
