@@ -197,4 +197,23 @@ class ProductRepository extends AbstractRepository {
         return $value;
     }
 
+    public function filterProduct($input) {
+        $query = $this->model::query();
+        if(isset($input['title'])){
+            $query->where('title', 'like', '%'.$input['title'].'%');
+        }
+        if(isset($input['min_price'])){
+            $query->where('min_price', '>=', $input['min_price']);
+        }
+        if(isset($input['max_price'])){
+            $query->where('max_price', '<=', $input['max_price']);
+        }
+        if(isset($input['location'])){
+            $id = DB::table('product_category')->where('category_id',$input['location'])->pluck('product_id');
+            $query->whereIn('id', $id);
+        }
+        $records = $query->get();
+        return $records;
+    }
+
 }

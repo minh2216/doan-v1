@@ -39,31 +39,25 @@
         <div class="rt-banner-searchbox standard-search wow fade-in-bottom" data-wow-duration="1s" data-wow-delay="1s">
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane show active" id="rt-item_a_first" role="tabpanel" aria-labelledby="rt-item_a_first">
-                    <form action="#">
+                    <form id="filter" action="{!!route('product.filter')!!}" method="post" enctype="multipart/form-data" class="rt-form rt-line-form flight-lable">
+                        @csrf
                         <div class="rt-input-group">
                             <div class="single-input  col-rt-in-3">
-                            <select class="rt-selectactive banner-select" name="rating" style="width: 100%">
-                                <option value="">Đánh giá sao</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select>
+                                <input type="text" class="form-control" placeholder="Tên khách sạn" name="title">
                             </div><!-- /.single-input -->
 
                             <div class="single-input  col-rt-in-3">
-                                <input type="text" class="form-control" placeholder="Giá thấp nhất" name="min-price">
+                                <input type="text" class="form-control" placeholder="Giá thấp nhất" name="min_price">
                             </div><!-- /.single-input -->
                             <div class="single-input  col-rt-in-3">
-                                <input type="text" class="form-control" placeholder="Giá cao nhất" name="max-price">
+                                <input type="text" class="form-control" placeholder="Giá cao nhất" name="max_price">
                             </div><!-- /.single-input -->
                             <div class="single-input  col-rt-in-3">
                                 <select class="rt-selectactive banner-select" name="location" style="width: 100%">
-                                    <option value="">Khu vực</option>
-                                    <option value="1">Hải Phòng</option>
-                                    <option value="2">Hà Nội</option>
-                                    <option value="3">TP Hồ Chí Minh</option>
+                                    <option value="">Chọn vị trí</option>
+                                      @foreach($city as $city)
+                                        <option value="{{$city->id}}">{{$city->title}}</option>
+                                      @endforeach
                                 </select>
                             </div><!-- /.single-input -->
                             <div class="single-input  col-rt-in-1">

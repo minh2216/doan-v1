@@ -248,7 +248,8 @@ class ProductController extends Controller {
         if($check_cat==false){
             $records = $this->productRepo->getProductByAliasCategory($category);
         }
-        return view('frontend/product/list', compact('records'));
+        $city = \DB::table('category')->where('parent_id',5)->get();
+        return view('frontend/product/list', compact('records','city'));
     }
 
     public function detail2(Request $request, $alias) {
@@ -305,8 +306,10 @@ class ProductController extends Controller {
 
     public function filter(Request $request) {
         ini_set('memory_limit', '2048M');
-        dd($request);
-        return view('frontend/product/order', compact('time','total_price','tax','cost'));
+        $input = $request ->all();
+        $records = $this->productRepo->filterProduct($input);
+        $city = \DB::table('category')->where('parent_id',5)->get();
+        return view('frontend/product/list', compact('records','city'));
     }
 
     public function getData(){

@@ -36,7 +36,8 @@ class FrontendController extends Controller {
         $recommend_homestay = $this->productRepo->getProductByAliasCategory('homestay-goi-y');
         $recommend_location = $this->categoryRepo->readLocationCategory();
         $recommend_product = $this->productRepo->getRecommendHotel($recommend_location->pluck('id'));
-        return view('frontend/home/index', compact('category_arr', 'construction_arr', 'keyword_arr','recommend_location','recommend_product','recommend_homestay'));
+        $city = \DB::table('category')->where('parent_id',5)->get();
+        return view('frontend/home/index', compact('category_arr', 'construction_arr', 'keyword_arr','recommend_location','recommend_product','recommend_homestay','city'));
     }
 
     public function login(Request $request) {

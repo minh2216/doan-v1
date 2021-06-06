@@ -222,26 +222,14 @@
                                   @csrf
                                      <div class="rt-input-group" style="padding-top: 10px;padding-bottom: 10px;">
                                           <div class="single-input  col-rt-in-3">
-                                             <style type="text/css">
-                                            .select2-container--default .select2-selection--single .select2-selection__rendered{
-                                              padding-left: 15px;
-                                            }
-                                          </style>
-                                            <select class="rt-selectactive banner-select" name="rating" style="width: 100%">
-                                                <option value="">Đánh giá sao</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                            </select>
+                                             <input type="text" class="form-control" placeholder="Tên khách sạn" name="title">
                                          </div><!-- /.single-input -->
                                          <div class="single-input  col-rt-in-3">
-                                             <input type="text" class="form-control" placeholder="Giá thấp nhất" name="min-price">
+                                             <input type="text" class="form-control" placeholder="Giá thấp nhất" name="min_price">
 
                                          </div><!-- /.single-input -->
                                          <div class="single-input  col-rt-in-3">
-                                             <input type="text" class="form-control" placeholder="Giá cao nhất" name="max-price">
+                                             <input type="text" class="form-control" placeholder="Giá cao nhất" name="max_price">
 
                                          </div><!-- /.single-input -->
                                           <div class="single-input  col-rt-in-3">
@@ -251,10 +239,10 @@
                                             }
                                           </style>
                                             <select class="rt-selectactive banner-select" name="location" style="width: 100%">
-                                                <option value="">Khu vực</option>
-                                                <option value="1">Hải Phòng</option>
-                                                <option value="2">Hà Nội</option>
-                                                <option value="3">TP Hồ Chí Minh</option>
+                                              <option value="">Chọn vị trí</option>
+                                              @foreach($city as $city)
+                                                <option value="{{$city->id}}">{{$city->title}}</option>
+                                              @endforeach
                                             </select>
                                          </div><!-- /.single-input -->
                                          <div class="single-input  col-rt-in-1">
