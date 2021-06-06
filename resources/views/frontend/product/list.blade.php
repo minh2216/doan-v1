@@ -1448,11 +1448,18 @@
                                   <i class="icofont-star"></i>
                                   @endfor
                                 </span></h5>
-                                <p>Times Square | 4.8 km from downtown <span>| Near the subway</span></p>
+                                @foreach ($province as $item)
+                                @foreach ($district as $di)
+                                <p>
+                                    {{$item->title}}
+                                 <span>| {{$di->title}}</span>
+                                 <span>| {{$product->meta_title}}</span></p>
+                                @endforeach
+                                @endforeach
                             </div><!-- /.top -->
                             <div class="middle-text d-md-flex justify-content-md-between mb-4 mb-md-0">
                                 <div class="left">
-                                    <span>( 86 Reviews )</span>
+                                    <span>({{$num_review}}) Reviews</span>
                                 </div><!-- /.left- -->
                                 <div class="right text-left text-md-right mt-4 mt-md-0">
                                 </div><!-- /.right -->
@@ -1527,12 +1534,9 @@
                 
                 <nav aria-label="Page navigation example">
     <ul class="pagination  rt-paganation justify-content-center">
-        <li class="page-item"><a class="page-link" href="#"><i class="icofont-rounded-double-left"></i></a>
+
         </li>
-        <li class="page-item active"><a class="page-link" href="#">01</a></li>
-        <li class="page-item"><a class="page-link" href="#">02</a></li>
-        <li class="page-item"><a class="page-link" href="#">03</a></li>
-        <li class="page-item"><a class="page-link" href="#"><i class="icofont-rounded-double-right"></i></a>
+            {{$records->links()}}
         </li>
     </ul>
 </nav>
@@ -2713,4 +2717,9 @@
 
 </html>
 
+@stop
+@section('script')
+    @parent
+    <script src="{!! asset('assets/global_assets/js/plugins/tables/datatables/datatables.min.js') !!}"></script>
+    <script src="{!! asset('assets/global_assets/js/demo_pages/datatables_basic.js') !!}"></script>
 @stop

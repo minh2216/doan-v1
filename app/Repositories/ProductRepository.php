@@ -170,7 +170,7 @@ class ProductRepository extends AbstractRepository {
         $category_id = DB::table('category')->where('alias',$category)->pluck('id');
         foreach($category_id as $category)
         $product_id = DB::table('product_category')->where('category_id',$category)->pluck('product_id');
-        $value = $this->model->where('status', 1)->whereIn('id',$product_id)->orderBy('created_at', 'desc')->take($limit)->get();
+        $value = $this->model->where('status', 1)->whereIn('id',$product_id)->orderBy('created_at', 'desc')->take($limit)->paginate(1);
         return $value;
     }
 
@@ -203,10 +203,31 @@ class ProductRepository extends AbstractRepository {
             $query->where('title', 'like', '%'.$input['title'].'%');
         }
         if(isset($input['min_price'])){
-            $query->where('min_price', '>=', $input['min_price']);
+            $room = \DB::table('room')->where('price','>=',$input['min_price'])->pluck('product_id');
+            $query->whereIn('id',$room);
         }
         if(isset($input['max_price'])){
-            $query->where('max_price', '<=', $input['max_price']);
+            $room = \DB::table('room')->where('price','<=',$input['max_price'])->pluck('product_id');
+            $query->whereIn('id',$room);
+        }
+        if(isset($input['max_price']) && isset($input['min_price'])){
+            $room = \DB::table('room')->where('price','<=',$input['max_price'])->where('price','>=',$input['min_price'])->pluck('product_id');
+            $query->whereIn('id',$room);
+        }
+        if(isset($input['max_price']) && isset($input['min_price']) && isset($input['location'])){
+            $id = DB::table('product_category')->where('category_id',$input['location'])->pluck('product_id');
+            $room = \DB::table('room')->where('price','<=',$input['max_price'])->where('price','>=',$input['min_price'])->where('product_id',$id)->pluck('product_id');
+            $query->whereIn('id',$room);
+        }
+        if(isset($input['min_price']) && isset($input['location'])){
+            $id = DB::table('product_category')->where('category_id',$input['location'])->pluck('product_id');
+            $room = \DB::table('room')->where('price','>=',$input['min_price'])->where('product_id',$id)->pluck('product_id');
+            $query->whereIn('id',$room);
+        }
+        if(isset($input['max_price']) && isset($input['location'])){
+            $id = DB::table('product_category')->where('category_id',$input['location'])->pluck('product_id');
+            $room = \DB::table('room')->where('price','<=',$input['max_price'])->where('product_id',$id)->pluck('product_id');
+            $query->whereIn('id',$room);
         }
         if(isset($input['location'])){
             $id = DB::table('product_category')->where('category_id',$input['location'])->pluck('product_id');

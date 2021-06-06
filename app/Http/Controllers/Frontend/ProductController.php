@@ -249,7 +249,11 @@ class ProductController extends Controller {
             $records = $this->productRepo->getProductByAliasCategory($category);
         }
         $city = \DB::table('category')->where('parent_id',5)->get();
-        return view('frontend/product/list', compact('records','city'));
+        foreach($records as $record)
+        $province = \Db::table('province')->where('id',$record->province_id)->get();
+        $district = \Db::table('district')->where('id',$record->district_id)->get();
+        $num_review = \DB::table('review')->where('product_id',$record->id)->count();
+        return view('frontend/product/list', compact('records','city','province','district','num_review'));
     }
 
     public function detail2(Request $request, $alias) {
