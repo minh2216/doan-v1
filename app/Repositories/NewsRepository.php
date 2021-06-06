@@ -68,7 +68,7 @@ class NewsRepository extends AbstractRepository {
         $category_id = DB::table('category')->where('alias',$category)->pluck('id');
         foreach($category_id as $category)
         $news_id = \DB::table('news_category')->where('category_id',$category)->pluck('news_id');
-        $value = $this->model->where('status', 1)->whereIn('id',$news_id)->orderBy('created_at', 'desc')->take($limit)->get();
+        $value = $this->model->where('status', 1)->whereIn('id',$news_id)->orderBy('created_at', 'desc')->take($limit)->paginate(3);
         return $value;
     }
 

@@ -1459,7 +1459,7 @@
                             </div><!-- /.top -->
                             <div class="middle-text d-md-flex justify-content-md-between mb-4 mb-md-0">
                                 <div class="left">
-                                    <span>({{$num_review}}) Reviews</span>
+                                    <span>( {{$num_review}}) Reviews</span>
                                 </div><!-- /.left- -->
                                 <div class="right text-left text-md-right mt-4 mt-md-0">
                                 </div><!-- /.right -->

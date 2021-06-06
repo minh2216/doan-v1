@@ -122,11 +122,11 @@
 <div class="blog-content-area">
     <div class="container">
         <div class="row">
-            @foreach($records as $key => $records)
+            @foreach($records as $key => $record)
             <div class="col-lg-4 col-md-6 mx-auto">
             <article class="single-blg-post grid-view standard-post wow fadeInUp" data-wow-duration="1.5s">
-                    <a href="{!! route('news.detail',['alias' => $records->alias])!!}" class="post-thumbnail">
-                        <img src="{!!$records->getFirstImage()!!}"alt="">
+                    <a href="{!! route('news.detail',['alias' => $record->alias])!!}" class="post-thumbnail">
+                        <img src="{!!$record->getFirstImage()!!}"alt="">
                         <div class="meta-date">
                             <span>22</span>
                             <span>Dec</span>
@@ -135,7 +135,7 @@
                     <div class="entry-content">
                         <header class="entry-header">
                             <h2 class="entry-title">
-                                <a href="#" rel="bookmark">{!!$records->title!!}</a>
+                                <a href="#" rel="bookmark">{!!$record->title!!}</a>
                             </h2>
                             <div class="entry-meta">
                                 <span><a href="#"><i class="icofont-speech-comments"></i>20 Comments</a></span>
@@ -143,10 +143,10 @@
                             </div><!-- .entry-meta -->
                         </header><!-- .entry header -->
                         <p>
-                            {!!$records->description!!}
+                            {!!$record->description!!}
                         </p>
                         <footer class="entry-footer text-center">
-                            <a href="{!! route('news.detail',['alias' => $records->alias])!!}">read more</a>
+                            <a href="{!! route('news.detail',['alias' => $record->alias])!!}">read more</a>
                         </footer><!-- ./ footer -->
                     </div><!-- .entry content -->
                 </article><!-- ./artice single blog -->
@@ -155,12 +155,8 @@
 <div class="col-12">
     <nav aria-label="Page navigation example">
     <ul class="pagination  rt-paganation justify-content-center">
-        <li class="page-item"><a class="page-link" href="#"><i class="icofont-rounded-double-left"></i></a>
         </li>
-        <li class="page-item active"><a class="page-link" href="#">01</a></li>
-        <li class="page-item"><a class="page-link" href="#">02</a></li>
-        <li class="page-item"><a class="page-link" href="#">03</a></li>
-        <li class="page-item"><a class="page-link" href="#"><i class="icofont-rounded-double-right"></i></a>
+        {{$records->links()}}
         </li>
     </ul>
 </nav>
