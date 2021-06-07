@@ -128,8 +128,7 @@
                     <a href="{!! route('news.detail',['alias' => $record->alias])!!}" class="post-thumbnail">
                         <img src="{!!$record->getFirstImage()!!}"alt="">
                         <div class="meta-date">
-                            <span>22</span>
-                            <span>Dec</span>
+                            <span style="font-size: 1em;">{{$record->created_at()}}</span>
                         </div><!-- /.meta-date -->
                     </a>
                     <div class="entry-content">
