@@ -171,6 +171,34 @@
                                         </label>
                                     </div>
                                 </div>
+
+                                <div class="form-group row">
+                                    <div class="form-check col-md-5 form-check-right">
+                                        <label class="form-check-label float-left ml-2">
+                                            Rating
+                                            <input type="text" class="form-control" name="rating" value="{!!old('rating')!!}" ="">
+                                            {!! $errors->first('rating', '<span class="text-danger">:message</span>') !!}
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="form-check col-md-5 form-check-right">
+                                        <label class="form-check-label float-left ml-2">
+                                            Rating
+                                            <input type="text" class="form-control" name="min_price" value="{!!old('googlemap')!!}" ="">
+                                            {!! $errors->first('googlemap', '<span class="text-danger">:message</span>') !!}
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="form-check col-md-5 form-check-right">
+                                        <label class="form-check-label float-left ml-2">
+                                            Rating
+                                            <input type="text" class="form-control" name="googlemap" value="{!!old('googlemap')!!}" ="">
+                                            {!! $errors->first('googlemap', '<span class="text-danger">:message</span>') !!}
+                                        </label>
+                                    </div>
+                                </div>
 <!--                                 <div class="form-group row">
                                     <div class="form-check col-md-6 form-check-right">
                                         <label class="form-check-label float-right">

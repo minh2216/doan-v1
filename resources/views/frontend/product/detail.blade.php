@@ -524,10 +524,8 @@
                                     
                                         </div><!-- /.col-md-4 -->
                                     </div><!-- /.row -->
-                                   </div><!-- /.col-12 -->
-                                </div><!-- /.flight-list-box -->
-                                <div class="flight-list-box single-commnets row rt-mb-30">
                                 @foreach ($review as $r)
+                                <div class="flight-list-box single-commnets row rt-mb-30">
                                     <div class="col-lg-9 col-md-8 pl-md-5">
                                             <h4 class="f-size-17 rt-strong">{{$r->user}} <span class="rt-pl-15 f-size-14"> </span></h4>
                                             <span class="f-size-13 text-878 d-block rt-mb-15">{{$r->created_at}}</span>
@@ -537,6 +535,8 @@
                                     </div><!-- /.right-column -->
                                 </div><!-- /.flight-list-box -->
                                 @endforeach
+                                   </div><!-- /.col-12 -->
+                                </div><!-- /.flight-list-box -->
                             
                             </div>
                         </div>

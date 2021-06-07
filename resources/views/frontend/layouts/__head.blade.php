@@ -2,7 +2,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Emigrar Html-5 Template</title>
+    <title>Booking</title>
     <link rel="icon" type="image/png" href="{{asset('public/assets/frontend/images/favicon.png')}}">
     <!-- ==================Start Css Link===================== -->
 <link rel="preconnect" href="https://fonts.gstatic.com">
