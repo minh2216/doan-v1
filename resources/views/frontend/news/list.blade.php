@@ -134,7 +134,7 @@
                     <div class="entry-content">
                         <header class="entry-header">
                             <h2 class="entry-title">
-                                <a href="{!! route('news.detail',['alias' => $records->alias])!!}" rel="bookmark">{!!$records->title!!}</a>
+                                <a href="{!! route('news.detail',['alias' => $record->alias])!!}" rel="bookmark">{!!$record->title!!}</a>
                             </h2>
                             <div class="entry-meta">
                                 <span><a href="#"><i class="icofont-speech-comments"></i>20 Comments</a></span>
