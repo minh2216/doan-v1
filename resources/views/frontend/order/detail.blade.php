@@ -261,8 +261,9 @@
                     </div><!-- /.icon-thumb -->
                     <div class="iconbox-content">
                         <h5>Our Address</h5>
-                        <p>971-949 8th Ave <br>
-                        New York, NY</p>
+                        @foreach ($contact as $item)
+                        <p>{{$item->address}}</p>
+                        @endforeach
                     </div><!-- /.iconbox-content -->
                 </div><!-- /.rt-single-icon-box -->
             </div><!-- /.col-lg-4 -->
@@ -273,8 +274,10 @@
                     </div><!-- /.icon-thumb -->
                     <div class="iconbox-content">
                         <h5>Phone & Email</h5>
-                        <p>(123) 456 7890 <br>
-                        contact@example.com</p>
+                        @foreach ($contact as $contact)
+                        <p>{{$contact->phone}} <br>
+                        {{$contact->email}}</p>
+                        @endforeach
                     </div><!-- /.iconbox-content -->
                 </div><!-- /.rt-single-icon-box -->
             </div><!-- /.col-lg-4 -->

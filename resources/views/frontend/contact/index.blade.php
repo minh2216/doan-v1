@@ -160,8 +160,9 @@
                     </div><!-- /.icon-thumb -->
                     <div class="iconbox-content">
                         <h5>Our Address</h5>
-                        <p>971-949 8th Ave <br>
-                        New York, NY</p>
+                        @foreach ($contact as $item)
+                        <p>{{$item->address}}</p>
+                        @endforeach
                     </div><!-- /.iconbox-content -->
                 </div><!-- /.rt-single-icon-box -->
             </div><!-- /.col-lg-4 -->
@@ -172,8 +173,10 @@
                     </div><!-- /.icon-thumb -->
                     <div class="iconbox-content">
                         <h5>Phone & Email</h5>
-                        <p>(123) 456 7890 <br>
-                        contact@example.com</p>
+                        @foreach ($contact as $contact)
+                        <p>{{$contact->phone}} <br>
+                        {{$contact->email}}</p>
+                        @endforeach
                     </div><!-- /.iconbox-content -->
                 </div><!-- /.rt-single-icon-box -->
             </div><!-- /.col-lg-4 -->
@@ -197,7 +200,7 @@
     </div><!-- /.container -->
     <div class="googleMap">
         <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d116834.1509316622!2d90.34928591742289!3d23.780620653401414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8b087026b81%3A0x8fa563bbdd5904c2!2sDhaka!5e0!3m2!1sen!2sbd!4v1569663745803!5m2!1sen!2sbd"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14918.375741728662!2d106.6228675!3d20.8077095!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x70df39254ee1c357!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBI4bqjaSBQaMOybmc!5e0!3m2!1svi!2s!4v1623223189943!5m2!1svi!2s"
             width="100%" height="582" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
     </div>
 </section>

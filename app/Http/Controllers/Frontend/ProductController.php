@@ -327,14 +327,16 @@ class ProductController extends Controller {
         $value = $request->session()->get('username');
         $member_id = \DB::table('member')->where('username', $value)->pluck('id');
         $order = \DB::table('order')->where('member_id',$member_id)->get();
-        return view('frontend/order/index',compact('order'));
+        $contact = \DB::table('config')->get();
+        return view('frontend/order/index',compact('order','contact'));
     }
 
     public function details($id){
         $record = $this->orderRepo->find($id);
         $time_in = \DB::table('order_detail')->where('order_id',$record->id)->pluck('checkin_date');
         $time_out = \DB::table('order_detail')->where('order_id',$record->id)->pluck('checkout_date');
-        return view('frontend/order/detail',compact('record','time_in','time_out'));
+        $contact = \DB::table('config')->get();
+        return view('frontend/order/detail',compact('record','time_in','time_out','contact'));
     }
 
     public function review(Request $request){

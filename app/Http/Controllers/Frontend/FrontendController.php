@@ -85,7 +85,8 @@ class FrontendController extends Controller {
     }
 
     public function contact() {
-        return view('frontend/contact/index');
+        $contact = DB::table('config')->get();
+        return view('frontend/contact/index',compact('contact'));
     }
 
     public function blog() {
