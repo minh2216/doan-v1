@@ -9,7 +9,7 @@ class Product extends Model {
 
     protected $table = 'product';
     protected $fillable = [
-        'created_by','content','images', 'title', 'description', 'meta_title', 'meta_description', 'meta_keywords', 'view_count', 'status', 'alias', 'ordering','user_id','googlemap','province_id','district_id'
+        'created_by','content','images', 'title', 'description', 'meta_title', 'meta_description', 'meta_keywords', 'view_count', 'status', 'alias', 'ordering','user_id','googlemap','province_id','district_id','rating','min_price','max_price'
     ]; 
 
     public function user(){

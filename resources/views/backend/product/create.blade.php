@@ -173,30 +173,21 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <div class="form-check col-md-5 form-check-right">
-                                        <label class="form-check-label float-left ml-2">
-                                            Rating
-                                            <input type="text" class="form-control" name="rating" value="{!!old('rating')!!}" ="">
-                                            {!! $errors->first('rating', '<span class="text-danger">:message</span>') !!}
-                                        </label>
+                                    <label class="col-form-label col-md-4 text-left">Rating </label>
+                                    <div class="col-md-8">
+                                        <input type="text" name="rating" class="form-control touchspin text-center" value="0">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <div class="form-check col-md-5 form-check-right">
-                                        <label class="form-check-label float-left ml-2">
-                                            Rating
-                                            <input type="text" class="form-control" name="min_price" value="{!!old('googlemap')!!}" ="">
-                                            {!! $errors->first('googlemap', '<span class="text-danger">:message</span>') !!}
-                                        </label>
+                                    <label class="col-form-label col-md-4 text-left">Giá thấp nhất </label>
+                                    <div class="col-md-8">
+                                        <input type="text" name="min_price" class="form-control touchspin text-center" value="0">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <div class="form-check col-md-5 form-check-right">
-                                        <label class="form-check-label float-left ml-2">
-                                            Rating
-                                            <input type="text" class="form-control" name="googlemap" value="{!!old('googlemap')!!}" ="">
-                                            {!! $errors->first('googlemap', '<span class="text-danger">:message</span>') !!}
-                                        </label>
+                                    <label class="col-form-label col-md-4 text-left">Giá cao nhất </label>
+                                    <div class="col-md-8">
+                                        <input type="text" name="max_price" class="form-control touchspin text-center" value="0">
                                     </div>
                                 </div>
 <!--                                 <div class="form-group row">

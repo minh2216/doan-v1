@@ -158,6 +158,25 @@
                                         </label>
                                     </div>
                                 </div>
+
+                                <div class="form-group row">
+                                    <label class="col-form-label col-md-4 text-left">Rating </label>
+                                    <div class="col-md-8">
+                                        <input type="text" name="rating" class="form-control touchspin text-center" value="{!!is_null(old('rating'))?$record->rating:old('rating')!!}">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-form-label col-md-4 text-left">Giá thấp nhất </label>
+                                    <div class="col-md-8">
+                                        <input type="text" name="min_price" class="form-control touchspin text-center" value="{!!is_null(old('min_price'))?$record->min_price:old('min_price')!!}">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-form-label col-md-4 text-left">Giá cao nhất </label>
+                                    <div class="col-md-8">
+                                        <input type="text" name="max_price" class="form-control touchspin text-center" value="{!!is_null(old('max_price'))?$record->max_price:old('max_price')!!}">
+                                    </div>
+                                </div>
 <!--                                 <div class="form-group row">
                                     <div class="form-check col-md-6 form-check-right">
                                         <label class="form-check-label float-right">
