@@ -28,9 +28,7 @@
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>Đơn vị thi công</th>
-                    <th>Họ tên người đánh giá</th>
-                    <th>Đánh giá (<i class="icon-star-full2"></i>)</th>
+                    <th>Người đánh giá</th>
                     <th>Nội dung</th>
                     <th>Tác vụ</th>
                 </tr>
@@ -39,9 +37,8 @@
                 @foreach($records as $key=>$record)
                 <tr>
                     <td>{{++$key}}</td>
-                    <td>{{$record->construction->full_name}}</td>
-                    <td>{{$record->review_person->full_name}}</td>
-                    <td>
+                    <td>{{$record->user}}
+                    <!--<td>
                         @for($i = 1; $i <= 5; $i++)
                         @if ($i <= $record->star)
                         <i class="icon-star-full2"></i>
@@ -50,7 +47,7 @@
                         @endif
                         @endfor
                         ({{$record->star}}/5)
-                    </td>
+                    </td>-->
                     <td>{{$record->content}}
                     </td>
                     <td class="text-center">

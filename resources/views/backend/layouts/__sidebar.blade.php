@@ -122,17 +122,17 @@
                         <li class="nav-item"><a href="{{route('admin.block.index')}}" class="nav-link">Khối</a></li>
                         <li class="nav-item"><a href="{{route('admin.template_setting.index')}}" class="nav-link">Tùy chỉnh giao diện</a></li>
                     </ul>
-                </li>
+                </li>-->
                 <li class="nav-item nav-item-submenu">
-                    <a href="#" class="nav-link"><i class="icon-bucket"></i> <span>Thi công</span></a>
+                    <a href="#" class="nav-link"><i class="icon-bucket"></i> <span>Review</span></a>
                     <ul class="nav nav-group-sub" data-submenu-title="Thi công">
-                        <li class="nav-item"><a href="{{route('admin.construction.index')}}" class="nav-link">Đơn vị thi công</a></li>
+                        <!--<li class="nav-item"><a href="{{route('admin.construction.index')}}" class="nav-link">Đơn vị thi công</a></li>
                         <li class="nav-item"><a href="{{route('admin.category.index', \App\Category::TYPE_CONSTRUCTION)}}" class="nav-link">Danh mục</a></li>
                         <li class="nav-item"><a href="{{route('admin.item.index')}}" class="nav-link">Hạng mục</a></li>
-                        <li class="nav-item"><a href="{{route('admin.project.index')}}" class="nav-link">Dự án</a></li>
+                        <li class="nav-item"><a href="{{route('admin.project.index')}}" class="nav-link">Dự án</a></li>-->
                         <li class="nav-item"><a href="{{route('admin.review.index')}}" class="nav-link">Đánh giá</a></li>
                     </ul>
-                </li> -->
+                </li> 
                  <li class="nav-item nav-item-submenu">
                    <a href="#" class="nav-link"><i class="icon-users"></i> <span>Khách hàng</span></a>
                     <ul class="nav nav-group-sub" data-submenu-title="Khách hàng">
