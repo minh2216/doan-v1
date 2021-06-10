@@ -86,7 +86,6 @@ class RoomController extends Controller {
         //Thêm danh mục sản phẩm
         // $product->categories()->attach($input['category_id']);
         //Thêm thuộc tính sản phẩm
-        dd($input);
         $facilities = $this->getRoomFacilities($input);
         $room->facilities()->attach($facilities);
 
