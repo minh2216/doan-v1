@@ -1432,6 +1432,7 @@
 </div><!-- /.rt-sidebar-group -->
             </div><!-- /.col-lg-3 -->
             <div class="col-xl-12 col-lg-12 mt-5 mt-lg-0">
+                @if(count($records)>0)
                 @foreach($records as $key => $product)
                 <div class="box-style__1 rt-mb-30">
                     <div class="hotel-inner-content row">
@@ -1484,6 +1485,7 @@
                     </div><!-- /.hotel-inner-content -->
                 </div><!-- /.hotel-list-box -->
                 @endforeach
+                @endif
                 <!-- <div class="box-style__1 rt-mb-30">
                     <div class="hotel-inner-content row">
                         <div class="hotel-thumb col-md-3 mb-4 mb-md-0">

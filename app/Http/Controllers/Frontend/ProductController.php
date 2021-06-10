@@ -313,6 +313,16 @@ class ProductController extends Controller {
         $input = $request ->all();
         $records = $this->productRepo->filterProduct($input);
         $city = \DB::table('category')->where('parent_id',5)->get();
+        if(count($records) > 0)
+        {
+            foreach($records as $record)
+
+            $province = \Db::table('province')->where('id',$record->province_id)->get();
+            $district = \Db::table('district')->where('id',$record->district_id)->get();
+            $num_review = \DB::table('review')->where('product_id',$record->id)->count();
+            return view('frontend/product/list', compact('records','city','province','district','num_review'));
+        }
+        else
         return view('frontend/product/list', compact('records','city'));
     }
 

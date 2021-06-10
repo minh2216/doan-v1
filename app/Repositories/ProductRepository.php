@@ -170,7 +170,7 @@ class ProductRepository extends AbstractRepository {
         $category_id = DB::table('category')->where('alias',$category)->pluck('id');
         foreach($category_id as $category)
         $product_id = DB::table('product_category')->where('category_id',$category)->pluck('product_id');
-        $value = $this->model->where('status', 1)->whereIn('id',$product_id)->orderBy('created_at', 'desc')->take($limit)->paginate(5);
+        $value = $this->model->where('status', 1)->whereIn('id',$product_id)->orderBy('created_at', 'desc')->take($limit)->paginate(2);
         return $value;
     }
 
@@ -233,7 +233,7 @@ class ProductRepository extends AbstractRepository {
             $id = DB::table('product_category')->where('category_id',$input['location'])->pluck('product_id');
             $query->whereIn('id', $id);
         }
-        $records = $query->get();
+        $records = $query->where('status',1)->paginate(2);
         return $records;
     }
 
