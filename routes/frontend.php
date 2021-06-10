@@ -57,7 +57,8 @@ Route::group(['middleware' => 'frontend'], function() {
     Route::get('/log-out', ['as' => 'account.logout', 'uses' => 'Frontend\FrontendController@logout']);
 
     Route::get('/product/{category}', ['as' => 'product.index', 'uses' => 'Frontend\ProductController@index2']);
-    Route::post('/filter', ['as' => 'product.filter', 'uses' => 'Frontend\ProductController@filter']);
+    Route::get('/filter', ['as' => 'product.filter', 'uses' => 'Frontend\ProductController@filter']);
+    //Route::get('/filter', ['as' => 'product.result', 'uses' => 'Frontend\ProductController@result']);
     Route::post('/create-login', ['as' => 'account.create', 'uses' => 'Frontend\FrontendController@create']);
     Route::get('/thong-tin-sp', ['as' => 'thong-tin-sp.index', 'uses' => 'Frontend\FrontendController@thongtinsp']);
     Route::get('/contact', ['as' => 'contact.index', 'uses' => 'Frontend\FrontendController@contact']);

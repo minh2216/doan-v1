@@ -218,8 +218,8 @@
                                </form>
                             </div> -->
                             <div class="tab-pane  show active" id="rt-item_a_second" role="tabpanel" aria-labelledby="rt-item_a_second">
-                                 <form action="{!!route('product.filter')!!}" method="post" enctype="multipart/form-data">
-                                  @csrf
+                                 <form action="{!!route('product.filter')!!}" enctype="multipart/form-data">
+                                  @csrf                             
                                      <div class="rt-input-group" style="padding-top: 10px;padding-bottom: 10px;">
                                           <div class="single-input  col-rt-in-3">
                                              <input type="text" class="form-control" placeholder="Tên khách sạn" name="title">
@@ -246,7 +246,7 @@
                                             </select>
                                          </div><!-- /.single-input -->
                                          <div class="single-input  col-rt-in-1">
-                                             <button type="submit"><i class="icofont-search"></i></button>
+                                             <button type="submit" name="search"><i class="icofont-search"></i></button>
                                          </div><!-- /.single-input -->
                                      </div><!-- /.rt-input-group -->
                                  </form><!-- ./ form -->
@@ -1538,7 +1538,7 @@
     <ul class="pagination  rt-paganation justify-content-center">
 
         </li>
-            {{$records->links()}}
+            {{$records->appends(Request::all())->links()}}
         </li>
     </ul>
 </nav>

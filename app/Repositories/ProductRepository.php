@@ -200,7 +200,7 @@ class ProductRepository extends AbstractRepository {
     public function filterProduct($input) {
         $query = $this->model::query();
         if(isset($input['title'])){
-            $query->where('title', 'like', '%'.$input['title'].'%');
+            $query->where('title', 'like', '%'.$input['title'].'%')->where('status',1);
         }
         if(isset($input['min_price'])){
             $room = \DB::table('room')->where('price','>=',$input['min_price'])->pluck('product_id');
@@ -233,7 +233,7 @@ class ProductRepository extends AbstractRepository {
             $id = DB::table('product_category')->where('category_id',$input['location'])->pluck('product_id');
             $query->whereIn('id', $id);
         }
-        $records = $query->where('status',1)->paginate(2);
+        $records = $query->paginate(2);
         return $records;
     }
 

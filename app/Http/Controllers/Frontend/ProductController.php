@@ -321,9 +321,21 @@ class ProductController extends Controller {
             $district = \Db::table('district')->where('id',$record->district_id)->get();
             $num_review = \DB::table('review')->where('product_id',$record->id)->count();
             return view('frontend/product/list', compact('records','city','province','district','num_review'));
+            /*return redirect()->route('product.result')->with([
+                'records'=>$records,
+                'city'=>$city,
+                'province'=>$province,
+                'district'=>$district,
+                'num_review'=>$num_review]);*/
         }
-        else
-        return view('frontend/product/list', compact('records','city'));
+    }
+    public function result(Request $request){
+        $records=$request->session()->get('records');
+        $city=$request->session()->get('city');
+        $province=$request->session()->get('province');
+        $district=$request->session()->get('district');
+        $num_review=$request->session()->get('num_review');
+        return view('frontend/product/list', compact('records','city','province','district','num_review'));
     }
 
     public function getData(){
