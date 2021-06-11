@@ -264,9 +264,16 @@ class ProductController extends Controller {
         $room = Room::whereIn('id',$room_id)->where('status',1)->get();
         $review = \DB::table('review')->where('product_id',$product_id)->get();
         $att_pro = \DB::table('product_attribute')->where('product_id',$product_id)->pluck('attribute_id');
-        $att = \DB::table('attribute')->whereIn('id',$att_pro)->get();
+        $att = \DB::table('attribute')->whereIn('id',$att_pro)->pluck('id')->toArray();
+        $record = $this->productRepo->find($product_id);
+        $product_attribute = array();
+        foreach ($record->attributes()->get() as $key => $val) {
+            if ($val != null) {
+                $product_attribute[$val->id] = $val->pivot->value;
+            }
+        }
         $num_review = \DB::table('review')->where('product_id',$product_id)->count();
-        return view('frontend/product/detail', compact('records','room','product_id','review','att','num_review'));
+        return view('frontend/product/detail', compact('records','room','product_id','review','att','num_review','product_attribute'));
     }
 
     public function order(Request $request) {

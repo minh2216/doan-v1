@@ -168,10 +168,9 @@
                     </p>
                     <p class="f-size-14 text-333">"It is a good hotel with nice service, everything is so convenient. will choose it again next time i go there. "</p>
                     <p>
-                        @foreach ($att as $att)
-                        <span class="d-block "><span class="f-size-15 rt-pl-20">{{$att->title}}</span></span>
-                        @endforeach
-                    
+                        @foreach ($product_attribute as $p)
+                        <span class="d-block "><span class="f-size-15 rt-pl-20">{!!$p!!}</span></span>
+                        @endforeach                 
                     </p>
                     <div class="rt-divider style-one rt-mb-30"></div><!-- /.rt-divider -->
                     <div class="d-flex flex-md-row flex-column justify-content-md-between">
