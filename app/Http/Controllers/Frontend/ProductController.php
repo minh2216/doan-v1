@@ -15,6 +15,7 @@ use App\Repositories\OrderRepository;
 use App\Repositories\OrderDetailRepository;
 use Repositories\ReviewRepository;
 use Repositories\GalleryRepository;
+use App\Repositories\RoomRepository;
 use App\Room;
 use DB;
 use App\Product;
@@ -23,7 +24,7 @@ use App\Review;
 use App\Http\Resources\ProductResource;
 class ProductController extends Controller {
 
-    public function __construct(ReviewRepository $reviewRepo,OrderRepository $orderRepo, OrderDetailRepository $orderdetailRepo, ProductRepository $productRepo, CategoryRepository $categoryRepo, AttributeRepository $attributeRepo, ProductAttributeRepository $productAttrRepo, ProductCategoryRepository $productCategoryRepo, KeywordRepository $keywordRepo, GalleryRepository $galleryRepo) {
+    public function __construct(RoomRepository $roomRepo,ReviewRepository $reviewRepo,OrderRepository $orderRepo, OrderDetailRepository $orderdetailRepo, ProductRepository $productRepo, CategoryRepository $categoryRepo, AttributeRepository $attributeRepo, ProductAttributeRepository $productAttrRepo, ProductCategoryRepository $productCategoryRepo, KeywordRepository $keywordRepo, GalleryRepository $galleryRepo) {
         $this->productRepo = $productRepo;
         $this->categoryRepo = $categoryRepo;
         $this->attributeRepo = $attributeRepo;
@@ -34,6 +35,7 @@ class ProductController extends Controller {
         $this->orderRepo = $orderRepo;
         $this->orderdetailRepo = $orderdetailRepo;
         $this->reviewRepo = $reviewRepo;
+        $this->roomRepo = $roomRepo;
     }
 
     public function index(Request $request) {
@@ -289,7 +291,20 @@ class ProductController extends Controller {
         $room_id = $input['room_id'];
         $checkin_date = date('Y-m-d',$checkin);
         $checkout_date = date('Y-m-d',$checkout);
-        return view('frontend/product/order', compact('time','total_price','tax','cost','product_id','room_id','checkin_date','checkout_date'));
+        $record = \DB::table('product')->where('id',$input['product_id'])->get();
+        foreach($record as $record)
+        $province = \Db::table('province')->where('id',$record->province_id)->get();
+        $district = \Db::table('district')->where('id',$record->district_id)->get();
+        $num_review = \DB::table('review')->where('product_id',$record->id)->count();
+        $record1 = $this->roomRepo->find($room_id);
+        $room_fac = array();
+        foreach ($record1->facilities()->get() as $key => $val) {
+            if ($val != null) {
+                $room_fac[$val->id] = $val->pivot->value;
+            }
+        }
+        dd($room_fac);
+        return view('frontend/product/order', compact('time','total_price','tax','cost','product_id','room_id','checkin_date','checkout_date','province','district','record','room_fac'));
     }
 
     public function post_order_detail(Request $request) {

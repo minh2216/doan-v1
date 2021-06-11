@@ -55,12 +55,15 @@
                 <div class="flt-dtls-box rt-mb-30">
                     <div class="upper-top-content d-md-flex flex-md-row justify-content-md-between align-items-center">
                         <div class="left">
-                            <span>Candlewood Suites NYC - </span><span>Times Square</span>
-                            <p>Times Square | 4.8 km from downtown   | Near the subway</p>
+                            @foreach ($province as $item)
+                                @foreach ($district as $di)
+                                <p>
+                                  <span>  {{$item->title}}</span>
+                                 <span>| {{$di->title}}</span>
+                                 <span>| {{$record->meta_title}}</span></p>
+                                @endforeach
+                                @endforeach
                         </div><!-- /.left -->
-                        <div class="right">
-                            <a href="#" class="rt-btn rt-gradient3 rt-Bshadow-3  pill text-uppercase rt-sm2">Update</a>
-                        </div><!-- /.right -->
                     </div><!-- /.upper-top-content -->
                     <div class="flight-list-box">
                         <div class="hotel-inner-content row">
@@ -92,12 +95,10 @@
                                <div class="rt-divider style-three"></div><!-- /.rt-divider -->
                               
                                <div class="footer3-elements rt-mt-20">
-                                   <span class="d-block heading-color-1 rt-strong">Superior Room - Minimum 2 nights</span>
-                                   
-                                       <div class="clearfix f-size-12 text-555"><span class="float-left ">Max. guests per room</span> <span class="float-right">02</span></div>
-                                       <div class="clearfix f-size-12 text-555"><span class="float-left">Bed</span> <span class="float-right">1 double bed or 2 single beds</span></div>
-                                       <div class="clearfix f-size-12 text-555"><span class="float-left">Breakfast</span> <span class="float-right">No Breakfast</span></div>
-                                   
+                                   <span class="d-block heading-color-1 rt-strong">Tiện ich</span>
+                                   @foreach($room_fac as $fac)
+                                       <div class="clearfix f-size-12 text-555"><span class="float-left ">{{$fac}}</span> <span class="float-right"></span></div>
+                                   @endforeach
                                </div><!-- /.footer3-elements -->
                             </div><!-- /.hotel-text -->
                         </div><!-- /.hotel-inner-content -->
