@@ -20,7 +20,6 @@
     !============= Banner Area Start ===========!
  -->
 
-
 <section class="rt-banner-area">
     <div class="single-rt-banner rt-banner-height" style="background-image: url({{asset('public/assets/frontend/images/all-img/banner01.png')}})">
         <div class="container">
@@ -68,6 +67,14 @@
                 </div>
             </div>
         </div><!-- /.rt-banner-searchbox -->
+        <div class="card-body">
+            @if (Session::has('status'))
+            <div class="alert bg-success alert-styled-left">
+                <button type="button" class="close" data-dismiss="alert"><span>×</span><span class="sr-only">Close</span></button>
+                <span class="text-semibold">{{ Session::get('status') }}</span>
+            </div>
+            @endif
+        </div>
                     </div><!-- end banner content -->
                 </div><!-- end column -->
             </div><!-- end row -->
