@@ -199,6 +199,8 @@ class ProductRepository extends AbstractRepository {
 
     public function filterProduct($input) {
         $query = $this->model::query();
+    
+
         if(isset($input['title'])){
             $query->where('title', 'like', '%'.$input['title'].'%')->where('status',1);
         }

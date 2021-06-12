@@ -8,7 +8,7 @@ class Room extends Model {
 
     protected $table = 'room';
     protected $fillable = [
-        'created_by', 'title', 'product_id', 'alias', 'description', 'images', 'content',  'price', 'sale_price', 'ordering','status'
+        'created_by', 'title', 'product_id', 'alias', 'description', 'images', 'content',  'price', 'sale_price', 'ordering','status','quantity'
     ];
 
     public function facilities() {

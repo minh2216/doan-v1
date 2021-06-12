@@ -232,6 +232,8 @@
                                              <input type="text" class="form-control" placeholder="Giá cao nhất" name="max_price">
 
                                          </div><!-- /.single-input -->
+                                         
+
                                           <div class="single-input  col-rt-in-3">
                                              <style type="text/css">
                                             .select2-container--default .select2-selection--single .select2-selection__rendered{
@@ -251,6 +253,7 @@
                                      </div><!-- /.rt-input-group -->
                                  </form><!-- ./ form -->
                             </div>
+                            
 <!--                             <div class="tab-pane  rtIncative" id="rt-item_a_third" role="tabpanel" aria-labelledby="rt-item_a_third">
                                 <form action="#">
 
@@ -2716,6 +2719,25 @@
 </section>
 
 </body>
+<script type="text/javascript">
+    $(document).ready(function(){
+    //$("#datepicker").datepicker({
+    //minDate: 30
+    //});
+    var dates = $("#datepicker,#datepicker1").datepicker({
+        minDate: "0",
+        maxDate: "+2Y",
+        onSelect: function(date) {
+        for(var i = 0; i < dates.length; ++i) {
+            if(dates[i].id < this.id)
+                $(dates[i]).datepicker('option', 'maxDate', date);
+            else if(dates[i].id > this.id)
+                $(dates[i]).datepicker('option', 'minDate', date);
+        }
+    } 
+    });
+});
+</script>
 
 </html>
 

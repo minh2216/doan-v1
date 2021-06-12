@@ -291,6 +291,7 @@ class ProductController extends Controller {
         $room_id = $input['room_id'];
         $checkin_date = date('Y-m-d',$checkin);
         $checkout_date = date('Y-m-d',$checkout);
+
         $record = \DB::table('product')->where('id',$input['product_id'])->get();
         foreach($record as $record)
         $province = \Db::table('province')->where('id',$record->province_id)->get();
@@ -303,8 +304,19 @@ class ProductController extends Controller {
                 $room_fac[$val->id] = $val->pivot->value;
             }
         }
-        dd($room_fac);
-        return view('frontend/product/order', compact('time','total_price','tax','cost','product_id','room_id','checkin_date','checkout_date','province','district','record','room_fac'));
+        $test = \DB::table('order_detail')->whereBetween('checkin_date',[$checkin_date,$checkout_date])->orwhereBetween('checkout_date',[$checkin_date,$checkout_date])->get();
+        $test1 = \DB::table('order_detail')->whereBetween('checkin_date',[$checkin_date,$checkout_date])->whereBetween('checkout_date',[$checkin_date,$checkout_date])->get();
+        $a = \DB::table('room')->where('id',$room_id)->pluck('quantity');
+        $b = (string)$a;
+        $c = str_replace('[','',$b);
+        $d = str_replace(']','',$c);
+        if((int)$d > (count($test)+count($test1))){
+            return view('frontend/product/order', compact('time','total_price','tax','cost','product_id','room_id','checkin_date','checkout_date','province','district','record','room_fac'));
+        }
+        else{
+            return redirect()->back()->with('error','đã hết phòng ngày bạn chọn');
+        }
+    
     }
 
     public function post_order_detail(Request $request) {

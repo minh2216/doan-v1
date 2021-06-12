@@ -5,14 +5,17 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <body>
 @if(Session::has('error'))
 <div class="alert alert-danger">
   {{ Session::get('error')}}
 </div>
 @endif
-
+@if (session('error'))
+    <div class="alert alert-success">
+        {{ session('error') }}
+    </div>
+@endif
 @foreach($records as $key =>$product)
 
     <!-- /preloder -->
@@ -138,7 +141,11 @@
 
 
 
-
+@if (session('error'))
+<div id="alert" class="alert alert-danger">
+    {{ session('error') }}
+</div>
+@endif
 <section class="content-area">
     <div class="container">
         <div class="row">
@@ -325,11 +332,11 @@
                                                 <div class="container">
                                                     <div class="row">
                                                         <div class="single-input  col-rt-in-4 col-6" style="padding: 0px;">
-                                                           <input autocomplete="off" type="text" class="form-control rt-date-picker has-icon" placeholder="Ngày nhận phòng" name="checkin_time">
+                                                           <input autocomplete="off" type="text" id ="datepicker" class="form-control rt-date-picker has-icon" placeholder="Ngày nhận phòng" name="checkin_time">
                                                            <span class="input-iconbadge"><i class="icofont-ui-calendar"></i></span>
                                                         </div><!-- /.single-input -->
                                                         <div class="single-input  col-rt-in-4 col-6" style="padding: 0px;">
-                                                            <input autocomplete="off" type="text" class="form-control rt-date-picker has-icon" placeholder="Ngày trả phòng" name="checkout_time">
+                                                            <input autocomplete="off" type="text" id="datepicker1" class="form-control rt-date-picker has-icon" placeholder="Ngày trả phòng" name="checkout_time">
                                                             <span class="input-iconbadge"><i class="icofont-ui-calendar"></i></span>
                                                         </div><!-- /.single-input -->
                                                         <input type="hidden" value ="{!!$product->id!!}"name="product_id">
@@ -543,15 +550,39 @@
                 </div><!-- /.hotel-tabs -->
             </div><!-- /.col-12 -->
         </div><!-- /.row -->
-        
-        
+        <input type="text" id="datepicker"  name = "datepicker" autocomplete="off">
     </div><!-- /.container -->
 </section>
 
 @endforeach
 </body>
-
+<script type="text/javascript">
+    $(document).ready(function(){
+    //$("#datepicker").datepicker({
+    //minDate: 30
+    //});
+    var dates = $("#datepicker,#datepicker1").datepicker({
+        minDate: "0",
+        maxDate: "+2Y",
+        onSelect: function(date) {
+        for(var i = 0; i < dates.length; ++i) {
+            if(dates[i].id < this.id)
+                $(dates[i]).datepicker('option', 'maxDate', date);
+            else if(dates[i].id > this.id)
+                $(dates[i]).datepicker('option', 'minDate', date);
+        }
+    } 
+    });
+    window.setTimeout(function() {
+    $(".alert").fadeTo(1000, 0).slideUp(1000, function(){
+        $(this).remove(); 
+    });
+}, 3000);
+});
+</script>
 
 </html>
+
+
 
 @stop

@@ -128,6 +128,12 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
+                                    <label class="col-form-label col-md-4 text-left">Số lượng</label>
+                                    <div class="col-md-5">
+                                        <input type="text" name="quantity" class="form-control touchspin text-center" value="0">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
                                     <div class="form-check col-md-5 form-check-right">
                                         <label class="form-check-label float-left ml-2">
                                             Hiển thị
