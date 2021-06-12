@@ -31,6 +31,7 @@ class OrderController extends Controller
 
     public function destroy($id)
     {
+        \DB::table('order_detail')->where('order_id',$id)->delete();
         $this->orderRepo->delete($id);
         return redirect()->back()->with('success','Xóa thành công');
     }
