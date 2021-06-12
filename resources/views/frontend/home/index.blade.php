@@ -67,14 +67,11 @@
                 </div>
             </div>
         </div><!-- /.rt-banner-searchbox -->
-        <div class="card-body">
-            @if (Session::has('status'))
-            <div class="alert bg-success alert-styled-left">
-                <button type="button" class="close" data-dismiss="alert"><span>×</span><span class="sr-only">Close</span></button>
-                <span class="text-semibold">{{ Session::get('status') }}</span>
-            </div>
-            @endif
+        @if (session('status'))
+        <div id="alert" class="alert alert-success">
+            {{ session('status') }}
         </div>
+        @endif
                     </div><!-- end banner content -->
                 </div><!-- end column -->
             </div><!-- end row -->
@@ -254,7 +251,18 @@
 
 </body>
 
-
+<script type="text/javascript">
+    $(document).ready(function(){
+    //$("#datepicker").datepicker({
+    //minDate: 30
+    //});
+    window.setTimeout(function() {
+    $(".alert").fadeTo(1000, 0).slideUp(1000, function(){
+        $(this).remove(); 
+    });
+}, 3000);
+});
+</script>
 <!-- Mirrored from pixner.net/emigrar/emigrar/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 30 Jan 2021 02:49:17 GMT -->
 </html>
 

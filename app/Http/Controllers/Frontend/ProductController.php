@@ -341,7 +341,6 @@ class ProductController extends Controller {
                 }
             }
         }
-        dd($temp);
         if((int)$d > $count + $count1){
             return view('frontend/product/order', compact('time','total_price','tax','cost','product_id','room_id','checkin_date','checkout_date','province','district','record','room_fac'));
         }
