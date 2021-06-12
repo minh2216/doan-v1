@@ -304,13 +304,45 @@ class ProductController extends Controller {
                 $room_fac[$val->id] = $val->pivot->value;
             }
         }
+        $count = 0;
+        $count1=0;
+        $test2 = array();
+        $test3 = array();
+        $test4 = array();
+        $test5 = array();
         $test = \DB::table('order_detail')->whereBetween('checkin_date',[$checkin_date,$checkout_date])->orwhereBetween('checkout_date',[$checkin_date,$checkout_date])->get();
         $test1 = \DB::table('order_detail')->whereBetween('checkin_date',[$checkin_date,$checkout_date])->whereBetween('checkout_date',[$checkin_date,$checkout_date])->get();
         $a = \DB::table('room')->where('id',$room_id)->pluck('quantity');
         $b = (string)$a;
         $c = str_replace('[','',$b);
         $d = str_replace(']','',$c);
-        if((int)$d > (count($test)+count($test1))){
+        foreach($test as $t){
+            $test2[] = $t->checkin_date;
+            $test3[] = $t->checkout_date;
+        }
+        foreach($test1 as $t){
+            $test4[] = $t->checkin_date;
+            $test5[] = $t->checkout_date;
+        }
+        $j = count($test2)-1;
+        $n = count($test4) - 1;
+        $temp = array();
+        if($j>0){
+            for($i=0;$i<$j;$i++){
+                if(($test2[$i]>=$test2[$i+1] && $test3[$i]<=$test3[$i+1]) || ($test2[$i]<=$test2[$i+1] && $test3[$i]>=$test3[$i+1]) || ($test2[$i]>=$test2[$i+1] && $test3[$i]>=$test3[$i+1]) || ($test2[$i]<=$test2[$i+1] && $test3[$i]<=$test3[$i+1])){
+                    $count++;
+                }
+            }
+        }
+        if($n>0){
+            for($i=0;$i<$j;$i++){
+                if(($test4[$i]>=$test4[$i+1] && $test5[$i]<=$test5[$i+1]) || ($test4[$i]<=$test4[$i+1] && $test5[$i]>=$test5[$i+1]) || ($test4[$i]>=$test4[$i+1] && $test5[$i]>=$test5[$i+1]) || ($test4[$i]<=$test4[$i+1] && $test5[$i]<=$test5[$i+1])){
+                $count1++;
+                }
+            }
+        }
+        dd($temp);
+        if((int)$d > $count + $count1){
             return view('frontend/product/order', compact('time','total_price','tax','cost','product_id','room_id','checkin_date','checkout_date','province','district','record','room_fac'));
         }
         else{
@@ -318,6 +350,7 @@ class ProductController extends Controller {
         }
     
     }
+
 
     public function post_order_detail(Request $request) {
         ini_set('memory_limit', '2048M');
