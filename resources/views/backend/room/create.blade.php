@@ -105,6 +105,30 @@
                                         <input type="text" name="sale_price" class="form-control touchspin text-center" value="0">
                                     </div>
                                 </div>
+                                <div class="form-group row">
+                                    <label class="col-form-label col-md-4 text-left">Giá mùa xuân (Từ tháng 4 đến hết tháng 6)</label>
+                                    <div class="col-md-7">
+                                        <input type="text" name="price1" class="form-control touchspin text-center" value="0">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-form-label col-md-4 text-left">Giá mùa hạ (Từ tháng 7 đến  hết tháng 9)</label>
+                                    <div class="col-md-7">
+                                        <input type="text" name="price2" class="form-control touchspin text-center" value="0">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-form-label col-md-4 text-left">Giá mùa thu (Từ tháng 10 đến hết tháng 12)</label>
+                                    <div class="col-md-7">
+                                        <input type="text" name="price3" class="form-control touchspin text-center" value="0">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-form-label col-md-4 text-left">Giá mùa đông (Từ tháng 1 đến hết tháng 3)</label>
+                                    <div class="col-md-7">
+                                        <input type="text" name="price4" class="form-control touchspin text-center" value="0">
+                                    </div>
+                                </div>
 <!--                                 <div class="form-group row">
                                     <label class="form-check-label col-md-4  text-left">Hẹn ngày đăng </label>
                                     <div class="input-group col-md-7">

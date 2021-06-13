@@ -283,7 +283,31 @@ class ProductController extends Controller {
         $input = $request->all();
         $checkin = strtotime($input['checkin_time']);
         $checkout = strtotime($input['checkout_time']);
+        $month = date("m",strtotime($input['checkin_time']));
+
+        $muaxuan = array("04", "05", "06");
+        $muaha = array("07", "08", "09");
+        $muathu = array("10", "11", "12");
+        $muadong = array("01", "02", "03");
+        if (in_array($month, $muaxuan, true) && ($input['price1']>0)) {
+            $input['price'] = $input['price1'];
+            $mua = 'mùa xuân';
+        }
+        if (in_array($month, $muaha, true) && ($input['price2']>0)) {
+            $input['price'] = $input['price2'];
+            $mua = 'mùa hạ';
+        }
+        if (in_array($month, $muathu, true) && ($input['price3']>0)) {
+            $input['price'] = $input['price3'];
+            $mua = 'mùa thu';
+        }
+        if (in_array($month, $muadong, true) && ($input['price4']>0)) {
+            $input['price'] = $input['price4'];
+            $mua = 'mùa đông';
+        }
+        $mua='';
         $time = ($checkout - $checkin)/86400;
+        $price = $input['price'];
         $total_price = $input['price']*$time;
         $tax = ($total_price/100)*10;
         $cost = $total_price + $tax;
@@ -334,7 +358,7 @@ class ProductController extends Controller {
                 
             }
             if((int)$d > max($temp)+1){
-                return view('frontend/product/order', compact('time','total_price','tax','cost','product_id','room_id','checkin_date','checkout_date','province','district','record','room_fac'));
+                return view('frontend/product/order', compact('time','total_price','tax','cost','product_id','room_id','checkin_date','checkout_date','province','district','record','room_fac','mua','price'));
             }
             else{
                 return redirect()->back()->with('error','đã hết phòng ngày bạn chọn, vui lòng chọn ngày khác');
@@ -342,14 +366,14 @@ class ProductController extends Controller {
         }
         else if($n==0){
             if($d > count($test)){
-                return view('frontend/product/order', compact('time','total_price','tax','cost','product_id','room_id','checkin_date','checkout_date','province','district','record','room_fac'));
+                return view('frontend/product/order', compact('time','total_price','tax','cost','product_id','room_id','checkin_date','checkout_date','province','district','record','room_fac','mua','price'));
             }
             else{
                 return redirect()->back()->with('error','đã hết phòng ngày bạn chọn, vui lòng chọn ngày khác');
             }
         }
         else{
-            return view('frontend/product/order', compact('time','total_price','tax','cost','product_id','room_id','checkin_date','checkout_date','province','district','record','room_fac'));
+            return view('frontend/product/order', compact('time','total_price','tax','cost','product_id','room_id','checkin_date','checkout_date','province','district','record','room_fac','mua','price'));
         }
     
     }
