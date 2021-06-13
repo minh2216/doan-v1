@@ -320,7 +320,7 @@ class ProductController extends Controller {
             $test3[] = $t->checkout_date;
         }
         $n = count($test2)-1;
-        $temp = array();
+        $temp = array();  
         if($n>0){
             for($i=0;$i<$n;$i++){
                 $count = 0;
