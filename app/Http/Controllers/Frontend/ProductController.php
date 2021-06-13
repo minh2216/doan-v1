@@ -339,6 +339,14 @@ class ProductController extends Controller {
                 return redirect()->back()->with('error','đã hết phòng ngày bạn chọn, vui lòng chọn ngày khác');
             }
         }
+        else if($n==0){
+            if($d > count($test)){
+                return view('frontend/product/order', compact('time','total_price','tax','cost','product_id','room_id','checkin_date','checkout_date','province','district','record','room_fac'));
+            }
+            else{
+                return redirect()->back()->with('error','đã hết phòng ngày bạn chọn, vui lòng chọn ngày khác');
+            }
+        }
         else{
             return view('frontend/product/order', compact('time','total_price','tax','cost','product_id','room_id','checkin_date','checkout_date','province','district','record','room_fac'));
         }
