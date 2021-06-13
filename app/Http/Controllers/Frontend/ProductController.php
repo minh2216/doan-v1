@@ -304,11 +304,12 @@ class ProductController extends Controller {
                 $room_fac[$val->id] = $val->pivot->value;
             }
         }
-        
         $temp = array();
         $test2 = array();
         $test3 = array();
-        $test = \DB::table('order_detail')->whereBetween('checkin_date',[$checkin_date,$checkout_date])->orwhereBetween('checkout_date',[$checkin_date,$checkout_date])->orderBy('checkin_date','asc')->get();
+        $test = \DB::table('order_detail')->where('room_id',$room_id)->where(function($query) use ($checkin_date,$checkout_date){
+            $query->whereBetween('checkin_date',[$checkin_date,$checkout_date])->orwhereBetween('checkout_date',[$checkin_date,$checkout_date]);
+        })->orderBy('checkin_date','asc')->get();
         $a = \DB::table('room')->where('id',$room_id)->pluck('quantity');
         $b = (string)$a;
         $c = str_replace('[','',$b);
@@ -331,12 +332,15 @@ class ProductController extends Controller {
                 }
                 
             }
-        }
-        if((int)$d > max($temp)+1){
-            return view('frontend/product/order', compact('time','total_price','tax','cost','product_id','room_id','checkin_date','checkout_date','province','district','record','room_fac'));
+            if((int)$d > max($temp)+1){
+                return view('frontend/product/order', compact('time','total_price','tax','cost','product_id','room_id','checkin_date','checkout_date','province','district','record','room_fac'));
+            }
+            else{
+                return redirect()->back()->with('error','đã hết phòng ngày bạn chọn, vui lòng chọn ngày khác');
+            }
         }
         else{
-            return redirect()->back()->with('error','đã hết phòng ngày bạn chọn, vui lòng chọn ngày khác');
+            return view('frontend/product/order', compact('time','total_price','tax','cost','product_id','room_id','checkin_date','checkout_date','province','district','record','room_fac'));
         }
     
     }
