@@ -149,8 +149,10 @@
 
                         <ul>
                             <li class="clearfix">
-
-                                <span>1 Phòng x 2 Đêm</span>
+                                @if($mua!='')<span>Bạn đã đặt phòng vào {{$mua}} </span><br>@endif
+                                <span>Giá phòng tại thời điểm này là: </span>
+                                <br>
+                                <span>1 Phòng x {{$time}} Đêm</span>
                                 <br>
                                 <span class="float-right">{{$total_price}} VNĐ</span>
                             </li>

@@ -96,6 +96,30 @@
                                         <input type="text" name="sale_price" class="form-control touchspin text-center" value="{!!is_null(old('sale_price'))?$record->sale_price:old('sale_price')!!}">
                                     </div>
                                 </div>
+                                <div class="form-group row">
+                                    <label class="col-form-label col-md-4 text-left">Giá mùa xuân (Từ tháng 4 đến hết tháng 6) </label>
+                                    <div class="col-md-7">
+                                        <input type="text" name="price1" class="form-control touchspin text-center" value="{!!is_null(old('price1'))?$record->price1:old('price1')!!}">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-form-label col-md-4 text-left">Giá mùa hạ (Từ tháng 7 đến  hết tháng 9) </label>
+                                    <div class="col-md-7">
+                                        <input type="text" name="price2" class="form-control touchspin text-center" value="{!!is_null(old('price2'))?$record->price2:old('price2')!!}">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-form-label col-md-4 text-left">Giá mùa thu (Từ tháng 10 đến hết tháng 12) </label>
+                                    <div class="col-md-7">
+                                        <input type="text" name="price3" class="form-control touchspin text-center" value="{!!is_null(old('price3'))?$record->price3:old('price3')!!}">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-form-label col-md-4 text-left">Giá mùa đông (Từ tháng 1 đến hết tháng 3) </label>
+                                    <div class="col-md-7">
+                                        <input type="text" name="price4" class="form-control touchspin text-center" value="{!!is_null(old('price4'))?$record->price4:old('price4')!!}">
+                                    </div>
+                                </div>
 <!--                                 <div class="form-group row">
                                     <label class="form-check-label col-md-4  text-left">Hẹn ngày đăng </label>
                                     <div class="input-group col-md-7">

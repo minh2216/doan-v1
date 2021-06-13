@@ -342,6 +342,10 @@
                                                         <input type="hidden" value ="{!!$product->id!!}"name="product_id">
                                                         <input type="hidden" value ="{!!$room->id!!}"name="room_id">
                                                         <input type="hidden" value ="{!!$room->getValuePrice()!!}"name="price">
+                                                        <input type="hidden" value ="{!!$room->price1!!}"name="price1">
+                                                        <input type="hidden" value ="{!!$room->price2!!}"name="price2">
+                                                        <input type="hidden" value ="{!!$room->price3!!}"name="price3">
+                                                        <input type="hidden" value ="{!!$room->price4!!}"name="price4">
                                                     </div>
                                                 </div>
                                             </div><!-- /.rt-input-group -->
