@@ -321,7 +321,6 @@ class ProductController extends Controller {
         }
         $n = count($test2)-1;
         $temp = array();
-        dd($test);
         if($n>0){
             for($i=0;$i<$n;$i++){
                 $count = 0;
