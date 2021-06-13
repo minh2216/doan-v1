@@ -45,7 +45,9 @@ class Room extends Model {
 
     public function getValuePrice() {
         if($this->sale_price==0){
-            $value = $this->price;
+
+                $value = $this->price1;
+
         }
         else{
             $value = $this->sale_price;

@@ -22,7 +22,7 @@ class MemberRepository extends AbstractRepository
     }
     public function validateCreate() {
         return $rules = [
-            'username' => 'required',
+            'username' => 'required|unique:member',
             'email' => 'required|unique:member',
             'password' => 'required',
         ];

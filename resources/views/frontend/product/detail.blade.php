@@ -303,11 +303,40 @@
                                                                 </li>
 
                                                                 <li class="rt-pt-8">
+                                                                    @if(session()->has('username')) 
                                                                     <a href="#" class="rt-btn rt-gradient rt-sm2 pill text-uppercase" data-toggle="modal" data-target="#booking" >Book</a>
+                                                                    @else
+                                                                    <a href="#" class="rt-btn rt-gradient rt-sm2 pill text-uppercase" data-toggle="modal" data-target="#rtmodal-1" >Book</a>
+                                                                    @endif
                                                                     <p class="f-size-13 text-2f7"><span class="rt-pr-5"><i class="icofont-check"></i></span>Price Guarantee</p>
                                                                     <span class="d-block f-size-12 text-878">From VNĐ</span>
-                                                                    <span class="d-block f-size-24 primary-color rt-strong">{!!$room->getPrice()!!}</span>
-                                                                    <span class="d-block f-size-12 text-444">After tax $410</span>
+                                                                    
+                                                                    @if(date('m')>=1 && date('m')<=3)
+                                                                    <span class="d-block f-size-24 primary-color rt-strong">{!!$room->price1!!}</span>
+                                                                    @endif
+                                                                    @if(date('m')>=4 && date('m')<=6)
+                                                                    <span class="d-block f-size-24 primary-color rt-strong">{!!$room->price2!!}</span>
+                                                                    @endif
+                                                                    @if(date('m')>=7 && date('m')<=9)
+                                                                    <span class="d-block f-size-24 primary-color rt-strong">{!!$room->price3!!}</span>
+                                                                    @endif
+                                                                    @if(date('m')>=10 && date('m')<=12)
+                                                                    <span class="d-block f-size-24 primary-color rt-strong">{!!$room->price4!!}</span>
+                                                                    @endif
+                                                                    
+                                                                    @if(date('m')>=1 && date('m')<=3)
+                                                                    <span class="d-block f-size-12 text-444">Sau thuế {!!$room->price1 * 0.9!!}</span>
+                                                                    @endif
+                                                                    @if(date('m')>=4 && date('m')<=6)
+                                                                    <span class="d-block f-size-12 text-444">Sau thuế {!!$room->price2 * 0.9!!}</span>
+                                                                    @endif
+                                                                    @if(date('m')>=7 && date('m')<=9)
+                                                                    <span class="d-block f-size-12 text-444">Sau thuế {!!$room->price3 * 0.9!!}</span>
+                                                                    @endif
+                                                                    @if(date('m')>=10 && date('m')<=12)
+                                                                    <span class="d-block f-size-12 text-444">Sau thuế {!!$room->price4 * 0.9!!}</span>
+                                                                    @endif
+
                                                                 </li>
                                                             </ul>
                                                         </div><!-- /.col-lg-12 -->
