@@ -307,9 +307,10 @@ class ProductController extends Controller {
         $temp = array();
         $test2 = array();
         $test3 = array();
-        $test = \DB::table('order_detail')->where('room_id',$room_id)->where(function($query) use ($checkin_date,$checkout_date){
+        $test = \DB::table('order_detail')->where('room_id',$room_id)->where('checkin_date','<=',$checkin_date)->where('checkout_date','>=',$checkout_date)->orwhere(function($query) use ($checkin_date,$checkout_date){
             $query->whereBetween('checkin_date',[$checkin_date,$checkout_date])->orwhereBetween('checkout_date',[$checkin_date,$checkout_date]);
         })->orderBy('checkin_date','asc')->get();
+
         $a = \DB::table('room')->where('id',$room_id)->pluck('quantity');
         $b = (string)$a;
         $c = str_replace('[','',$b);
@@ -320,6 +321,7 @@ class ProductController extends Controller {
         }
         $n = count($test2)-1;
         $temp = array();
+        dd($test);
         if($n>0){
             for($i=0;$i<$n;$i++){
                 $count = 0;
